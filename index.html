@@ -245,22 +245,6 @@
       width:100%;
     }
 
-    .dot,.ring{
-      position:absolute;
-      border-radius:999px;
-      pointer-events:none;
-    }
-
-    .dot{
-      background:var(--soft);
-      opacity:.8;
-    }
-
-    .ring{
-      border:22px solid var(--red);
-      opacity:.08;
-    }
-
     .section{
       padding:2.2rem 0;
     }
@@ -391,8 +375,12 @@
 
     .timeline-item{
       position:relative;
-      margin-bottom:1.6rem;
-      padding:0 0 0 1.1rem;
+      margin-bottom:1.8rem;
+      padding-left:1.1rem;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:1.2rem;
+      align-items:center;
     }
 
     .timeline-item:last-child{
@@ -403,12 +391,16 @@
       content:"";
       position:absolute;
       left:-2.05rem;
-      top:.2rem;
+      top:.8rem;
       width:14px;
       height:14px;
       border-radius:50%;
       background:var(--red);
       box-shadow:0 0 0 6px #f7e5e5;
+    }
+
+    .timeline-content{
+      min-width:0;
     }
 
     .timeline-year{
@@ -424,6 +416,34 @@
 
     .timeline-text{
       color:#333;
+    }
+
+    .timeline-logo{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .timeline-logo-box{
+      width:100%;
+      max-width:220px;
+      min-height:130px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:1.2rem;
+    }
+
+    .timeline-logo-box img{
+      max-width:100%;
+      max-height:72px;
+      width:auto;
+      height:auto;
+      object-fit:contain;
     }
 
     .footer{
@@ -456,6 +476,19 @@
 
       .hero-card{
         max-width:360px;
+      }
+
+      .timeline-item{
+        grid-template-columns:1fr;
+        align-items:start;
+      }
+
+      .timeline-logo{
+        justify-content:flex-start;
+      }
+
+      .timeline-logo-box{
+        max-width:260px;
       }
     }
 
@@ -513,8 +546,6 @@
   </nav>
 
   <header class="intro" id="top">
-
-
     <div class="container intro-grid">
       <div>
         <div class="eyebrow">Mechanical Engineering Portfolio</div>
@@ -548,35 +579,63 @@
           <div class="timeline">
 
             <div class="timeline-item">
-              <div class="timeline-year">2018 – 2021</div>
-              <h4>High school</h4>
-              <p class="timeline-text">
-                Scientific academic track with increasing attraction to mathematics, physics and technical problem solving.
-              </p>
+              <div class="timeline-content">
+                <div class="timeline-year">2018 – 2021</div>
+                <h4>High school</h4>
+                <p class="timeline-text">
+                  Scientific academic track with increasing attraction to mathematics, physics and technical problem solving.
+                </p>
+              </div>
+              <div class="timeline-logo">
+                <div class="timeline-logo-box">
+                  <img src="logos/highschool-logo.png" alt="High school logo">
+                </div>
+              </div>
             </div>
 
             <div class="timeline-item">
-              <div class="timeline-year">2021 – 2024</div>
-              <h4>Bachelor in Mechanical Engineering at EPFL</h4>
-              <p class="timeline-text">
-                Development of strong foundations in mechanics, materials, design, manufacturing, simulation and project-based engineering.
-              </p>
+              <div class="timeline-content">
+                <div class="timeline-year">2021 – 2024</div>
+                <h4>Bachelor in Mechanical Engineering at EPFL</h4>
+                <p class="timeline-text">
+                  Development of strong foundations in mechanics, materials, design, manufacturing, simulation and project-based engineering.
+                </p>
+              </div>
+              <div class="timeline-logo">
+                <div class="timeline-logo-box">
+                  <img src="logos/epfl-logo.png" alt="EPFL logo">
+                </div>
+              </div>
             </div>
 
             <div class="timeline-item">
-              <div class="timeline-year">2023 – 2025</div>
-              <h4>EPFL Racing Team</h4>
-              <p class="timeline-text">
-                Progression from technical contributor to broader responsibilities in monocoque manufacturing, integration, organization and leadership.
-              </p>
+              <div class="timeline-content">
+                <div class="timeline-year">2023 – 2025</div>
+                <h4>EPFL Racing Team</h4>
+                <p class="timeline-text">
+                  Progression from technical contributor to broader responsibilities in monocoque manufacturing, integration, organization and leadership.
+                </p>
+              </div>
+              <div class="timeline-logo">
+                <div class="timeline-logo-box">
+                  <img src="logos/epfl-racing-logo.png" alt="EPFL Racing logo">
+                </div>
+              </div>
             </div>
 
             <div class="timeline-item">
-              <div class="timeline-year">2024 – 2026</div>
-              <h4>Master of Science in Mechanical Engineering at EPFL</h4>
-              <p class="timeline-text">
-                Specialization in Design and Production with a minor in Materials Science, with a strong focus on high-performance engineering and technical project execution.
-              </p>
+              <div class="timeline-content">
+                <div class="timeline-year">2024 – 2026</div>
+                <h4>Master of Science in Mechanical Engineering at EPFL</h4>
+                <p class="timeline-text">
+                  Specialization in Design and Production with a minor in Materials Science, with a strong focus on high-performance engineering and technical project execution.
+                </p>
+              </div>
+              <div class="timeline-logo">
+                <div class="timeline-logo-box">
+                  <img src="logos/epfl-master-logo.png" alt="EPFL Master logo">
+                </div>
+              </div>
             </div>
 
           </div>
