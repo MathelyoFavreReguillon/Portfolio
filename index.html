@@ -17,6 +17,7 @@
       --radius:28px;
       --max:1200px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -26,38 +27,64 @@
       color:var(--text);
       line-height:1.55;
     }
+
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-    .container{width:min(var(--max), calc(100% - 2rem));margin:0 auto}
+
+    .container{
+      width:min(var(--max), calc(100% - 2rem));
+      margin:0 auto;
+    }
+
     .nav{
-      position:sticky; top:0; z-index:20;
+      position:sticky;
+      top:0;
+      z-index:50;
       backdrop-filter: blur(16px);
       background:rgba(244,241,239,.78);
       border-bottom:1px solid rgba(0,0,0,.06);
     }
+
     .nav-inner{
-      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
       padding:1rem 0;
     }
-    .brand{font-weight:800; letter-spacing:-.03em}
-    .nav-links{display:flex; flex-wrap:wrap; gap:.9rem; font-size:.95rem; color:var(--muted)}
+
+    .brand{
+      font-weight:800;
+      letter-spacing:-.03em;
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.9rem;
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
     .nav-links a:hover{color:var(--red)}
-    .hero{
-      padding:5.5rem 0 3rem;
+
+    /* PAGE D'ENTRÉE */
+    .intro{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
       position:relative;
       overflow:hidden;
     }
-    .dot, .ring{
-      position:absolute; border-radius:999px; pointer-events:none;
-    }
-    .dot{background:var(--soft); opacity:.8}
-    .ring{border:22px solid var(--red)}
-    .hero-grid{
+
+    .intro-grid{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:1.05fr .95fr;
       gap:2rem;
       align-items:center;
+      padding:3rem 0;
     }
+
     .eyebrow{
       display:inline-block;
       background:var(--red);
@@ -65,39 +92,120 @@
       padding:.55rem 1.1rem;
       border-radius:999px;
       font-weight:700;
-      margin:1rem 0 1.2rem;
+      margin:0 0 1.2rem;
     }
-    h1,h2,h3{line-height:1; letter-spacing:-.04em; margin:0}
-    h1{font-size:clamp(2.8rem, 8vw, 6rem); margin-bottom:1rem}
-    h2{font-size:clamp(2rem, 5vw, 3.6rem); margin-bottom:1rem}
-    h3{font-size:1.5rem; margin-bottom:.7rem}
-    .lead{font-size:1.12rem; color:#2c2c2c; max-width:62ch}
+
+    h1,h2,h3{
+      line-height:1;
+      letter-spacing:-.04em;
+      margin:0;
+    }
+
+    h1{
+      font-size:clamp(3rem, 8vw, 6.2rem);
+      margin-bottom:1rem;
+    }
+
+    h2{
+      font-size:clamp(2rem, 5vw, 3.6rem);
+      margin-bottom:1rem;
+    }
+
+    h3{
+      font-size:1.5rem;
+      margin-bottom:.7rem;
+    }
+
+    .lead{
+      font-size:1.12rem;
+      color:#2c2c2c;
+      max-width:62ch;
+    }
+
+    .intro-actions{
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+      margin-top:1.5rem;
+    }
+
+    .btn{
+      display:inline-block;
+      background:var(--red);
+      color:#fff;
+      padding:.9rem 1.2rem;
+      border-radius:999px;
+      font-weight:800;
+      transition:.2s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-outline{
+      display:inline-block;
+      padding:.9rem 1.2rem;
+      border-radius:999px;
+      font-weight:800;
+      border:1px solid rgba(0,0,0,.1);
+      background:#fff;
+    }
+
     .hero-card{
       background:var(--card);
       border-radius:40px;
       overflow:hidden;
       box-shadow:var(--shadow);
     }
-    .hero-card img{aspect-ratio:4/5; object-fit:cover; width:100%}
-    .section{padding:2.2rem 0}
+
+    .hero-card img{
+      aspect-ratio:4/5;
+      object-fit:cover;
+      width:100%;
+    }
+
+    .dot,.ring{
+      position:absolute;
+      border-radius:999px;
+      pointer-events:none;
+    }
+
+    .dot{
+      background:var(--soft);
+      opacity:.8;
+    }
+
+    .ring{
+      border:22px solid var(--red);
+      opacity:.08;
+    }
+
+    .section{
+      padding:2.2rem 0;
+    }
+
     .grid-2{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:1.4rem;
       align-items:start;
     }
+
     .card{
       background:var(--card);
       border-radius:var(--radius);
       padding:1.5rem;
       box-shadow:var(--shadow);
     }
+
     .skills{
       display:grid;
       grid-template-columns:repeat(3, minmax(0,1fr));
       gap:1rem;
       margin-top:1.2rem;
     }
+
     .skill{
       background:#fff;
       border-radius:22px;
@@ -105,6 +213,7 @@
       border:1px solid rgba(0,0,0,.06);
       font-weight:700;
     }
+
     .project-feature{
       display:grid;
       grid-template-columns:1.05fr .95fr;
@@ -112,30 +221,44 @@
       align-items:center;
       margin-top:1.5rem;
     }
+
     .project-stats{
       display:grid;
       grid-template-columns:repeat(3, minmax(0,1fr));
       gap:1rem;
       margin-top:1rem;
     }
+
     .stat{
       background:#fff;
       border-radius:20px;
       padding:1rem;
       border:1px solid rgba(0,0,0,.06);
     }
+
     .stat strong{
       display:block;
       color:var(--red);
       font-size:1.45rem;
       letter-spacing:-.03em;
     }
+
     .projects-grid{
       display:grid;
       grid-template-columns:repeat(2, minmax(0,1fr));
       gap:1.2rem;
       margin-top:1.2rem;
     }
+
+    .project-link{
+      display:block;
+      transition:.25s ease;
+    }
+
+    .project-link:hover{
+      transform:translateY(-6px);
+    }
+
     .project-card{
       background:var(--card);
       border-radius:26px;
@@ -143,13 +266,19 @@
       box-shadow:var(--shadow);
       display:flex;
       flex-direction:column;
+      height:100%;
     }
+
     .project-card img{
       aspect-ratio:16/10;
       object-fit:cover;
       width:100%;
     }
-    .project-body{padding:1.2rem 1.2rem 1.4rem}
+
+    .project-body{
+      padding:1.2rem 1.2rem 1.4rem;
+    }
+
     .tag{
       display:inline-block;
       font-size:.8rem;
@@ -160,46 +289,50 @@
       font-weight:700;
       margin-bottom:.8rem;
     }
+
     .muted{color:var(--muted)}
+
     .footer{
       padding:3rem 0 4rem;
     }
+
     .contact{
       display:grid;
       grid-template-columns:1fr auto;
       gap:1rem;
       align-items:center;
     }
+
     .contact-list{
       display:grid;
       gap:.55rem;
       font-size:1.02rem;
     }
-    .btn{
-      display:inline-block;
-      background:var(--red);
-      color:#fff;
-      padding:.9rem 1.2rem;
-      border-radius:999px;
-      font-weight:800;
-    }
+
     .small{font-size:.9rem}
+
     @media (max-width: 960px){
-      .hero-grid,.grid-2,.project-feature,.contact{grid-template-columns:1fr}
-      .skills,.projects-grid,.project-stats{grid-template-columns:1fr 1fr}
+      .intro-grid,.grid-2,.project-feature,.contact{
+        grid-template-columns:1fr;
+      }
+      .skills,.projects-grid,.project-stats{
+        grid-template-columns:1fr 1fr;
+      }
     }
+
     @media (max-width: 640px){
       .nav-links{display:none}
       .skills,.projects-grid,.project-stats{grid-template-columns:1fr}
-      .hero{padding-top:4rem}
     }
   </style>
 </head>
 <body>
+
   <nav class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#top">Mathélyo Favre-Réguillon</a>
       <div class="nav-links">
+        <a href="#portfolio">Portfolio</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#racing">EPFL Racing</a>
@@ -209,26 +342,33 @@
     </div>
   </nav>
 
-  <header class="hero" id="top">
-    <div class="dot" style="width:120px;height:120px;left:-20px;top:40px;"></div>
-    <div class="dot" style="width:100px;height:100px;right:7%;top:110px;"></div>
-    <div class="container hero-grid">
+  <!-- PAGE D'OUVERTURE -->
+  <header class="intro" id="top">
+    <div class="dot" style="width:120px;height:120px;left:-20px;top:60px;"></div>
+    <div class="dot" style="width:100px;height:100px;right:8%;top:120px;"></div>
+    <div class="ring" style="width:280px;height:280px;right:-80px;bottom:-80px;"></div>
+
+    <div class="container intro-grid">
       <div>
-        <h1>Professional<br>Portfolio</h1>
-        <div class="eyebrow">Mechanical Engineering Master’s student</div>
+        <div class="eyebrow">Mechanical Engineering Portfolio</div>
+        <h1>Design.<br>Build.<br>Deliver.</h1>
         <p class="lead">
-          I am Mathélyo Favre-Réguillon, a mechanical engineering student at EPFL with a strong focus on
-          high-performance engineering, composites, lightweight design, structural analysis and hands-on project delivery.
-          My work combines technical depth, manufacturing awareness and team leadership, with a particular interest in motorsport.
+          Welcome to my portfolio. I am Mathélyo Favre-Réguillon, an EPFL Mechanical Engineering Master’s student
+          focused on composites, lightweight structures, simulation, manufacturing and high-performance engineering.
         </p>
+        <div class="intro-actions">
+          <a class="btn" href="#portfolio">Enter portfolio</a>
+          <a class="btn-outline" href="#contact">Contact me</a>
+        </div>
       </div>
+
       <div class="hero-card">
-        <img src="photo2.png" alt="Portfolio cover preview">
+        <img src="photo2.png" alt="Mathélyo Favre-Réguillon portfolio cover">
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="portfolio">
     <section class="section" id="about">
       <div class="container grid-2">
         <div class="card">
@@ -277,6 +417,7 @@
             EPFL Racing Team is a student-led organization of around 100 members developing a fully autonomous and electric race car.
             Over two years in the team, I progressed from Chassis and Cockpit team member to Vice-President and Head of Monocoque and Layup Manufacturing.
           </p>
+
           <div class="project-feature">
             <div>
               <h3>From structural work to team-wide coordination</h3>
@@ -287,16 +428,19 @@
               <p>
                 In my second year, I took on wider responsibilities across logistics, organization, rollout planning, testing and competitions, while also leading the production of the new carbon monocoque and the mechanical integration of electronics.
               </p>
+
               <div class="project-stats">
                 <div class="stat"><strong>11</strong>team members supervised in monocoque production</div>
                 <div class="stat"><strong>90+</strong>members involved in the wider student team</div>
                 <div class="stat"><strong>30+</strong>tests coordinated, plus 3 competitions</div>
               </div>
             </div>
+
             <div class="card" style="padding:0; overflow:hidden;">
               <img src="assets/page_6.jpg" alt="EPFL Racing Team car and carbon packaging">
             </div>
           </div>
+
           <div class="project-stats">
             <div class="stat"><strong>1 month</strong>saved in production through improved integration approach</div>
             <div class="stat"><strong>2 kg</strong>weight reduction on the electrical integration kit</div>
@@ -309,96 +453,119 @@
     <section class="section" id="projects">
       <div class="container">
         <h2>Selected Projects</h2>
+
         <div class="projects-grid">
-          <article class="project-card">
-            <img src="assets/page_7.jpg" alt="Bachelor thesis insert analysis preview">
-            <div class="project-body">
-              <div class="tag">Bachelor Thesis</div>
-              <h3>Monocoque insert analysis</h3>
-              <p class="muted">Analysis and redesign of production and post-production monocoque inserts, supported by full-structure simulations including carbon, aluminium, inserts and reinforcements.</p>
-            </div>
-          </article>
 
-          <article class="project-card">
-            <img src="assets/page_8.jpg" alt="Screw sorter preview">
-            <div class="project-body">
-              <div class="tag">Vision System</div>
-              <h3>Screw sorter</h3>
-              <p class="muted">Low-cost screw sorting prototype based on a single-camera vision system, optimized for ease of integration and accessibility for non-expert users.</p>
-            </div>
-          </article>
+          <a class="project-link" href="projects/monocoque.html">
+            <article class="project-card">
+              <img src="assets/page_7.jpg" alt="Bachelor thesis insert analysis preview">
+              <div class="project-body">
+                <div class="tag">Bachelor Thesis</div>
+                <h3>Monocoque insert analysis</h3>
+                <p class="muted">Analysis and redesign of production and post-production monocoque inserts, supported by full-structure simulations including carbon, aluminium, inserts and reinforcements.</p>
+              </div>
+            </article>
+          </a>
 
-          <article class="project-card">
-            <img src="assets/page_9.jpg" alt="Raspberry gripper preview">
-            <div class="project-body">
-              <div class="tag">Robotics</div>
-              <h3>Raspberry gripper</h3>
-              <p class="muted">Robotic end-effector for raspberry picking with Arduino-based automation, pressure-controlled gripping and ripeness detection for gentle harvesting.</p>
-            </div>
-          </article>
+          <a class="project-link" href="projects/screw-sorter.html">
+            <article class="project-card">
+              <img src="assets/page_8.jpg" alt="Screw sorter preview">
+              <div class="project-body">
+                <div class="tag">Vision System</div>
+                <h3>Screw sorter</h3>
+                <p class="muted">Low-cost screw sorting prototype based on a single-camera vision system, optimized for ease of integration and accessibility for non-expert users.</p>
+              </div>
+            </article>
+          </a>
 
-          <article class="project-card">
-            <img src="assets/page_10.jpg" alt="Domino placement machine preview">
-            <div class="project-body">
-              <div class="tag">CAD / Mechanisms</div>
-              <h3>Domino placement machine</h3>
-              <p class="muted">Early CATIA project covering kinematics, dynamic studies, structural design, fasteners, documentation and timeline-driven team delivery.</p>
-            </div>
-          </article>
+          <a class="project-link" href="projects/raspberry-gripper.html">
+            <article class="project-card">
+              <img src="assets/page_9.jpg" alt="Raspberry gripper preview">
+              <div class="project-body">
+                <div class="tag">Robotics</div>
+                <h3>Raspberry gripper</h3>
+                <p class="muted">Robotic end-effector for raspberry picking with Arduino-based automation, pressure-controlled gripping and ripeness detection for gentle harvesting.</p>
+              </div>
+            </article>
+          </a>
 
-          <article class="project-card">
-            <img src="assets/page_11.jpg" alt="Sudoku solver preview">
-            <div class="project-body">
-              <div class="tag">Programming</div>
-              <h3>Sudoku solver</h3>
-              <p class="muted">End-to-end automation of Sudoku solving from a photo using C for image recognition, MATLAB for solving and LabVIEW for orchestration and interface.</p>
-            </div>
-          </article>
+          <a class="project-link" href="projects/domino-machine.html">
+            <article class="project-card">
+              <img src="assets/page_10.jpg" alt="Domino placement machine preview">
+              <div class="project-body">
+                <div class="tag">CAD / Mechanisms</div>
+                <h3>Domino placement machine</h3>
+                <p class="muted">Early CATIA project covering kinematics, dynamic studies, structural design, fasteners, documentation and timeline-driven team delivery.</p>
+              </div>
+            </article>
+          </a>
 
-          <article class="project-card">
-            <img src="assets/page_12.jpg" alt="Finite element simulation preview">
-            <div class="project-body">
-              <div class="tag">Simulation</div>
-              <h3>Finite element simulation for inserts</h3>
-              <p class="muted">Detailed simulation workflow in 3DEXPERIENCE covering mesh selection, convergence analysis and tension, torsion and shear load cases.</p>
-            </div>
-          </article>
+          <a class="project-link" href="projects/sudoku-solver.html">
+            <article class="project-card">
+              <img src="assets/page_11.jpg" alt="Sudoku solver preview">
+              <div class="project-body">
+                <div class="tag">Programming</div>
+                <h3>Sudoku solver</h3>
+                <p class="muted">End-to-end automation of Sudoku solving from a photo using C for image recognition, MATLAB for solving and LabVIEW for orchestration and interface.</p>
+              </div>
+            </article>
+          </a>
 
-          <article class="project-card">
-            <img src="assets/page_13.jpg" alt="Measurement on trampoline preview">
-            <div class="project-body">
-              <div class="tag">Experimental Methods</div>
-              <h3>Measurement on trampoline</h3>
-              <p class="muted">Experimental project using a simplified trampoline-ball system to study deformation fields, acceleration and oscillation frequency.</p>
-            </div>
-          </article>
+          <a class="project-link" href="projects/fea-inserts.html">
+            <article class="project-card">
+              <img src="assets/page_12.jpg" alt="Finite element simulation preview">
+              <div class="project-body">
+                <div class="tag">Simulation</div>
+                <h3>Finite element simulation for inserts</h3>
+                <p class="muted">Detailed simulation workflow in 3DEXPERIENCE covering mesh selection, convergence analysis and tension, torsion and shear load cases.</p>
+              </div>
+            </article>
+          </a>
 
-          <article class="project-card">
-            <img src="assets/page_14.jpg" alt="X-ray spectroscopy preview">
-            <div class="project-body">
-              <div class="tag">Materials Science</div>
-              <h3>X-ray Spectroscopy Si₃N₄ PVD coating</h3>
-              <p class="muted">Thin-film quality assessment focused on contamination, stoichiometry and interface integrity for silicon nitride coatings on silicon wafers.</p>
-            </div>
-          </article>
+          <a class="project-link" href="projects/trampoline-measurement.html">
+            <article class="project-card">
+              <img src="assets/page_13.jpg" alt="Measurement on trampoline preview">
+              <div class="project-body">
+                <div class="tag">Experimental Methods</div>
+                <h3>Measurement on trampoline</h3>
+                <p class="muted">Experimental project using a simplified trampoline-ball system to study deformation fields, acceleration and oscillation frequency.</p>
+              </div>
+            </article>
+          </a>
 
-          <article class="project-card">
-            <img src="assets/page_15.jpg" alt="High strength aluminium alloys preview">
-            <div class="project-body">
-              <div class="tag">Computational Materials</div>
-              <h3>High strength aluminium alloys at high temperature</h3>
-              <p class="muted">Thermo-Calc based study of Al–Ce–Sc alloy design for high-temperature strength retention beyond conventional aluminium alloys.</p>
-            </div>
-          </article>
+          <a class="project-link" href="projects/xray-spectroscopy.html">
+            <article class="project-card">
+              <img src="assets/page_14.jpg" alt="X-ray spectroscopy preview">
+              <div class="project-body">
+                <div class="tag">Materials Science</div>
+                <h3>X-ray Spectroscopy Si₃N₄ PVD coating</h3>
+                <p class="muted">Thin-film quality assessment focused on contamination, stoichiometry and interface integrity for silicon nitride coatings on silicon wafers.</p>
+              </div>
+            </article>
+          </a>
 
-          <article class="project-card">
-            <img src="assets/page_4.jpg" alt="EPFL RT first year preview">
-            <div class="project-body">
-              <div class="tag">Formula Student</div>
-              <h3>Electrical housing integration</h3>
-              <p class="muted">Design, manufacturing and integration of the electrical housing system for the race car, with attention to packaging, sealing and structural constraints.</p>
-            </div>
-          </article>
+          <a class="project-link" href="projects/aluminium-alloys.html">
+            <article class="project-card">
+              <img src="assets/page_15.jpg" alt="High strength aluminium alloys preview">
+              <div class="project-body">
+                <div class="tag">Computational Materials</div>
+                <h3>High strength aluminium alloys at high temperature</h3>
+                <p class="muted">Thermo-Calc based study of Al–Ce–Sc alloy design for high-temperature strength retention beyond conventional aluminium alloys.</p>
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="projects/electrical-housing.html">
+            <article class="project-card">
+              <img src="assets/page_4.jpg" alt="EPFL RT first year preview">
+              <div class="project-body">
+                <div class="tag">Formula Student</div>
+                <h3>Electrical housing integration</h3>
+                <p class="muted">Design, manufacturing and integration of the electrical housing system for the race car, with attention to packaging, sealing and structural constraints.</p>
+              </div>
+            </article>
+          </a>
+
         </div>
       </div>
     </section>
@@ -420,7 +587,10 @@
             <a class="btn" href="mailto:mathelyo.favre-reguillon@epfl.ch">Get in touch</a>
           </div>
         </div>
-        <p class="small muted" style="margin-top:1rem;">Built from the content and visual structure of the original portfolio PDF.</p>
+
+        <p class="small muted" style="margin-top:1rem;">
+          Built from the content and visual structure of the original portfolio PDF.
+        </p>
       </div>
     </section>
   </main>
