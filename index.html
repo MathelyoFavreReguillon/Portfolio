@@ -1,260 +1,884 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mathélyo Favre-Réguillon | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mathélyo Favre-Réguillon | Portfolio</title>
+  <meta name="description" content="Mechanical Engineering portfolio of Mathélyo Favre-Réguillon, focused on high-performance engineering, composites, design, simulation and Formula Student." />
+  <style>
+    :root{
+      --bg:#f4f1ef;
+      --text:#171717;
+      --muted:#5f5f5f;
+      --red:#d60000;
+      --soft:#efd8d8;
+      --card:#ffffff;
+      --shadow:0 20px 60px rgba(0,0,0,.08);
+      --radius:28px;
+      --max:1200px;
+      --nav-bg: rgba(210, 204, 200, 0.96);
+    }
 
-<style>
-:root{
-  --bg:#f4f1ef;
-  --text:#171717;
-  --muted:#5f5f5f;
-  --red:#d60000;
-  --card:#ffffff;
-  --shadow:0 20px 60px rgba(0,0,0,.08);
-  --radius:28px;
-  --max:1200px;
-  --nav-bg: rgba(210, 204, 200, 0.96);
-}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter, system-ui;
-  background:var(--bg);
-  color:var(--text);
-}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
 
-.container{
-  width:min(var(--max), calc(100% - 2rem));
-  margin:auto;
-}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
 
-/* NAVBAR */
-.nav{
-  position:sticky;
-  top:0;
-  background:var(--nav-bg);
-  z-index:1000;
-}
+    .container{
+      width:min(var(--max), calc(100% - 2rem));
+      margin:0 auto;
+    }
 
-.nav-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:1.2rem 0;
-}
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter: blur(16px);
+      background:var(--nav-bg);
+      border-bottom:1px solid rgba(0,0,0,.08);
+      box-shadow:0 10px 25px rgba(0,0,0,.05);
+    }
 
-.nav-links{
-  display:flex;
-  gap:1.4rem;
-}
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1.5rem;
+      padding:1.25rem 0;
+    }
 
-.nav-links a,
-.dropdown-toggle{
-  font-weight:700; /* 🔥 FIX PROJECT BOLD */
-  cursor:pointer;
-}
+    .brand{
+      font-weight:800;
+      letter-spacing:-.03em;
+      font-size:1.05rem;
+      white-space:nowrap;
+    }
 
-/* DROPDOWN */
-.dropdown{position:relative;}
+    .nav-links{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:1.4rem;
+      font-size:1rem;
+      color:#3f3f3f;
+    }
 
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  background:#fff;
-  padding:.5rem;
-  border-radius:12px;
-}
+    .nav-links > a,
+    .dropdown-toggle{
+      transition:.2s ease;
+      cursor:pointer;
+      font-weight:600;
+    }
 
-.dropdown.open .dropdown-menu{
-  display:block;
-}
+    .nav-links > a:hover,
+    .dropdown-toggle:hover{
+      color:var(--red);
+    }
 
-/* HERO */
-.intro{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-}
+    .dropdown{
+      position:relative;
+    }
 
-.intro-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:2rem;
-}
+    .dropdown-toggle{
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      background:none;
+      border:none;
+      font:inherit;
+      color:inherit;
+      padding:0;
+    }
 
-.btn{
-  background:var(--red);
-  color:white;
-  padding:1rem 1.6rem; /* 🔥 bigger */
-  border-radius:999px;
-  font-weight:800;
-  font-size:1.05rem; /* 🔥 FIX SIZE */
-}
+    .dropdown-menu{
+      position:absolute;
+      top:calc(100% + 12px);
+      left:0;
+      min-width:290px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:20px;
+      box-shadow:0 20px 50px rgba(0,0,0,.12);
+      padding:.6rem;
+      display:none;
+      flex-direction:column;
+      z-index:2000;
+    }
 
-/* ABOUT */
-.timeline{
-  margin-top:2rem;
-}
+    .dropdown.open .dropdown-menu{
+      display:flex;
+    }
 
-.timeline-item{
-  display:grid;
-  grid-template-columns:1fr auto;
-  align-items:center;
-  margin-bottom:1.5rem;
-}
+    .dropdown-menu a{
+      display:block;
+      padding:.75rem .9rem;
+      border-radius:14px;
+      color:var(--text);
+      font-size:.95rem;
+      line-height:1.35;
+      font-weight:500;
+    }
 
-.timeline-content{
-  max-width:none; /* 🔥 FULL WIDTH TEXT */
-}
+    .dropdown-menu a:hover{
+      background:#f7e5e5;
+      color:var(--red);
+    }
 
-.timeline-logo{
-  justify-self:end; /* 🔥 RIGHT ALIGN */
-}
+    .intro{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
 
-.timeline-logo-box{
-  width:120px;
-  display:flex;
-  justify-content:flex-end; /* 🔥 PUSH RIGHT */
-}
+    .intro-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:2rem;
+      align-items:center;
+      padding:3rem 0;
+    }
 
-/* SKILLS */
-.skills{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1rem;
-}
+    .eyebrow{
+      display:inline-block;
+      background:var(--red);
+      color:#fff;
+      padding:.55rem 1.1rem;
+      border-radius:999px;
+      font-weight:700;
+      margin:0 0 1.2rem;
+    }
 
-/* FOOTER */
-.section{padding:2rem 0;}
+    h1,h2,h3,h4{
+      line-height:1;
+      letter-spacing:-.04em;
+      margin:0;
+    }
 
-</style>
+    h1{
+      font-size:clamp(3rem, 8vw, 6.2rem);
+      margin-bottom:1rem;
+    }
+
+    h2{
+      font-size:clamp(2rem, 5vw, 3.6rem);
+      margin-bottom:1rem;
+    }
+
+    h3{
+      font-size:1.5rem;
+      margin-bottom:.7rem;
+    }
+
+    h4{
+      font-size:1.05rem;
+      margin-bottom:.5rem;
+    }
+
+    .lead{
+      font-size:1.12rem;
+      color:#2c2c2c;
+      max-width:62ch;
+    }
+
+    .intro-actions{
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+      margin-top:1.5rem;
+    }
+
+    .btn{
+      display:inline-block;
+      background:var(--red);
+      color:#fff;
+      padding:.9rem 1.2rem;
+      border-radius:999px;
+      font-weight:800;
+      transition:.2s ease;
+      border:none;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-outline{
+      display:inline-block;
+      padding:.9rem 1.2rem;
+      border-radius:999px;
+      font-weight:800;
+      border:1px solid rgba(0,0,0,.1);
+      background:#fff;
+      transition:.2s ease;
+    }
+
+    .btn-outline:hover{
+      transform:translateY(-2px);
+      color:var(--red);
+    }
+
+    .hero-card{
+      background:var(--card);
+      border-radius:40px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      max-width:420px;
+      width:100%;
+      justify-self:center;
+    }
+
+    .hero-card img{
+      aspect-ratio:4/5;
+      object-fit:cover;
+      width:100%;
+    }
+
+    .section{
+      padding:2.2rem 0;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1.4rem;
+      align-items:start;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:1.5rem;
+      box-shadow:var(--shadow);
+    }
+
+    .skills{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:1rem;
+      margin-top:1.2rem;
+    }
+
+    .skill{
+      background:#fff;
+      border-radius:22px;
+      padding:1rem 1.1rem;
+      border:1px solid rgba(0,0,0,.06);
+      font-weight:700;
+    }
+
+    .project-feature{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:1.6rem;
+      align-items:center;
+      margin-top:1.5rem;
+    }
+
+    .project-stats{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:1rem;
+      margin-top:1rem;
+    }
+
+    .stat{
+      background:#fff;
+      border-radius:20px;
+      padding:1rem;
+      border:1px solid rgba(0,0,0,.06);
+    }
+
+    .stat strong{
+      display:block;
+      color:var(--red);
+      font-size:1.45rem;
+      letter-spacing:-.03em;
+    }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:1.2rem;
+      margin-top:1.2rem;
+    }
+
+    .project-link{
+      display:block;
+      transition:.25s ease;
+    }
+
+    .project-link:hover{
+      transform:translateY(-6px);
+    }
+
+    .project-card{
+      background:var(--card);
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+
+    .project-card img{
+      aspect-ratio:16/10;
+      object-fit:cover;
+      width:100%;
+    }
+
+    .project-body{
+      padding:1.2rem 1.2rem 1.4rem;
+    }
+
+    .tag{
+      display:inline-block;
+      font-size:.8rem;
+      padding:.35rem .7rem;
+      border-radius:999px;
+      background:#f7e5e5;
+      color:#9b0000;
+      font-weight:700;
+      margin-bottom:.8rem;
+    }
+
+    .muted{color:var(--muted)}
+
+    .timeline{
+      position:relative;
+      margin-top:1.5rem;
+      padding-left:2rem;
+    }
+
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:12px;
+      top:0;
+      bottom:0;
+      width:3px;
+      background:linear-gradient(to bottom, var(--red), #e8c3c3);
+      border-radius:999px;
+    }
+
+    .timeline-item{
+      position:relative;
+      margin-bottom:1.8rem;
+      padding-left:1.1rem;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:1.2rem;
+      align-items:center;
+    }
+
+    .timeline-item:last-child{
+      margin-bottom:0;
+    }
+
+    .timeline-item::before{
+      content:"";
+      position:absolute;
+      left:-2.05rem;
+      top:.8rem;
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      background:var(--red);
+      box-shadow:0 0 0 6px #f7e5e5;
+    }
+
+    .timeline-content{
+      min-width:0;
+    }
+
+    .timeline-year{
+      display:inline-block;
+      font-size:.82rem;
+      font-weight:800;
+      color:var(--red);
+      background:#f7e5e5;
+      padding:.35rem .7rem;
+      border-radius:999px;
+      margin-bottom:.55rem;
+    }
+
+    .timeline-text{
+      color:#333;
+    }
+
+    .timeline-logo{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .timeline-logo-box{
+      width:100%;
+      max-width:220px;
+      min-height:130px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:1.2rem;
+    }
+
+    .timeline-logo-box img{
+      max-width:100%;
+      max-height:72px;
+      width:auto;
+      height:auto;
+      object-fit:contain;
+    }
+
+    .footer{
+      padding:3rem 0 4rem;
+    }
+
+    .contact{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:1rem;
+      align-items:center;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:.55rem;
+      font-size:1.02rem;
+    }
+
+    .small{font-size:.9rem}
+
+    @media (max-width: 960px){
+      .intro-grid,.grid-2,.project-feature,.contact{
+        grid-template-columns:1fr;
+      }
+
+      .skills,.projects-grid,.project-stats{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .hero-card{
+        max-width:360px;
+      }
+
+      .timeline-item{
+        grid-template-columns:1fr;
+        align-items:start;
+      }
+
+      .timeline-logo{
+        justify-content:flex-start;
+      }
+
+      .timeline-logo-box{
+        max-width:260px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .nav-links{
+        display:none;
+      }
+
+      .skills,.projects-grid,.project-stats{
+        grid-template-columns:1fr;
+      }
+
+      .timeline{
+        padding-left:1.7rem;
+      }
+
+      .timeline-item::before{
+        left:-1.8rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="container nav-inner">
-    <div>Mathélyo Favre-Réguillon</div>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Mathélyo Favre-Réguillon</a>
 
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#racing">EPFL Racing</a>
+      <div class="nav-links">
+        <a href="#about">About me</a>
+        <a href="#racing">EPFL Racing Team</a>
 
-      <div class="dropdown" id="projectsDropdown">
-        <button class="dropdown-toggle" onclick="toggleDropdown(event)">
-          Projects ▾
-        </button>
+        <div class="dropdown" id="projectsDropdown">
+          <button class="dropdown-toggle" type="button" onclick="toggleDropdown(event)">
+            Projects ▾
+          </button>
+          <div class="dropdown-menu">
+            <a href="projects/monocoque.html">Monocoque insert analysis</a>
+            <a href="projects/screw-sorter.html">Screw sorter</a>
+            <a href="projects/raspberry-gripper.html">Raspberry gripper</a>
+            <a href="projects/domino-machine.html">Domino placement machine</a>
+            <a href="projects/sudoku-solver.html">Sudoku solver</a>
+            <a href="projects/fea-inserts.html">Finite element simulation</a>
+            <a href="projects/trampoline-measurement.html">Measurement on trampoline</a>
+            <a href="projects/xray-spectroscopy.html">X-ray spectroscopy</a>
+            <a href="projects/aluminium-alloys.html">High strength aluminium alloys</a>
+            <a href="projects/electrical-housing.html">Electrical housing integration</a>
+          </div>
+        </div>
 
-        <div class="dropdown-menu">
-          <a href="#">Monocoque</a>
-          <a href="#">Screw sorter</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="intro" id="top">
+    <div class="container intro-grid">
+      <div>
+        <div class="eyebrow">Mechanical Engineering Portfolio</div>
+        <h1>Design.<br>Build.<br>Deliver.</h1>
+        <p class="lead">
+          Welcome to my portfolio. I am Mathélyo Favre-Réguillon, an EPFL Mechanical Engineering Master’s student
+          focused on composites, lightweight structures, simulation, manufacturing and high-performance engineering.
+        </p>
+        <div class="intro-actions">
+          <button class="btn" onclick="scrollToSection('about')">Discover my profile</button>
+          <a class="btn-outline" href="#contact">Contact me</a>
         </div>
       </div>
 
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+      <div class="hero-card">
+        <img src="photos/ImagePresentation.jpg" alt="Mathélyo Favre-Réguillon portfolio cover">
+      </div>
     </div>
-  </div>
-</nav>
+  </header>
 
-<!-- HERO -->
-<header class="intro">
-  <div class="container intro-grid">
+  <main>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="card">
+          <h2>About Me</h2>
+          <p class="lead">
+            My academic and technical journey has been shaped by a growing interest in engineering, design,
+            manufacturing and high-performance systems. Here is a timeline of my path from 2018 to today.
+          </p>
 
-    <div>
-      <h1>Design.<br>Build.<br>Deliver.</h1>
+          <div class="timeline">
 
-      <button class="btn">Discover my profile</button>
-    </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-year">2018 – 2021</div>
+                <h4>High school</h4>
+                <p class="timeline-text">
+                  Scientific academic track with increasing attraction to mathematics, physics and technical problem solving.
+                </p>
+              </div>
+              <div class="timeline-logo">
+                <div class="timeline-logo-box">
+                  <img src="logos/highschool-logo.png" alt="High school logo">
+                </div>
+              </div>
+            </div>
 
-    <img src="photos/ImagePresentation.jpg" style="width:350px;">
-  </div>
-</header>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-year">2021 – 2024</div>
+                <h4>Bachelor in Mechanical Engineering at EPFL</h4>
+                <p class="timeline-text">
+                  Development of strong foundations in mechanics, materials, design, manufacturing, simulation and project-based engineering.
+                </p>
+              </div>
+              <div class="timeline-logo">
+                <div class="timeline-logo-box">
+                  <img src="logos/epfl-logo.png" alt="EPFL logo">
+                </div>
+              </div>
+            </div>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container">
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-year">2023 – 2025</div>
+                <h4>EPFL Racing Team</h4>
+                <p class="timeline-text">
+                  Progression from technical contributor to broader responsibilities in monocoque manufacturing, integration, organization and leadership.
+                </p>
+              </div>
+              <div class="timeline-logo">
+                <div class="timeline-logo-box">
+                  <img src="logos/epfl-racing-logo.png" alt="EPFL Racing logo">
+                </div>
+              </div>
+            </div>
 
-    <h2>About Me</h2>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <div class="timeline-year">2024 – 2026</div>
+                <h4>Master of Science in Mechanical Engineering at EPFL</h4>
+                <p class="timeline-text">
+                  Specialization in Design and Production with a minor in Materials Science, with a strong focus on high-performance engineering and technical project execution.
+                </p>
+              </div>
+              <div class="timeline-logo">
+                <div class="timeline-logo-box">
+                  <img src="logos/epfl-master-logo.png" alt="EPFL Master logo">
+                </div>
+              </div>
+            </div>
 
-    <p style="width:100%;"> <!-- 🔥 FIX WIDTH -->
-      My academic journey...
-    </p>
-
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <strong>2018-2021</strong>
-          <p>High school</p>
-        </div>
-        <div class="timeline-logo">
-          <div class="timeline-logo-box">
-            <img src="logos/highschool.png">
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <strong>2021-2024</strong>
-          <p>EPFL Bachelor</p>
-        </div>
-        <div class="timeline-logo">
-          <div class="timeline-logo-box">
-            <img src="logos/epfl.png">
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="card">
+          <h2>Skills and Expertise</h2>
+          <p class="lead">
+            My background bridges technical design, materials engineering, simulation, integration and project execution.
+            I am especially comfortable in high-pressure environments where structure, ownership and delivery matter.
+          </p>
+          <div class="skills">
+            <div class="skill">Critical thinking</div>
+            <div class="skill">Problem solving</div>
+            <div class="skill">Curiosity</div>
+            <div class="skill">Material production</div>
+            <div class="skill">Teamwork</div>
+            <div class="skill">Stress management</div>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <section class="section" id="racing">
+      <div class="container">
+        <div class="card">
+          <h2>EPFL Racing Team</h2>
+          <p>
+            EPFL Racing Team is a student-led organization of around 100 members developing a fully autonomous and electric race car.
+            Over two years in the team, I progressed from Chassis and Cockpit team member to Vice-President and Head of Monocoque and Layup Manufacturing.
+          </p>
 
-<!-- RACING -->
-<section id="racing" class="section">
-  <div class="container">
-    <h2>EPFL Racing</h2>
-  </div>
-</section>
+          <div class="project-feature">
+            <div>
+              <h3>From structural work to team-wide coordination</h3>
+              <p>
+                During my first year, I contributed to the structural development of the car and to the production of the season’s carbon monocoque.
+                I also designed, manufactured and integrated the full electrical housing system, focusing on materials selection, volume optimization and sealing.
+              </p>
+              <p>
+                In my second year, I took on wider responsibilities across logistics, organization, rollout planning, testing and competitions, while also leading the production of the new carbon monocoque and the mechanical integration of electronics.
+              </p>
 
-<!-- PROJECTS -->
-<section id="projects" class="section">
-  <div class="container">
-    <h2>Projects</h2>
-  </div>
-</section>
+              <div class="project-stats">
+                <div class="stat"><strong>11</strong>team members supervised in monocoque production</div>
+                <div class="stat"><strong>90+</strong>members involved in the wider student team</div>
+                <div class="stat"><strong>30+</strong>tests coordinated, plus 3 competitions</div>
+              </div>
+            </div>
 
-<!-- 🔥 SKILLS MOVED HERE -->
-<section id="skills" class="section">
-  <div class="container">
-    <h2>Skills</h2>
+            <div class="card" style="padding:0; overflow:hidden;">
+              <img src="assets/page_6.jpg" alt="EPFL Racing Team car and carbon packaging">
+            </div>
+          </div>
 
-    <div class="skills">
-      <div>Problem solving</div>
-      <div>Teamwork</div>
-      <div>Curiosity</div>
-    </div>
-  </div>
-</section>
+          <div class="project-stats">
+            <div class="stat"><strong>1 month</strong>saved in production through improved integration approach</div>
+            <div class="stat"><strong>2 kg</strong>weight reduction on the electrical integration kit</div>
+            <div class="stat"><strong>47%</strong>lighter kit than the previous year’s design</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="container">
-    <h2>Contact</h2>
-  </div>
-</section>
+    <section class="section" id="projects">
+      <div class="container">
+        <h2>Selected Projects</h2>
 
-<script>
-function toggleDropdown(e){
-  e.stopPropagation();
-  document.getElementById("projectsDropdown").classList.toggle("open");
-}
-</script>
+        <div class="projects-grid">
+          <a class="project-link" href="projects/monocoque.html">
+            <article class="project-card">
+              <img src="assets/page_7.jpg" alt="Bachelor thesis insert analysis preview">
+              <div class="project-body">
+                <div class="tag">Bachelor Thesis</div>
+                <h3>Monocoque insert analysis</h3>
+                <p class="muted">Analysis and redesign of production and post-production monocoque inserts, supported by full-structure simulations including carbon, aluminium, inserts and reinforcements.</p>
+              </div>
+            </article>
+          </a>
 
+          <a class="project-link" href="projects/screw-sorter.html">
+            <article class="project-card">
+              <img src="assets/page_8.jpg" alt="Screw sorter preview">
+              <div class="project-body">
+                <div class="tag">Vision System</div>
+                <h3>Screw sorter</h3>
+                <p class="muted">Low-cost screw sorting prototype based on a single-camera vision system, optimized for ease of integration and accessibility for non-expert users.</p>
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="projects/raspberry-gripper.html">
+            <article class="project-card">
+              <img src="assets/page_9.jpg" alt="Raspberry gripper preview">
+              <div class="project-body">
+                <div class="tag">Robotics</div>
+                <h3>Raspberry gripper</h3>
+                <p class="muted">Robotic end-effector for raspberry picking with Arduino-based automation, pressure-controlled gripping and ripeness detection for gentle harvesting.</p>
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="projects/domino-machine.html">
+            <article class="project-card">
+              <img src="assets/page_10.jpg" alt="Domino placement machine preview">
+              <div class="project-body">
+                <div class="tag">CAD / Mechanisms</div>
+                <h3>Domino placement machine</h3>
+                <p class="muted">Early CATIA project covering kinematics, dynamic studies, structural design, fasteners, documentation and timeline-driven team delivery.</p>
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="projects/sudoku-solver.html">
+            <article class="project-card">
+              <img src="assets/page_11.jpg" alt="Sudoku solver preview">
+              <div class="project-body">
+                <div class="tag">Programming</div>
+                <h3>Sudoku solver</h3>
+                <p class="muted">End-to-end automation of Sudoku solving from a photo using C for image recognition, MATLAB for solving and LabVIEW for orchestration and interface.</p>
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="projects/fea-inserts.html">
+            <article class="project-card">
+              <img src="assets/page_12.jpg" alt="Finite element simulation preview">
+              <div class="project-body">
+                <div class="tag">Simulation</div>
+                <h3>Finite element simulation for inserts</h3>
+                <p class="muted">Detailed simulation workflow in 3DEXPERIENCE covering mesh selection, convergence analysis and tension, torsion and shear load cases.</p>
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="projects/trampoline-measurement.html">
+            <article class="project-card">
+              <img src="assets/page_13.jpg" alt="Measurement on trampoline preview">
+              <div class="project-body">
+                <div class="tag">Experimental Methods</div>
+                <h3>Measurement on trampoline</h3>
+                <p class="muted">Experimental project using a simplified trampoline-ball system to study deformation fields, acceleration and oscillation frequency.</p>
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="projects/xray-spectroscopy.html">
+            <article class="project-card">
+              <img src="assets/page_14.jpg" alt="X-ray spectroscopy preview">
+              <div class="project-body">
+                <div class="tag">Materials Science</div>
+                <h3>X-ray Spectroscopy Si₃N₄ PVD coating</h3>
+                <p class="muted">Thin-film quality assessment focused on contamination, stoichiometry and interface integrity for silicon nitride coatings on silicon wafers.</p>
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="projects/aluminium-alloys.html">
+            <article class="project-card">
+              <img src="assets/page_15.jpg" alt="High strength aluminium alloys preview">
+              <div class="project-body">
+                <div class="tag">Computational Materials</div>
+                <h3>High strength aluminium alloys at high temperature</h3>
+                <p class="muted">Thermo-Calc based study of Al–Ce–Sc alloy design for high-temperature strength retention beyond conventional aluminium alloys.</p>
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="projects/electrical-housing.html">
+            <article class="project-card">
+              <img src="assets/page_4.jpg" alt="EPFL RT first year preview">
+              <div class="project-body">
+                <div class="tag">Formula Student</div>
+                <h3>Electrical housing integration</h3>
+                <p class="muted">Design, manufacturing and integration of the electrical housing system for the race car, with attention to packaging, sealing and structural constraints.</p>
+              </div>
+            </article>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section footer" id="contact">
+      <div class="container">
+        <div class="card contact">
+          <div>
+            <h2>Contact</h2>
+            <div class="contact-list">
+              <div>Mathélyo Favre-Réguillon</div>
+              <div>52D Rue de Lausanne, 1030 Bussigny</div>
+              <div><a href="tel:+33768422354">+33 7 68 42 23 54</a></div>
+              <div><a href="mailto:mathelyo.favre-reguillon@epfl.ch">mathelyo.favre-reguillon@epfl.ch</a></div>
+              <div>@mathelyo favre-reguillon</div>
+            </div>
+          </div>
+          <div>
+            <a class="btn" href="mailto:mathelyo.favre-reguillon@epfl.ch">Get in touch</a>
+          </div>
+        </div>
+
+        <p class="small muted" style="margin-top:1rem;">
+          Built from the content and visual structure of the original portfolio PDF.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+        history.replaceState(null, null, window.location.pathname);
+      }
+    }
+
+    function toggleDropdown(event) {
+      event.stopPropagation();
+      const dropdown = document.getElementById("projectsDropdown");
+      dropdown.classList.toggle("open");
+    }
+
+    document.addEventListener("click", (event) => {
+      const dropdown = document.getElementById("projectsDropdown");
+      if (dropdown && !dropdown.contains(event.target)) {
+        dropdown.classList.remove("open");
+      }
+    });
+
+    window.addEventListener("load", () => {
+      if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);
+      }
+      window.scrollTo(0, 0);
+    });
+  </script>
 </body>
 </html>
