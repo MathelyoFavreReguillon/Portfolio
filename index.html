@@ -76,7 +76,7 @@
     .dropdown-toggle{
       transition:.2s ease;
       cursor:pointer;
-      font-weight:600;
+      font-weight:700;
     }
 
     .nav-links > a:hover,
@@ -97,6 +97,8 @@
       font:inherit;
       color:inherit;
       padding:0;
+      font-weight:700;
+      font-size:1rem;
     }
 
     .dropdown-menu{
@@ -191,6 +193,11 @@
       max-width:62ch;
     }
 
+    .lead-full{
+      max-width:none;
+      width:100%;
+    }
+
     .intro-actions{
       display:flex;
       gap:1rem;
@@ -205,6 +212,7 @@
       padding:.9rem 1.2rem;
       border-radius:999px;
       font-weight:800;
+      font-size:1.02rem;
       transition:.2s ease;
       border:none;
       cursor:pointer;
@@ -219,6 +227,7 @@
       padding:.9rem 1.2rem;
       border-radius:999px;
       font-weight:800;
+      font-size:1.02rem;
       border:1px solid rgba(0,0,0,.1);
       background:#fff;
       transition:.2s ease;
@@ -378,7 +387,7 @@
       margin-bottom:1.8rem;
       padding-left:1.1rem;
       display:grid;
-      grid-template-columns:1.2fr .8fr;
+      grid-template-columns:1.15fr .85fr;
       gap:1.2rem;
       align-items:center;
     }
@@ -420,13 +429,14 @@
 
     .timeline-logo{
       display:flex;
-      justify-content:center;
+      justify-content:flex-end;
       align-items:center;
+      padding-right:.15rem;
     }
 
     .timeline-logo-box{
       width:100%;
-      max-width:220px;
+      max-width:240px;
       min-height:130px;
       background:#fff;
       border:1px solid rgba(0,0,0,.06);
@@ -444,6 +454,13 @@
       width:auto;
       height:auto;
       object-fit:contain;
+    }
+
+    .section-actions{
+      margin-top:1.4rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:1rem;
     }
 
     .footer{
@@ -485,6 +502,7 @@
 
       .timeline-logo{
         justify-content:flex-start;
+        padding-right:0;
       }
 
       .timeline-logo-box{
@@ -571,7 +589,7 @@
       <div class="container">
         <div class="card">
           <h2>About Me</h2>
-          <p class="lead">
+          <p class="lead lead-full">
             My academic and technical journey has been shaped by a growing interest in engineering, design,
             manufacturing and high-performance systems. Here is a timeline of my path from 2018 to today.
           </p>
@@ -643,26 +661,6 @@
       </div>
     </section>
 
-    <section class="section" id="skills">
-      <div class="container">
-        <div class="card">
-          <h2>Skills and Expertise</h2>
-          <p class="lead">
-            My background bridges technical design, materials engineering, simulation, integration and project execution.
-            I am especially comfortable in high-pressure environments where structure, ownership and delivery matter.
-          </p>
-          <div class="skills">
-            <div class="skill">Critical thinking</div>
-            <div class="skill">Problem solving</div>
-            <div class="skill">Curiosity</div>
-            <div class="skill">Material production</div>
-            <div class="skill">Teamwork</div>
-            <div class="skill">Stress management</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="racing">
       <div class="container">
         <div class="card">
@@ -687,6 +685,10 @@
                 <div class="stat"><strong>11</strong>team members supervised in monocoque production</div>
                 <div class="stat"><strong>90+</strong>members involved in the wider student team</div>
                 <div class="stat"><strong>30+</strong>tests coordinated, plus 3 competitions</div>
+              </div>
+
+              <div class="section-actions">
+                <a class="btn" href="projects/epfl-racing-team.html">Click to discover more</a>
               </div>
             </div>
 
@@ -818,6 +820,26 @@
               </div>
             </article>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="card">
+          <h2>Skills and Expertise</h2>
+          <p class="lead">
+            My background bridges technical design, materials engineering, simulation, integration and project execution.
+            I am especially comfortable in high-pressure environments where structure, ownership and delivery matter.
+          </p>
+          <div class="skills">
+            <div class="skill">Critical thinking</div>
+            <div class="skill">Problem solving</div>
+            <div class="skill">Curiosity</div>
+            <div class="skill">Material production</div>
+            <div class="skill">Teamwork</div>
+            <div class="skill">Stress management</div>
+          </div>
         </div>
       </div>
     </section>
