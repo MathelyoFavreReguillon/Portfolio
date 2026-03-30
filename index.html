@@ -274,21 +274,6 @@
       box-shadow:var(--shadow);
     }
 
-    .skills{
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:1rem;
-      margin-top:1.2rem;
-    }
-
-    .skill{
-      background:#fff;
-      border-radius:22px;
-      padding:1rem 1.1rem;
-      border:1px solid rgba(0,0,0,.06);
-      font-weight:700;
-    }
-
     .project-feature{
       display:grid;
       grid-template-columns:1.05fr .95fr;
@@ -465,6 +450,106 @@
       gap:1rem;
     }
 
+    .skills-layout{
+      display:grid;
+      gap:2rem;
+      margin-top:1.8rem;
+    }
+
+    .skills-block h3{
+      margin-bottom:1rem;
+    }
+
+    .soft-skills-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:1rem;
+    }
+
+    .soft-skill-card,
+    .software-card{
+      background:#fff;
+      border-radius:22px;
+      padding:1.15rem 1.2rem;
+      border:1px solid rgba(0,0,0,.06);
+      box-shadow:0 8px 25px rgba(0,0,0,.04);
+    }
+
+    .soft-skill-card h4,
+    .software-card h4{
+      margin-bottom:.55rem;
+    }
+
+    .soft-skill-card p,
+    .software-card p{
+      margin:0;
+      color:#444;
+      line-height:1.5;
+    }
+
+    .technical-block{
+      margin-top:.6rem;
+    }
+
+    .skills-tabs{
+      display:flex;
+      gap:.8rem;
+      flex-wrap:wrap;
+      margin:1rem 0 1.2rem;
+    }
+
+    .skill-tab{
+      border:none;
+      background:#f3ece9;
+      color:#3c3c3c;
+      padding:.8rem 1.1rem;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.95rem;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+
+    .skill-tab:hover{
+      transform:translateY(-1px);
+      color:var(--red);
+    }
+
+    .skill-tab.active{
+      background:var(--red);
+      color:#fff;
+    }
+
+    .skills-panels{
+      position:relative;
+    }
+
+    .skills-panel{
+      display:none;
+      animation:fadeSlide .25s ease;
+    }
+
+    .skills-panel.active{
+      display:block;
+    }
+
+    .software-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:1rem;
+    }
+
+    @keyframes fadeSlide{
+      from{
+        opacity:0;
+        transform:translateY(6px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
     .footer{
       padding:3rem 0 4rem;
     }
@@ -489,7 +574,8 @@
         grid-template-columns:1fr;
       }
 
-      .skills,.projects-grid,.project-stats{
+      .projects-grid,.project-stats,
+      .soft-skills-grid,.software-grid{
         grid-template-columns:1fr 1fr;
       }
 
@@ -517,7 +603,8 @@
         display:none;
       }
 
-      .skills,.projects-grid,.project-stats{
+      .projects-grid,.project-stats,
+      .soft-skills-grid,.software-grid{
         grid-template-columns:1fr;
       }
 
@@ -527,6 +614,15 @@
 
       .timeline-item::before{
         left:-1.8rem;
+      }
+
+      .skills-tabs{
+        gap:.6rem;
+      }
+
+      .skill-tab{
+        width:100%;
+        text-align:center;
       }
     }
   </style>
@@ -867,18 +963,155 @@
       <div class="container">
         <div class="card">
           <h2>Skills and Expertise</h2>
-          <p class="lead">
-            My background bridges technical design, materials engineering, simulation, integration and project execution.
-            I am especially comfortable in high-pressure environments where structure, ownership and delivery matter.
+          <p class="lead lead-full">
+            My profile combines technical engineering skills, hands-on prototyping experience and strong interpersonal abilities.
+            I enjoy moving from concept to execution, whether through design, simulation, manufacturing or teamwork in demanding environments.
           </p>
-          <div class="skills">
-            <div class="skill">Critical thinking</div>
-            <div class="skill">Problem solving</div>
-            <div class="skill">Curiosity</div>
-            <div class="skill">Material production</div>
-            <div class="skill">Teamwork</div>
-            <div class="skill">Stress management</div>
+
+          <div class="skills-layout">
+            <div class="skills-block">
+              <h3>Soft Skills</h3>
+              <div class="soft-skills-grid">
+                <div class="soft-skill-card">
+                  <h4>Critical thinking</h4>
+                  <p>Ability to analyze complex situations, identify key issues and make structured engineering decisions.</p>
+                </div>
+
+                <div class="soft-skill-card">
+                  <h4>Problem solving</h4>
+                  <p>Strong interest in understanding technical challenges and developing practical, efficient and robust solutions.</p>
+                </div>
+
+                <div class="soft-skill-card">
+                  <h4>Teamwork</h4>
+                  <p>Used to collaborating in multidisciplinary teams with shared objectives, deadlines and technical constraints.</p>
+                </div>
+
+                <div class="soft-skill-card">
+                  <h4>Curiosity</h4>
+                  <p>Motivated by learning new methods, exploring new tools and improving both technical knowledge and execution.</p>
+                </div>
+
+                <div class="soft-skill-card">
+                  <h4>Stress management</h4>
+                  <p>Comfortable working in demanding environments with tight schedules, multiple priorities and high expectations.</p>
+                </div>
+
+                <div class="soft-skill-card">
+                  <h4>Ownership and delivery</h4>
+                  <p>Strong ability to take responsibility for a task or project and move it forward with consistency and commitment.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="skills-block technical-block">
+              <h3>Technical Skills</h3>
+
+              <div class="skills-tabs">
+                <button class="skill-tab active" type="button" data-tab="cad">CAD</button>
+                <button class="skill-tab" type="button" data-tab="simulation">Simulation</button>
+                <button class="skill-tab" type="button" data-tab="programming">Programming</button>
+                <button class="skill-tab" type="button" data-tab="prototyping">Prototyping</button>
+                <button class="skill-tab" type="button" data-tab="manufacturing">Manufacturing</button>
+              </div>
+
+              <div class="skills-panels">
+                <div class="skills-panel active" data-panel="cad">
+                  <div class="software-grid">
+                    <div class="software-card">
+                      <h4>CATIA</h4>
+                      <p>3D design, assemblies, technical development and mechanical project work.</p>
+                    </div>
+                    <div class="software-card">
+                      <h4>SolidWorks</h4>
+                      <p>Mechanical design, part development and prototyping-oriented modeling.</p>
+                    </div>
+                    <div class="software-card">
+                      <h4>Fusion 360</h4>
+                      <p>Fast design iterations, integrated engineering workflow and project development.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="skills-panel" data-panel="simulation">
+                  <div class="software-grid">
+                    <div class="software-card">
+                      <h4>3DEXPERIENCE</h4>
+                      <p>Finite element studies, mesh strategy, convergence analysis and structural investigations.</p>
+                    </div>
+                    <div class="software-card">
+                      <h4>Thermo-Calc</h4>
+                      <p>Computational materials work and alloy behavior analysis.</p>
+                    </div>
+                    <div class="software-card">
+                      <h4>MATLAB</h4>
+                      <p>Scientific computing, numerical analysis and engineering problem solving.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="skills-panel" data-panel="programming">
+                  <div class="software-grid">
+                    <div class="software-card">
+                      <h4>Python</h4>
+                      <p>Automation, data processing, engineering workflows and technical scripting.</p>
+                    </div>
+                    <div class="software-card">
+                      <h4>C</h4>
+                      <p>Structured programming for problem solving and low-level technical applications.</p>
+                    </div>
+                    <div class="software-card">
+                      <h4>MATLAB</h4>
+                      <p>Algorithm development, calculation and technical modeling.</p>
+                    </div>
+                    <div class="software-card">
+                      <h4>LabVIEW</h4>
+                      <p>Experimental interfacing, workflow control and system orchestration.</p>
+                    </div>
+                    <div class="software-card">
+                      <h4>Arduino</h4>
+                      <p>Embedded prototyping, sensor integration and experimental control systems.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="skills-panel" data-panel="prototyping">
+                  <div class="software-grid">
+                    <div class="software-card">
+                      <h4>3D Printing</h4>
+                      <p>Rapid prototyping, test parts and fast design validation loops.</p>
+                    </div>
+                    <div class="software-card">
+                      <h4>Arduino</h4>
+                      <p>Electromechanical prototyping, sensor testing and hardware experimentation.</p>
+                    </div>
+                    <div class="software-card">
+                      <h4>Workshop fabrication</h4>
+                      <p>Hands-on manufacturing and assembly in practical engineering environments.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="skills-panel" data-panel="manufacturing">
+                  <div class="software-grid">
+                    <div class="software-card">
+                      <h4>Composite manufacturing</h4>
+                      <p>Layup processes, monocoque production and lightweight structural fabrication.</p>
+                    </div>
+                    <div class="software-card">
+                      <h4>Mechanical integration</h4>
+                      <p>System packaging, structural constraints and design-for-integration thinking.</p>
+                    </div>
+                    <div class="software-card">
+                      <h4>Testing and validation</h4>
+                      <p>Practical verification, iteration and engineering performance follow-up.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -932,6 +1165,21 @@
       if (dropdown && !dropdown.contains(event.target)) {
         dropdown.classList.remove("open");
       }
+    });
+
+    const skillTabs = document.querySelectorAll(".skill-tab");
+    const skillPanels = document.querySelectorAll(".skills-panel");
+
+    skillTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const target = tab.dataset.tab;
+
+        skillTabs.forEach((btn) => btn.classList.remove("active"));
+        skillPanels.forEach((panel) => panel.classList.remove("active"));
+
+        tab.classList.add("active");
+        document.querySelector(`.skills-panel[data-panel="${target}"]`).classList.add("active");
+      });
     });
 
     window.addEventListener("load", () => {
