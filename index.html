@@ -625,6 +625,34 @@
         text-align:center;
       }
     }
+
+      .contact-extended{
+        grid-template-columns:1fr 220px auto;
+        gap:1.4rem;
+        align-items:stretch;
+      }
+      
+      .contact-image-wrap{
+        border-radius:22px;
+        overflow:hidden;
+        min-height:100%;
+        height:100%;
+        align-self:stretch;
+        box-shadow:0 8px 24px rgba(0,0,0,.06);
+      }
+      
+      .contact-image-wrap img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+      }
+      
+      .contact-cta{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      }
+    
   </style>
 </head>
 <body>
@@ -1117,28 +1145,34 @@
     </section>
 
     <section class="section footer" id="contact">
-      <div class="container">
-        <div class="card contact">
-          <div>
-            <h2>Contact</h2>
-            <div class="contact-list">
-              <div>Mathélyo Favre-Réguillon</div>
-              <div>52D Rue de Lausanne, 1030 Bussigny</div>
-              <div><a href="tel:+33768422354">+33 7 68 42 23 54</a></div>
-              <div><a href="mailto:mathelyo.favre-reguillon@epfl.ch">mathelyo.favre-reguillon@epfl.ch</a></div>
-              <div>@mathelyo favre-reguillon</div>
-            </div>
-          </div>
-          <div>
-            <a class="btn" href="mailto:mathelyo.favre-reguillon@epfl.ch">Get in touch</a>
+    <div class="container">
+      <div class="card contact contact-extended">
+        <div>
+          <h2>Contact</h2>
+          <div class="contact-list">
+            <div>Mathélyo Favre-Réguillon</div>
+            <div>52D Rue de Lausanne, 1030 Bussigny</div>
+            <div><a href="tel:+33768422354">+33 7 68 42 23 54</a></div>
+            <div><a href="mailto:mathelyo.favre-reguillon@epfl.ch">mathelyo.favre-reguillon@epfl.ch</a></div>
+            <div>@mathelyo favre-reguillon</div>
           </div>
         </div>
-
-        <p class="small muted" style="margin-top:1rem;">
-          Built from the content and visual structure of the original portfolio PDF.
-        </p>
+  
+        <div class="contact-image-wrap">
+          <img src="photos/contact-image.jpg" alt="Contact visual">
+        </div>
+  
+        <div class="contact-cta">
+          <a class="btn" href="mailto:mathelyo.favre-reguillon@epfl.ch">Get in touch</a>
+        </div>
       </div>
-    </section>
+  
+      <p class="small muted" style="margin-top:1rem;">
+        Built from the content and visual structure of the original portfolio PDF.
+      </p>
+    </div>
+  </section>
+    
   </main>
 
   <script>
