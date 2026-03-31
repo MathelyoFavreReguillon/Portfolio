@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monocoque Insert Analysis | Mathélyo Favre-Réguillon</title>
+  <title>Raspberry Gripper | Mathélyo Favre-Réguillon</title>
   <style>
     :root{
       --bg:#f4f1ef;
@@ -27,7 +27,7 @@
     }
 
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    img, video{max-width:100%;display:block}
 
     .container{
       width:min(var(--max), calc(100% - 2rem));
@@ -72,7 +72,7 @@
     .lead{
       font-size:1.1rem;
       color:#333;
-      max-width:800px;
+      max-width:860px;
     }
 
     .tag{
@@ -94,10 +94,17 @@
       overflow:hidden;
     }
 
+    .hero-image{
+      padding:1rem;
+    }
+
     .hero-image img{
       width:100%;
-      aspect-ratio:16/8;
-      object-fit:cover;
+      height:520px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:22px;
+      background:#fff;
     }
 
     .section{
@@ -120,11 +127,40 @@
       gap:1rem;
     }
 
-    .gallery img{
+    .gallery-item{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
       border-radius:20px;
-      aspect-ratio:4/3;
-      object-fit:cover;
+      padding:.8rem;
+      min-height:320px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .gallery img{
       width:100%;
+      height:100%;
+      max-height:300px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:14px;
+      background:#fff;
+    }
+
+    .video-wrap{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:20px;
+      padding:.8rem;
+    }
+
+    .video-wrap video{
+      width:100%;
+      border-radius:14px;
+      background:#000;
+      max-height:620px;
+      object-fit:contain;
     }
 
     .files{
@@ -139,87 +175,364 @@
       background:#fff;
       border:1px solid rgba(0,0,0,.08);
       font-weight:700;
+      transition:.2s ease;
+    }
+
+    .file-link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(214,0,0,.18);
     }
 
     .muted{color:var(--muted)}
 
+    ul{
+      margin:.3rem 0 0 1.1rem;
+      padding:0;
+    }
+
+    li + li{
+      margin-top:.45rem;
+    }
+
     @media (max-width: 800px){
       .grid-2,.gallery{grid-template-columns:1fr}
+
+      .hero-image img{
+        height:320px;
+      }
+
+      .gallery-item{
+        min-height:260px;
+      }
+
+      .gallery img{
+        max-height:240px;
+      }
     }
   </style>
 </head>
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="back" href="../index.html#projects">← Back to portfolio</a>
+      <a class="back" href="../index.html#projects" data-i18n="backToPortfolio">← Back to portfolio</a>
     </div>
   </nav>
 
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag">Bachelor Thesis</div>
-        <h1>Monocoque Insert Analysis</h1>
-        <p class="lead">
-          Analysis and redesign of monocoque inserts with a focus on structural performance,
-          production constraints and post-production robustness.
+        <div class="tag" data-i18n="raspTag">EPFL · ME-320 · Robotic Fruit Harvesting Project</div>
+        <h1 data-i18n="raspTitle">Raspberry Gripper</h1>
+        <p class="lead" data-i18n="raspLead">
+          Development of a compact robotic gripper for raspberry harvesting, designed to pick delicate fruit without damage while integrating ripeness detection, pressure control and temporary onboard storage.
         </p>
       </div>
     </section>
 
     <section class="section">
       <div class="container hero-image">
-        <img src="../assets/page_7.jpg" alt="Monocoque insert analysis">
+        <img src="../photos/raspberrygripper1.jpg" alt="Raspberry Gripper final prototype">
       </div>
     </section>
 
     <section class="section">
       <div class="container grid-2">
         <div class="card">
-          <h2>Project Overview</h2>
-          <p>
-            This project focused on understanding the behavior of inserts integrated in a carbon monocoque,
-            identifying weaknesses in the existing design and proposing improvements based on simulation and manufacturing feedback.
+          <h2 data-i18n="raspOverviewTitle">Project Overview</h2>
+          <p data-i18n="raspOverviewText1">
+            This project focused on the design and prototyping of a raspberry harvesting gripper for robotic use at EPFL. The challenge was to handle a fragile fruit with a compact mechanism able to grip gently, identify ripeness and remain easy to integrate on a robot.
           </p>
-          <p class="muted">
-            The work combined structural reasoning, CAD integration, composite constraints and validation through simulation.
+          <p class="muted" data-i18n="raspOverviewText2">
+            The final concept combines a two-jaw side gripping system, sensing for pressure and conductivity, and an integrated storage box to avoid repeated back-and-forth motions during harvesting.
           </p>
         </div>
 
         <div class="card">
-          <h2>Key Contributions</h2>
+          <h2 data-i18n="raspContribTitle">Key Contributions</h2>
           <ul>
-            <li>Insert redesign for improved robustness</li>
-            <li>Full-structure simulation including carbon and aluminium parts</li>
-            <li>Consideration of manufacturing and assembly constraints</li>
-            <li>Support for production and post-production decisions</li>
+            <li data-i18n="raspContrib1">Mechanical design and integration of the final gripper architecture</li>
+            <li data-i18n="raspContrib2">Contribution to concept generation, comparison and selection</li>
+            <li data-i18n="raspContrib3">Integration of sensing, electronics and Arduino-based control</li>
+            <li data-i18n="raspContrib4">Work on sustainable material choices and reuse-oriented design decisions</li>
+            <li data-i18n="raspContrib5">Development of a compact storage solution to improve harvesting efficiency</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container card">
-        <h2>Image Gallery</h2>
-        <div class="gallery">
-          <img src="../assets/page_7.jpg" alt="Project image 1">
-          <img src="../assets/page_6.jpg" alt="Project image 2">
-          <img src="../assets/page_4.jpg" alt="Project image 3">
-          <img src="../assets/page_2.jpg" alt="Project image 4">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="raspConceptTitle">Concept Development</h2>
+          <p data-i18n="raspConceptText1">
+            The project started with five different gripper concepts exploring tendon-like fingers, rack-and-pinion motion, gear-driven linkages, three-finger solutions and integrated storage approaches.
+          </p>
+          <p class="muted" data-i18n="raspConceptText2">
+            After screening and weighted scoring, the final solution combined the overall architecture of concept B, the grip-related qualities of concept C, and the reservoir idea from concept E.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="raspMechanismTitle">Final Mechanism</h2>
+          <p data-i18n="raspMechanismText1">
+            The final gripper uses a parallel jaw mechanism driven by a compact servo motor. Two gears transmit motion to a linkage system that converts rotation into a controlled translational closing motion of the jaws.
+          </p>
+          <p class="muted" data-i18n="raspMechanismText2">
+            The fruit is gripped from the side, a practical approach for robot positioning during harvesting, and then transferred into an onboard tank that stores several raspberries before release.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="raspSensorsTitle">Sensors & Control</h2>
+          <ul>
+            <li data-i18n="raspSensors1">Pressure sensing integrated in the gripping area to avoid damaging the fruit</li>
+            <li data-i18n="raspSensors2">Conductivity-based ripeness detection implemented directly on the gripper</li>
+            <li data-i18n="raspSensors3">Arduino-based control of sensors, servomotors and operating logic</li>
+            <li data-i18n="raspSensors4">Software-controlled motion used instead of mechanical end-stop switches</li>
+            <li data-i18n="raspSensors5">System designed to balance delicacy, reliability and simplicity</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="raspMaterialsTitle">Materials & Manufacturing</h2>
+          <ul>
+            <li data-i18n="raspMaterials1">3D printed structural parts for fast and low-cost prototyping</li>
+            <li data-i18n="raspMaterials2">PETG gripping parts improved with sandpaper for better adhesion</li>
+            <li data-i18n="raspMaterials3">Laser-cut MDF plates used for selected non-critical flat components</li>
+            <li data-i18n="raspMaterials4">Conductive wires recovered from old cables for the ripeness sensor</li>
+            <li data-i18n="raspMaterials5">Compact assembly including Arduino, servomotors, pressure sensor and integrated reservoir</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="raspSustainTitle">Sustainability & Scalability</h2>
+          <p data-i18n="raspSustainText1">
+            Sustainability was addressed through material reuse, low-cost prototyping and simple sensing solutions. Recycled wires and reused materials were incorporated where possible, while the integrated storage reduced unnecessary robot motion during harvesting.
+          </p>
+          <p class="muted" data-i18n="raspSustainText2">
+            The report also highlights future improvements such as FEM-guided design, topology optimization, reduced glue usage, and a transition from 3D printing to injection molding for larger-scale production.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="raspDesignTitle">Design Reflection</h2>
+          <p data-i18n="raspDesignText1">
+            The final design remained intentionally simple while still performing the key harvesting tasks effectively. The pressure sensing worked reliably and helped maintain gentle handling of the fruit.
+          </p>
+          <p class="muted" data-i18n="raspDesignText2">
+            The main limitation identified was the conductivity-based ripeness check, which was reliable but slower in use. A future redesign could consider a color sensor to increase harvesting speed and improve competitive performance.
+          </p>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container card">
-        <h2>Important Files</h2>
+        <h2 data-i18n="raspVideoTitle">Project Video</h2>
+        <div class="video-wrap">
+          <video controls preload="metadata">
+            <source src="../videos/IMG_7247.mov" type="video/quicktime">
+            <source src="../videos/IMG_7247.mov" type="video/mp4">
+            <span data-i18n="raspVideoFallback">Your browser does not support the video tag.</span>
+          </video>
+        </div>
+        <p class="muted" style="margin-top:1rem;" data-i18n="raspVideoNote">
+          Replace the video path if needed depending on where you store the .mov file in your portfolio structure.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="raspGalleryTitle">Image Gallery</h2>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="../photos/raspberrygripper1.jpg" alt="Raspberry Gripper gallery image 1">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/raspberrygripper2.jpg" alt="Raspberry Gripper gallery image 2">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/raspberrygripper3.jpg" alt="Raspberry Gripper gallery image 3">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/raspberrygripper4.jpg" alt="Raspberry Gripper gallery image 4">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/raspberrygripper5.jpg" alt="Raspberry Gripper gallery image 5">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/raspberrygripper6.jpg" alt="Raspberry Gripper gallery image 6">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="raspFilesTitle">Important Files</h2>
         <div class="files">
-          <a class="file-link" href="../files/monocoque-report.pdf" target="_blank">Project report (PDF)</a>
-          <a class="file-link" href="../files/monocoque-presentation.pdf" target="_blank">Presentation slides</a>
-          <a class="file-link" href="../files/monocoque-cad.zip" target="_blank">CAD package</a>
+          <a class="file-link" href="../documents/Final_Report_ME_320.pdf" target="_blank" data-i18n="raspFile1">Final report (PDF)</a>
+          <a class="file-link" href="../documents/Product_design___Rendu_1.pdf" target="_blank" data-i18n="raspFile2">Concept selection report (PDF)</a>
+          <a class="file-link" href="../documents/Bill of Material.pdf" target="_blank" data-i18n="raspFile3">Bill of materials (PDF)</a>
         </div>
       </div>
     </section>
   </main>
+
+  <script>
+    const translations = {
+      en: {
+        backToPortfolio: "← Back to portfolio",
+
+        raspTag: "EPFL · ME-320 · Robotic Fruit Harvesting Project",
+        raspTitle: "Raspberry Gripper",
+        raspLead: "Development of a compact robotic gripper for raspberry harvesting, designed to pick delicate fruit without damage while integrating ripeness detection, pressure control and temporary onboard storage.",
+
+        raspOverviewTitle: "Project Overview",
+        raspOverviewText1: "This project focused on the design and prototyping of a raspberry harvesting gripper for robotic use at EPFL. The challenge was to handle a fragile fruit with a compact mechanism able to grip gently, identify ripeness and remain easy to integrate on a robot.",
+        raspOverviewText2: "The final concept combines a two-jaw side gripping system, sensing for pressure and conductivity, and an integrated storage box to avoid repeated back-and-forth motions during harvesting.",
+
+        raspContribTitle: "Key Contributions",
+        raspContrib1: "Mechanical design and integration of the final gripper architecture",
+        raspContrib2: "Contribution to concept generation, comparison and selection",
+        raspContrib3: "Integration of sensing, electronics and Arduino-based control",
+        raspContrib4: "Work on sustainable material choices and reuse-oriented design decisions",
+        raspContrib5: "Development of a compact storage solution to improve harvesting efficiency",
+
+        raspConceptTitle: "Concept Development",
+        raspConceptText1: "The project started with five different gripper concepts exploring tendon-like fingers, rack-and-pinion motion, gear-driven linkages, three-finger solutions and integrated storage approaches.",
+        raspConceptText2: "After screening and weighted scoring, the final solution combined the overall architecture of concept B, the grip-related qualities of concept C, and the reservoir idea from concept E.",
+
+        raspMechanismTitle: "Final Mechanism",
+        raspMechanismText1: "The final gripper uses a parallel jaw mechanism driven by a compact servo motor. Two gears transmit motion to a linkage system that converts rotation into a controlled translational closing motion of the jaws.",
+        raspMechanismText2: "The fruit is gripped from the side, a practical approach for robot positioning during harvesting, and then transferred into an onboard tank that stores several raspberries before release.",
+
+        raspSensorsTitle: "Sensors & Control",
+        raspSensors1: "Pressure sensing integrated in the gripping area to avoid damaging the fruit",
+        raspSensors2: "Conductivity-based ripeness detection implemented directly on the gripper",
+        raspSensors3: "Arduino-based control of sensors, servomotors and operating logic",
+        raspSensors4: "Software-controlled motion used instead of mechanical end-stop switches",
+        raspSensors5: "System designed to balance delicacy, reliability and simplicity",
+
+        raspMaterialsTitle: "Materials & Manufacturing",
+        raspMaterials1: "3D printed structural parts for fast and low-cost prototyping",
+        raspMaterials2: "PETG gripping parts improved with sandpaper for better adhesion",
+        raspMaterials3: "Laser-cut MDF plates used for selected non-critical flat components",
+        raspMaterials4: "Conductive wires recovered from old cables for the ripeness sensor",
+        raspMaterials5: "Compact assembly including Arduino, servomotors, pressure sensor and integrated reservoir",
+
+        raspSustainTitle: "Sustainability & Scalability",
+        raspSustainText1: "Sustainability was addressed through material reuse, low-cost prototyping and simple sensing solutions. Recycled wires and reused materials were incorporated where possible, while the integrated storage reduced unnecessary robot motion during harvesting.",
+        raspSustainText2: "The report also highlights future improvements such as FEM-guided design, topology optimization, reduced glue usage, and a transition from 3D printing to injection molding for larger-scale production.",
+
+        raspDesignTitle: "Design Reflection",
+        raspDesignText1: "The final design remained intentionally simple while still performing the key harvesting tasks effectively. The pressure sensing worked reliably and helped maintain gentle handling of the fruit.",
+        raspDesignText2: "The main limitation identified was the conductivity-based ripeness check, which was reliable but slower in use. A future redesign could consider a color sensor to increase harvesting speed and improve competitive performance.",
+
+        raspVideoTitle: "Project Video",
+        raspVideoFallback: "Your browser does not support the video tag.",
+        raspVideoNote: "Replace the video path if needed depending on where you store the .mov file in your portfolio structure.",
+
+        raspGalleryTitle: "Image Gallery",
+
+        raspFilesTitle: "Important Files",
+        raspFile1: "Final report (PDF)",
+        raspFile2: "Concept selection report (PDF)",
+        raspFile3: "Bill of materials (PDF)"
+      },
+
+      fr: {
+        backToPortfolio: "← Retour au portfolio",
+
+        raspTag: "EPFL · ME-320 · Projet de récolte robotisée",
+        raspTitle: "Raspberry Gripper",
+        raspLead: "Développement d’une pince robotique compacte pour la récolte de framboises, conçue pour saisir un fruit délicat sans l’endommager tout en intégrant la détection de maturité, le contrôle de pression et un stockage embarqué temporaire.",
+
+        raspOverviewTitle: "Vue d’ensemble du projet",
+        raspOverviewText1: "Ce projet portait sur la conception et le prototypage d’une pince de récolte de framboises pour usage robotique à l’EPFL. L’enjeu était de manipuler un fruit fragile avec un mécanisme compact capable de saisir délicatement, d’identifier la maturité et de rester facile à intégrer sur un robot.",
+        raspOverviewText2: "Le concept final combine un système de préhension latérale à deux doigts, une détection par pression et conductivité, ainsi qu’un réservoir intégré pour éviter les allers-retours répétés pendant la récolte.",
+
+        raspContribTitle: "Contributions clés",
+        raspContrib1: "Conception mécanique et intégration de l’architecture finale de la pince",
+        raspContrib2: "Contribution à la génération, la comparaison et la sélection des concepts",
+        raspContrib3: "Intégration des capteurs, de l’électronique et du pilotage par Arduino",
+        raspContrib4: "Travail sur les choix matériaux et les décisions de conception orientées durabilité",
+        raspContrib5: "Développement d’une solution de stockage compacte pour améliorer l’efficacité de récolte",
+
+        raspConceptTitle: "Développement du concept",
+        raspConceptText1: "Le projet a commencé par l’étude de cinq concepts différents de pince, explorant des doigts de type tendon, un système crémaillère-pignon, des liaisons entraînées par engrenages, des solutions à trois doigts et des approches avec stockage intégré.",
+        raspConceptText2: "Après une phase de screening et de scoring pondéré, la solution finale a combiné l’architecture générale du concept B, les qualités de préhension du concept C et l’idée de réservoir du concept E.",
+
+        raspMechanismTitle: "Mécanisme final",
+        raspMechanismText1: "La pince finale repose sur un mécanisme à mâchoires parallèles entraîné par un servomoteur compact. Deux engrenages transmettent le mouvement à un système de liaisons qui convertit la rotation en fermeture translatoire contrôlée des doigts.",
+        raspMechanismText2: "Le fruit est saisi latéralement, une approche pratique pour le positionnement du robot pendant la récolte, puis transféré dans un réservoir embarqué capable de stocker plusieurs framboises avant déchargement.",
+
+        raspSensorsTitle: "Capteurs et contrôle",
+        raspSensors1: "Détection de pression intégrée dans la zone de préhension pour éviter d’endommager le fruit",
+        raspSensors2: "Détection de maturité par conductivité directement intégrée à la pince",
+        raspSensors3: "Pilotage Arduino des capteurs, servomoteurs et de la logique de fonctionnement",
+        raspSensors4: "Commande logicielle utilisée à la place de butées mécaniques de fin de course",
+        raspSensors5: "Système conçu pour équilibrer délicatesse, fiabilité et simplicité",
+
+        raspMaterialsTitle: "Matériaux et fabrication",
+        raspMaterials1: "Pièces structurelles imprimées en 3D pour un prototypage rapide et économique",
+        raspMaterials2: "Doigts en PETG améliorés avec du papier abrasif pour augmenter l’adhérence",
+        raspMaterials3: "Plaques MDF découpées au laser pour certains composants plats non critiques",
+        raspMaterials4: "Fils conducteurs récupérés sur d’anciens câbles pour le capteur de maturité",
+        raspMaterials5: "Assemblage compact intégrant Arduino, servomoteurs, capteur de pression et réservoir",
+
+        raspSustainTitle: "Durabilité et passage à l’échelle",
+        raspSustainText1: "La durabilité a été abordée par la réutilisation de matériaux, le prototypage à faible coût et des solutions de détection simples. Des fils recyclés et des matériaux réemployés ont été intégrés lorsque cela était possible, tandis que le stockage intégré réduisait les mouvements inutiles du robot pendant la récolte.",
+        raspSustainText2: "Le rapport met aussi en avant plusieurs pistes d’amélioration : conception guidée par FEM, optimisation topologique, réduction de l’usage de colle et passage de l’impression 3D à l’injection plastique pour une production en plus grande série.",
+
+        raspDesignTitle: "Retour critique sur le design",
+        raspDesignText1: "Le design final est resté volontairement simple tout en assurant efficacement les fonctions clés de récolte. La mesure de pression s’est montrée fiable et a permis une manipulation douce du fruit.",
+        raspDesignText2: "La principale limite identifiée concerne la détection de maturité par conductivité, jugée fiable mais plus lente à l’usage. Une future version pourrait intégrer un capteur couleur pour augmenter la vitesse de récolte et améliorer les performances en contexte compétitif.",
+
+        raspVideoTitle: "Vidéo du projet",
+        raspVideoFallback: "Votre navigateur ne prend pas en charge la lecture de cette vidéo.",
+        raspVideoNote: "Remplace le chemin de la vidéo si besoin selon l’endroit où tu stockes le fichier .mov dans ton arborescence.",
+
+        raspGalleryTitle: "Galerie d’images",
+
+        raspFilesTitle: "Fichiers importants",
+        raspFile1: "Rapport final (PDF)",
+        raspFile2: "Rapport de sélection de concept (PDF)",
+        raspFile3: "Nomenclature / Bill of materials (PDF)"
+      }
+    };
+
+    function applyTranslations(lang) {
+      const dict = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang =
+        localStorage.getItem("siteLanguage") ||
+        localStorage.getItem("language") ||
+        localStorage.getItem("lang") ||
+        sessionStorage.getItem("language") ||
+        "en";
+
+      applyTranslations(savedLang);
+    });
+  </script>
 </body>
 </html>
