@@ -94,11 +94,17 @@
       overflow:hidden;
     }
 
+    .hero-image{
+      padding:1rem;
+    }
+
     .hero-image img{
       width:100%;
-      aspect-ratio:16/8;
-      object-fit:cover;
-      object-position:center 35%;
+      height:520px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:22px;
+      background:#fff;
     }
 
     .section{
@@ -121,11 +127,25 @@
       gap:1rem;
     }
 
-    .gallery img{
+    .gallery-item{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
       border-radius:20px;
-      aspect-ratio:4/3;
-      object-fit:cover;
+      padding:.8rem;
+      min-height:320px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .gallery img{
       width:100%;
+      height:100%;
+      max-height:300px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:14px;
+      background:#fff;
     }
 
     .files{
@@ -140,6 +160,12 @@
       background:#fff;
       border:1px solid rgba(0,0,0,.08);
       font-weight:700;
+      transition:.2s ease;
+    }
+
+    .file-link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(214,0,0,.18);
     }
 
     .muted{color:var(--muted)}
@@ -155,6 +181,18 @@
 
     @media (max-width: 800px){
       .grid-2,.gallery{grid-template-columns:1fr}
+
+      .hero-image img{
+        height:320px;
+      }
+
+      .gallery-item{
+        min-height:260px;
+      }
+
+      .gallery img{
+        max-height:240px;
+      }
     }
   </style>
 </head>
@@ -260,12 +298,31 @@
 
     <section class="section">
       <div class="container card">
+        <h2 data-i18n="screwLabTitle">Associated Laboratory Website</h2>
+        <div class="files">
+          <a class="file-link" href="https://www.paikslab.com/courses/me-420/2025/group-1" target="_blank" rel="noopener noreferrer" data-i18n="screwLabLink">
+            View the project page on the Paik’s Lab course website
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
         <h2 data-i18n="screwGalleryTitle">Image Gallery</h2>
         <div class="gallery">
-          <img src="../photos/screwsorter2.jpg" alt="ScrewSorter prototype overview">
-          <img src="../photos/screwsorter3.png" alt="Conveyor subsystem">
-          <img src="../photos/screwsorter4.png" alt="User interface">
-          <img src="../photos/screwsorter5.png" alt="Design progression and final concept">
+          <div class="gallery-item">
+            <img src="../photos/screwsorter2.jpg" alt="ScrewSorter prototype overview">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/screwsorter3.png" alt="Conveyor subsystem">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/screwsorter4.png" alt="User interface">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/screwsorter5.png" alt="Design progression and final concept">
+          </div>
         </div>
       </div>
     </section>
@@ -274,8 +331,18 @@
       <div class="container card">
         <h2 data-i18n="screwFilesTitle">Important Files</h2>
         <div class="files">
-          <a class="file-link" href="../documents/Screw_sorter-report.pdf" target="_blank" data-i18n="screwFile1">Project report (PDF)</a>
-          <a class="file-link" href="../documents/Screw_Sorter_Presentation.pdf" target="_blank" data-i18n="screwFile2">Presentation slides (PDF)</a>
+          <a class="file-link" href="../files/Screw_sorter-report.pdf" target="_blank" data-i18n="screwFile1">Project report (PDF)</a>
+          <a class="file-link" href="../files/Screw_Sorter_Presentation.pdf" target="_blank" data-i18n="screwFile2">Presentation slides (PDF)</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="screwExtraDocsTitle">Additional Documents</h2>
+        <div class="files">
+          <a class="file-link" href="../files/ScrewSorter_Arduino_Code.ino" target="_blank" data-i18n="screwFile3">Arduino code</a>
+          <a class="file-link" href="../files/ScrewSorter_Interface_Code.py" target="_blank" data-i18n="screwFile4">Interface code</a>
         </div>
       </div>
     </section>
@@ -324,10 +391,18 @@
         screwCostText1: "The single prototype cost was estimated at 262.55 CHF, while the projected production cost for a batch of 100 units was 187.59 CHF per unit, leading to a target selling price of about 230 CHF.",
         screwCostText2: "The project was framed around reuse, reduction and rethink principles, with the objective of reducing screw waste, manual sorting effort and associated environmental impact.",
 
+        screwLabTitle: "Associated Laboratory Website",
+        screwLabLink: "View the project page on the Paik’s Lab course website",
+
         screwGalleryTitle: "Image Gallery",
+
         screwFilesTitle: "Important Files",
         screwFile1: "Project report (PDF)",
-        screwFile2: "Presentation slides (PDF)"
+        screwFile2: "Presentation slides (PDF)",
+
+        screwExtraDocsTitle: "Additional Documents",
+        screwFile3: "Arduino code",
+        screwFile4: "Interface code"
       },
 
       fr: {
@@ -371,10 +446,18 @@
         screwCostText1: "Le coût d’un prototype unique a été estimé à 262.55 CHF, tandis que le coût projeté pour une production de 100 unités est de 187.59 CHF par unité, conduisant à un prix de vente cible d’environ 230 CHF.",
         screwCostText2: "Le projet a été structuré autour des principes reuse, reduce et rethink, avec l’objectif de limiter le gaspillage de vis, le temps de tri manuel et l’impact environnemental associé.",
 
+        screwLabTitle: "Site web du laboratoire associé",
+        screwLabLink: "Voir la page du projet sur le site du cours du Paik’s Lab",
+
         screwGalleryTitle: "Galerie d’images",
+
         screwFilesTitle: "Fichiers importants",
         screwFile1: "Rapport du projet (PDF)",
-        screwFile2: "Slides de présentation (PDF)"
+        screwFile2: "Slides de présentation (PDF)",
+
+        screwExtraDocsTitle: "Documents supplémentaires",
+        screwFile3: "Code Arduino",
+        screwFile4: "Code de l’interface"
       }
     };
 
