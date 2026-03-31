@@ -675,6 +675,39 @@
       }
     }
 
+      .status-card{
+        display:grid;
+        gap:1rem;
+      }
+      
+      .status-badge{
+        display:inline-block;
+        width:max-content;
+        background:var(--red);
+        color:#fff;
+        padding:.5rem 1rem;
+        border-radius:999px;
+        font-weight:800;
+        font-size:.9rem;
+      }
+      
+      .status-tags{
+        display:flex;
+        flex-wrap:wrap;
+        gap:.8rem;
+        margin-top:.3rem;
+      }
+      
+      .status-tag{
+        display:inline-block;
+        padding:.65rem 1rem;
+        border-radius:999px;
+        background:#f7e5e5;
+        color:#8f0000;
+        font-weight:700;
+        font-size:.92rem;
+      }
+
     @media (max-width: 640px){
       .nav-links{
         display:none;
@@ -901,6 +934,10 @@
                 </div>
               </div>
             </div>
+          </div>
+
+          <div class="section-actions">
+            <a class="btn" href="documents/Mathelyo_Favre-Reguillon_CV.pdf" download data-i18n="aboutCvBtn">Download my CV</a>
           </div>
         </div>
       </div>
@@ -1319,6 +1356,14 @@
         heroBtnProfile: "Discover my profile",
         heroBtnContact: "Contact me",
 
+        statusBadge: "Currently available",
+        statusTitle: "First-year Master’s student at EPFL",
+        statusText: "I am currently a first-year Master’s student in Mechanical Engineering at EPFL and I am looking for a 6 to 12-month internship in engineering, design, simulation, manufacturing or high-performance systems.",
+        statusTag1: "6 to 12-month internship",
+        statusTag2: "Available for engineering opportunities",
+        statusTag3: "EPFL Master’s student",
+        aboutCvBtn: "Download my CV",
+
         aboutTitle: "About Me",
         aboutLead: "My academic journey has been defined by a continuous progression through demanding engineering projects that have shaped both my technical skills and my way of working. At EPFL, I have been involved in complex, team-based projects, strengthening my interest in design, manufacturing, and high-performance systems, while developing a structured and collaborative approach to engineering. This timeline traces my path from 2018 to today.",
         aboutHsTitle: "High school",
@@ -1487,6 +1532,16 @@
         aboutMasterTitle: "Master en génie mécanique à l’EPFL",
         aboutMasterText: "Spécialisation en Design and Production avec un mineur en science des matériaux, orientée vers l’ingénierie de haute performance et l’exécution de projets techniques.",
 
+
+        statusBadge: "Actuellement disponible",
+        statusTitle: "Étudiant en première année de Master à l’EPFL",
+        statusText: "Je suis actuellement étudiant en première année de Master en génie mécanique à l’EPFL et je recherche un stage de 6 mois à 1 an en ingénierie, conception, simulation, fabrication ou systèmes de haute performance.",
+        statusTag1: "Stage de 6 mois à 1 an",
+        statusTag2: "Disponible pour des opportunités en ingénierie",
+        statusTag3: "Étudiant en Master à l’EPFL",
+        aboutCvBtn: "Télécharger mon CV",  
+
+        
         racingTitle: "EPFL Racing Team",
         racingLead: "EPFL Racing Team est une organisation étudiante d’environ 100 membres développant une voiture de course entièrement autonome et électrique. En deux ans au sein de l’équipe, j’ai évolué de membre Chassis and Cockpit à Vice-President et Head of Monocoque and Layup Manufacturing.",
         racingSubtitle: "Du travail structurel à la coordination globale de l’équipe",
