@@ -345,8 +345,9 @@
     }
 
     .status-top{
-      max-width:760px;
-      padding-right:180px;
+      width:100%;
+      max-width:none;
+      padding-right:260px;
     }
 
     .status-label{
@@ -359,16 +360,17 @@
     }
 
     .status-heading{
-      font-size:clamp(1.6rem, 3vw, 2.4rem);
-      line-height:1.08;
+      font-size:clamp(1.6rem, 4vw, 2.8rem);
+      line-height:1.06;
       letter-spacing:-.03em;
       margin:0 0 .9rem;
+      max-width:1250px;
     }
 
     .status-text{
       font-size:1.02rem;
       color:#333;
-      max-width:78ch;
+      max-width:1100px;
       margin:0;
     }
 
@@ -906,7 +908,7 @@
             <p class="status-label" data-i18n="statusLabel">Current status</p>
 
             <h3 class="status-heading" data-i18n="statusHeading">
-              First-year Master’s student in Mechanical Engineering at EPFL, currently looking for an internship
+              First-year Master’s student at EPFL, currently looking for an internship
             </h3>
 
             <p class="status-text" data-i18n="statusText">
@@ -931,7 +933,7 @@
             </div>
 
             <div class="status-item">
-              <div class="status-item-title" data-i18n="statusBox4Title">Also interested in</div>
+              <div class="status-item-title" data-i18n="statusBox4Title">Project management</div>
               <div class="status-item-text" data-i18n="statusBox4Text">Technical project management and coordination</div>
             </div>
           </div>
@@ -954,7 +956,7 @@
             <div class="timeline-item">
               <div class="timeline-content">
                 <div class="timeline-year">2018</div>
-                <h4 data-i18n="aboutUgitechTitle">Intership in metallurgy field</h4>
+                <h4 data-i18n="aboutUgitechTitle">Internship in metallurgy field</h4>
                 <p class="timeline-text" data-i18n="aboutUgitechText">
                   Sci
                 </p>
@@ -1140,7 +1142,7 @@
           <a class="project-link" href="projects/screw-sorter.html">
             <article class="project-card">
               <img src="photos/ScrewSorter.png"
-                   alt="Domino placement machine preview"
+                   alt="Screw sorter preview"
                    style="transform: scale(1.1); transform-origin: center; display:block; margin:auto;">
               <div class="project-body">
                 <div class="tag" data-i18n="tagVision">Vision System</div>
@@ -1153,7 +1155,7 @@
           <a class="project-link" href="projects/raspberry-gripper.html">
             <article class="project-card">
               <img src="photos/rasberry gripper.png"
-                   alt="Domino placement machine preview"
+                   alt="Raspberry gripper preview"
                    style="transform: scale(0.9); transform-origin: center; display:block; margin:auto;">
               <div class="project-body">
                 <div class="tag" data-i18n="tagRobotics">Robotics</div>
@@ -1450,7 +1452,7 @@
             <h2 data-i18n="contactTitle">Contact</h2>
             <div class="contact-list">
               <div>Mathélyo Favre-Réguillon</div>
-              <div><p data-i18n="country"> </p></div>
+              <div><p data-i18n="country"></p></div>
               <div><a href="tel:+33768422354">+33 7 68 42 23 54</a></div>
               <div><a href="mailto:mathelyo.favrereguillon@gmail.com">mathelyo.favrereguillon@gmail.com</a></div>
               <div>@mathelyo favre-reguillon</div>
@@ -1465,7 +1467,6 @@
             <a class="btn" href="mailto:mathelyo.favrereguillon@gmail.com" data-i18n="contactBtn">Get in touch</a>
           </div>
         </div>
-
       </div>
     </section>
   </main>
@@ -1502,7 +1503,7 @@
 
         statusAvailable: "Currently available",
         statusLabel: "Current status",
-        statusHeading: "First-year Master’s student in Mechanical Engineering at EPFL, currently looking for an internship",
+        statusHeading: "First-year Master’s student at EPFL, currently looking for an internship",
         statusText: "I am currently looking for a 6 to 12-month internship in engineering, design, simulation, manufacturing, production chain optimization or technical project management.",
         statusBox1Title: "Format",
         statusBox1Text: "6 to 12-month internship",
@@ -1510,7 +1511,7 @@
         statusBox2Text: "Engineering, design and simulation",
         statusBox3Title: "Industrial scope",
         statusBox3Text: "Manufacturing and production optimization",
-        statusBox4Title: "Also interested in",
+        statusBox4Title: "Project management",
         statusBox4Text: "Technical project management and coordination",
 
         aboutTitle: "About Me",
@@ -1518,7 +1519,7 @@
         aboutHsTitle: "High School – Scientific Track",
         aboutUgitechTitle: "Metallurgy Internship – Stainless Steel Industry",
         aboutUgitechText: "Internship at UGITECH (Ugine), a stainless steel manufacturer. Worked on production and automation while developing a solid understanding of advanced metallurgy concepts applied to high-performance materials.",
-        aboutHsText: "General high school at Saint-Joseph (Thônes). Specialized in Mathematics, Physics, and Economics & Social Sciences. Developed a strong interest in analytical thinking and technical problem-solving, and graduated with honors in the French General Baccalauréat : 18.24/20 (91.2%) .",
+        aboutHsText: "General high school at Saint-Joseph (Thônes). Specialized in Mathematics, Physics, and Economics & Social Sciences. Developed a strong interest in analytical thinking and technical problem-solving, and graduated with honors in the French General Baccalauréat: 18.24/20 (91.2%).",
         aboutBianchettiText: "Summer work at Bianchetti (Thônes) in carpentry and roofing. Contributed to the renovation of a high-rise roof, working with various tools and within a team environment, while developing hands-on skills in construction and roofing techniques.",
         aboutBianchettiTitle: "Carpentry Summer Work – Roofing",
         aboutBachelorTitle: "Bachelor in Mechanical Engineering – EPFL",
@@ -1641,7 +1642,6 @@
 
         contactTitle: "Contact",
         contactBtn: "Get in touch",
-        footerNote: "Built from the content and visual structure of the original portfolio PDF.",
         country: "52D Rue de Lausanne, 1030 Bussigny, Switzerland"
       },
 
@@ -1675,7 +1675,7 @@
 
         statusAvailable: "Actuellement disponible",
         statusLabel: "Situation actuelle",
-        statusHeading: "Étudiant en première année de Master en génie mécanique à l’EPFL, actuellement à la recherche d’un stage",
+        statusHeading: "Étudiant en première année de Master à l’EPFL, actuellement à la recherche d’un stage",
         statusText: "Je recherche actuellement un stage de 6 à 12 mois en ingénierie, conception, simulation, fabrication, optimisation de chaîne de production ou gestion de projet technique.",
         statusBox1Title: "Format",
         statusBox1Text: "Stage de 6 à 12 mois",
@@ -1683,13 +1683,13 @@
         statusBox2Text: "Ingénierie, conception et simulation",
         statusBox3Title: "Dimension industrielle",
         statusBox3Text: "Fabrication et optimisation de production",
-        statusBox4Title: "Ouvert aussi à",
+        statusBox4Title: "Gestion de projet",
         statusBox4Text: "Gestion et coordination de projets techniques",
 
         aboutTitle: "À propos de moi",
         aboutLead: "Mon parcours académique s’est construit à travers une progression continue de projets d’ingénierie exigeants, qui ont façonné à la fois mes compétences techniques et ma manière de travailler. À l’EPFL, j’ai été impliqué dans des projets complexes menés en équipe, renforçant mon intérêt pour la conception, la fabrication et les systèmes à haute performance, tout en développant une approche structurée et collaborative de l’ingénierie. Cette frise retrace mon parcours de 2018 à aujourd’hui.",
         aboutHsTitle: "Lycée – Parcours scientifique",
-        aboutHsText: "Lycée général à Saint-Joseph (Thônes). Spécialités en Mathématiques, Physique et Sciences Économiques et Sociales. Développement d’un esprit analytique et d’une appétence pour la résolution de problèmes techniques, avec obtention du Baccalauréat général avec mention : 18.24/20 (91.2%)",
+        aboutHsText: "Lycée général à Saint-Joseph (Thônes). Spécialités en Mathématiques, Physique et Sciences Économiques et Sociales. Développement d’un esprit analytique et d’une appétence pour la résolution de problèmes techniques, avec obtention du Baccalauréat général avec mention : 18.24/20 (91.2%).",
         aboutUgitechTitle: "Stage en métallurgie – Industrie des aciers inoxydables",
         aboutUgitechText: "Stage chez UGITECH (Ugine), spécialisé dans les aciers inoxydables. Travail en production et automatisation, avec le développement de compétences en métallurgie avancée appliquée à des matériaux haute performance.",
         aboutBianchettiText: "Travail d’été chez Bianchetti (Thônes) en charpente et couverture. Participation à la rénovation d’une toiture en hauteur, avec l’utilisation de différents outils et un travail en équipe, permettant d’acquérir une expérience concrète des techniques de construction et de couverture.",
@@ -1814,7 +1814,6 @@
 
         contactTitle: "Contact",
         contactBtn: "Prendre contact",
-        footerNote: "Construit à partir du contenu et de la structure visuelle du portfolio PDF original.",
         country: "52D Rue de Lausanne, 1030 Bussigny, Suisse"
       }
     };
