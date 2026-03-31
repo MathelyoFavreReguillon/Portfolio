@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Screw Sorter | Mathélyo Favre-Réguillon</title>
+  <title>ScrewSorter | Mathélyo Favre-Réguillon</title>
   <style>
     :root{
       --bg:#f4f1ef;
@@ -72,7 +72,7 @@
     .lead{
       font-size:1.1rem;
       color:#333;
-      max-width:800px;
+      max-width:860px;
     }
 
     .tag{
@@ -98,6 +98,7 @@
       width:100%;
       aspect-ratio:16/8;
       object-fit:cover;
+      object-position:center 35%;
     }
 
     .section{
@@ -143,6 +144,15 @@
 
     .muted{color:var(--muted)}
 
+    ul{
+      margin:.3rem 0 0 1.1rem;
+      padding:0;
+    }
+
+    li + li{
+      margin-top:.45rem;
+    }
+
     @media (max-width: 800px){
       .grid-2,.gallery{grid-template-columns:1fr}
     }
@@ -151,75 +161,127 @@
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="back" href="../index.html#projects">← Back to portfolio</a>
+      <a class="back" href="../index.html#projects" data-i18n="backToPortfolio">← Back to portfolio</a>
     </div>
   </nav>
 
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag">Bachelor Thesis</div>
-        <h1>Monocoque Insert Analysis</h1>
-        <p class="lead">
-          Analysis and redesign of monocoque inserts with a focus on structural performance,
-          production constraints and post-production robustness.
+        <div class="tag" data-i18n="screwTag">EPFL · ME-420 · Sustainable Design Project</div>
+        <h1 data-i18n="screwTitle">ScrewSorter</h1>
+        <p class="lead" data-i18n="screwLead">
+          Development of a compact automated screw sorting system for small workshops, combining screw isolation, conveyor transport, camera-based measurement and bin distribution, with a strong focus on sustainability, low energy use and practical manufacturability.
         </p>
       </div>
     </section>
 
     <section class="section">
       <div class="container hero-image">
-        <img src="../assets/page_7.jpg" alt="Monocoque insert analysis">
+        <img src="../photos/screwsorter-main.png" alt="ScrewSorter final prototype">
       </div>
     </section>
 
     <section class="section">
       <div class="container grid-2">
         <div class="card">
-          <h2>Project Overview</h2>
-          <p>
-            This project focused on understanding the behavior of inserts integrated in a carbon monocoque,
-            identifying weaknesses in the existing design and proposing improvements based on simulation and manufacturing feedback.
+          <h2 data-i18n="screwOverviewTitle">Project Overview</h2>
+          <p data-i18n="screwOverviewText1">
+            ScrewSorter was designed as an automated sorting machine adapted to small and medium-sized workshops, where mixed screws are often discarded instead of reused.
           </p>
-          <p class="muted">
-            The work combined structural reasoning, CAD integration, composite constraints and validation through simulation.
+          <p class="muted" data-i18n="screwOverviewText2">
+            The final concept combines a lifting and separation subsystem, a custom conveyor with closed-loop positioning, a camera-based measurement system and rotating bins for automated sorting.
           </p>
         </div>
 
         <div class="card">
-          <h2>Key Contributions</h2>
+          <h2 data-i18n="screwContribTitle">Key Contributions</h2>
           <ul>
-            <li>Insert redesign for improved robustness</li>
-            <li>Full-structure simulation including carbon and aluminium parts</li>
-            <li>Consideration of manufacturing and assembly constraints</li>
-            <li>Support for production and post-production decisions</li>
+            <li data-i18n="screwContrib1">Mechanical design of subsystems and final integrated prototype</li>
+            <li data-i18n="screwContrib2">Design progression from concept selection to proof of concept</li>
+            <li data-i18n="screwContrib3">Cost analysis and product positioning for batch production</li>
+            <li data-i18n="screwContrib4">Sustainability-oriented engineering for reuse and low energy consumption</li>
+            <li data-i18n="screwContrib5">Integration of sensing, control logic and manufacturable components</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container card">
-        <h2>Image Gallery</h2>
-        <div class="gallery">
-          <img src="../assets/page_7.jpg" alt="Project image 1">
-          <img src="../assets/page_6.jpg" alt="Project image 2">
-          <img src="../assets/page_4.jpg" alt="Project image 3">
-          <img src="../assets/page_2.jpg" alt="Project image 4">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="screwSystemTitle">System Architecture</h2>
+          <p data-i18n="screwSystemText1">
+            The machine is structured around three main functions: screw isolation, camera-based measurement, and automated sorting.
+          </p>
+          <p class="muted" data-i18n="screwSystemText2">
+            A lifting system and one-by-one ramp feed screws individually onto a custom TPU conveyor, where a vision system estimates diameter and length before the screw is routed into the appropriate bin.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="screwPerfTitle">Performance</h2>
+          <ul>
+            <li data-i18n="screwPerf1">12 screws/min sorting speed</li>
+            <li data-i18n="screwPerf2">90% sorting accuracy</li>
+            <li data-i18n="screwPerf3">57 W maximum instantaneous power</li>
+            <li data-i18n="screwPerf4">600 × 900 × 280 mm final size</li>
+            <li data-i18n="screwPerf5">M3–M6 and L10–L70 screw range</li>
+            <li data-i18n="screwPerf6">70% material sorting accuracy</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="screwEngTitle">Engineering Highlights</h2>
+          <ul>
+            <li data-i18n="screwEng1">Custom TPU belt geometry for screw alignment and sensing</li>
+            <li data-i18n="screwEng2">Closed-loop conveyor control using a distance sensor</li>
+            <li data-i18n="screwEng3">Camera-based length and diameter estimation</li>
+            <li data-i18n="screwEng4">Prototype optimized for compactness and workshop integration</li>
+            <li data-i18n="screwEng5">Design trade-offs between throughput, robustness and complexity</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="screwCostTitle">Cost & Sustainability</h2>
+          <p data-i18n="screwCostText1">
+            The single prototype cost was estimated at 262.55 CHF, while the projected production cost for a batch of 100 units was 187.59 CHF per unit, leading to a target selling price of about 230 CHF.
+          </p>
+          <p class="muted" data-i18n="screwCostText2">
+            The project was framed around reuse, reduction and rethink principles, with the objective of reducing screw waste, manual sorting effort and associated environmental impact.
+          </p>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container card">
-        <h2>Important Files</h2>
+        <h2 data-i18n="screwGalleryTitle">Image Gallery</h2>
+        <div class="gallery">
+          <img src="../photos/screwsorter-main.png" alt="ScrewSorter prototype overview">
+          <img src="../photos/screwsorter-conveyor.png" alt="Conveyor subsystem">
+          <img src="../photos/screwsorter-ui.png" alt="User interface">
+          <img src="../photos/screwsorter-design.png" alt="Design progression and final concept">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="screwFilesTitle">Important Files</h2>
         <div class="files">
-          <a class="file-link" href="../files/monocoque-report.pdf" target="_blank">Project report (PDF)</a>
-          <a class="file-link" href="../files/monocoque-presentation.pdf" target="_blank">Presentation slides</a>
-          <a class="file-link" href="../files/monocoque-cad.zip" target="_blank">CAD package</a>
+          <a class="file-link" href="../files/Screw_sorter-report.pdf" target="_blank" data-i18n="screwFile1">Project report (PDF)</a>
+          <a class="file-link" href="../files/Screw_Sorter_Presentation.pdf" target="_blank" data-i18n="screwFile2">Presentation slides (PDF)</a>
         </div>
       </div>
     </section>
   </main>
 </body>
 </html>
+
+
+
