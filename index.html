@@ -458,13 +458,25 @@
       height:100%;
     }
 
-    .project-card img{
+    .project-image{
       width:100%;
       height:260px;
-      object-fit:contain;
-      object-position:center;
       background:#fff;
       padding:1rem;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .project-image img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      transform:scale(var(--img-scale, 1));
+      transform-origin:center;
+      transition:transform .25s ease;
     }
 
     .project-body{
@@ -828,7 +840,7 @@
         padding:1.35rem;
       }
 
-      .project-card img{
+      .project-image{
         height:220px;
       }
     }
@@ -1137,7 +1149,9 @@
         <div class="projects-grid">
           <a class="project-link" href="projects/monocoque.html">
             <article class="project-card">
-              <img src="photos/Insert1.png" alt="Bachelor thesis insert analysis preview">
+              <div class="project-image">
+                <img src="photos/Insert1.png" alt="Bachelor thesis insert analysis preview" style="--img-scale: 1.00;">
+              </div>
               <div class="project-body">
                 <div class="tag" data-i18n="tagBachelor">Bachelor Thesis</div>
                 <h3 data-i18n="projectMonocoqueTitle">Monocoque insert analysis</h3>
@@ -1148,7 +1162,9 @@
 
           <a class="project-link" href="projects/screw-sorter.html">
             <article class="project-card">
-              <img src="photos/ScrewSorter.png" alt="Screw sorter preview">
+              <div class="project-image">
+                <img src="photos/ScrewSorter.png" alt="Screw sorter preview" style="--img-scale: 0.95;">
+              </div>
               <div class="project-body">
                 <div class="tag" data-i18n="tagVision">Vision System</div>
                 <h3 data-i18n="projectScrewTitle">Screw sorter</h3>
@@ -1159,7 +1175,9 @@
 
           <a class="project-link" href="projects/raspberry-gripper.html">
             <article class="project-card">
-              <img src="photos/rasberry gripper.png" alt="Raspberry gripper preview">
+              <div class="project-image">
+                <img src="photos/rasberry gripper.png" alt="Raspberry gripper preview" style="--img-scale: 0.92;">
+              </div>
               <div class="project-body">
                 <div class="tag" data-i18n="tagRobotics">Robotics</div>
                 <h3 data-i18n="projectRaspberryTitle">Raspberry gripper</h3>
@@ -1170,7 +1188,9 @@
 
           <a class="project-link" href="projects/domino-machine.html">
             <article class="project-card">
-              <img src="photos/domino.png" alt="Domino placement machine preview">
+              <div class="project-image">
+                <img src="photos/domino.png" alt="Domino placement machine preview" style="--img-scale: 0.96;">
+              </div>
               <div class="project-body">
                 <div class="tag" data-i18n="tagCad">CAD / Mechanisms</div>
                 <h3 data-i18n="projectDominoTitle">Domino placement machine</h3>
@@ -1181,7 +1201,9 @@
 
           <a class="project-link" href="projects/sudoku-solver.html">
             <article class="project-card">
-              <img src="photos/sudoku.png" alt="Sudoku solver preview">
+              <div class="project-image">
+                <img src="photos/sudoku.png" alt="Sudoku solver preview" style="--img-scale: 0.92;">
+              </div>
               <div class="project-body">
                 <div class="tag" data-i18n="tagProgramming">Programming</div>
                 <h3 data-i18n="projectSudokuTitle">Sudoku solver</h3>
@@ -1192,7 +1214,9 @@
 
           <a class="project-link" href="projects/fea-inserts.html">
             <article class="project-card">
-              <img src="photos/InsertFEA.png" alt="Finite element simulation preview">
+              <div class="project-image">
+                <img src="photos/InsertFEA.png" alt="Finite element simulation preview" style="--img-scale: 1.00;">
+              </div>
               <div class="project-body">
                 <div class="tag" data-i18n="tagSimulation">Simulation</div>
                 <h3 data-i18n="projectFeaTitle">Finite element simulation for inserts</h3>
@@ -1203,7 +1227,9 @@
 
           <a class="project-link" href="projects/trampoline-measurement.html">
             <article class="project-card">
-              <img src="photos/MeasureTrampoline.png" alt="Measurement on trampoline preview">
+              <div class="project-image">
+                <img src="photos/MeasureTrampoline.png" alt="Measurement on trampoline preview" style="--img-scale: 0.94;">
+              </div>
               <div class="project-body">
                 <div class="tag" data-i18n="tagExperimental">Experimental Methods</div>
                 <h3 data-i18n="projectTrampolineTitle">Measurement on trampoline</h3>
@@ -1214,7 +1240,9 @@
 
           <a class="project-link" href="projects/xray-spectroscopy.html">
             <article class="project-card">
-              <img src="photos/xray.png" alt="X-ray spectroscopy preview">
+              <div class="project-image">
+                <img src="photos/xray.png" alt="X-ray spectroscopy preview" style="--img-scale: 0.92;">
+              </div>
               <div class="project-body">
                 <div class="tag" data-i18n="tagMaterials">Materials Science</div>
                 <h3 data-i18n="projectXrayTitle">X-ray Spectroscopy Si₃N₄ PVD coating</h3>
@@ -1225,7 +1253,9 @@
 
           <a class="project-link" href="projects/aluminium-alloys.html">
             <article class="project-card">
-              <img src="photos/aluThermocalc.png" alt="High strength aluminium alloys preview">
+              <div class="project-image">
+                <img src="photos/aluThermocalc.png" alt="High strength aluminium alloys preview" style="--img-scale: 0.94;">
+              </div>
               <div class="project-body">
                 <div class="tag" data-i18n="tagComputational">Computational Materials</div>
                 <h3 data-i18n="projectAlloysTitle">High strength aluminium alloys at high temperature</h3>
@@ -1236,7 +1266,9 @@
 
           <a class="project-link" href="projects/electrical-housing.html">
             <article class="project-card">
-              <img src="photos/EPFLRT2.png" alt="EPFL RT first year preview">
+              <div class="project-image">
+                <img src="photos/EPFLRT2.png" alt="EPFL RT first year preview" style="--img-scale: 0.95;">
+              </div>
               <div class="project-body">
                 <div class="tag" data-i18n="tagFormula">Formula Student</div>
                 <h3 data-i18n="projectElectricalTitle">Electrical housing integration</h3>
@@ -1247,7 +1279,9 @@
 
           <a class="project-link" href="projects/topology-optimization.html">
             <article class="project-card">
-              <img src="photos/Soon.png" alt="Topology optimization preview">
+              <div class="project-image">
+                <img src="photos/Soon.png" alt="Topology optimization preview" style="--img-scale: 0.75;">
+              </div>
               <div class="project-body">
                 <div class="tag" data-i18n="tagTopology">Literature Review / Additive Manufacturing</div>
                 <h3 data-i18n="projectTopologyTitle">Topology optimization</h3>
@@ -1258,7 +1292,9 @@
 
           <a class="project-link" href="projects/sustainable-light-bulb.html">
             <article class="project-card">
-              <img src="photos/Soon.png" alt="Sustainable light bulb preview">
+              <div class="project-image">
+                <img src="photos/Soon.png" alt="Sustainable light bulb preview" style="--img-scale: 0.75;">
+              </div>
               <div class="project-body">
                 <div class="tag" data-i18n="tagSustainable">Sustainable Design</div>
                 <h3 data-i18n="projectBulbTitle">Sustainable light bulb</h3>
@@ -1269,7 +1305,9 @@
 
           <a class="project-link" href="projects/lattice-optimization.html">
             <article class="project-card">
-              <img src="photos/Soon.png" alt="Lattice optimization preview">
+              <div class="project-image">
+                <img src="photos/Soon.png" alt="Lattice optimization preview" style="--img-scale: 0.75;">
+              </div>
               <div class="project-body">
                 <div class="tag" data-i18n="tagOptimization">Optimization / Simulation</div>
                 <h3 data-i18n="projectLatticeTitle">Lattice optimization</h3>
@@ -1280,7 +1318,9 @@
 
           <a class="project-link" href="projects/data-acquisition-semester-project.html">
             <article class="project-card">
-              <img src="photos/Soon.png" alt="Data acquisition semester project preview">
+              <div class="project-image">
+                <img src="photos/Soon.png" alt="Data acquisition semester project preview" style="--img-scale: 0.75;">
+              </div>
               <div class="project-body">
                 <div class="tag" data-i18n="tagInstrumentation">Instrumentation</div>
                 <h3 data-i18n="projectDataTitle">Data acquisition semester project</h3>
