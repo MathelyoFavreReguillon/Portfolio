@@ -309,7 +309,6 @@
       box-shadow:var(--shadow);
     }
 
-    /* STATUS */
     .status-card{
       position:relative;
       overflow:hidden;
@@ -460,9 +459,12 @@
     }
 
     .project-card img{
-      aspect-ratio:16/10;
-      object-fit:cover;
       width:100%;
+      height:260px;
+      object-fit:contain;
+      object-position:center;
+      background:#fff;
+      padding:1rem;
     }
 
     .project-body{
@@ -825,6 +827,10 @@
       .status-card{
         padding:1.35rem;
       }
+
+      .project-card img{
+        height:220px;
+      }
     }
   </style>
 </head>
@@ -855,6 +861,7 @@
               <a href="projects/xray-spectroscopy.html" data-i18n="dropdownXray">X-ray spectroscopy</a>
               <a href="projects/aluminium-alloys.html" data-i18n="dropdownAlloys">High strength aluminium alloys</a>
               <a href="projects/electrical-housing.html" data-i18n="dropdownElectrical">Electrical housing integration</a>
+              <a href="projects/topology-optimization.html" data-i18n="dropdownTopology">Topology optimization</a>
               <a href="projects/sustainable-light-bulb.html" data-i18n="dropdownBulb">Sustainable light bulb</a>
               <a href="projects/lattice-optimization.html" data-i18n="dropdownLattice">Lattice optimization</a>
               <a href="projects/data-acquisition-semester-project.html" data-i18n="dropdownData">Data acquisition semester project</a>
@@ -1141,9 +1148,7 @@
 
           <a class="project-link" href="projects/screw-sorter.html">
             <article class="project-card">
-              <img src="photos/ScrewSorter.png"
-                   alt="Screw sorter preview"
-                   style="transform: scale(1.1); transform-origin: center; display:block; margin:auto;">
+              <img src="photos/ScrewSorter.png" alt="Screw sorter preview">
               <div class="project-body">
                 <div class="tag" data-i18n="tagVision">Vision System</div>
                 <h3 data-i18n="projectScrewTitle">Screw sorter</h3>
@@ -1154,9 +1159,7 @@
 
           <a class="project-link" href="projects/raspberry-gripper.html">
             <article class="project-card">
-              <img src="photos/rasberry gripper.png"
-                   alt="Raspberry gripper preview"
-                   style="transform: scale(0.9); transform-origin: center; display:block; margin:auto;">
+              <img src="photos/rasberry gripper.png" alt="Raspberry gripper preview">
               <div class="project-body">
                 <div class="tag" data-i18n="tagRobotics">Robotics</div>
                 <h3 data-i18n="projectRaspberryTitle">Raspberry gripper</h3>
@@ -1167,9 +1170,7 @@
 
           <a class="project-link" href="projects/domino-machine.html">
             <article class="project-card">
-              <img src="photos/domino.png"
-                   alt="Domino placement machine preview"
-                   style="transform: scale(0.9); transform-origin: center; display:block; margin:auto;">
+              <img src="photos/domino.png" alt="Domino placement machine preview">
               <div class="project-body">
                 <div class="tag" data-i18n="tagCad">CAD / Mechanisms</div>
                 <h3 data-i18n="projectDominoTitle">Domino placement machine</h3>
@@ -1240,6 +1241,17 @@
                 <div class="tag" data-i18n="tagFormula">Formula Student</div>
                 <h3 data-i18n="projectElectricalTitle">Electrical housing integration</h3>
                 <p class="muted" data-i18n="projectElectricalText">Design, manufacturing and integration of the electrical housing system for the race car, with attention to packaging, sealing and structural constraints.</p>
+              </div>
+            </article>
+          </a>
+
+          <a class="project-link" href="projects/topology-optimization.html">
+            <article class="project-card">
+              <img src="photos/Soon.png" alt="Topology optimization preview">
+              <div class="project-body">
+                <div class="tag" data-i18n="tagTopology">Literature Review / Additive Manufacturing</div>
+                <h3 data-i18n="projectTopologyTitle">Topology optimization</h3>
+                <p class="muted" data-i18n="projectTopologyText">Literature review and engineering study focused on topology optimization and its links with additive manufacturing, lightweight design and structural performance.</p>
               </div>
             </article>
           </a>
@@ -1491,6 +1503,7 @@
         dropdownXray: "X-ray spectroscopy",
         dropdownAlloys: "High strength aluminium alloys",
         dropdownElectrical: "Electrical housing integration",
+        dropdownTopology: "Topology optimization",
         dropdownBulb: "Sustainable light bulb",
         dropdownLattice: "Lattice optimization",
         dropdownData: "Data acquisition semester project",
@@ -1556,6 +1569,7 @@
         tagMaterials: "Materials Science",
         tagComputational: "Computational Materials",
         tagFormula: "Formula Student",
+        tagTopology: "Literature Review / Additive Manufacturing",
         tagSustainable: "Sustainable Design",
         tagOptimization: "Optimization / Simulation",
         tagInstrumentation: "Instrumentation",
@@ -1580,6 +1594,8 @@
         projectAlloysText: "Thermo-Calc based study of Al–Ce–Sc alloy design for high-temperature strength retention beyond conventional aluminium alloys.",
         projectElectricalTitle: "Electrical housing integration",
         projectElectricalText: "Design, manufacturing and integration of the electrical housing system for the race car, with attention to packaging, sealing and structural constraints.",
+        projectTopologyTitle: "Topology optimization",
+        projectTopologyText: "Literature review and engineering study focused on topology optimization and its links with additive manufacturing, lightweight design and structural performance.",
         projectBulbTitle: "Sustainable light bulb",
         projectBulbText: "Redesign of a light bulb with a stronger focus on circularity, modularity, material optimization and improved sustainability across the product lifecycle.",
         projectLatticeTitle: "Lattice optimization",
@@ -1663,6 +1679,7 @@
         dropdownXray: "Spectroscopie X",
         dropdownAlloys: "Alliages d’aluminium haute résistance",
         dropdownElectrical: "Intégration du boîtier électrique",
+        dropdownTopology: "Topology optimization",
         dropdownBulb: "Ampoule durable",
         dropdownLattice: "Optimisation de lattice",
         dropdownData: "Projet semestriel d’acquisition de données",
@@ -1728,6 +1745,7 @@
         tagMaterials: "Science des matériaux",
         tagComputational: "Matériaux computationnels",
         tagFormula: "Formula Student",
+        tagTopology: "Revue de littérature / Fabrication additive",
         tagSustainable: "Conception durable",
         tagOptimization: "Optimisation / Simulation",
         tagInstrumentation: "Instrumentation",
@@ -1752,6 +1770,8 @@
         projectAlloysText: "Étude sous Thermo-Calc de la conception d’alliages Al–Ce–Sc pour le maintien des performances mécaniques à haute température au-delà des alliages d’aluminium conventionnels.",
         projectElectricalTitle: "Intégration du boîtier électrique",
         projectElectricalText: "Conception, fabrication et intégration du système de boîtier électrique de la voiture de course, avec un focus sur l’encombrement, l’étanchéité et les contraintes structurelles.",
+        projectTopologyTitle: "Topology optimization",
+        projectTopologyText: "Revue de littérature et étude d’ingénierie centrées sur l’optimisation topologique et ses liens avec la fabrication additive, l’allègement des structures et les performances mécaniques.",
         projectBulbTitle: "Ampoule durable",
         projectBulbText: "Redesign d’une ampoule avec un accent renforcé sur la circularité, la modularité, l’optimisation des matériaux et l’amélioration de la durabilité sur l’ensemble du cycle de vie.",
         projectLatticeTitle: "Optimisation de lattice",
