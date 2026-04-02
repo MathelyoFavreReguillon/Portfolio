@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monocoque Insert Analysis | Mathélyo Favre-Réguillon</title>
+  <title>Domino Laying Machine | Mathélyo Favre-Réguillon</title>
   <style>
     :root{
       --bg:#f4f1ef;
@@ -18,6 +18,7 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -27,7 +28,7 @@
     }
 
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    img, video{max-width:100%;display:block}
 
     .container{
       width:min(var(--max), calc(100% - 2rem));
@@ -72,7 +73,7 @@
     .lead{
       font-size:1.1rem;
       color:#333;
-      max-width:800px;
+      max-width:900px;
     }
 
     .tag{
@@ -94,10 +95,17 @@
       overflow:hidden;
     }
 
+    .hero-image{
+      padding:1rem;
+    }
+
     .hero-image img{
       width:100%;
-      aspect-ratio:16/8;
-      object-fit:cover;
+      height:520px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:22px;
+      background:#fff;
     }
 
     .section{
@@ -120,11 +128,25 @@
       gap:1rem;
     }
 
-    .gallery img{
+    .gallery-item{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
       border-radius:20px;
-      aspect-ratio:4/3;
-      object-fit:cover;
+      padding:.8rem;
+      min-height:320px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .gallery img{
       width:100%;
+      height:100%;
+      max-height:300px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:14px;
+      background:#fff;
     }
 
     .files{
@@ -139,87 +161,317 @@
       background:#fff;
       border:1px solid rgba(0,0,0,.08);
       font-weight:700;
+      transition:.2s ease;
+    }
+
+    .file-link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(214,0,0,.18);
     }
 
     .muted{color:var(--muted)}
 
+    ul{
+      margin:.3rem 0 0 1.1rem;
+      padding:0;
+    }
+
+    li + li{
+      margin-top:.45rem;
+    }
+
     @media (max-width: 800px){
       .grid-2,.gallery{grid-template-columns:1fr}
+
+      .hero-image img{
+        height:320px;
+      }
+
+      .gallery-item{
+        min-height:260px;
+      }
+
+      .gallery img{
+        max-height:240px;
+      }
     }
   </style>
 </head>
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="back" href="../index.html#projects">← Back to portfolio</a>
+      <a class="back" href="../index.html#projects" data-i18n="backToPortfolio">← Back to portfolio</a>
     </div>
   </nav>
 
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag">Bachelor Thesis</div>
-        <h1>Monocoque Insert Analysis</h1>
-        <p class="lead">
-          Analysis and redesign of monocoque inserts with a focus on structural performance,
-          production constraints and post-production robustness.
+        <div class="tag" data-i18n="dominoTag">EPFL · ME-102 · Mechanical Design Project</div>
+        <h1 data-i18n="dominoTitle">Domino Laying Machine</h1>
+        <p class="lead" data-i18n="dominoLead">
+          Design and development of a manual mechanical machine able to place 50 dominos with a regular spacing, both in straight lines and curved trajectories, through a fully integrated system of storage, transmission, steering and deposition.
         </p>
       </div>
     </section>
 
     <section class="section">
       <div class="container hero-image">
-        <img src="../assets/page_7.jpg" alt="Monocoque insert analysis">
+        <img src="../photos/domino-main.png" alt="Domino Laying Machine final CAD assembly">
       </div>
     </section>
 
     <section class="section">
       <div class="container grid-2">
         <div class="card">
-          <h2>Project Overview</h2>
-          <p>
-            This project focused on understanding the behavior of inserts integrated in a carbon monocoque,
-            identifying weaknesses in the existing design and proposing improvements based on simulation and manufacturing feedback.
+          <h2 data-i18n="dominoOverviewTitle">Project Overview</h2>
+          <p data-i18n="dominoOverviewText1">
+            This project was carried out at EPFL in the context of a mechanical design course focused on the development of a complete functional system. The objective was to create a fully manual machine capable of placing dominos one by one with controlled spacing and stable vertical positioning.
           </p>
-          <p class="muted">
-            The work combined structural reasoning, CAD integration, composite constraints and validation through simulation.
+          <p class="muted" data-i18n="dominoOverviewText2">
+            The final design was developed around a strict specification including a capacity of 50 dominos, a target spacing of 20 ± 1 mm, compatibility with straight and curved paths, and compact overall dimensions below 300 mm in height.
           </p>
         </div>
 
         <div class="card">
-          <h2>Key Contributions</h2>
+          <h2 data-i18n="dominoContribTitle">Key Contributions</h2>
           <ul>
-            <li>Insert redesign for improved robustness</li>
-            <li>Full-structure simulation including carbon and aluminium parts</li>
-            <li>Consideration of manufacturing and assembly constraints</li>
-            <li>Support for production and post-production decisions</li>
+            <li data-i18n="dominoContrib1">Concept generation and comparison of several storage, steering and deposition architectures</li>
+            <li data-i18n="dominoContrib2">Mechanical design and CAD development of the final machine</li>
+            <li data-i18n="dominoContrib3">Work on transmission, gearing, kinematics and integration of the full mechanism</li>
+            <li data-i18n="dominoContrib4">Dimensioning and engineering calculations for steering, deposition and manufacturability</li>
+            <li data-i18n="dominoContrib5">Participation in the overall development from concept phase to final assembly definition</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container card">
-        <h2>Image Gallery</h2>
-        <div class="gallery">
-          <img src="../assets/page_7.jpg" alt="Project image 1">
-          <img src="../assets/page_6.jpg" alt="Project image 2">
-          <img src="../assets/page_4.jpg" alt="Project image 3">
-          <img src="../assets/page_2.jpg" alt="Project image 4">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="dominoChallengeTitle">Design Challenge</h2>
+          <p data-i18n="dominoChallengeText1">
+            The main challenge was to synchronize multiple functions in a purely mechanical and manually driven system: storing the dominos, feeding them progressively, redirecting them, laying them vertically on the table and keeping a constant spacing regardless of the trajectory.
+          </p>
+          <p class="muted" data-i18n="dominoChallengeText2">
+            In parallel, the machine had to remain compact, stable, safe to use, easy to reload and compatible with both fixed and free steering modes.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="dominoConceptTitle">Concept Selection</h2>
+          <p data-i18n="dominoConceptText1">
+            Several concepts were explored for the charger layout, transmission system, steering architecture and deposition principle. Among the investigated options were inclined storage, barrel-type solutions, horizontal chargers, belt transmission and different steering concepts.
+          </p>
+          <p class="muted" data-i18n="dominoConceptText2">
+            The final concept selected a dual vertical charger architecture combined with a gear-based transmission, a dedicated projection mechanism and a centered deposition system judged to be the most reliable and feasible solution.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="dominoMechanismTitle">Final Mechanical Architecture</h2>
+          <p data-i18n="dominoMechanismText1">
+            The machine stores 50 dominos through two vertical chargers of 25 dominos each. As the machine moves forward, a central driving wheel activates the internal transmission and powers the projection and deposition mechanisms.
+          </p>
+          <p class="muted" data-i18n="dominoMechanismText2">
+            A gear ratio of 2.5 was defined between the driving wheel and the actuation of the mechanisms, ensuring a regular deposition frequency while reducing the influence of curved trajectories on domino spacing.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="dominoWorkflowTitle">Domino Deposition Workflow</h2>
+          <p data-i18n="dominoWorkflowText1">
+            Dominos are first pushed out of the two chargers by an alternating projection mechanism referred to in the report as the “windmill” system. They are then guided through dedicated slides which progressively rotate them from horizontal storage to vertical deposition.
+          </p>
+          <p class="muted" data-i18n="dominoWorkflowText2">
+            A final crank-slider based deposition mechanism recenters the dominos coming from both sides and releases them through a single output, allowing vertical placement with controlled alignment and spacing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="dominoSteeringTitle">Steering System</h2>
+          <p data-i18n="dominoSteeringText1">
+            One of the strengths of the project is the integration of two steering modes. The machine can operate in a fixed steering mode with predefined trajectories, or in a free mode controlled by a steering wheel.
+          </p>
+          <p class="muted" data-i18n="dominoSteeringText2">
+            The fixed mode allows straight motion and predefined left and right turning radii of 200 mm and 400 mm, while the free mode gives more flexibility during manual guidance.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="dominoEngineeringTitle">Engineering & Validation</h2>
+          <p data-i18n="dominoEngineeringText1">
+            The development involved more than CAD modeling. The report includes calculations for steering geometry, mechanism amplitude, gear loading, shaft torsion, friction losses, bearing efficiency, domino stability after release and maximum operating speed.
+          </p>
+          <p class="muted" data-i18n="dominoEngineeringText2">
+            Materials and manufacturability were also considered carefully, with a large number of structural parts designed in PA6, low-friction interfaces in PTFE, aluminum shafts, and an assembly strategy compatible with machining.
+          </p>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container card">
-        <h2>Important Files</h2>
+        <h2 data-i18n="dominoGalleryTitle">Image Gallery</h2>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="../photos/domino1.png" alt="Domino machine gallery image 1">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/domino2.png" alt="Domino machine gallery image 2">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/domino3.png" alt="Domino machine gallery image 3">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/domino4.png" alt="Domino machine gallery image 4">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="dominoFilesTitle">Important Files</h2>
         <div class="files">
-          <a class="file-link" href="../files/monocoque-report.pdf" target="_blank">Project report (PDF)</a>
-          <a class="file-link" href="../files/monocoque-presentation.pdf" target="_blank">Presentation slides</a>
-          <a class="file-link" href="../files/monocoque-cad.zip" target="_blank">CAD package</a>
+          <a class="file-link" href="../documents/Domino_Report.pdf" target="_blank" data-i18n="dominoFile1">Project report (PDF)</a>
+          <a class="file-link" href="../documents/Domino_Project_Files.zip" target="_blank" data-i18n="dominoFile2">Complete project folder (ZIP)</a>
         </div>
       </div>
     </section>
   </main>
+
+  <script>
+    const translations = {
+      en: {
+        backToPortfolio: "← Back to portfolio",
+
+        dominoTag: "EPFL · ME-102 · Mechanical Design Project",
+        dominoTitle: "Domino Laying Machine",
+        dominoLead: "Design and development of a manual mechanical machine able to place 50 dominos with a regular spacing, both in straight lines and curved trajectories, through a fully integrated system of storage, transmission, steering and deposition.",
+
+        dominoOverviewTitle: "Project Overview",
+        dominoOverviewText1: "This project was carried out at EPFL in the context of a mechanical design course focused on the development of a complete functional system. The objective was to create a fully manual machine capable of placing dominos one by one with controlled spacing and stable vertical positioning.",
+        dominoOverviewText2: "The final design was developed around a strict specification including a capacity of 50 dominos, a target spacing of 20 ± 1 mm, compatibility with straight and curved paths, and compact overall dimensions below 300 mm in height.",
+
+        dominoContribTitle: "Key Contributions",
+        dominoContrib1: "Concept generation and comparison of several storage, steering and deposition architectures",
+        dominoContrib2: "Mechanical design and CAD development of the final machine",
+        dominoContrib3: "Work on transmission, gearing, kinematics and integration of the full mechanism",
+        dominoContrib4: "Dimensioning and engineering calculations for steering, deposition and manufacturability",
+        dominoContrib5: "Participation in the overall development from concept phase to final assembly definition",
+
+        dominoChallengeTitle: "Design Challenge",
+        dominoChallengeText1: "The main challenge was to synchronize multiple functions in a purely mechanical and manually driven system: storing the dominos, feeding them progressively, redirecting them, laying them vertically on the table and keeping a constant spacing regardless of the trajectory.",
+        dominoChallengeText2: "In parallel, the machine had to remain compact, stable, safe to use, easy to reload and compatible with both fixed and free steering modes.",
+
+        dominoConceptTitle: "Concept Selection",
+        dominoConceptText1: "Several concepts were explored for the charger layout, transmission system, steering architecture and deposition principle. Among the investigated options were inclined storage, barrel-type solutions, horizontal chargers, belt transmission and different steering concepts.",
+        dominoConceptText2: "The final concept selected a dual vertical charger architecture combined with a gear-based transmission, a dedicated projection mechanism and a centered deposition system judged to be the most reliable and feasible solution.",
+
+        dominoMechanismTitle: "Final Mechanical Architecture",
+        dominoMechanismText1: "The machine stores 50 dominos through two vertical chargers of 25 dominos each. As the machine moves forward, a central driving wheel activates the internal transmission and powers the projection and deposition mechanisms.",
+        dominoMechanismText2: "A gear ratio of 2.5 was defined between the driving wheel and the actuation of the mechanisms, ensuring a regular deposition frequency while reducing the influence of curved trajectories on domino spacing.",
+
+        dominoWorkflowTitle: "Domino Deposition Workflow",
+        dominoWorkflowText1: "Dominos are first pushed out of the two chargers by an alternating projection mechanism referred to in the report as the “windmill” system. They are then guided through dedicated slides which progressively rotate them from horizontal storage to vertical deposition.",
+        dominoWorkflowText2: "A final crank-slider based deposition mechanism recenters the dominos coming from both sides and releases them through a single output, allowing vertical placement with controlled alignment and spacing.",
+
+        dominoSteeringTitle: "Steering System",
+        dominoSteeringText1: "One of the strengths of the project is the integration of two steering modes. The machine can operate in a fixed steering mode with predefined trajectories, or in a free mode controlled by a steering wheel.",
+        dominoSteeringText2: "The fixed mode allows straight motion and predefined left and right turning radii of 200 mm and 400 mm, while the free mode gives more flexibility during manual guidance.",
+
+        dominoEngineeringTitle: "Engineering & Validation",
+        dominoEngineeringText1: "The development involved more than CAD modeling. The report includes calculations for steering geometry, mechanism amplitude, gear loading, shaft torsion, friction losses, bearing efficiency, domino stability after release and maximum operating speed.",
+        dominoEngineeringText2: "Materials and manufacturability were also considered carefully, with a large number of structural parts designed in PA6, low-friction interfaces in PTFE, aluminum shafts, and an assembly strategy compatible with machining.",
+
+        dominoGalleryTitle: "Image Gallery",
+
+        dominoFilesTitle: "Important Files",
+        dominoFile1: "Project report (PDF)",
+        dominoFile2: "Complete project folder (ZIP)"
+      },
+
+      fr: {
+        backToPortfolio: "← Retour au portfolio",
+
+        dominoTag: "EPFL · ME-102 · Projet de construction mécanique",
+        dominoTitle: "Machine de pose de dominos",
+        dominoLead: "Conception et développement d’une machine mécanique manuelle capable de poser 50 dominos à intervalles réguliers, en ligne droite comme en virage, grâce à un système intégré de stockage, transmission, direction et dépose.",
+
+        dominoOverviewTitle: "Vue d’ensemble du projet",
+        dominoOverviewText1: "Ce projet a été réalisé à l’EPFL dans le cadre d’un cours de construction mécanique centré sur le développement d’un système fonctionnel complet. L’objectif était de concevoir une machine entièrement manuelle capable de poser les dominos un à un avec un espacement contrôlé et une stabilité verticale à la dépose.",
+        dominoOverviewText2: "Le design final a été développé à partir d’un cahier des charges exigeant : capacité de 50 dominos, espacement cible de 20 ± 1 mm, compatibilité avec des trajectoires droites et courbes, et encombrement global inférieur à 300 mm en hauteur.",
+
+        dominoContribTitle: "Contributions clés",
+        dominoContrib1: "Génération de concepts et comparaison de plusieurs architectures de stockage, direction et dépose",
+        dominoContrib2: "Conception mécanique et développement CAO de la machine finale",
+        dominoContrib3: "Travail sur la transmission, les engrenages, la cinématique et l’intégration de l’ensemble du mécanisme",
+        dominoContrib4: "Dimensionnement et calculs d’ingénierie pour la direction, la dépose et l’usinabilité",
+        dominoContrib5: "Participation au développement global depuis la phase concept jusqu’à la définition finale de l’assemblage",
+
+        dominoChallengeTitle: "Défi de conception",
+        dominoChallengeText1: "Le principal défi était de synchroniser plusieurs fonctions dans un système purement mécanique et entraîné manuellement : stocker les dominos, les alimenter progressivement, les rediriger, les poser verticalement sur la table et conserver un espacement constant quelle que soit la trajectoire.",
+        dominoChallengeText2: "En parallèle, la machine devait rester compacte, stable, sûre à l’usage, facile à recharger et compatible avec des modes de direction fixe et libre.",
+
+        dominoConceptTitle: "Choix du concept",
+        dominoConceptText1: "Plusieurs concepts ont été étudiés pour l’architecture du chargeur, le système de transmission, la direction et le principe de dépose. Parmi les options envisagées figuraient notamment le stockage incliné, des solutions de type barillet, des chargeurs horizontaux, une transmission par courroie et différentes architectures de direction.",
+        dominoConceptText2: "Le concept final a retenu une architecture à double chargeur vertical, combinée à une transmission par engrenages, un mécanisme de projection dédié et un système de dépose centré, jugés les plus fiables et réalistes au regard du cahier des charges.",
+
+        dominoMechanismTitle: "Architecture mécanique finale",
+        dominoMechanismText1: "La machine stocke 50 dominos grâce à deux chargeurs verticaux de 25 dominos chacun. Lorsque la machine avance, une roue motrice centrale active la transmission interne et entraîne les mécanismes de projection et de dépose.",
+        dominoMechanismText2: "Un rapport de transmission de 2,5 a été défini entre la roue motrice et l’actionnement des mécanismes, afin d’assurer une fréquence de dépose régulière tout en limitant l’influence des trajectoires courbes sur l’espacement des dominos.",
+
+        dominoWorkflowTitle: "Fonctionnement de la dépose",
+        dominoWorkflowText1: "Les dominos sont d’abord poussés hors des deux chargeurs par un mécanisme de projection alterné appelé dans le rapport le système “éolienne”. Ils sont ensuite guidés dans des toboggans dédiés qui les font progressivement passer d’une position de stockage horizontale à une position de dépose verticale.",
+        dominoWorkflowText2: "Un mécanisme final de dépose de type bielle-manivelle recentre les dominos arrivant des deux côtés et les libère par une sortie unique, permettant une pose verticale avec alignement et espacement contrôlés.",
+
+        dominoSteeringTitle: "Système de direction",
+        dominoSteeringText1: "L’un des points forts du projet est l’intégration de deux modes de direction. La machine peut fonctionner soit en mode fixe avec des trajectoires prédéfinies, soit en mode libre contrôlé par un volant.",
+        dominoSteeringText2: "Le mode fixe permet une trajectoire droite ainsi que des rayons de courbure imposés à gauche et à droite de 200 mm et 400 mm, tandis que le mode libre offre davantage de flexibilité à l’utilisateur.",
+
+        dominoEngineeringTitle: "Ingénierie & validation",
+        dominoEngineeringText1: "Le développement ne s’est pas limité à la CAO. Le rapport comprend des calculs sur la géométrie de direction, l’amplitude des mécanismes, les efforts sur les engrenages, la torsion des arbres, les pertes par frottement, le rendement des paliers, la stabilité du domino après dépose ainsi que la vitesse maximale d’utilisation.",
+        dominoEngineeringText2: "Les matériaux et l’usinabilité ont également été étudiés avec soin, avec de nombreuses pièces structurelles en PA6, des interfaces à faible frottement en PTFE, des axes en aluminium, et une stratégie d’assemblage compatible avec l’usinage.",
+
+        dominoGalleryTitle: "Galerie d’images",
+
+        dominoFilesTitle: "Fichiers importants",
+        dominoFile1: "Rapport du projet (PDF)",
+        dominoFile2: "Dossier complet du projet (ZIP)"
+      }
+    };
+
+    function applyTranslations(lang) {
+      const dict = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang =
+        localStorage.getItem("siteLanguage") ||
+        localStorage.getItem("language") ||
+        localStorage.getItem("lang") ||
+        sessionStorage.getItem("language") ||
+        "en";
+
+      applyTranslations(savedLang);
+    });
+  </script>
 </body>
 </html>
