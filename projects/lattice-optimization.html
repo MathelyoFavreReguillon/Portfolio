@@ -111,22 +111,62 @@
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="back" href="../index.html#projects">← Back to portfolio</a>
+      <a class="back" href="../index.html#projects" data-i18n="backToPortfolio">← Back to portfolio</a>
     </div>
   </nav>
 
   <main class="hero">
     <div class="container">
-      <div class="tag">Optimization / Simulation</div>
-      <h1>Lattice optimization</h1>
-      <p class="lead">
+      <div class="tag" data-i18n="projectTag">Optimization / Simulation</div>
+      <h1 data-i18n="projectTitle">Lattice optimization</h1>
+      <p class="lead" data-i18n="projectLead">
         Development of a parametric lattice generation and simulation workflow to optimize lightweight structures through numerical modeling and performance analysis.
       </p>
 
       <div class="image-wrap">
-        <img src="../photos/Soon.png" alt="Lattice optimization project image">
+        <img src="../photos/LatticeHero.png" alt="Lattice optimization project image">
       </div>
     </div>
   </main>
+
+  <script>
+    const translations = {
+      en: {
+        backToPortfolio: "← Back to portfolio",
+        projectTag: "Optimization / Simulation",
+        projectTitle: "Lattice optimization",
+        projectLead: "Development of a parametric lattice generation and simulation workflow to optimize lightweight structures through numerical modeling and performance analysis."
+      },
+      fr: {
+        backToPortfolio: "← Retour au portfolio",
+        projectTag: "Optimisation / Simulation",
+        projectTitle: "Optimisation de structure lattice",
+        projectLead: "Développement d’un workflow paramétrique de génération et de simulation de structures lattice afin d’optimiser des structures allégées par modélisation numérique et analyse de performance."
+      }
+    };
+
+    function applyTranslations(lang) {
+      const dict = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang =
+        localStorage.getItem("siteLanguage") ||
+        localStorage.getItem("language") ||
+        localStorage.getItem("lang") ||
+        sessionStorage.getItem("language") ||
+        "en";
+
+      applyTranslations(savedLang);
+    });
+  </script>
 </body>
 </html>
