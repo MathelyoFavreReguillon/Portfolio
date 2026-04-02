@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EPFL Racing Team – First Year | Mathélyo Favre-Réguillon</title>
+  <title>EPFL Racing Team – Second Year | Mathélyo Favre-Réguillon</title>
   <style>
     :root{
       --bg:#f4f1ef;
       --text:#171717;
       --muted:#5f5f5f;
       --red:#d60000;
+      --red-soft:#f7e5e5;
       --card:#ffffff;
       --shadow:0 20px 60px rgba(0,0,0,.08);
       --radius:28px;
-      --max:1100px;
+      --radius-sm:18px;
+      --max:1120px;
     }
 
     *{box-sizing:border-box}
@@ -38,7 +40,7 @@
     .nav{
       position:sticky;
       top:0;
-      z-index:20;
+      z-index:30;
       backdrop-filter:blur(16px);
       background:rgba(244,241,239,.82);
       border-bottom:1px solid rgba(0,0,0,.06);
@@ -49,6 +51,7 @@
       justify-content:space-between;
       align-items:center;
       padding:1rem 0;
+      gap:1rem;
     }
 
     .back{
@@ -57,7 +60,7 @@
     }
 
     .hero{
-      padding:3rem 0 2rem;
+      padding:3rem 0 1.5rem;
     }
 
     h1,h2,h3{
@@ -67,13 +70,13 @@
     }
 
     h1{font-size:clamp(2.4rem, 6vw, 4.4rem)}
-    h2{font-size:clamp(1.7rem, 4vw, 2.6rem)}
-    h3{font-size:1.2rem}
+    h2{font-size:clamp(1.6rem, 4vw, 2.5rem)}
+    h3{font-size:1.15rem}
 
     .lead{
-      font-size:1.1rem;
+      font-size:1.08rem;
       color:#333;
-      max-width:900px;
+      max-width:920px;
     }
 
     .tag{
@@ -81,10 +84,44 @@
       font-size:.82rem;
       padding:.35rem .7rem;
       border-radius:999px;
-      background:#f7e5e5;
+      background:var(--red-soft);
       color:#9b0000;
       font-weight:700;
       margin-bottom:1rem;
+    }
+
+    .tabs-wrap{
+      padding:.5rem 0 1rem;
+    }
+
+    .tabs{
+      display:flex;
+      gap:.8rem;
+      flex-wrap:wrap;
+    }
+
+    .tab-btn{
+      border:none;
+      background:#fff;
+      color:var(--text);
+      border-radius:999px;
+      padding:.9rem 1.1rem;
+      font:inherit;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(0,0,0,.06);
+      transition:.2s ease;
+    }
+
+    .tab-btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .tab-btn.active{
+      background:var(--red);
+      color:#fff;
+      border-color:var(--red);
     }
 
     .hero-image,
@@ -99,17 +136,31 @@
       padding:1rem;
     }
 
-    .hero-image img{
-      width:100%;
+    .hero-image-frame{
       height:520px;
-      object-fit:contain;
-      object-position:center;
       border-radius:22px;
       background:#fff;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+
+    .hero-image-frame img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      transform:
+        translate(var(--img-x, 0px), var(--img-y, 0px))
+        scale(var(--img-scale, 1));
+      transform-origin:center center;
+      will-change:transform;
     }
 
     .section{
-      padding:1.5rem 0;
+      padding:1.4rem 0;
     }
 
     .grid-2{
@@ -120,6 +171,17 @@
 
     .card{
       padding:1.5rem;
+    }
+
+    .muted{color:var(--muted)}
+
+    ul{
+      margin:.3rem 0 0 1.1rem;
+      padding:0;
+    }
+
+    li + li{
+      margin-top:.45rem;
     }
 
     .gallery{
@@ -151,6 +213,7 @@
 
     .files{
       display:grid;
+      grid-template-columns:1fr 1fr;
       gap:.8rem;
     }
 
@@ -169,45 +232,28 @@
       border-color:rgba(214,0,0,.18);
     }
 
-    .muted{color:var(--muted)}
-
-    ul{
-      margin:.3rem 0 0 1.1rem;
-      padding:0;
+    .role-panel{
+      display:none;
     }
 
-    li + li{
-      margin-top:.45rem;
+    .role-panel.active{
+      display:block;
     }
 
-    @media (max-width: 900px){
-      .gallery{
-        grid-template-columns:repeat(2, 1fr);
-      }
+    @media (max-width: 950px){
+      .gallery{grid-template-columns:repeat(2, 1fr)}
+      .files{grid-template-columns:1fr}
     }
 
     @media (max-width: 800px){
-      .grid-2{
-        grid-template-columns:1fr;
-      }
-
-      .hero-image img{
-        height:320px;
-      }
+      .grid-2{grid-template-columns:1fr}
+      .hero-image-frame{height:320px}
     }
 
     @media (max-width: 560px){
-      .gallery{
-        grid-template-columns:1fr;
-      }
-
-      .gallery-item{
-        min-height:240px;
-      }
-
-      .gallery img{
-        max-height:220px;
-      }
+      .gallery{grid-template-columns:1fr}
+      .gallery-item{min-height:240px}
+      .gallery img{max-height:220px}
     }
   </style>
 </head>
@@ -221,170 +267,215 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag" data-i18n="projectTag">EPFL · EPFL Racing Team · First Year</div>
-        <h1 data-i18n="projectTitle">Mechanical Integration of LV Electronics</h1>
-        <p class="lead" data-i18n="projectLead">
-          During my first year in the EPFL Racing Team as a chassis member, I was responsible for the full mechanical integration of the low-voltage electronics inside the carbon monocoque. This project was a major learning experience, combining CAD design, prototyping, waterproofing strategy, material selection, fastening design, and close collaboration with the electrical team.
+        <div class="tag" data-i18n="pageTag">EPFL · EPFL Racing Team · Second Year</div>
+        <h1 id="roleTitleMain">Vice-President</h1>
+        <p class="lead" id="roleLeadMain">
+          In my second year within the EPFL Racing Team, I combined two major responsibilities: Vice-President of the team and leader of the Monocoque & Layup Division. This role placed me at the intersection of technical execution, manufacturing leadership, team coordination and project organization.
         </p>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container hero-image">
-        <img src="../photos/RacingYear1_1.png" alt="EPFL Racing Team first year main visual">
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="overviewTitle">Project Overview</h2>
-          <p data-i18n="overviewText1">
-            In my first year with the EPFL Racing Team, I joined the chassis department and worked on one of the most cross-functional topics of the car: the mechanical integration of the low-voltage electronics.
-          </p>
-          <p class="muted" data-i18n="overviewText2">
-            The scope included the design and development of several electrical enclosures, their positioning inside the monocoque, the integration of LEMO interfaces, and the preparation of solutions compatible with production, assembly and race conditions.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 data-i18n="roleTitle">My Role</h2>
-          <ul>
-            <li data-i18n="role1">Full mechanical integration of the LV electronics inside the car</li>
-            <li data-i18n="role2">Development of enclosure concepts, interfaces and fastening strategies</li>
-            <li data-i18n="role3">Close work with the electrical team to understand system needs and connector constraints</li>
-            <li data-i18n="role4">Participation in the carbon monocoque production with the chassis team</li>
-            <li data-i18n="role5">Contribution to a new waterproofing approach for competition readiness</li>
-          </ul>
+    <section class="tabs-wrap">
+      <div class="container">
+        <div class="tabs">
+          <button class="tab-btn active" data-role="vp" data-i18n="tabVp">Vice-President</button>
+          <button class="tab-btn" data-role="mono" data-i18n="tabMono">Monocoque & Layup Division Lead</button>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="contextTitle">Context</h2>
-          <p data-i18n="contextText1">
-            The EPFL Racing Team develops a new Formula Student race car every year. In this context, integrating the electronics is not only a packaging task: it is a structural, safety and manufacturing challenge.
-          </p>
-          <p class="muted" data-i18n="contextText2">
-            Each enclosure had to fit within the limited volume of the monocoque, remain accessible for assembly and maintenance, protect the electronics, and interface correctly with the rest of the car architecture.
-          </p>
+    <!-- VICE PRESIDENT -->
+    <section id="panel-vp" class="role-panel active">
+      <section class="section">
+        <div class="container hero-image">
+          <div class="hero-image-frame">
+            <img
+              src="../photos/RacingVP1.png"
+              alt="Vice-President main visual"
+              style="--img-scale: 1.2; --img-x: 0px; --img-y: 0px;"
+            >
+          </div>
         </div>
+      </section>
 
-        <div class="card">
-          <h2 data-i18n="challengeTitle">Engineering Challenge</h2>
-          <p data-i18n="challengeText1">
-            One of the most interesting parts of the project was the search for waterproofness, which was a key topic for competition reliability and a relatively new challenge for the team.
-          </p>
-          <p class="muted" data-i18n="challengeText2">
-            The work therefore required balancing sealing performance, electrical isolation, compactness, manufacturability, connector integration and robust fixation in a very constrained environment.
-          </p>
+      <section class="section">
+        <div class="container grid-2">
+          <div class="card">
+            <h2 data-i18n="vpOverviewTitle">Role Overview</h2>
+            <p data-i18n="vpOverviewText1">
+              As Vice-President of the EPFL Racing Team, I contributed to the overall management of a large student engineering organization combining technical development, manufacturing, logistics, planning and competition preparation.
+            </p>
+            <p class="muted" data-i18n="vpOverviewText2">
+              This position required balancing strategic vision with operational execution, while helping the team stay aligned across departments and throughout the race car development cycle.
+            </p>
+          </div>
+
+          <div class="card">
+            <h2 data-i18n="vpRoleTitle">Main Responsibilities</h2>
+            <ul>
+              <li data-i18n="vpRole1">Supporting overall team coordination and decision-making</li>
+              <li data-i18n="vpRole2">Contributing to planning, organization and project follow-up</li>
+              <li data-i18n="vpRole3">Helping align technical progress with manufacturing reality and deadlines</li>
+              <li data-i18n="vpRole4">Supporting team structure, communication and day-to-day operations</li>
+              <li data-i18n="vpRole5">Taking part in competition preparation, tests and global execution</li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <section class="section">
+        <div class="container grid-2">
+          <div class="card">
+            <h2 data-i18n="vpLeadershipTitle">Leadership Dimension</h2>
+            <p data-i18n="vpLeadershipText1">
+              This role pushed me to grow beyond pure engineering execution. It required leadership, prioritization, communication and the ability to help people move in the same direction in a demanding and fast-paced environment.
+            </p>
+            <p class="muted" data-i18n="vpLeadershipText2">
+              It was especially formative in understanding how performance also depends on team structure, project discipline and the quality of coordination between many parallel workstreams.
+            </p>
+          </div>
+
+          <div class="card">
+            <h2 data-i18n="vpImpactTitle">Impact</h2>
+            <p data-i18n="vpImpactText1">
+              Being Vice-President gave me a much broader perspective on what it takes to bring a race car project from design to production, testing and competition.
+            </p>
+            <p class="muted" data-i18n="vpImpactText2">
+              It reinforced my ability to connect technical challenges with organizational realities, which is essential in any high-performance engineering environment.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container card">
+          <h2 data-i18n="vpGalleryTitle">Image Gallery</h2>
+          <div class="gallery">
+            <div class="gallery-item"><img src="../photos/RacingVP2.jpg" alt="Vice-President image 1"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP3.jpg" alt="Vice-President image 2"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP4.jpg" alt="Vice-President image 3"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP5.jpg" alt="Vice-President image 4"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP6.jpg" alt="Vice-President image 5"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP7.jpg" alt="Vice-President image 6"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP8.jpg" alt="Vice-President image 7"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP9.jpg" alt="Vice-President image 8"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP10.jpg" alt="Vice-President image 9"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP11.jpg" alt="Vice-President image 10"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP12.jpg" alt="Vice-President image 11"></div>
+            <div class="gallery-item"><img src="../photos/RacingVP13.jpg" alt="Vice-President image 12"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container card">
+          <h2 data-i18n="vpFilesTitle">Important Files</h2>
+          <div class="files">
+            <a class="file-link" href="../documents/RacingVP_Document1.pdf" target="_blank" data-i18n="vpFile1">Annual overview report (PDF)</a>
+            <a class="file-link" href="../documents/RacingVP_Document2.pdf" target="_blank" data-i18n="vpFile2">Organization summary (PDF)</a>
+            <a class="file-link" href="../documents/RacingVP_Document3.pdf" target="_blank" data-i18n="vpFile3">Competition preparation notes (PDF)</a>
+            <a class="file-link" href="../documents/RacingVP_Document4.pdf" target="_blank" data-i18n="vpFile4">Presentation deck (PDF)</a>
+            <a class="file-link" href="../documents/RacingVP_Document5.pdf" target="_blank" data-i18n="vpFile5">Additional document (PDF)</a>
+          </div>
+        </div>
+      </section>
     </section>
 
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="learningTitle">What I Learned</h2>
-          <ul>
-            <li data-i18n="learning1">A much deeper understanding of the electronics system in order to design meaningful mechanical solutions</li>
-            <li data-i18n="learning2">How connector geometry and routing strongly influence enclosure design</li>
-            <li data-i18n="learning3">How waterproofing depends on details such as groove geometry, compression, screws and interfaces</li>
-            <li data-i18n="learning4">How to move from concept ideas to CAD models, prototypes and manufacturable parts</li>
-            <li data-i18n="learning5">How to work across chassis, electronics and composites topics in a race car project</li>
-          </ul>
+    <!-- MONOCOQUE -->
+    <section id="panel-mono" class="role-panel">
+      <section class="section">
+        <div class="container hero-image">
+          <div class="hero-image-frame">
+            <img
+              src="../photos/RacingMono1.png"
+              alt="Monocoque and layup main visual"
+              style="--img-scale: 1.15; --img-x: 0px; --img-y: 0px;"
+            >
+          </div>
         </div>
+      </section>
 
-        <div class="card">
-          <h2 data-i18n="materialsTitle">Materials & Manufacturing</h2>
-          <p data-i18n="materialsText1">
-            This project was also extremely formative from a materials perspective. Depending on the box function and constraints, several manufacturing routes and materials were explored.
-          </p>
-          <p class="muted" data-i18n="materialsText2">
-            I learned a lot about the use of 3D printing, carbon fiber, fiberglass and aluminum, and about how the material choice directly affects stiffness, insulation, sealing, weight, manufacturability and assembly strategy.
-          </p>
-        </div>
-      </div>
-    </section>
+      <section class="section">
+        <div class="container grid-2">
+          <div class="card">
+            <h2 data-i18n="monoOverviewTitle">Role Overview</h2>
+            <p data-i18n="monoOverviewText1">
+              As leader of the Monocoque & Layup Division, I was responsible for one of the most critical parts of the car: the manufacturing and delivery of the carbon monocoque and the organization of the layup-related work.
+            </p>
+            <p class="muted" data-i18n="monoOverviewText2">
+              This role combined composites manufacturing, technical supervision, production planning and coordination of people working on one of the most demanding components of the whole vehicle.
+            </p>
+          </div>
 
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="boxesTitle">Main Technical Work</h2>
-          <ul>
-            <li data-i18n="boxes1">Design of multiple LV electrical enclosures for different subsystems</li>
-            <li data-i18n="boxes2">Integration of LEMO connectors and related geometric constraints</li>
-            <li data-i18n="boxes3">Research and testing of sealing solutions for rain resistance</li>
-            <li data-i18n="boxes4">Definition of fixing and attachment concepts for safe installation in the monocoque</li>
-            <li data-i18n="boxes5">Preparation of designs for prototyping and production</li>
-          </ul>
+          <div class="card">
+            <h2 data-i18n="monoRoleTitle">Main Responsibilities</h2>
+            <ul>
+              <li data-i18n="monoRole1">Leading the Monocoque & Layup Division throughout production</li>
+              <li data-i18n="monoRole2">Supervising composite manufacturing activities and preparation steps</li>
+              <li data-i18n="monoRole3">Coordinating people, tasks and priorities within the division</li>
+              <li data-i18n="monoRole4">Ensuring manufacturing quality, process consistency and progress tracking</li>
+              <li data-i18n="monoRole5">Contributing to the final delivery of a key structural part of the race car</li>
+            </ul>
+          </div>
         </div>
+      </section>
 
-        <div class="card">
-          <h2 data-i18n="fixationTitle">Fixation & Assembly</h2>
-          <p data-i18n="fixationText1">
-            A very important part of the work was not only the box itself, but also the way it was attached to the car. This included direct fixations, support pieces, inserts, screws, assembly logic and accessibility during mounting and servicing.
-          </p>
-          <p class="muted" data-i18n="fixationText2">
-            These fastening details were critical, because a good enclosure design is not enough if the installation is fragile, difficult to assemble, or incompatible with the surrounding structure.
-          </p>
-        </div>
-      </div>
-    </section>
+      <section class="section">
+        <div class="container grid-2">
+          <div class="card">
+            <h2 data-i18n="monoTechnicalTitle">Technical Dimension</h2>
+            <p data-i18n="monoTechnicalText1">
+              The monocoque is at the center of the car architecture, both structurally and from a manufacturing perspective. Leading this division required understanding the full production chain, from preparation and layup to organization, execution and manufacturing reliability.
+            </p>
+            <p class="muted" data-i18n="monoTechnicalText2">
+              It was a role where technical rigor, anticipation and workshop discipline were essential, because delays or errors on such a part have major consequences on the rest of the project.
+            </p>
+          </div>
 
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="monocoqueTitle">Monocoque Production</h2>
-          <p data-i18n="monocoqueText1">
-            In parallel with the electronics integration work, I also took part in the production of the carbon monocoque with the chassis team.
-          </p>
-          <p class="muted" data-i18n="monocoqueText2">
-            This was especially valuable because it gave me a much better understanding of the structure in which the electronics had to be integrated, and of the manufacturing realities behind a Formula Student composite chassis.
-          </p>
+          <div class="card">
+            <h2 data-i18n="monoLeadershipTitle">Team & Production Leadership</h2>
+            <p data-i18n="monoLeadershipText1">
+              Beyond the technical side, this role also meant leading people in a production environment: assigning work, maintaining momentum, solving day-to-day issues and keeping the division aligned with the larger team schedule.
+            </p>
+            <p class="muted" data-i18n="monoLeadershipText2">
+              It was one of the most intense and formative leadership experiences of my time in the team, because it required both engineering understanding and strong execution under pressure.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div class="card">
-          <h2 data-i18n="impactTitle">Why This Year Was Important</h2>
-          <p data-i18n="impactText1">
-            This first year was extremely formative. It taught me how to handle a real engineering topic with strong interactions between design, manufacturing, constraints, iteration and team collaboration.
-          </p>
-          <p class="muted" data-i18n="impactText2">
-            It also gave me my first deep exposure to race car integration work, where performance depends on many small technical decisions that all need to work together reliably.
-          </p>
+      <section class="section">
+        <div class="container card">
+          <h2 data-i18n="monoGalleryTitle">Image Gallery</h2>
+          <div class="gallery">
+            <div class="gallery-item"><img src="../photos/RacingMono2.jpg" alt="Monocoque image 1"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono3.jpg" alt="Monocoque image 2"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono4.jpg" alt="Monocoque image 3"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono5.jpg" alt="Monocoque image 4"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono6.jpg" alt="Monocoque image 5"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono7.jpg" alt="Monocoque image 6"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono8.jpg" alt="Monocoque image 7"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono9.jpg" alt="Monocoque image 8"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono10.jpg" alt="Monocoque image 9"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono11.jpg" alt="Monocoque image 10"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono12.jpg" alt="Monocoque image 11"></div>
+            <div class="gallery-item"><img src="../photos/RacingMono13.jpg" alt="Monocoque image 12"></div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <div class="container card">
-        <h2 data-i18n="galleryTitle">Image Gallery</h2>
-        <div class="gallery">
-          <div class="gallery-item"><img src="../photos/RacingYear1_1.png" alt="Racing Team first year image 1"></div>
-          <div class="gallery-item"><img src="../photos/RacingYear1_2.png" alt="Racing Team first year image 2"></div>
-          <div class="gallery-item"><img src="../photos/RacingYear1_3.png" alt="Racing Team first year image 3"></div>
-          <div class="gallery-item"><img src="../photos/RacingYear1_4.png" alt="Racing Team first year image 4"></div>
-          <div class="gallery-item"><img src="../photos/RacingYear1_5.png" alt="Racing Team first year image 5"></div>
-          <div class="gallery-item"><img src="../photos/RacingYear1_6.png" alt="Racing Team first year image 6"></div>
-          <div class="gallery-item"><img src="../photos/RacingYear1_7.png" alt="Racing Team first year image 7"></div>
-          <div class="gallery-item"><img src="../photos/RacingYear1_8.png" alt="Racing Team first year image 8"></div>
-          <div class="gallery-item"><img src="../photos/RacingYear1_9.png" alt="Racing Team first year image 9"></div>
-          <div class="gallery-item"><img src="../photos/RacingYear1_10.png" alt="Racing Team first year image 10"></div>
-          <div class="gallery-item"><img src="../photos/RacingYear1_11.png" alt="Racing Team first year image 11"></div>
-          <div class="gallery-item"><img src="../photos/RacingYear1_12.png" alt="Racing Team first year image 12"></div>
+      <section class="section">
+        <div class="container card">
+          <h2 data-i18n="monoFilesTitle">Important Files</h2>
+          <div class="files">
+            <a class="file-link" href="../documents/RacingMono_Document1.pdf" target="_blank" data-i18n="monoFile1">Manufacturing report (PDF)</a>
+            <a class="file-link" href="../documents/RacingMono_Document2.pdf" target="_blank" data-i18n="monoFile2">Layup documentation (PDF)</a>
+            <a class="file-link" href="../documents/RacingMono_Document3.pdf" target="_blank" data-i18n="monoFile3">Production summary (PDF)</a>
+            <a class="file-link" href="../documents/RacingMono_Document4.pdf" target="_blank" data-i18n="monoFile4">Presentation deck (PDF)</a>
+            <a class="file-link" href="../documents/RacingMono_Document5.pdf" target="_blank" data-i18n="monoFile5">Additional document (PDF)</a>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container card">
-        <h2 data-i18n="filesTitle">Important Files</h2>
-        <div class="files">
-          <a class="file-link" href="../documents/Racing-Team_1_Rapport.pdf" target="_blank" data-i18n="file1">Project report (PDF)</a>
-        </div>
-      </div>
+      </section>
     </section>
   </main>
 
@@ -392,130 +483,144 @@
     const translations = {
       en: {
         backToPortfolio: "← Back to portfolio",
+        pageTag: "EPFL · EPFL Racing Team · Second Year",
+        tabVp: "Vice-President",
+        tabMono: "Monocoque & Layup Division Lead",
 
-        projectTag: "EPFL · EPFL Racing Team · First Year",
-        projectTitle: "Mechanical Integration of LV Electronics",
-        projectLead: "During my first year in the EPFL Racing Team as a chassis member, I was responsible for the full mechanical integration of the low-voltage electronics inside the carbon monocoque. This project was a major learning experience, combining CAD design, prototyping, waterproofing strategy, material selection, fastening design, and close collaboration with the electrical team.",
+        vpMainTitle: "Vice-President",
+        vpMainLead: "In my second year within the EPFL Racing Team, I combined two major responsibilities: Vice-President of the team and leader of the Monocoque & Layup Division. This role placed me at the intersection of technical execution, manufacturing leadership, team coordination and project organization.",
 
-        overviewTitle: "Project Overview",
-        overviewText1: "In my first year with the EPFL Racing Team, I joined the chassis department and worked on one of the most cross-functional topics of the car: the mechanical integration of the low-voltage electronics.",
-        overviewText2: "The scope included the design and development of several electrical enclosures, their positioning inside the monocoque, the integration of LEMO interfaces, and the preparation of solutions compatible with production, assembly and race conditions.",
+        monoMainTitle: "Monocoque & Layup Division Lead",
+        monoMainLead: "In parallel with my Vice-President role, I led the Monocoque & Layup Division, overseeing one of the most critical manufacturing scopes of the car. This position involved composites production leadership, division coordination and delivery responsibility on a core structural component of the vehicle.",
 
-        roleTitle: "My Role",
-        role1: "Full mechanical integration of the LV electronics inside the car",
-        role2: "Development of enclosure concepts, interfaces and fastening strategies",
-        role3: "Close work with the electrical team to understand system needs and connector constraints",
-        role4: "Participation in the carbon monocoque production with the chassis team",
-        role5: "Contribution to a new waterproofing approach for competition readiness",
+        vpOverviewTitle: "Role Overview",
+        vpOverviewText1: "As Vice-President of the EPFL Racing Team, I contributed to the overall management of a large student engineering organization combining technical development, manufacturing, logistics, planning and competition preparation.",
+        vpOverviewText2: "This position required balancing strategic vision with operational execution, while helping the team stay aligned across departments and throughout the race car development cycle.",
 
-        contextTitle: "Context",
-        contextText1: "The EPFL Racing Team develops a new Formula Student race car every year. In this context, integrating the electronics is not only a packaging task: it is a structural, safety and manufacturing challenge.",
-        contextText2: "Each enclosure had to fit within the limited volume of the monocoque, remain accessible for assembly and maintenance, protect the electronics, and interface correctly with the rest of the car architecture.",
+        vpRoleTitle: "Main Responsibilities",
+        vpRole1: "Supporting overall team coordination and decision-making",
+        vpRole2: "Contributing to planning, organization and project follow-up",
+        vpRole3: "Helping align technical progress with manufacturing reality and deadlines",
+        vpRole4: "Supporting team structure, communication and day-to-day operations",
+        vpRole5: "Taking part in competition preparation, tests and global execution",
 
-        challengeTitle: "Engineering Challenge",
-        challengeText1: "One of the most interesting parts of the project was the search for waterproofness, which was a key topic for competition reliability and a relatively new challenge for the team.",
-        challengeText2: "The work therefore required balancing sealing performance, electrical isolation, compactness, manufacturability, connector integration and robust fixation in a very constrained environment.",
+        vpLeadershipTitle: "Leadership Dimension",
+        vpLeadershipText1: "This role pushed me to grow beyond pure engineering execution. It required leadership, prioritization, communication and the ability to help people move in the same direction in a demanding and fast-paced environment.",
+        vpLeadershipText2: "It was especially formative in understanding how performance also depends on team structure, project discipline and the quality of coordination between many parallel workstreams.",
 
-        learningTitle: "What I Learned",
-        learning1: "A much deeper understanding of the electronics system in order to design meaningful mechanical solutions",
-        learning2: "How connector geometry and routing strongly influence enclosure design",
-        learning3: "How waterproofing depends on details such as groove geometry, compression, screws and interfaces",
-        learning4: "How to move from concept ideas to CAD models, prototypes and manufacturable parts",
-        learning5: "How to work across chassis, electronics and composites topics in a race car project",
+        vpImpactTitle: "Impact",
+        vpImpactText1: "Being Vice-President gave me a much broader perspective on what it takes to bring a race car project from design to production, testing and competition.",
+        vpImpactText2: "It reinforced my ability to connect technical challenges with organizational realities, which is essential in any high-performance engineering environment.",
 
-        materialsTitle: "Materials & Manufacturing",
-        materialsText1: "This project was also extremely formative from a materials perspective. Depending on the box function and constraints, several manufacturing routes and materials were explored.",
-        materialsText2: "I learned a lot about the use of 3D printing, carbon fiber, fiberglass and aluminum, and about how the material choice directly affects stiffness, insulation, sealing, weight, manufacturability and assembly strategy.",
+        vpGalleryTitle: "Image Gallery",
+        vpFilesTitle: "Important Files",
+        vpFile1: "Annual overview report (PDF)",
+        vpFile2: "Organization summary (PDF)",
+        vpFile3: "Competition preparation notes (PDF)",
+        vpFile4: "Presentation deck (PDF)",
+        vpFile5: "Additional document (PDF)",
 
-        boxesTitle: "Main Technical Work",
-        boxes1: "Design of multiple LV electrical enclosures for different subsystems",
-        boxes2: "Integration of LEMO connectors and related geometric constraints",
-        boxes3: "Research and testing of sealing solutions for rain resistance",
-        boxes4: "Definition of fixing and attachment concepts for safe installation in the monocoque",
-        boxes5: "Preparation of designs for prototyping and production",
+        monoOverviewTitle: "Role Overview",
+        monoOverviewText1: "As leader of the Monocoque & Layup Division, I was responsible for one of the most critical parts of the car: the manufacturing and delivery of the carbon monocoque and the organization of the layup-related work.",
+        monoOverviewText2: "This role combined composites manufacturing, technical supervision, production planning and coordination of people working on one of the most demanding components of the whole vehicle.",
 
-        fixationTitle: "Fixation & Assembly",
-        fixationText1: "A very important part of the work was not only the box itself, but also the way it was attached to the car. This included direct fixations, support pieces, inserts, screws, assembly logic and accessibility during mounting and servicing.",
-        fixationText2: "These fastening details were critical, because a good enclosure design is not enough if the installation is fragile, difficult to assemble, or incompatible with the surrounding structure.",
+        monoRoleTitle: "Main Responsibilities",
+        monoRole1: "Leading the Monocoque & Layup Division throughout production",
+        monoRole2: "Supervising composite manufacturing activities and preparation steps",
+        monoRole3: "Coordinating people, tasks and priorities within the division",
+        monoRole4: "Ensuring manufacturing quality, process consistency and progress tracking",
+        monoRole5: "Contributing to the final delivery of a key structural part of the race car",
 
-        monocoqueTitle: "Monocoque Production",
-        monocoqueText1: "In parallel with the electronics integration work, I also took part in the production of the carbon monocoque with the chassis team.",
-        monocoqueText2: "This was especially valuable because it gave me a much better understanding of the structure in which the electronics had to be integrated, and of the manufacturing realities behind a Formula Student composite chassis.",
+        monoTechnicalTitle: "Technical Dimension",
+        monoTechnicalText1: "The monocoque is at the center of the car architecture, both structurally and from a manufacturing perspective. Leading this division required understanding the full production chain, from preparation and layup to organization, execution and manufacturing reliability.",
+        monoTechnicalText2: "It was a role where technical rigor, anticipation and workshop discipline were essential, because delays or errors on such a part have major consequences on the rest of the project.",
 
-        impactTitle: "Why This Year Was Important",
-        impactText1: "This first year was extremely formative. It taught me how to handle a real engineering topic with strong interactions between design, manufacturing, constraints, iteration and team collaboration.",
-        impactText2: "It also gave me my first deep exposure to race car integration work, where performance depends on many small technical decisions that all need to work together reliably.",
+        monoLeadershipTitle: "Team & Production Leadership",
+        monoLeadershipText1: "Beyond the technical side, this role also meant leading people in a production environment: assigning work, maintaining momentum, solving day-to-day issues and keeping the division aligned with the larger team schedule.",
+        monoLeadershipText2: "It was one of the most intense and formative leadership experiences of my time in the team, because it required both engineering understanding and strong execution under pressure.",
 
-        galleryTitle: "Image Gallery",
-
-        filesTitle: "Important Files",
-        file1: "Project report (PDF)"
+        monoGalleryTitle: "Image Gallery",
+        monoFilesTitle: "Important Files",
+        monoFile1: "Manufacturing report (PDF)",
+        monoFile2: "Layup documentation (PDF)",
+        monoFile3: "Production summary (PDF)",
+        monoFile4: "Presentation deck (PDF)",
+        monoFile5: "Additional document (PDF)"
       },
 
       fr: {
         backToPortfolio: "← Retour au portfolio",
+        pageTag: "EPFL · EPFL Racing Team · Deuxième année",
+        tabVp: "Vice-président",
+        tabMono: "Responsable division monocoque & layup",
 
-        projectTag: "EPFL · EPFL Racing Team · Première année",
-        projectTitle: "Intégration mécanique de l’électronique LV",
-        projectLead: "Lors de ma première année à l’EPFL Racing Team en tant que membre chassis, j’ai été responsable de toute l’intégration mécanique de l’électronique basse tension dans la monocoque carbone. Ce projet a été extrêmement formateur, en combinant CAO, prototypage, stratégie d’étanchéité, choix matériaux, conception des fixations et collaboration étroite avec l’équipe électrique.",
+        vpMainTitle: "Vice-président",
+        vpMainLead: "Lors de ma deuxième année à l’EPFL Racing Team, j’ai cumulé deux responsabilités majeures : vice-président de l’équipe et responsable de la division Monocoque & Layup. Ce rôle me plaçait à l’interface entre exécution technique, leadership de production, coordination d’équipe et organisation globale du projet.",
 
-        overviewTitle: "Vue d’ensemble du projet",
-        overviewText1: "Pendant ma première année à l’EPFL Racing Team, j’ai intégré le département chassis et travaillé sur l’un des sujets les plus transversaux de la voiture : l’intégration mécanique de l’électronique basse tension.",
-        overviewText2: "Le périmètre comprenait la conception de plusieurs boîtiers électriques, leur implantation dans la monocoque, l’intégration des interfaces LEMO et la préparation de solutions compatibles avec la production, l’assemblage et les conditions d’utilisation en compétition.",
+        monoMainTitle: "Responsable division monocoque & layup",
+        monoMainLead: "En parallèle de mon rôle de vice-président, j’ai dirigé la division Monocoque & Layup, en supervisant l’un des périmètres de fabrication les plus critiques de la voiture. Cette fonction impliquait le pilotage de la production composite, la coordination de la division et la responsabilité de livrer un composant structurel central du véhicule.",
 
-        roleTitle: "Mon rôle",
-        role1: "Réalisation de toute l’intégration mécanique de l’électronique LV dans la voiture",
-        role2: "Développement des concepts de boîtiers, interfaces et stratégies de fixation",
-        role3: "Travail étroit avec l’équipe électrique pour comprendre les besoins système et les contraintes de connectique",
-        role4: "Participation à la production de la monocoque carbone avec l’équipe chassis",
-        role5: "Contribution à une nouvelle approche d’étanchéité pour mieux préparer la voiture à la compétition",
+        vpOverviewTitle: "Vue d’ensemble du rôle",
+        vpOverviewText1: "En tant que vice-président de l’EPFL Racing Team, j’ai contribué à la gestion globale d’une importante organisation étudiante d’ingénierie mêlant développement technique, fabrication, logistique, planification et préparation des compétitions.",
+        vpOverviewText2: "Cette position demandait d’équilibrer vision stratégique et exécution opérationnelle, tout en aidant l’équipe à rester alignée entre les départements et tout au long du cycle de développement de la voiture.",
 
-        contextTitle: "Contexte",
-        contextText1: "L’EPFL Racing Team développe chaque année une nouvelle voiture de Formula Student. Dans ce contexte, intégrer l’électronique n’est pas seulement un sujet d’encombrement : c’est aussi un défi structurel, sécuritaire et de fabrication.",
-        contextText2: "Chaque boîtier devait s’intégrer dans le volume très contraint de la monocoque, rester accessible pour le montage et la maintenance, protéger l’électronique, et s’interfacer correctement avec l’architecture globale de la voiture.",
+        vpRoleTitle: "Responsabilités principales",
+        vpRole1: "Contribution à la coordination globale de l’équipe et à la prise de décision",
+        vpRole2: "Participation à la planification, à l’organisation et au suivi du projet",
+        vpRole3: "Aide à l’alignement entre avancement technique, réalité de fabrication et délais",
+        vpRole4: "Soutien à la structure de l’équipe, à la communication et aux opérations quotidiennes",
+        vpRole5: "Participation à la préparation des compétitions, aux tests et à l’exécution globale",
 
-        challengeTitle: "Défi d’ingénierie",
-        challengeText1: "L’un des aspects les plus intéressants du projet a été la recherche d’étanchéité, un sujet essentiel pour la fiabilité en compétition et relativement nouveau pour l’équipe.",
-        challengeText2: "Le travail a donc consisté à équilibrer performance d’étanchéité, isolation électrique, compacité, fabricabilité, intégration des connecteurs et robustesse des fixations dans un environnement très contraint.",
+        vpLeadershipTitle: "Dimension leadership",
+        vpLeadershipText1: "Ce rôle m’a poussé à aller au-delà de la seule exécution technique. Il demandait du leadership, de la priorisation, de la communication et la capacité à faire avancer plusieurs personnes dans la même direction dans un environnement exigeant et rapide.",
+        vpLeadershipText2: "Il a été particulièrement formateur pour comprendre que la performance dépend aussi de la structure de l’équipe, de la discipline projet et de la qualité de coordination entre de nombreux chantiers parallèles.",
 
-        learningTitle: "Ce que j’ai appris",
-        learning1: "Une compréhension beaucoup plus profonde du système électronique afin de concevoir des solutions mécaniques pertinentes",
-        learning2: "L’influence majeure de la géométrie des connecteurs et du routage sur le design des boîtiers",
-        learning3: "Le fait que l’étanchéité dépend de détails comme la géométrie des rainures, la compression, les vis et les interfaces",
-        learning4: "La manière de passer d’idées de principe à des modèles CAO, des prototypes puis des pièces fabricables",
-        learning5: "La façon de travailler entre sujets chassis, électronique et composites sur une voiture de course",
+        vpImpactTitle: "Impact",
+        vpImpactText1: "Être vice-président m’a donné une vision beaucoup plus large de ce qu’il faut pour mener un projet de voiture de course, depuis la conception jusqu’à la production, aux essais puis à la compétition.",
+        vpImpactText2: "Cela a renforcé ma capacité à relier défis techniques et réalités organisationnelles, ce qui est essentiel dans tout environnement d’ingénierie haute performance.",
 
-        materialsTitle: "Matériaux et fabrication",
-        materialsText1: "Ce projet a aussi été extrêmement formateur du point de vue matériaux. Selon la fonction de chaque boîte et ses contraintes, plusieurs procédés de fabrication et matériaux ont été étudiés.",
-        materialsText2: "J’ai beaucoup appris sur l’utilisation de l’impression 3D, de la fibre de carbone, de la fibre de verre et de l’aluminium, ainsi que sur l’impact direct du matériau sur la rigidité, l’isolation, l’étanchéité, la masse, la fabricabilité et la stratégie d’assemblage.",
+        vpGalleryTitle: "Galerie d’images",
+        vpFilesTitle: "Fichiers importants",
+        vpFile1: "Rapport d’ensemble annuel (PDF)",
+        vpFile2: "Synthèse organisationnelle (PDF)",
+        vpFile3: "Notes de préparation compétition (PDF)",
+        vpFile4: "Présentation (PDF)",
+        vpFile5: "Document supplémentaire (PDF)",
 
-        boxesTitle: "Travail technique principal",
-        boxes1: "Conception de plusieurs boîtiers électriques LV pour différents sous-systèmes",
-        boxes2: "Intégration des connecteurs LEMO et de leurs contraintes géométriques",
-        boxes3: "Recherche et essais de solutions d’étanchéité pour la pluie et les projections",
-        boxes4: "Définition de concepts de fixation et d’attaches pour une installation sûre dans la monocoque",
-        boxes5: "Préparation des designs pour le prototypage et la production",
+        monoOverviewTitle: "Vue d’ensemble du rôle",
+        monoOverviewText1: "En tant que responsable de la division Monocoque & Layup, j’étais en charge de l’un des éléments les plus critiques de la voiture : la fabrication et la livraison de la monocoque carbone, ainsi que l’organisation des travaux liés au layup.",
+        monoOverviewText2: "Ce rôle combinait fabrication composite, supervision technique, planification de production et coordination de plusieurs personnes travaillant sur l’un des composants les plus exigeants du véhicule.",
 
-        fixationTitle: "Fixations et assemblage",
-        fixationText1: "Une partie très importante du travail ne concernait pas seulement la boîte elle-même, mais aussi sa manière d’être fixée à la voiture. Cela comprenait les fixations directes, les pièces support, les inserts, les vis, la logique d’assemblage et l’accessibilité pendant le montage et la maintenance.",
-        fixationText2: "Ces détails de fixation étaient critiques, car un bon design de boîtier ne suffit pas si l’installation est fragile, difficile à assembler ou incompatible avec la structure environnante.",
+        monoRoleTitle: "Responsabilités principales",
+        monoRole1: "Pilotage de la division Monocoque & Layup pendant la production",
+        monoRole2: "Supervision des activités de fabrication composite et des étapes de préparation",
+        monoRole3: "Coordination des personnes, des tâches et des priorités dans la division",
+        monoRole4: "Garantie de la qualité de fabrication, de la cohérence process et du suivi d’avancement",
+        monoRole5: "Contribution à la livraison finale d’une pièce structurelle majeure de la voiture",
 
-        monocoqueTitle: "Production de la monocoque",
-        monocoqueText1: "En parallèle du travail sur l’intégration de l’électronique, j’ai également participé à la production de la monocoque carbone avec l’équipe chassis.",
-        monocoqueText2: "C’était particulièrement intéressant car cela m’a donné une bien meilleure compréhension de la structure dans laquelle l’électronique devait être intégrée, ainsi que des réalités de fabrication d’un châssis composite de Formula Student.",
+        monoTechnicalTitle: "Dimension technique",
+        monoTechnicalText1: "La monocoque est au centre de l’architecture de la voiture, à la fois d’un point de vue structurel et fabrication. Diriger cette division demandait de comprendre toute la chaîne de production, depuis la préparation et le layup jusqu’à l’organisation, l’exécution et la fiabilité de fabrication.",
+        monoTechnicalText2: "C’était un rôle où la rigueur technique, l’anticipation et la discipline atelier étaient essentielles, car les retards ou erreurs sur une telle pièce ont des conséquences majeures sur le reste du projet.",
 
-        impactTitle: "Pourquoi cette année a été importante",
-        impactText1: "Cette première année a été ultra formatrice. Elle m’a appris à traiter un vrai sujet d’ingénierie avec de fortes interactions entre conception, fabrication, contraintes, itérations et travail d’équipe.",
-        impactText2: "Elle m’a aussi donné une première exposition très concrète au travail d’intégration sur une voiture de course, où la performance dépend d’une multitude de petits choix techniques qui doivent tous fonctionner ensemble de manière fiable.",
+        monoLeadershipTitle: "Leadership d’équipe et de production",
+        monoLeadershipText1: "Au-delà de l’aspect technique, ce rôle signifiait aussi encadrer des personnes dans un environnement de production : répartir le travail, maintenir la dynamique, résoudre les problèmes du quotidien et garder la division alignée avec le planning global de l’équipe.",
+        monoLeadershipText2: "Cela a été l’une des expériences de leadership les plus intenses et formatrices de mon parcours dans l’équipe, car elle demandait à la fois compréhension technique et forte capacité d’exécution sous pression.",
 
-        galleryTitle: "Galerie d’images",
-
-        filesTitle: "Fichiers importants",
-        file1: "Rapport du projet (PDF)"
+        monoGalleryTitle: "Galerie d’images",
+        monoFilesTitle: "Fichiers importants",
+        monoFile1: "Rapport de fabrication (PDF)",
+        monoFile2: "Documentation layup (PDF)",
+        monoFile3: "Synthèse de production (PDF)",
+        monoFile4: "Présentation (PDF)",
+        monoFile5: "Document supplémentaire (PDF)"
       }
     };
 
+    let currentLang = "en";
+    let currentRole = "vp";
+
     function applyTranslations(lang) {
+      currentLang = lang;
       const dict = translations[lang] || translations.en;
       document.documentElement.lang = lang;
 
@@ -525,6 +630,40 @@
           el.innerHTML = dict[key];
         }
       });
+
+      updateMainHero();
+    }
+
+    function updateMainHero() {
+      const dict = translations[currentLang] || translations.en;
+      const titleEl = document.getElementById("roleTitleMain");
+      const leadEl = document.getElementById("roleLeadMain");
+
+      if (currentRole === "vp") {
+        titleEl.textContent = dict.vpMainTitle;
+        leadEl.textContent = dict.vpMainLead;
+      } else {
+        titleEl.textContent = dict.monoMainTitle;
+        leadEl.textContent = dict.monoMainLead;
+      }
+    }
+
+    function switchRole(role) {
+      currentRole = role;
+
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.role === role);
+      });
+
+      document.querySelectorAll(".role-panel").forEach((panel) => {
+        panel.classList.remove("active");
+      });
+
+      const activePanel = document.getElementById(`panel-${role}`);
+      if (activePanel) activePanel.classList.add("active");
+
+      updateMainHero();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -536,6 +675,10 @@
         "en";
 
       applyTranslations(savedLang);
+
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.addEventListener("click", () => switchRole(btn.dataset.role));
+      });
     });
   </script>
 </body>
