@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monocoque Insert Analysis | Mathélyo Favre-Réguillon</title>
+  <title>Dynamic Measurement on a Trampoline Membrane | Mathélyo Favre-Réguillon</title>
   <style>
     :root{
       --bg:#f4f1ef;
@@ -59,20 +59,19 @@
       padding:3rem 0 2rem;
     }
 
-    h1,h2,h3{
+    h1,h2{
       line-height:1.05;
       letter-spacing:-.04em;
       margin:0 0 1rem;
     }
 
     h1{font-size:clamp(2.4rem, 6vw, 4.4rem)}
-    h2{font-size:clamp(1.7rem, 4vw, 2.6rem)}
-    h3{font-size:1.2rem}
+    h2{font-size:clamp(1.7rem, 4vw, 2.45rem)}
 
     .lead{
-      font-size:1.1rem;
+      font-size:1.08rem;
       color:#333;
-      max-width:800px;
+      max-width:900px;
     }
 
     .tag{
@@ -86,6 +85,10 @@
       margin-bottom:1rem;
     }
 
+    .section{
+      padding:1.5rem 0;
+    }
+
     .hero-image,
     .card{
       background:var(--card);
@@ -94,14 +97,21 @@
       overflow:hidden;
     }
 
-    .hero-image img{
-      width:100%;
-      aspect-ratio:16/8;
-      object-fit:cover;
+    .hero-image{
+      padding:1rem;
     }
 
-    .section{
-      padding:1.5rem 0;
+    .hero-image img{
+      width:100%;
+      height:520px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:22px;
+      background:#fff;
+    }
+
+    .card{
+      padding:1.5rem;
     }
 
     .grid-2{
@@ -110,8 +120,42 @@
       gap:1.2rem;
     }
 
-    .card{
-      padding:1.5rem;
+    .facts{
+      display:grid;
+      gap:.8rem;
+    }
+
+    .fact{
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .fact strong{
+      display:block;
+      font-size:1.05rem;
+      margin-bottom:.2rem;
+    }
+
+    .results{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1rem;
+      margin-top:1rem;
+    }
+
+    .result{
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .result strong{
+      display:block;
+      font-size:1.1rem;
+      margin-bottom:.35rem;
     }
 
     .gallery{
@@ -120,11 +164,31 @@
       gap:1rem;
     }
 
-    .gallery img{
+    .gallery-item{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
       border-radius:20px;
-      aspect-ratio:4/3;
-      object-fit:cover;
+      padding:.8rem;
+      min-height:320px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:.75rem;
+    }
+
+    .gallery img{
       width:100%;
+      height:100%;
+      max-height:300px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:14px;
+      background:#fff;
+    }
+
+    .caption{
+      font-size:.95rem;
+      color:var(--muted);
     }
 
     .files{
@@ -139,60 +203,125 @@
       background:#fff;
       border:1px solid rgba(0,0,0,.08);
       font-weight:700;
+      transition:.2s ease;
+    }
+
+    .file-link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(214,0,0,.18);
     }
 
     .muted{color:var(--muted)}
 
-    @media (max-width: 800px){
-      .grid-2,.gallery{grid-template-columns:1fr}
+    ul{
+      margin:.3rem 0 0 1.1rem;
+      padding:0;
+    }
+
+    li + li{
+      margin-top:.45rem;
+    }
+
+    @media (max-width: 900px){
+      .grid-2,
+      .results,
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .hero-image img{
+        height:320px;
+      }
+
+      .gallery-item{
+        min-height:260px;
+      }
+
+      .gallery img{
+        max-height:240px;
+      }
     }
   </style>
 </head>
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="back" href="../index.html#projects">← Back to portfolio</a>
+      <a class="back" href="../index.html#projects" data-i18n="backToPortfolio">← Back to portfolio</a>
     </div>
   </nav>
 
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag">Bachelor Thesis</div>
-        <h1>Monocoque Insert Analysis</h1>
-        <p class="lead">
-          Analysis and redesign of monocoque inserts with a focus on structural performance,
-          production constraints and post-production robustness.
+        <div class="tag" data-i18n="projectTag">EPFL · Measurement Techniques · Experimental Dynamics</div>
+        <h1 data-i18n="projectTitle">Dynamic Measurement on a Trampoline-Like Membrane</h1>
+        <p class="lead" data-i18n="projectLead">
+          Experimental study of the dynamic interaction between a ball and a trampoline-like membrane, combining deformation tracking, rebound velocity measurement and acceleration analysis through a repeatable pendulum-based setup.
         </p>
       </div>
     </section>
 
     <section class="section">
       <div class="container hero-image">
-        <img src="../assets/page_7.jpg" alt="Monocoque insert analysis">
+        <img src="../photos/MeasureTrampoline.png" alt="Dynamic measurement project main visual">
       </div>
     </section>
 
     <section class="section">
       <div class="container grid-2">
         <div class="card">
-          <h2>Project Overview</h2>
-          <p>
-            This project focused on understanding the behavior of inserts integrated in a carbon monocoque,
-            identifying weaknesses in the existing design and proposing improvements based on simulation and manufacturing feedback.
+          <h2 data-i18n="overviewTitle">Project Overview</h2>
+          <p data-i18n="overviewText1">
+            This project investigated the response of a trampoline-like membrane subjected to repeated impacts from a ball. The initial idea was to better understand how a flexible surface stores and returns energy during contact, in a simplified configuration inspired by trampoline dynamics.
           </p>
-          <p class="muted">
-            The work combined structural reasoning, CAD integration, composite constraints and validation through simulation.
+          <p class="muted" data-i18n="overviewText2">
+            Early free-fall experiments proved difficult to reproduce consistently, so the setup was redesigned around a guided pendulum system. This made it possible to control the impact conditions more precisely and to compare results at several release angles under repeatable experimental conditions.
+          </p>
+        </div>
+
+        <div class="facts">
+          <div class="fact">
+            <strong data-i18n="fact1Title">Test principle</strong>
+            <span class="muted" data-i18n="fact1Text">A ball mounted on a pendulum impacts a vertically tensioned elastic membrane.</span>
+          </div>
+          <div class="fact">
+            <strong data-i18n="fact2Title">Control parameter</strong>
+            <span class="muted" data-i18n="fact2Text">Release angle α = 34°, 53°, and 70° used to vary impact severity.</span>
+          </div>
+          <div class="fact">
+            <strong data-i18n="fact3Title">Measurements</strong>
+            <span class="muted" data-i18n="fact3Text">Membrane deformation, rebound velocity and impact acceleration.</span>
+          </div>
+          <div class="fact">
+            <strong data-i18n="fact4Title">Main objective</strong>
+            <span class="muted" data-i18n="fact4Text">Build a reliable and repeatable dynamic measurement setup.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="methodTitle">Methodology</h2>
+          <p data-i18n="methodText1">
+            The experiment combined three complementary measurement systems. First, the membrane deformation field was extracted from high-speed video using PIV analysis. Second, the ball’s rebound velocity was measured with two light-dependent resistors positioned near the membrane. Third, an onboard accelerometer was used to capture the acceleration profile during impact and rebound.
+          </p>
+          <p class="muted" data-i18n="methodText2">
+            Several repetitions were performed for each measurement type in order to evaluate repeatability. The pendulum architecture, release stops and sensor arrangement were all designed to reduce variability and create consistent initial conditions across trials.
           </p>
         </div>
 
         <div class="card">
-          <h2>Key Contributions</h2>
+          <h2 data-i18n="systemsTitle">Measurement Systems</h2>
+          <p data-i18n="systemsText1">
+            The project was structured around three different but connected measurement approaches, each targeting a different part of the dynamic response of the system.
+          </p>
           <ul>
-            <li>Insert redesign for improved robustness</li>
-            <li>Full-structure simulation including carbon and aluminium parts</li>
-            <li>Consideration of manufacturing and assembly constraints</li>
-            <li>Support for production and post-production decisions</li>
+            <li data-i18n="system1">PIV-based deformation field analysis of the membrane surface</li>
+            <li data-i18n="system2">LDR-based rebound velocity measurement after impact</li>
+            <li data-i18n="system3">Accelerometer-based measurement of rebound acceleration peaks</li>
+            <li data-i18n="system4">Repeated trials to assess precision and statistical consistency</li>
           </ul>
         </div>
       </div>
@@ -200,26 +329,231 @@
 
     <section class="section">
       <div class="container card">
-        <h2>Image Gallery</h2>
-        <div class="gallery">
-          <img src="../assets/page_7.jpg" alt="Project image 1">
-          <img src="../assets/page_6.jpg" alt="Project image 2">
-          <img src="../assets/page_4.jpg" alt="Project image 3">
-          <img src="../assets/page_2.jpg" alt="Project image 4">
+        <h2 data-i18n="resultsTitle">Main Results</h2>
+        <p data-i18n="resultsText1">
+          The membrane deformation increased clearly with the release angle, confirming that higher impact velocity leads to a stronger local response. The deformation fields remained centered and coherent across trials, indicating that the setup produced reproducible impacts and a consistent deformation pattern.
+        </p>
+        <p class="muted" data-i18n="resultsText2">
+          The rebound velocity and acceleration measurements followed the same global trend: stronger initial launches produced larger rebound velocities and higher first impact accelerations. Despite some limitations at the most severe impacts, the overall standard deviations remained low, supporting the reliability of the experimental protocol.
+        </p>
+
+        <div class="results">
+          <div class="result">
+            <strong data-i18n="result1Title">Membrane deformation</strong>
+            <span class="muted" data-i18n="result1Text">Maximum displacement increases significantly from 34° to 70°, with low dispersion between trials.</span>
+          </div>
+          <div class="result">
+            <strong data-i18n="result2Title">Rebound velocity</strong>
+            <span class="muted" data-i18n="result2Text">Mean first rebound velocity rises from about 0.77 m/s at 34° to about 1.82 m/s at 70°.</span>
+          </div>
+          <div class="result">
+            <strong data-i18n="result3Title">Acceleration</strong>
+            <span class="muted" data-i18n="result3Text">Peak acceleration is highest at large angles, with overall repeatability improving after setup stabilization.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="interpretationTitle">Engineering Interpretation</h2>
+          <p data-i18n="interpretationText1">
+            The project shows that the dynamic response of a flexible membrane can be characterized with a relatively simple laboratory setup, provided the boundary conditions and impact conditions are sufficiently controlled. The guided pendulum was a key design decision because it replaced poorly repeatable free-fall trials with a more stable and measurable input.
+          </p>
+          <p class="muted" data-i18n="interpretationText2">
+            Beyond the physical results themselves, the project highlights the importance of sensor choice, acquisition rate and setup rigidity in experimental mechanics. The quality of the data depended as much on measurement design as on the underlying system dynamics.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="limitsTitle">Limits and Improvements</h2>
+          <p data-i18n="limitsText1">
+            The report identifies several possible improvements to further refine the experiment. The main limitations came from mechanical losses in the pendulum, occasional obstruction effects near the light sensors, and setup motion during the strongest impacts before the structure was fully secured.
+          </p>
+          <ul>
+            <li data-i18n="limit1">Slimmer pendulum arm to reduce optical interference</li>
+            <li data-i18n="limit2">Lower-friction pivot with ball bearing for better repeatability</li>
+            <li data-i18n="limit3">Improved membrane surface preparation for higher PIV quality</li>
+            <li data-i18n="limit4">Further refinement of sensor integration and signal acquisition</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container card">
-        <h2>Important Files</h2>
+        <h2 data-i18n="galleryTitle">Image Gallery</h2>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="../photos/Trampoline1.png" alt="Acceleration profile">
+            <div class="caption" data-i18n="galleryCaption1">Acceleration profile measured during repeated rebounds</div>
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/Trampoline2.png" alt="Deformation field visualization">
+            <div class="caption" data-i18n="galleryCaption2">PIV-based deformation field showing local membrane response</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="filesTitle">Important Files</h2>
         <div class="files">
-          <a class="file-link" href="../files/monocoque-report.pdf" target="_blank">Project report (PDF)</a>
-          <a class="file-link" href="../files/monocoque-presentation.pdf" target="_blank">Presentation slides</a>
-          <a class="file-link" href="../files/monocoque-cad.zip" target="_blank">CAD package</a>
+          <a class="file-link" href="../documents/Measurement_Technique_Report.pdf" target="_blank" data-i18n="file1">Project report (PDF)</a>
         </div>
       </div>
     </section>
   </main>
+
+  <script>
+    const translations = {
+      en: {
+        backToPortfolio: "← Back to portfolio",
+
+        projectTag: "EPFL · Measurement Techniques · Experimental Dynamics",
+        projectTitle: "Dynamic Measurement on a Trampoline-Like Membrane",
+        projectLead: "Experimental study of the dynamic interaction between a ball and a trampoline-like membrane, combining deformation tracking, rebound velocity measurement and acceleration analysis through a repeatable pendulum-based setup.",
+
+        overviewTitle: "Project Overview",
+        overviewText1: "This project investigated the response of a trampoline-like membrane subjected to repeated impacts from a ball. The initial idea was to better understand how a flexible surface stores and returns energy during contact, in a simplified configuration inspired by trampoline dynamics.",
+        overviewText2: "Early free-fall experiments proved difficult to reproduce consistently, so the setup was redesigned around a guided pendulum system. This made it possible to control the impact conditions more precisely and to compare results at several release angles under repeatable experimental conditions.",
+
+        fact1Title: "Test principle",
+        fact1Text: "A ball mounted on a pendulum impacts a vertically tensioned elastic membrane.",
+        fact2Title: "Control parameter",
+        fact2Text: "Release angle α = 34°, 53°, and 70° used to vary impact severity.",
+        fact3Title: "Measurements",
+        fact3Text: "Membrane deformation, rebound velocity and impact acceleration.",
+        fact4Title: "Main objective",
+        fact4Text: "Build a reliable and repeatable dynamic measurement setup.",
+
+        methodTitle: "Methodology",
+        methodText1: "The experiment combined three complementary measurement systems. First, the membrane deformation field was extracted from high-speed video using PIV analysis. Second, the ball’s rebound velocity was measured with two light-dependent resistors positioned near the membrane. Third, an onboard accelerometer was used to capture the acceleration profile during impact and rebound.",
+        methodText2: "Several repetitions were performed for each measurement type in order to evaluate repeatability. The pendulum architecture, release stops and sensor arrangement were all designed to reduce variability and create consistent initial conditions across trials.",
+
+        systemsTitle: "Measurement Systems",
+        systemsText1: "The project was structured around three different but connected measurement approaches, each targeting a different part of the dynamic response of the system.",
+        system1: "PIV-based deformation field analysis of the membrane surface",
+        system2: "LDR-based rebound velocity measurement after impact",
+        system3: "Accelerometer-based measurement of rebound acceleration peaks",
+        system4: "Repeated trials to assess precision and statistical consistency",
+
+        resultsTitle: "Main Results",
+        resultsText1: "The membrane deformation increased clearly with the release angle, confirming that higher impact velocity leads to a stronger local response. The deformation fields remained centered and coherent across trials, indicating that the setup produced reproducible impacts and a consistent deformation pattern.",
+        resultsText2: "The rebound velocity and acceleration measurements followed the same global trend: stronger initial launches produced larger rebound velocities and higher first impact accelerations. Despite some limitations at the most severe impacts, the overall standard deviations remained low, supporting the reliability of the experimental protocol.",
+
+        result1Title: "Membrane deformation",
+        result1Text: "Maximum displacement increases significantly from 34° to 70°, with low dispersion between trials.",
+        result2Title: "Rebound velocity",
+        result2Text: "Mean first rebound velocity rises from about 0.77 m/s at 34° to about 1.82 m/s at 70°.",
+        result3Title: "Acceleration",
+        result3Text: "Peak acceleration is highest at large angles, with overall repeatability improving after setup stabilization.",
+
+        interpretationTitle: "Engineering Interpretation",
+        interpretationText1: "The project shows that the dynamic response of a flexible membrane can be characterized with a relatively simple laboratory setup, provided the boundary conditions and impact conditions are sufficiently controlled. The guided pendulum was a key design decision because it replaced poorly repeatable free-fall trials with a more stable and measurable input.",
+        interpretationText2: "Beyond the physical results themselves, the project highlights the importance of sensor choice, acquisition rate and setup rigidity in experimental mechanics. The quality of the data depended as much on measurement design as on the underlying system dynamics.",
+
+        limitsTitle: "Limits and Improvements",
+        limitsText1: "The report identifies several possible improvements to further refine the experiment. The main limitations came from mechanical losses in the pendulum, occasional obstruction effects near the light sensors, and setup motion during the strongest impacts before the structure was fully secured.",
+        limit1: "Slimmer pendulum arm to reduce optical interference",
+        limit2: "Lower-friction pivot with ball bearing for better repeatability",
+        limit3: "Improved membrane surface preparation for higher PIV quality",
+        limit4: "Further refinement of sensor integration and signal acquisition",
+
+        galleryTitle: "Image Gallery",
+        galleryCaption1: "Acceleration profile measured during repeated rebounds",
+        galleryCaption2: "PIV-based deformation field showing local membrane response",
+
+        filesTitle: "Important Files",
+        file1: "Project report (PDF)"
+      },
+
+      fr: {
+        backToPortfolio: "← Retour au portfolio",
+
+        projectTag: "EPFL · Techniques de mesure · Dynamique expérimentale",
+        projectTitle: "Mesures dynamiques sur une membrane type trampoline",
+        projectLead: "Étude expérimentale de l’interaction dynamique entre une balle et une membrane de type trampoline, combinant suivi de déformation, mesure de vitesse de rebond et analyse d’accélération à l’aide d’un montage pendulaire répétable.",
+
+        overviewTitle: "Vue d’ensemble du projet",
+        overviewText1: "Ce projet portait sur l’étude de la réponse d’une membrane de type trampoline soumise à des impacts répétés d’une balle. L’idée initiale était de mieux comprendre comment une surface flexible stocke puis restitue de l’énergie lors du contact, dans une configuration simplifiée inspirée de la dynamique d’un trampoline.",
+        overviewText2: "Les premiers essais en chute libre se sont révélés difficiles à reproduire de manière fiable. Le montage a donc été repensé autour d’un système pendulaire guidé, permettant de mieux contrôler les conditions d’impact et de comparer les résultats pour plusieurs angles de départ dans des conditions répétables.",
+
+        fact1Title: "Principe d’essai",
+        fact1Text: "Une balle montée sur un pendule vient impacter une membrane élastique tendue verticalement.",
+        fact2Title: "Paramètre de contrôle",
+        fact2Text: "Angle de départ α = 34°, 53° et 70° pour faire varier la sévérité de l’impact.",
+        fact3Title: "Mesures",
+        fact3Text: "Déformation de membrane, vitesse de rebond et accélération à l’impact.",
+        fact4Title: "Objectif principal",
+        fact4Text: "Construire un montage dynamique fiable et répétable.",
+
+        methodTitle: "Méthodologie",
+        methodText1: "L’expérience combinait trois systèmes de mesure complémentaires. D’abord, le champ de déformation de la membrane a été extrait à partir de vidéos rapides par analyse PIV. Ensuite, la vitesse de rebond de la balle a été mesurée avec deux photo-résistances placées à proximité de la membrane. Enfin, un accéléromètre embarqué a permis d’enregistrer le profil d’accélération pendant l’impact et le rebond.",
+        methodText2: "Plusieurs répétitions ont été réalisées pour chaque type de mesure afin d’évaluer la répétabilité. L’architecture pendulaire, les butées de départ et l’intégration des capteurs ont été conçues pour réduire la variabilité et garantir des conditions initiales cohérentes entre les essais.",
+
+        systemsTitle: "Systèmes de mesure",
+        systemsText1: "Le projet s’articule autour de trois approches de mesure différentes mais complémentaires, chacune ciblant une partie spécifique de la réponse dynamique du système.",
+        system1: "Analyse PIV du champ de déformation à la surface de la membrane",
+        system2: "Mesure de la vitesse de rebond par photo-résistances après impact",
+        system3: "Mesure des pics d’accélération de rebond par accéléromètre",
+        system4: "Répétitions multiples pour évaluer la précision et la cohérence statistique",
+
+        resultsTitle: "Résultats principaux",
+        resultsText1: "La déformation de la membrane augmente nettement avec l’angle de départ, ce qui confirme qu’une vitesse d’impact plus élevée produit une réponse locale plus importante. Les champs de déformation restent centrés et cohérents d’un essai à l’autre, montrant que le montage génère des impacts reproductibles et un motif de déformation stable.",
+        resultsText2: "Les mesures de vitesse de rebond et d’accélération suivent la même tendance globale : des départs plus énergétiques produisent des vitesses de rebond plus élevées et des accélérations de premier impact plus fortes. Malgré certaines limites lors des impacts les plus sévères, les écarts-types globaux restent faibles, ce qui confirme la fiabilité du protocole expérimental.",
+
+        result1Title: "Déformation membrane",
+        result1Text: "Le déplacement maximal augmente fortement de 34° à 70°, avec une faible dispersion entre essais.",
+        result2Title: "Vitesse de rebond",
+        result2Text: "La vitesse moyenne du premier rebond passe d’environ 0,77 m/s à 34° à environ 1,82 m/s à 70°.",
+        result3Title: "Accélération",
+        result3Text: "Le pic d’accélération est maximal aux grands angles, avec une répétabilité globale améliorée après stabilisation du montage.",
+
+        interpretationTitle: "Interprétation technique",
+        interpretationText1: "Le projet montre que la réponse dynamique d’une membrane flexible peut être caractérisée avec un montage de laboratoire relativement simple, à condition que les conditions aux limites et les conditions d’impact soient suffisamment bien maîtrisées. Le pendule guidé a été un choix de conception déterminant, car il a remplacé des essais en chute libre peu répétables par une entrée plus stable et plus mesurable.",
+        interpretationText2: "Au-delà des résultats physiques eux-mêmes, le projet met en évidence l’importance du choix des capteurs, de la fréquence d’acquisition et de la rigidité du montage en mécanique expérimentale. La qualité des données dépendait autant de la conception de la mesure que de la dynamique propre du système.",
+
+        limitsTitle: "Limites et améliorations",
+        limitsText1: "Le rapport identifie plusieurs pistes pour améliorer encore l’expérience. Les principales limites provenaient des pertes mécaniques dans le pendule, de certains effets d’obstruction près des capteurs optiques, et du déplacement du montage lors des impacts les plus intenses avant sa fixation complète.",
+        limit1: "Bras de pendule plus fin pour limiter les interférences optiques",
+        limit2: "Pivot à plus faible frottement avec roulement pour améliorer la répétabilité",
+        limit3: "Préparation de surface de la membrane plus soignée pour une meilleure qualité PIV",
+        limit4: "Affinement supplémentaire de l’intégration capteurs et de l’acquisition",
+
+        galleryTitle: "Galerie d’images",
+        galleryCaption1: "Profil d’accélération mesuré au cours des rebonds successifs",
+        galleryCaption2: "Champ de déformation issu de l’analyse PIV montrant la réponse locale de la membrane",
+
+        filesTitle: "Fichiers importants",
+        file1: "Rapport du projet (PDF)"
+      }
+    };
+
+    function applyTranslations(lang) {
+      const dict = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang =
+        localStorage.getItem("siteLanguage") ||
+        localStorage.getItem("language") ||
+        localStorage.getItem("lang") ||
+        sessionStorage.getItem("language") ||
+        "en";
+
+      applyTranslations(savedLang);
+    });
+  </script>
 </body>
 </html>
