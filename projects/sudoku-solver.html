@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monocoque Insert Analysis | Mathélyo Favre-Réguillon</title>
+  <title>Sudoku Solver | Mathélyo Favre-Réguillon</title>
   <style>
     :root{
       --bg:#f4f1ef;
@@ -27,7 +27,7 @@
     }
 
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    img, video{max-width:100%;display:block}
 
     .container{
       width:min(var(--max), calc(100% - 2rem));
@@ -35,6 +35,366 @@
     }
 
     .nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter: blur(16px);
+      background:rgba(244,241,239,.82);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:1rem 0;
+    }
+
+    .back{
+      color:var(--red);
+      font-weight:800;
+    }
+
+    .hero{
+      padding:3rem 0 2rem;
+    }
+
+    h1,h2,h3{
+      line-height:1.05;
+      letter-spacing:-.04em;
+      margin:0 0 1rem;
+    }
+
+    h1{font-size:clamp(2.4rem, 6vw, 4.4rem)}
+    h2{font-size:clamp(1.7rem, 4vw, 2.6rem)}
+    h3{font-size:1.2rem}
+
+    .lead{
+      font-size:1.1rem;
+      color:#333;
+      max-width:860px;
+    }
+
+    .tag{
+      display:inline-block;
+      font-size:.82rem;
+      padding:.35rem .7rem;
+      border-radius:999px;
+      background:#f7e5e5;
+      color:#9b0000;
+      font-weight:700;
+      margin-bottom:1rem;
+    }
+
+    .hero-image,
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero-image{
+      padding:1rem;
+    }
+
+    .hero-image img{
+      width:100%;
+      height:520px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:22px;
+      background:#fff;
+    }
+
+    .section{
+      padding:1.5rem 0;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1.2rem;
+    }
+
+    .card{
+      padding:1.5rem;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1rem;
+    }
+
+    .gallery-item{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:20px;
+      padding:.8rem;
+      min-height:320px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .gallery img{
+      width:100%;
+      height:100%;
+      max-height:300px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:14px;
+      background:#fff;
+    }
+
+    .files{
+      display:grid;
+      gap:.8rem;
+    }
+
+    .file-link{
+      display:block;
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .file-link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(214,0,0,.18);
+    }
+
+    .muted{color:var(--muted)}
+
+    ul{
+      margin:.3rem 0 0 1.1rem;
+      padding:0;
+    }
+
+    li + li{
+      margin-top:.45rem;
+    }
+
+    @media (max-width: 800px){
+      .grid-2,.gallery{grid-template-columns:1fr}
+
+      .hero-image img{
+        height:320px;
+      }
+
+      .gallery-item{
+        min-height:260px;
+      }
+
+      .gallery img{
+        max-height:240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="back" href="../index.html#projects" data-i18n="backToPortfolio">← Back to portfolio</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="tag" data-i18n="sudokuTag">EPFL · Image Processing · LabVIEW / C / MATLAB</div>
+        <h1 data-i18n="sudokuTitle">Sudoku Solver</h1>
+        <p class="lead" data-i18n="sudokuLead">
+          Development of a modular Sudoku solver able to read a grid from a user-provided JPG image, recognize each digit, solve the puzzle and generate the final resolved output automatically.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container hero-image">
+        <img src="../photos/sudoku-main.png" alt="Sudoku Solver final interface">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="sudokuOverviewTitle">Project Overview</h2>
+          <p data-i18n="sudokuOverviewText1">
+            This project focused on the automatic resolution of a 9×9 Sudoku grid from a JPG image provided by the user.
+          </p>
+          <p class="muted" data-i18n="sudokuOverviewText2">
+            The workflow combines LabVIEW for image processing, a C executable for digit recognition, and MATLAB for solving and generating the final result.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="sudokuContribTitle">Key Contributions</h2>
+          <ul>
+            <li data-i18n="sudokuContrib1">Image reading and grid extraction in LabVIEW</li>
+            <li data-i18n="sudokuContrib2">Cell-by-cell digit recognition through a C module</li>
+            <li data-i18n="sudokuContrib3">Integration of a MATLAB solving script</li>
+            <li data-i18n="sudokuContrib4">Connection of the full software pipeline</li>
+            <li data-i18n="sudokuContrib5">Automatic generation of the solved output</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="sudokuWorkflowTitle">Workflow</h2>
+          <p data-i18n="sudokuWorkflowText1">
+            The input image is checked, converted and split into 81 cells. Each cell is then analyzed to identify the corresponding digit.
+          </p>
+          <p class="muted" data-i18n="sudokuWorkflowText2">
+            Once the grid is reconstructed, the MATLAB solver computes the solution and the final result is exported through the main interface.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="sudokuTechTitle">Technical Stack</h2>
+          <ul>
+            <li data-i18n="sudokuTech1">LabVIEW for orchestration and image handling</li>
+            <li data-i18n="sudokuTech2">C executable for OCR-style digit recognition</li>
+            <li data-i18n="sudokuTech3">MATLAB for Sudoku solving logic</li>
+            <li data-i18n="sudokuTech4">Automated data exchange between modules</li>
+            <li data-i18n="sudokuTech5">Final output generation in a complete pipeline</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="sudokuGalleryTitle">Image Gallery</h2>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="../photos/sudoku1.png" alt="Sudoku Solver gallery image 1">
+          </div>
+          <div class="gallery-item">
+            <img src="../photos/sudoku2.png" alt="Sudoku Solver gallery image 2">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="sudokuFilesTitle">Important Files</h2>
+        <div class="files">
+          <a class="file-link" href="../documents/Sudoku_Report.pdf" target="_blank" data-i18n="sudokuFile1">Project report (PDF)</a>
+          <a class="file-link" href="../documents/Sudoku_Project_Files.zip" target="_blank" data-i18n="sudokuFile2">Complete project folder (ZIP)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const translations = {
+      en: {
+        backToPortfolio: "← Back to portfolio",
+
+        sudokuTag: "EPFL · Image Processing · LabVIEW / C / MATLAB",
+        sudokuTitle: "Sudoku Solver",
+        sudokuLead: "Development of a modular Sudoku solver able to read a grid from a user-provided JPG image, recognize each digit, solve the puzzle and generate the final resolved output automatically.",
+
+        sudokuOverviewTitle: "Project Overview",
+        sudokuOverviewText1: "This project focused on the automatic resolution of a 9×9 Sudoku grid from a JPG image provided by the user.",
+        sudokuOverviewText2: "The workflow combines LabVIEW for image processing, a C executable for digit recognition, and MATLAB for solving and generating the final result.",
+
+        sudokuContribTitle: "Key Contributions",
+        sudokuContrib1: "Image reading and grid extraction in LabVIEW",
+        sudokuContrib2: "Cell-by-cell digit recognition through a C module",
+        sudokuContrib3: "Integration of a MATLAB solving script",
+        sudokuContrib4: "Connection of the full software pipeline",
+        sudokuContrib5: "Automatic generation of the solved output",
+
+        sudokuWorkflowTitle: "Workflow",
+        sudokuWorkflowText1: "The input image is checked, converted and split into 81 cells. Each cell is then analyzed to identify the corresponding digit.",
+        sudokuWorkflowText2: "Once the grid is reconstructed, the MATLAB solver computes the solution and the final result is exported through the main interface.",
+
+        sudokuTechTitle: "Technical Stack",
+        sudokuTech1: "LabVIEW for orchestration and image handling",
+        sudokuTech2: "C executable for OCR-style digit recognition",
+        sudokuTech3: "MATLAB for Sudoku solving logic",
+        sudokuTech4: "Automated data exchange between modules",
+        sudokuTech5: "Final output generation in a complete pipeline",
+
+        sudokuGalleryTitle: "Image Gallery",
+
+        sudokuFilesTitle: "Important Files",
+        sudokuFile1: "Project report (PDF)",
+        sudokuFile2: "Complete project folder (ZIP)"
+      },
+
+      fr: {
+        backToPortfolio: "← Retour au portfolio",
+
+        sudokuTag: "EPFL · Traitement d’image · LabVIEW / C / MATLAB",
+        sudokuTitle: "Sudoku Solver",
+        sudokuLead: "Développement d’un solveur de Sudoku modulaire capable de lire une grille à partir d’une image JPG fournie par l’utilisateur, de reconnaître chaque chiffre, de résoudre la grille et de générer automatiquement le résultat final.",
+
+        sudokuOverviewTitle: "Vue d’ensemble du projet",
+        sudokuOverviewText1: "Ce projet portait sur la résolution automatique d’une grille de Sudoku 9×9 à partir d’une image JPG fournie par l’utilisateur.",
+        sudokuOverviewText2: "La chaîne de traitement combine LabVIEW pour le traitement d’image, un exécutable en C pour la reconnaissance des chiffres, et MATLAB pour la résolution et la génération du résultat final.",
+
+        sudokuContribTitle: "Contributions clés",
+        sudokuContrib1: "Lecture de l’image et extraction de la grille sous LabVIEW",
+        sudokuContrib2: "Reconnaissance chiffre par chiffre via un module en C",
+        sudokuContrib3: "Intégration d’un script MATLAB de résolution",
+        sudokuContrib4: "Connexion de l’ensemble de la pipeline logicielle",
+        sudokuContrib5: "Génération automatique du résultat résolu",
+
+        sudokuWorkflowTitle: "Fonctionnement",
+        sudokuWorkflowText1: "L’image d’entrée est vérifiée, convertie puis découpée en 81 cellules. Chaque case est ensuite analysée afin d’identifier le chiffre correspondant.",
+        sudokuWorkflowText2: "Une fois la grille reconstruite, le solveur MATLAB calcule la solution et le résultat final est exporté via l’interface principale.",
+
+        sudokuTechTitle: "Stack technique",
+        sudokuTech1: "LabVIEW pour l’orchestration et le traitement d’image",
+        sudokuTech2: "Exécutable en C pour la reconnaissance de chiffres de type OCR",
+        sudokuTech3: "MATLAB pour la logique de résolution du Sudoku",
+        sudokuTech4: "Échange automatisé des données entre modules",
+        sudokuTech5: "Génération finale du résultat dans une pipeline complète",
+
+        sudokuGalleryTitle: "Galerie d’images",
+
+        sudokuFilesTitle: "Fichiers importants",
+        sudokuFile1: "Rapport du projet (PDF)",
+        sudokuFile2: "Dossier complet du projet (ZIP)"
+      }
+    };
+
+    function applyTranslations(lang) {
+      const dict = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang =
+        localStorage.getItem("siteLanguage") ||
+        localStorage.getItem("language") ||
+        localStorage.getItem("lang") ||
+        sessionStorage.getItem("language") ||
+        "en";
+
+      applyTranslations(savedLang);
+    });
+  </script>
+</body>
+</html>    .nav{
       position:sticky;
       top:0;
       z-index:20;
