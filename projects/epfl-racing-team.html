@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monocoque Insert Analysis | Mathélyo Favre-Réguillon</title>
+  <title>EPFL Racing Team – First Year | Mathélyo Favre-Réguillon</title>
   <style>
     :root{
       --bg:#f4f1ef;
@@ -18,9 +18,10 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:var(--bg);
       color:var(--text);
       line-height:1.6;
@@ -38,7 +39,7 @@
       position:sticky;
       top:0;
       z-index:20;
-      backdrop-filter: blur(16px);
+      backdrop-filter:blur(16px);
       background:rgba(244,241,239,.82);
       border-bottom:1px solid rgba(0,0,0,.06);
     }
@@ -72,7 +73,7 @@
     .lead{
       font-size:1.1rem;
       color:#333;
-      max-width:800px;
+      max-width:900px;
     }
 
     .tag{
@@ -94,10 +95,17 @@
       overflow:hidden;
     }
 
+    .hero-image{
+      padding:1rem;
+    }
+
     .hero-image img{
       width:100%;
-      aspect-ratio:16/8;
-      object-fit:cover;
+      height:520px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:22px;
+      background:#fff;
     }
 
     .section{
@@ -116,15 +124,29 @@
 
     .gallery{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
+      grid-template-columns:repeat(3, 1fr);
       gap:1rem;
     }
 
-    .gallery img{
+    .gallery-item{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
       border-radius:20px;
-      aspect-ratio:4/3;
-      object-fit:cover;
+      padding:.8rem;
+      min-height:260px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .gallery img{
       width:100%;
+      height:100%;
+      max-height:240px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:14px;
+      background:#fff;
     }
 
     .files{
@@ -139,87 +161,382 @@
       background:#fff;
       border:1px solid rgba(0,0,0,.08);
       font-weight:700;
+      transition:.2s ease;
+    }
+
+    .file-link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(214,0,0,.18);
     }
 
     .muted{color:var(--muted)}
 
+    ul{
+      margin:.3rem 0 0 1.1rem;
+      padding:0;
+    }
+
+    li + li{
+      margin-top:.45rem;
+    }
+
+    @media (max-width: 900px){
+      .gallery{
+        grid-template-columns:repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 800px){
-      .grid-2,.gallery{grid-template-columns:1fr}
+      .grid-2{
+        grid-template-columns:1fr;
+      }
+
+      .hero-image img{
+        height:320px;
+      }
+    }
+
+    @media (max-width: 560px){
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-item{
+        min-height:240px;
+      }
+
+      .gallery img{
+        max-height:220px;
+      }
     }
   </style>
 </head>
 <body>
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="back" href="../index.html#projects">← Back to portfolio</a>
+      <a class="back" href="../index.html#projects" data-i18n="backToPortfolio">← Back to portfolio</a>
     </div>
   </nav>
 
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag">Bachelor Thesis</div>
-        <h1>Monocoque Insert Analysis</h1>
-        <p class="lead">
-          Analysis and redesign of monocoque inserts with a focus on structural performance,
-          production constraints and post-production robustness.
+        <div class="tag" data-i18n="projectTag">EPFL · EPFL Racing Team · First Year</div>
+        <h1 data-i18n="projectTitle">Mechanical Integration of LV Electronics</h1>
+        <p class="lead" data-i18n="projectLead">
+          During my first year in the EPFL Racing Team as a chassis member, I was responsible for the full mechanical integration of the low-voltage electronics inside the carbon monocoque. This project was a major learning experience, combining CAD design, prototyping, waterproofing strategy, material selection, fastening design, and close collaboration with the electrical team.
         </p>
       </div>
     </section>
 
     <section class="section">
       <div class="container hero-image">
-        <img src="../assets/page_7.jpg" alt="Monocoque insert analysis">
+        <img src="../photos/RacingYear1_1.png" alt="EPFL Racing Team first year main visual">
       </div>
     </section>
 
     <section class="section">
       <div class="container grid-2">
         <div class="card">
-          <h2>Project Overview</h2>
-          <p>
-            This project focused on understanding the behavior of inserts integrated in a carbon monocoque,
-            identifying weaknesses in the existing design and proposing improvements based on simulation and manufacturing feedback.
+          <h2 data-i18n="overviewTitle">Project Overview</h2>
+          <p data-i18n="overviewText1">
+            In my first year with the EPFL Racing Team, I joined the chassis department and worked on one of the most cross-functional topics of the car: the mechanical integration of the low-voltage electronics.
           </p>
-          <p class="muted">
-            The work combined structural reasoning, CAD integration, composite constraints and validation through simulation.
+          <p class="muted" data-i18n="overviewText2">
+            The scope included the design and development of several electrical enclosures, their positioning inside the monocoque, the integration of LEMO interfaces, and the preparation of solutions compatible with production, assembly and race conditions.
           </p>
         </div>
 
         <div class="card">
-          <h2>Key Contributions</h2>
+          <h2 data-i18n="roleTitle">My Role</h2>
           <ul>
-            <li>Insert redesign for improved robustness</li>
-            <li>Full-structure simulation including carbon and aluminium parts</li>
-            <li>Consideration of manufacturing and assembly constraints</li>
-            <li>Support for production and post-production decisions</li>
+            <li data-i18n="role1">Full mechanical integration of the LV electronics inside the car</li>
+            <li data-i18n="role2">Development of enclosure concepts, interfaces and fastening strategies</li>
+            <li data-i18n="role3">Close work with the electrical team to understand system needs and connector constraints</li>
+            <li data-i18n="role4">Participation in the carbon monocoque production with the chassis team</li>
+            <li data-i18n="role5">Contribution to a new waterproofing approach for competition readiness</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container card">
-        <h2>Image Gallery</h2>
-        <div class="gallery">
-          <img src="../assets/page_7.jpg" alt="Project image 1">
-          <img src="../assets/page_6.jpg" alt="Project image 2">
-          <img src="../assets/page_4.jpg" alt="Project image 3">
-          <img src="../assets/page_2.jpg" alt="Project image 4">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="contextTitle">Context</h2>
+          <p data-i18n="contextText1">
+            The EPFL Racing Team develops a new Formula Student race car every year. In this context, integrating the electronics is not only a packaging task: it is a structural, safety and manufacturing challenge.
+          </p>
+          <p class="muted" data-i18n="contextText2">
+            Each enclosure had to fit within the limited volume of the monocoque, remain accessible for assembly and maintenance, protect the electronics, and interface correctly with the rest of the car architecture.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="challengeTitle">Engineering Challenge</h2>
+          <p data-i18n="challengeText1">
+            One of the most interesting parts of the project was the search for waterproofness, which was a key topic for competition reliability and a relatively new challenge for the team.
+          </p>
+          <p class="muted" data-i18n="challengeText2">
+            The work therefore required balancing sealing performance, electrical isolation, compactness, manufacturability, connector integration and robust fixation in a very constrained environment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="learningTitle">What I Learned</h2>
+          <ul>
+            <li data-i18n="learning1">A much deeper understanding of the electronics system in order to design meaningful mechanical solutions</li>
+            <li data-i18n="learning2">How connector geometry and routing strongly influence enclosure design</li>
+            <li data-i18n="learning3">How waterproofing depends on details such as groove geometry, compression, screws and interfaces</li>
+            <li data-i18n="learning4">How to move from concept ideas to CAD models, prototypes and manufacturable parts</li>
+            <li data-i18n="learning5">How to work across chassis, electronics and composites topics in a race car project</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="materialsTitle">Materials & Manufacturing</h2>
+          <p data-i18n="materialsText1">
+            This project was also extremely formative from a materials perspective. Depending on the box function and constraints, several manufacturing routes and materials were explored.
+          </p>
+          <p class="muted" data-i18n="materialsText2">
+            I learned a lot about the use of 3D printing, carbon fiber, fiberglass and aluminum, and about how the material choice directly affects stiffness, insulation, sealing, weight, manufacturability and assembly strategy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="boxesTitle">Main Technical Work</h2>
+          <ul>
+            <li data-i18n="boxes1">Design of multiple LV electrical enclosures for different subsystems</li>
+            <li data-i18n="boxes2">Integration of LEMO connectors and related geometric constraints</li>
+            <li data-i18n="boxes3">Research and testing of sealing solutions for rain resistance</li>
+            <li data-i18n="boxes4">Definition of fixing and attachment concepts for safe installation in the monocoque</li>
+            <li data-i18n="boxes5">Preparation of designs for prototyping and production</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="fixationTitle">Fixation & Assembly</h2>
+          <p data-i18n="fixationText1">
+            A very important part of the work was not only the box itself, but also the way it was attached to the car. This included direct fixations, support pieces, inserts, screws, assembly logic and accessibility during mounting and servicing.
+          </p>
+          <p class="muted" data-i18n="fixationText2">
+            These fastening details were critical, because a good enclosure design is not enough if the installation is fragile, difficult to assemble, or incompatible with the surrounding structure.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="monocoqueTitle">Monocoque Production</h2>
+          <p data-i18n="monocoqueText1">
+            In parallel with the electronics integration work, I also took part in the production of the carbon monocoque with the chassis team.
+          </p>
+          <p class="muted" data-i18n="monocoqueText2">
+            This was especially valuable because it gave me a much better understanding of the structure in which the electronics had to be integrated, and of the manufacturing realities behind a Formula Student composite chassis.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="impactTitle">Why This Year Was Important</h2>
+          <p data-i18n="impactText1">
+            This first year was extremely formative. It taught me how to handle a real engineering topic with strong interactions between design, manufacturing, constraints, iteration and team collaboration.
+          </p>
+          <p class="muted" data-i18n="impactText2">
+            It also gave me my first deep exposure to race car integration work, where performance depends on many small technical decisions that all need to work together reliably.
+          </p>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container card">
-        <h2>Important Files</h2>
+        <h2 data-i18n="galleryTitle">Image Gallery</h2>
+        <div class="gallery">
+          <div class="gallery-item"><img src="../photos/RacingYear1_1.png" alt="Racing Team first year image 1"></div>
+          <div class="gallery-item"><img src="../photos/RacingYear1_2.png" alt="Racing Team first year image 2"></div>
+          <div class="gallery-item"><img src="../photos/RacingYear1_3.png" alt="Racing Team first year image 3"></div>
+          <div class="gallery-item"><img src="../photos/RacingYear1_4.png" alt="Racing Team first year image 4"></div>
+          <div class="gallery-item"><img src="../photos/RacingYear1_5.png" alt="Racing Team first year image 5"></div>
+          <div class="gallery-item"><img src="../photos/RacingYear1_6.png" alt="Racing Team first year image 6"></div>
+          <div class="gallery-item"><img src="../photos/RacingYear1_7.png" alt="Racing Team first year image 7"></div>
+          <div class="gallery-item"><img src="../photos/RacingYear1_8.png" alt="Racing Team first year image 8"></div>
+          <div class="gallery-item"><img src="../photos/RacingYear1_9.png" alt="Racing Team first year image 9"></div>
+          <div class="gallery-item"><img src="../photos/RacingYear1_10.png" alt="Racing Team first year image 10"></div>
+          <div class="gallery-item"><img src="../photos/RacingYear1_11.png" alt="Racing Team first year image 11"></div>
+          <div class="gallery-item"><img src="../photos/RacingYear1_12.png" alt="Racing Team first year image 12"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="filesTitle">Important Files</h2>
         <div class="files">
-          <a class="file-link" href="../files/monocoque-report.pdf" target="_blank">Project report (PDF)</a>
-          <a class="file-link" href="../files/monocoque-presentation.pdf" target="_blank">Presentation slides</a>
-          <a class="file-link" href="../files/monocoque-cad.zip" target="_blank">CAD package</a>
+          <a class="file-link" href="../documents/Racing-Team_1_Rapport.pdf" target="_blank" data-i18n="file1">Project report (PDF)</a>
         </div>
       </div>
     </section>
   </main>
+
+  <script>
+    const translations = {
+      en: {
+        backToPortfolio: "← Back to portfolio",
+
+        projectTag: "EPFL · EPFL Racing Team · First Year",
+        projectTitle: "Mechanical Integration of LV Electronics",
+        projectLead: "During my first year in the EPFL Racing Team as a chassis member, I was responsible for the full mechanical integration of the low-voltage electronics inside the carbon monocoque. This project was a major learning experience, combining CAD design, prototyping, waterproofing strategy, material selection, fastening design, and close collaboration with the electrical team.",
+
+        overviewTitle: "Project Overview",
+        overviewText1: "In my first year with the EPFL Racing Team, I joined the chassis department and worked on one of the most cross-functional topics of the car: the mechanical integration of the low-voltage electronics.",
+        overviewText2: "The scope included the design and development of several electrical enclosures, their positioning inside the monocoque, the integration of LEMO interfaces, and the preparation of solutions compatible with production, assembly and race conditions.",
+
+        roleTitle: "My Role",
+        role1: "Full mechanical integration of the LV electronics inside the car",
+        role2: "Development of enclosure concepts, interfaces and fastening strategies",
+        role3: "Close work with the electrical team to understand system needs and connector constraints",
+        role4: "Participation in the carbon monocoque production with the chassis team",
+        role5: "Contribution to a new waterproofing approach for competition readiness",
+
+        contextTitle: "Context",
+        contextText1: "The EPFL Racing Team develops a new Formula Student race car every year. In this context, integrating the electronics is not only a packaging task: it is a structural, safety and manufacturing challenge.",
+        contextText2: "Each enclosure had to fit within the limited volume of the monocoque, remain accessible for assembly and maintenance, protect the electronics, and interface correctly with the rest of the car architecture.",
+
+        challengeTitle: "Engineering Challenge",
+        challengeText1: "One of the most interesting parts of the project was the search for waterproofness, which was a key topic for competition reliability and a relatively new challenge for the team.",
+        challengeText2: "The work therefore required balancing sealing performance, electrical isolation, compactness, manufacturability, connector integration and robust fixation in a very constrained environment.",
+
+        learningTitle: "What I Learned",
+        learning1: "A much deeper understanding of the electronics system in order to design meaningful mechanical solutions",
+        learning2: "How connector geometry and routing strongly influence enclosure design",
+        learning3: "How waterproofing depends on details such as groove geometry, compression, screws and interfaces",
+        learning4: "How to move from concept ideas to CAD models, prototypes and manufacturable parts",
+        learning5: "How to work across chassis, electronics and composites topics in a race car project",
+
+        materialsTitle: "Materials & Manufacturing",
+        materialsText1: "This project was also extremely formative from a materials perspective. Depending on the box function and constraints, several manufacturing routes and materials were explored.",
+        materialsText2: "I learned a lot about the use of 3D printing, carbon fiber, fiberglass and aluminum, and about how the material choice directly affects stiffness, insulation, sealing, weight, manufacturability and assembly strategy.",
+
+        boxesTitle: "Main Technical Work",
+        boxes1: "Design of multiple LV electrical enclosures for different subsystems",
+        boxes2: "Integration of LEMO connectors and related geometric constraints",
+        boxes3: "Research and testing of sealing solutions for rain resistance",
+        boxes4: "Definition of fixing and attachment concepts for safe installation in the monocoque",
+        boxes5: "Preparation of designs for prototyping and production",
+
+        fixationTitle: "Fixation & Assembly",
+        fixationText1: "A very important part of the work was not only the box itself, but also the way it was attached to the car. This included direct fixations, support pieces, inserts, screws, assembly logic and accessibility during mounting and servicing.",
+        fixationText2: "These fastening details were critical, because a good enclosure design is not enough if the installation is fragile, difficult to assemble, or incompatible with the surrounding structure.",
+
+        monocoqueTitle: "Monocoque Production",
+        monocoqueText1: "In parallel with the electronics integration work, I also took part in the production of the carbon monocoque with the chassis team.",
+        monocoqueText2: "This was especially valuable because it gave me a much better understanding of the structure in which the electronics had to be integrated, and of the manufacturing realities behind a Formula Student composite chassis.",
+
+        impactTitle: "Why This Year Was Important",
+        impactText1: "This first year was extremely formative. It taught me how to handle a real engineering topic with strong interactions between design, manufacturing, constraints, iteration and team collaboration.",
+        impactText2: "It also gave me my first deep exposure to race car integration work, where performance depends on many small technical decisions that all need to work together reliably.",
+
+        galleryTitle: "Image Gallery",
+
+        filesTitle: "Important Files",
+        file1: "Project report (PDF)"
+      },
+
+      fr: {
+        backToPortfolio: "← Retour au portfolio",
+
+        projectTag: "EPFL · EPFL Racing Team · Première année",
+        projectTitle: "Intégration mécanique de l’électronique LV",
+        projectLead: "Lors de ma première année à l’EPFL Racing Team en tant que membre chassis, j’ai été responsable de toute l’intégration mécanique de l’électronique basse tension dans la monocoque carbone. Ce projet a été extrêmement formateur, en combinant CAO, prototypage, stratégie d’étanchéité, choix matériaux, conception des fixations et collaboration étroite avec l’équipe électrique.",
+
+        overviewTitle: "Vue d’ensemble du projet",
+        overviewText1: "Pendant ma première année à l’EPFL Racing Team, j’ai intégré le département chassis et travaillé sur l’un des sujets les plus transversaux de la voiture : l’intégration mécanique de l’électronique basse tension.",
+        overviewText2: "Le périmètre comprenait la conception de plusieurs boîtiers électriques, leur implantation dans la monocoque, l’intégration des interfaces LEMO et la préparation de solutions compatibles avec la production, l’assemblage et les conditions d’utilisation en compétition.",
+
+        roleTitle: "Mon rôle",
+        role1: "Réalisation de toute l’intégration mécanique de l’électronique LV dans la voiture",
+        role2: "Développement des concepts de boîtiers, interfaces et stratégies de fixation",
+        role3: "Travail étroit avec l’équipe électrique pour comprendre les besoins système et les contraintes de connectique",
+        role4: "Participation à la production de la monocoque carbone avec l’équipe chassis",
+        role5: "Contribution à une nouvelle approche d’étanchéité pour mieux préparer la voiture à la compétition",
+
+        contextTitle: "Contexte",
+        contextText1: "L’EPFL Racing Team développe chaque année une nouvelle voiture de Formula Student. Dans ce contexte, intégrer l’électronique n’est pas seulement un sujet d’encombrement : c’est aussi un défi structurel, sécuritaire et de fabrication.",
+        contextText2: "Chaque boîtier devait s’intégrer dans le volume très contraint de la monocoque, rester accessible pour le montage et la maintenance, protéger l’électronique, et s’interfacer correctement avec l’architecture globale de la voiture.",
+
+        challengeTitle: "Défi d’ingénierie",
+        challengeText1: "L’un des aspects les plus intéressants du projet a été la recherche d’étanchéité, un sujet essentiel pour la fiabilité en compétition et relativement nouveau pour l’équipe.",
+        challengeText2: "Le travail a donc consisté à équilibrer performance d’étanchéité, isolation électrique, compacité, fabricabilité, intégration des connecteurs et robustesse des fixations dans un environnement très contraint.",
+
+        learningTitle: "Ce que j’ai appris",
+        learning1: "Une compréhension beaucoup plus profonde du système électronique afin de concevoir des solutions mécaniques pertinentes",
+        learning2: "L’influence majeure de la géométrie des connecteurs et du routage sur le design des boîtiers",
+        learning3: "Le fait que l’étanchéité dépend de détails comme la géométrie des rainures, la compression, les vis et les interfaces",
+        learning4: "La manière de passer d’idées de principe à des modèles CAO, des prototypes puis des pièces fabricables",
+        learning5: "La façon de travailler entre sujets chassis, électronique et composites sur une voiture de course",
+
+        materialsTitle: "Matériaux et fabrication",
+        materialsText1: "Ce projet a aussi été extrêmement formateur du point de vue matériaux. Selon la fonction de chaque boîte et ses contraintes, plusieurs procédés de fabrication et matériaux ont été étudiés.",
+        materialsText2: "J’ai beaucoup appris sur l’utilisation de l’impression 3D, de la fibre de carbone, de la fibre de verre et de l’aluminium, ainsi que sur l’impact direct du matériau sur la rigidité, l’isolation, l’étanchéité, la masse, la fabricabilité et la stratégie d’assemblage.",
+
+        boxesTitle: "Travail technique principal",
+        boxes1: "Conception de plusieurs boîtiers électriques LV pour différents sous-systèmes",
+        boxes2: "Intégration des connecteurs LEMO et de leurs contraintes géométriques",
+        boxes3: "Recherche et essais de solutions d’étanchéité pour la pluie et les projections",
+        boxes4: "Définition de concepts de fixation et d’attaches pour une installation sûre dans la monocoque",
+        boxes5: "Préparation des designs pour le prototypage et la production",
+
+        fixationTitle: "Fixations et assemblage",
+        fixationText1: "Une partie très importante du travail ne concernait pas seulement la boîte elle-même, mais aussi sa manière d’être fixée à la voiture. Cela comprenait les fixations directes, les pièces support, les inserts, les vis, la logique d’assemblage et l’accessibilité pendant le montage et la maintenance.",
+        fixationText2: "Ces détails de fixation étaient critiques, car un bon design de boîtier ne suffit pas si l’installation est fragile, difficile à assembler ou incompatible avec la structure environnante.",
+
+        monocoqueTitle: "Production de la monocoque",
+        monocoqueText1: "En parallèle du travail sur l’intégration de l’électronique, j’ai également participé à la production de la monocoque carbone avec l’équipe chassis.",
+        monocoqueText2: "C’était particulièrement intéressant car cela m’a donné une bien meilleure compréhension de la structure dans laquelle l’électronique devait être intégrée, ainsi que des réalités de fabrication d’un châssis composite de Formula Student.",
+
+        impactTitle: "Pourquoi cette année a été importante",
+        impactText1: "Cette première année a été ultra formatrice. Elle m’a appris à traiter un vrai sujet d’ingénierie avec de fortes interactions entre conception, fabrication, contraintes, itérations et travail d’équipe.",
+        impactText2: "Elle m’a aussi donné une première exposition très concrète au travail d’intégration sur une voiture de course, où la performance dépend d’une multitude de petits choix techniques qui doivent tous fonctionner ensemble de manière fiable.",
+
+        galleryTitle: "Galerie d’images",
+
+        filesTitle: "Fichiers importants",
+        file1: "Rapport du projet (PDF)"
+      }
+    };
+
+    function applyTranslations(lang) {
+      const dict = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang =
+        localStorage.getItem("siteLanguage") ||
+        localStorage.getItem("language") ||
+        localStorage.getItem("lang") ||
+        sessionStorage.getItem("language") ||
+        "en";
+
+      applyTranslations(savedLang);
+    });
+  </script>
 </body>
 </html>
