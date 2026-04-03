@@ -134,18 +134,28 @@
       padding:.8rem;
       min-height:320px;
       display:flex;
+      flex-direction:column;
       align-items:center;
-      justify-content:center;
+      justify-content:space-between;
+      gap:.8rem;
     }
 
     .gallery img{
       width:100%;
       height:100%;
-      max-height:300px;
+      max-height:260px;
       object-fit:contain;
       object-position:center;
       border-radius:14px;
       background:#fff;
+    }
+
+    .caption{
+      width:100%;
+      text-align:left;
+      font-size:.95rem;
+      color:var(--muted);
+      line-height:1.45;
     }
 
     .files{
@@ -191,7 +201,7 @@
       }
 
       .gallery img{
-        max-height:240px;
+        max-height:220px;
       }
     }
   </style>
@@ -206,10 +216,10 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag" data-i18n="screwTag">EPFL · ME-420 · Sustainable Design Project</div>
+        <div class="tag" data-i18n="screwTag">EPFL · Advanced Design for Sustainable Future · ME-420</div>
         <h1 data-i18n="screwTitle">ScrewSorter</h1>
         <p class="lead" data-i18n="screwLead">
-          Development of a compact automated screw sorting system for small workshops, combining screw isolation, conveyor transport, camera-based measurement and bin distribution, with a strong focus on sustainability, low energy use and practical manufacturability.
+          Development of a compact automated screw sorting system for small and medium-sized workshops, where mixed fasteners are often discarded instead of reused. The project combined screw isolation, conveyor transport, camera-based measurement and automated bin distribution in a single integrated prototype, with a strong focus on sustainability, low energy use, practical manufacturability and batch-production positioning.
         </p>
       </div>
     </section>
@@ -223,16 +233,6 @@
     <section class="section">
       <div class="container grid-2">
         <div class="card">
-          <h2 data-i18n="screwOverviewTitle">Project Overview</h2>
-          <p data-i18n="screwOverviewText1">
-            ScrewSorter was designed as an automated sorting machine adapted to small and medium-sized workshops, where mixed screws are often discarded instead of reused.
-          </p>
-          <p class="muted" data-i18n="screwOverviewText2">
-            The final concept combines a lifting and separation subsystem, a custom conveyor with closed-loop positioning, a camera-based measurement system and rotating bins for automated sorting.
-          </p>
-        </div>
-
-        <div class="card">
           <h2 data-i18n="screwContribTitle">Key Contributions</h2>
           <ul>
             <li data-i18n="screwContrib1">Mechanical design of subsystems and final integrated prototype</li>
@@ -241,20 +241,6 @@
             <li data-i18n="screwContrib4">Sustainability-oriented engineering for reuse and low energy consumption</li>
             <li data-i18n="screwContrib5">Integration of sensing, control logic and manufacturable components</li>
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="screwSystemTitle">System Architecture</h2>
-          <p data-i18n="screwSystemText1">
-            The machine is structured around three main functions: screw isolation, camera-based measurement, and automated sorting.
-          </p>
-          <p class="muted" data-i18n="screwSystemText2">
-            A lifting system and one-by-one ramp feed screws individually onto a custom TPU conveyor, where a vision system estimates diameter and length before the screw is routed into the appropriate bin.
-          </p>
         </div>
 
         <div class="card">
@@ -274,6 +260,40 @@
     <section class="section">
       <div class="container grid-2">
         <div class="card">
+          <h2 data-i18n="screwSystemTitle">System Architecture</h2>
+          <p data-i18n="screwSystemText1">
+            The machine is structured around three main functions: screw isolation, camera-based measurement, and automated sorting.
+          </p>
+          <p class="muted" data-i18n="screwSystemText2">
+            A lifting system and one-by-one ramp feed screws individually onto a custom TPU conveyor, where the geometric features are measured before each screw is redirected toward the appropriate bin.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="screwLoopTitle">Closed-Loop Control</h2>
+          <p data-i18n="screwLoopText1">
+            One of the key technical aspects of the project was the closed-loop control of the conveyor. Position feedback was used to stabilize screw transport and to ensure repeatable placement in front of the detection zone.
+          </p>
+          <p class="muted" data-i18n="screwLoopText2">
+            This control strategy improved synchronization between the transport mechanism, the measurement step and the sorting sequence, while reducing positioning uncertainty during operation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="screwInterfaceTitle">Interface</h2>
+          <p data-i18n="screwInterfaceText1">
+            A dedicated interface was developed to support system operation, testing and adjustment. It provided a practical way to interact with the prototype and to monitor the main stages of the sorting sequence.
+          </p>
+          <p class="muted" data-i18n="screwInterfaceText2">
+            This interface contributed to the overall usability of the machine by making calibration, debugging and demonstration phases clearer and more accessible during development.
+          </p>
+        </div>
+
+        <div class="card">
           <h2 data-i18n="screwEngTitle">Engineering Highlights</h2>
           <ul>
             <li data-i18n="screwEng1">Custom TPU belt geometry for screw alignment and sensing</li>
@@ -282,6 +302,20 @@
             <li data-i18n="screwEng4">Prototype optimized for compactness and workshop integration</li>
             <li data-i18n="screwEng5">Design trade-offs between throughput, robustness and complexity</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="screwLimitsTitle">Project Limitations</h2>
+          <p data-i18n="screwLimitsText1">
+            As a proof-of-concept prototype, the project also highlighted several technical limits. The camera-based detection remained sensitive to lighting conditions, positioning consistency and image interpretation robustness.
+          </p>
+          <p class="muted" data-i18n="screwLimitsText2">
+            In addition, the dimensional precision of the 3D-printed TPU belt influenced repeatability and transport quality. These aspects, together with calibration stability and classification reliability, defined the main improvement areas for a future iteration.
+          </p>
         </div>
 
         <div class="card">
@@ -312,16 +346,20 @@
         <h2 data-i18n="screwGalleryTitle">Image Gallery</h2>
         <div class="gallery">
           <div class="gallery-item">
-            <img src="../photos/screwsorter2.jpg" alt="ScrewSorter prototype overview">
+            <img src="../photos/screwsorter2.jpg" alt="Camera detection system">
+            <div class="caption" data-i18n="screwCaption1">Camera detection and measurement system</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/screwsorter6.png" alt="Conveyor subsystem">
+            <img src="../photos/screwsorter6.png" alt="Optimization and flow loop">
+            <div class="caption" data-i18n="screwCaption2">Optimization and flow loop</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/screwsorter4.png" alt="User interface">
+            <img src="../photos/screwsorter4.png" alt="Interface">
+            <div class="caption" data-i18n="screwCaption3">Interface</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/screwsorter5.png" alt="Design progression and final concept">
+            <img src="../photos/screwsorter5.png" alt="TPU belt">
+            <div class="caption" data-i18n="screwCaption4">TPU belt</div>
           </div>
         </div>
       </div>
@@ -353,13 +391,9 @@
       en: {
         backToPortfolio: "← Back to portfolio",
 
-        screwTag: "EPFL · ME-420 · Sustainable Design Project",
+        screwTag: "EPFL · Advanced Design for Sustainable Future · ME-420",
         screwTitle: "ScrewSorter",
-        screwLead: "Development of a compact automated screw sorting system for small workshops, combining screw isolation, conveyor transport, camera-based measurement and bin distribution, with a strong focus on sustainability, low energy use and practical manufacturability.",
-
-        screwOverviewTitle: "Project Overview",
-        screwOverviewText1: "ScrewSorter was designed as an automated sorting machine adapted to small and medium-sized workshops, where mixed screws are often discarded instead of reused.",
-        screwOverviewText2: "The final concept combines a lifting and separation subsystem, a custom conveyor with closed-loop positioning, a camera-based measurement system and rotating bins for automated sorting.",
+        screwLead: "Development of a compact automated screw sorting system for small and medium-sized workshops, where mixed fasteners are often discarded instead of reused. The project combined screw isolation, conveyor transport, camera-based measurement and automated bin distribution in a single integrated prototype, with a strong focus on sustainability, low energy use, practical manufacturability and batch-production positioning.",
 
         screwContribTitle: "Key Contributions",
         screwContrib1: "Mechanical design of subsystems and final integrated prototype",
@@ -370,7 +404,15 @@
 
         screwSystemTitle: "System Architecture",
         screwSystemText1: "The machine is structured around three main functions: screw isolation, camera-based measurement, and automated sorting.",
-        screwSystemText2: "A lifting system and one-by-one ramp feed screws individually onto a custom TPU conveyor, where a vision system estimates diameter and length before the screw is routed into the appropriate bin.",
+        screwSystemText2: "A lifting system and one-by-one ramp feed screws individually onto a custom TPU conveyor, where the geometric features are measured before each screw is redirected toward the appropriate bin.",
+
+        screwLoopTitle: "Closed-Loop Control",
+        screwLoopText1: "One of the key technical aspects of the project was the closed-loop control of the conveyor. Position feedback was used to stabilize screw transport and to ensure repeatable placement in front of the detection zone.",
+        screwLoopText2: "This control strategy improved synchronization between the transport mechanism, the measurement step and the sorting sequence, while reducing positioning uncertainty during operation.",
+
+        screwInterfaceTitle: "Interface",
+        screwInterfaceText1: "A dedicated interface was developed to support system operation, testing and adjustment. It provided a practical way to interact with the prototype and to monitor the main stages of the sorting sequence.",
+        screwInterfaceText2: "This interface contributed to the overall usability of the machine by making calibration, debugging and demonstration phases clearer and more accessible during development.",
 
         screwPerfTitle: "Performance",
         screwPerf1: "12 screws/min sorting speed",
@@ -387,6 +429,10 @@
         screwEng4: "Prototype optimized for compactness and workshop integration",
         screwEng5: "Design trade-offs between throughput, robustness and complexity",
 
+        screwLimitsTitle: "Project Limitations",
+        screwLimitsText1: "As a proof-of-concept prototype, the project also highlighted several technical limits. The camera-based detection remained sensitive to lighting conditions, positioning consistency and image interpretation robustness.",
+        screwLimitsText2: "In addition, the dimensional precision of the 3D-printed TPU belt influenced repeatability and transport quality. These aspects, together with calibration stability and classification reliability, defined the main improvement areas for a future iteration.",
+
         screwCostTitle: "Cost & Sustainability",
         screwCostText1: "The single prototype cost was estimated at 262.55 CHF, while the projected production cost for a batch of 100 units was 187.59 CHF per unit, leading to a target selling price of about 230 CHF.",
         screwCostText2: "The project was framed around reuse, reduction and rethink principles, with the objective of reducing screw waste, manual sorting effort and associated environmental impact.",
@@ -395,6 +441,10 @@
         screwLabLink: "View the project page on the Paik’s Lab course website",
 
         screwGalleryTitle: "Image Gallery",
+        screwCaption1: "Camera detection and measurement system",
+        screwCaption2: "Optimization and flow loop",
+        screwCaption3: "Interface",
+        screwCaption4: "TPU belt",
 
         screwFilesTitle: "Important Files",
         screwFile1: "Project report (PDF)",
@@ -408,13 +458,9 @@
       fr: {
         backToPortfolio: "← Retour au portfolio",
 
-        screwTag: "EPFL · ME-420 · Projet de design durable",
+        screwTag: "EPFL · Advanced Design for Sustainable Future · ME-420",
         screwTitle: "ScrewSorter",
-        screwLead: "Développement d’un système compact de tri automatisé de vis pour petits ateliers, combinant isolation des vis, transport par convoyeur, mesure par caméra et distribution dans des bacs, avec une forte attention portée à la durabilité, à la faible consommation d’énergie et à la fabricabilité.",
-
-        screwOverviewTitle: "Vue d’ensemble du projet",
-        screwOverviewText1: "ScrewSorter a été conçu comme une machine de tri automatisée adaptée aux petits et moyens ateliers, où les vis mélangées sont souvent jetées au lieu d’être réutilisées.",
-        screwOverviewText2: "Le concept final combine un sous-système de levage et de séparation, un convoyeur sur mesure avec positionnement en boucle fermée, un système de mesure par caméra et des bacs rotatifs pour le tri automatique.",
+        screwLead: "Développement d’un système compact de tri automatisé de vis pour petits et moyens ateliers, où les fixations mélangées sont souvent jetées au lieu d’être réutilisées. Le projet combine l’isolation des vis, leur transport par convoyeur, la mesure par caméra et la distribution automatique dans des bacs au sein d’un prototype intégré, avec une forte attention portée à la durabilité, à la faible consommation d’énergie, à la fabricabilité et au positionnement pour une production en série.",
 
         screwContribTitle: "Contributions clés",
         screwContrib1: "Conception mécanique des sous-systèmes et du prototype final intégré",
@@ -425,7 +471,15 @@
 
         screwSystemTitle: "Architecture du système",
         screwSystemText1: "La machine s’organise autour de trois fonctions principales : l’isolation des vis, la mesure par caméra et le tri automatisé.",
-        screwSystemText2: "Un système de levage et une rampe unitaire alimentent individuellement un convoyeur TPU sur mesure, où un système de vision estime le diamètre et la longueur avant d’orienter chaque vis vers le bac approprié.",
+        screwSystemText2: "Un système de levage et une rampe unitaire alimentent individuellement un convoyeur TPU sur mesure, où les caractéristiques géométriques sont mesurées avant d’orienter chaque vis vers le bac approprié.",
+
+        screwLoopTitle: "Boucle fermée",
+        screwLoopText1: "L’un des points techniques importants du projet résidait dans le contrôle en boucle fermée du convoyeur. Un retour de position a été utilisé pour stabiliser le transport des vis et garantir un positionnement répétable devant la zone de détection.",
+        screwLoopText2: "Cette stratégie de contrôle a amélioré la synchronisation entre le transport, la phase de mesure et la séquence de tri, tout en réduisant les incertitudes de positionnement pendant le fonctionnement.",
+
+        screwInterfaceTitle: "Interface",
+        screwInterfaceText1: "Une interface dédiée a été développée pour accompagner l’utilisation, les essais et les réglages du système. Elle permettait d’interagir plus facilement avec le prototype et de suivre les principales étapes de la séquence de tri.",
+        screwInterfaceText2: "Cette interface a contribué à l’ergonomie globale du projet en rendant les phases de calibration, de débogage et de démonstration plus lisibles et plus accessibles pendant le développement.",
 
         screwPerfTitle: "Performances",
         screwPerf1: "Vitesse de tri de 12 vis/min",
@@ -442,6 +496,10 @@
         screwEng4: "Prototype optimisé pour la compacité et l’intégration en atelier",
         screwEng5: "Compromis de conception entre débit, robustesse et complexité",
 
+        screwLimitsTitle: "Limites du projet",
+        screwLimitsText1: "En tant que prototype de preuve de concept, le projet a également mis en évidence plusieurs limites techniques. La détection par caméra restait sensible aux conditions d’éclairage, à la régularité du positionnement et à la robustesse de l’interprétation d’image.",
+        screwLimitsText2: "De plus, la précision dimensionnelle de la bande TPU imprimée en 3D influençait la répétabilité et la qualité du transport. Ces points, ainsi que la stabilité de calibration et la fiabilité du tri, constituent les principaux axes d’amélioration pour une future version.",
+
         screwCostTitle: "Coût et durabilité",
         screwCostText1: "Le coût d’un prototype unique a été estimé à 262.55 CHF, tandis que le coût projeté pour une production de 100 unités est de 187.59 CHF par unité, conduisant à un prix de vente cible d’environ 230 CHF.",
         screwCostText2: "Le projet a été structuré autour des principes reuse, reduce et rethink, avec l’objectif de limiter le gaspillage de vis, le temps de tri manuel et l’impact environnemental associé.",
@@ -450,6 +508,10 @@
         screwLabLink: "Voir la page du projet sur le site du cours du Paik’s Lab",
 
         screwGalleryTitle: "Galerie d’images",
+        screwCaption1: "Détection et mesure par caméra",
+        screwCaption2: "Optimisation et boucle de flux",
+        screwCaption3: "Interface",
+        screwCaption4: "Bande TPU",
 
         screwFilesTitle: "Fichiers importants",
         screwFile1: "Rapport du projet (PDF)",
