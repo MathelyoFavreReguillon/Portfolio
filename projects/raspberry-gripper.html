@@ -72,7 +72,7 @@
     .lead{
       font-size:1.1rem;
       color:#333;
-      max-width:860px;
+      max-width:none;
     }
 
     .tag{
@@ -134,18 +134,28 @@
       padding:.8rem;
       min-height:320px;
       display:flex;
+      flex-direction:column;
       align-items:center;
-      justify-content:center;
+      justify-content:space-between;
+      gap:.8rem;
     }
 
     .gallery img{
       width:100%;
       height:100%;
-      max-height:300px;
+      max-height:260px;
       object-fit:contain;
       object-position:center;
       border-radius:14px;
       background:#fff;
+    }
+
+    .caption{
+      width:100%;
+      text-align:left;
+      font-size:.95rem;
+      color:var(--muted);
+      line-height:1.45;
     }
 
     .video-wrap{
@@ -206,7 +216,7 @@
       }
 
       .gallery img{
-        max-height:240px;
+        max-height:220px;
       }
     }
   </style>
@@ -301,10 +311,10 @@
         <div class="card">
           <h2 data-i18n="raspReflectionTitle">Sustainability & Design Reflection</h2>
           <p data-i18n="raspReflectionText1">
-            Sustainability was addressed through material reuse, low-cost prototyping and simple sensing solutions. Recycled wires and reused materials were incorporated where possible, while the integrated storage reduced unnecessary robot motion during harvesting.
+            Sustainability was addressed through simple material reuse and low-cost prototyping, while the integrated storage reduced unnecessary robot motion during harvesting.
           </p>
           <p class="muted" data-i18n="raspReflectionText2">
-            The final design remained intentionally simple while still performing the key harvesting tasks effectively. Pressure sensing worked reliably and supported gentle fruit handling, while the main limitation identified was the conductivity-based ripeness check, considered reliable but relatively slow. Future development could include FEM-guided optimization, reduced glue usage, a transition toward injection molding for larger-scale production, and the use of a color sensor to increase harvesting speed.
+            The final design remained intentionally simple while still performing the key harvesting tasks effectively. Pressure sensing worked reliably and supported gentle fruit handling, while the main limitation identified was the conductivity-based ripeness check, considered reliable but relatively slow. Future development could include FEM-guided optimization, a transition toward injection molding for larger-scale production, and the use of a color sensor to increase harvesting speed.
           </p>
         </div>
       </div>
@@ -329,22 +339,28 @@
         <h2 data-i18n="raspGalleryTitle">Image Gallery</h2>
         <div class="gallery">
           <div class="gallery-item">
-            <img src="../photos/Gripper1.png" alt="Raspberry Gripper gallery image 1">
+            <img src="../photos/Gripper1.png" alt="1st proposed design">
+            <div class="caption" data-i18n="raspCaption1">1st proposed design</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/Gripper2.png" alt="Raspberry Gripper gallery image 2">
+            <img src="../photos/Gripper2.png" alt="2nd proposed design">
+            <div class="caption" data-i18n="raspCaption2">2nd proposed design</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/Gripper3.png" alt="Raspberry Gripper gallery image 3">
+            <img src="../photos/Gripper3.png" alt="3rd proposed design">
+            <div class="caption" data-i18n="raspCaption3">3rd proposed design</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/Gripper4.png" alt="Raspberry Gripper gallery image 4">
+            <img src="../photos/Gripper4.png" alt="Pressure sensor">
+            <div class="caption" data-i18n="raspCaption4">Pressure sensor</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/Gripper5.png" alt="Raspberry Gripper gallery image 5">
+            <img src="../photos/Gripper5.png" alt="Electrical wiring of the gripper">
+            <div class="caption" data-i18n="raspCaption5">Electrical wiring of the gripper</div>
           </div>
           <div class="gallery-item">
-            <img src="../photos/Gripper6.png" alt="Raspberry Gripper gallery image 6">
+            <img src="../photos/Gripper6.png" alt="Code decision flow">
+            <div class="caption" data-i18n="raspCaption6">Code decision flow</div>
           </div>
         </div>
       </div>
@@ -402,14 +418,20 @@
         raspMaterials5: "Compact assembly including Arduino, servomotors, pressure sensor and integrated reservoir",
 
         raspReflectionTitle: "Sustainability & Design Reflection",
-        raspReflectionText1: "Sustainability was addressed through material reuse, low-cost prototyping and simple sensing solutions. Recycled wires and reused materials were incorporated where possible, while the integrated storage reduced unnecessary robot motion during harvesting.",
-        raspReflectionText2: "The final design remained intentionally simple while still performing the key harvesting tasks effectively. Pressure sensing worked reliably and supported gentle fruit handling, while the main limitation identified was the conductivity-based ripeness check, considered reliable but relatively slow. Future development could include FEM-guided optimization, reduced glue usage, a transition toward injection molding for larger-scale production, and the use of a color sensor to increase harvesting speed.",
+        raspReflectionText1: "Sustainability was addressed through simple material reuse and low-cost prototyping, while the integrated storage reduced unnecessary robot motion during harvesting.",
+        raspReflectionText2: "The final design remained intentionally simple while still performing the key harvesting tasks effectively. Pressure sensing worked reliably and supported gentle fruit handling, while the main limitation identified was the conductivity-based ripeness check, considered reliable but relatively slow. Future development could include FEM-guided optimization, a transition toward injection molding for larger-scale production, and the use of a color sensor to increase harvesting speed.",
 
         raspVideoTitle: "Project Video",
         raspVideoFallback: "Your browser does not support the video tag.",
         raspVideoNote: "",
 
         raspGalleryTitle: "Image Gallery",
+        raspCaption1: "1st proposed design",
+        raspCaption2: "2nd proposed design",
+        raspCaption3: "3rd proposed design",
+        raspCaption4: "Pressure sensor",
+        raspCaption5: "Electrical wiring of the gripper",
+        raspCaption6: "Code decision flow",
 
         raspFilesTitle: "Important Files",
         raspFile1: "Final report (PDF)",
@@ -455,14 +477,20 @@
         raspMaterials5: "Assemblage compact intégrant Arduino, servomoteurs, capteur de pression et réservoir",
 
         raspReflectionTitle: "Durabilité et retour critique",
-        raspReflectionText1: "La durabilité a été abordée par la réutilisation de matériaux, le prototypage à faible coût et des solutions de détection simples. Des fils recyclés et des matériaux réemployés ont été intégrés lorsque cela était possible, tandis que le stockage intégré réduisait les mouvements inutiles du robot pendant la récolte.",
-        raspReflectionText2: "Le design final est resté volontairement simple tout en assurant efficacement les fonctions clés de récolte. La mesure de pression s’est montrée fiable et a permis une manipulation douce du fruit, tandis que la principale limite identifiée concerne la détection de maturité par conductivité, jugée fiable mais relativement lente. Les pistes d’amélioration incluent une optimisation guidée par FEM, une réduction de l’usage de colle, une transition vers l’injection plastique pour une production plus grande série, ainsi que l’intégration d’un capteur couleur pour accélérer la récolte.",
+        raspReflectionText1: "La durabilité a été abordée par une réutilisation simple de matériaux et un prototypage à faible coût, tandis que le stockage intégré réduisait les mouvements inutiles du robot pendant la récolte.",
+        raspReflectionText2: "Le design final est resté volontairement simple tout en assurant efficacement les fonctions clés de récolte. La mesure de pression s’est montrée fiable et a permis une manipulation douce du fruit, tandis que la principale limite identifiée concerne la détection de maturité par conductivité, jugée fiable mais relativement lente. Les pistes d’amélioration incluent une optimisation guidée par FEM, une transition vers l’injection plastique pour une production plus grande série, ainsi que l’intégration d’un capteur couleur pour accélérer la récolte.",
 
         raspVideoTitle: "Vidéo du projet",
         raspVideoFallback: "Votre navigateur ne prend pas en charge la lecture de cette vidéo.",
         raspVideoNote: "",
 
         raspGalleryTitle: "Galerie d’images",
+        raspCaption1: "1er design proposé",
+        raspCaption2: "2e design proposé",
+        raspCaption3: "3e design proposé",
+        raspCaption4: "Capteur de pression",
+        raspCaption5: "Branchement électrique du gripper",
+        raspCaption6: "Flux de décision du code",
 
         raspFilesTitle: "Fichiers importants",
         raspFile1: "Rapport final (PDF)",
