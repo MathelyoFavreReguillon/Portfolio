@@ -69,9 +69,12 @@
     h2{font-size:clamp(1.7rem, 4vw, 2.45rem)}
 
     .lead{
+      display:block;
+      width:100%;
+      max-width:none;
       font-size:1.08rem;
       color:#333;
-      max-width:900px;
+      margin:0;
     }
 
     .tag{
@@ -253,7 +256,7 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag" data-i18n="projectTag">EPFL · Advanced Metallurgy · Thermo-Calc</div>
+        <div class="tag" data-i18n="projectTag">EPFL · Advanced Metallurgy · MSE-422</div>
         <h1 data-i18n="projectTitle">Development of High-Temperature High-Strength Aluminium Alloys</h1>
         <p class="lead" data-i18n="projectLead">
           Computational study of an Al-Ce-Sc alloy system using Thermo-Calc to design aluminium alloys with improved thermal stability and strength for service temperatures well above conventional aluminium applications.
@@ -334,7 +337,10 @@
           The simulations showed that the Al₁₁Ce₃ eutectic has extremely high thermal stability, with negligible interfacial diffusion over the investigated conditions. On the scandium side, Al₃Sc precipitates provided significant strengthening of the α-Al matrix, with computed yield strengths increasing strongly with scandium content.
         </p>
         <p class="muted" data-i18n="resultsText2">
-          At 300 °C, the alloy system remains promising over long durations, with limited strength degradation after coarsening. At 350 °C, however, precipitate coarsening becomes much more severe and significantly reduces long-term strength retention, making this temperature more limiting for sustained service.
+          From an engineering standpoint, the main interest of this alloy system lies in the combination of long-term eutectic stability and controllable matrix strengthening. This makes the Al-Ce-Sc concept particularly relevant for lightweight components operating beyond the typical thermal limits of standard aluminium alloys.
+        </p>
+        <p class="muted" data-i18n="resultsText3">
+          At 300 °C, the alloy system remains promising over long durations, with limited strength degradation after coarsening. At 350 °C, however, precipitate coarsening becomes much more severe and significantly reduces long-term strength retention. The study therefore highlights both the potential of the concept and the need for further optimization, especially regarding cost, heat treatment and experimental validation.
         </p>
 
         <div class="results">
@@ -355,43 +361,16 @@
     </section>
 
     <section class="section">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 data-i18n="interpretationTitle">Engineering Interpretation</h2>
-          <p data-i18n="interpretationText1">
-            From a materials engineering perspective, the interest of this alloy system lies in the combination of two complementary mechanisms. Cerium contributes long-term structural stability through a robust eutectic architecture, while scandium provides a controllable precipitation strengthening route for the matrix.
-          </p>
-          <p class="muted" data-i18n="interpretationText2">
-            This dual approach is particularly relevant for applications where standard aluminium alloys would soften too quickly above 150–200 °C. The study suggests that Al-Ce-Sc alloys could offer a valuable compromise between lightweight design, mechanical resistance and improved thermal capability.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 data-i18n="limitsTitle">Limits and Outlook</h2>
-          <p data-i18n="limitsText1">
-            The main limitation identified in the study is the behaviour of Al₃Sc precipitates at 350 °C, where coarsening accelerates and mechanical performance decreases more rapidly. In addition, high scandium contents improve performance but also increase material cost significantly.
-          </p>
-          <ul>
-            <li data-i18n="limit1">Need for more detailed experimental validation</li>
-            <li data-i18n="limit2">Potential partial replacement of Sc by Zr or Er to reduce cost</li>
-            <li data-i18n="limit3">Further work required on corrosion and real processing routes</li>
-            <li data-i18n="limit4">Optimization of heat treatment still needed for industrial use</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
       <div class="container card">
         <h2 data-i18n="galleryTitle">Image Gallery</h2>
         <div class="gallery">
           <div class="gallery-item">
             <img src="../photos/Thermocalc.png" alt="Thermo-Calc software visual">
-            <div class="caption" data-i18n="galleryCaption1">Thermo-Calc environment used for alloy thermodynamic and diffusion studies</div>
+            <div class="caption" data-i18n="galleryCaption1">Thermo-Calc study environment</div>
           </div>
           <div class="gallery-item">
             <img src="../photos/Binary diagram.png" alt="Binary phase diagram">
-            <div class="caption" data-i18n="galleryCaption2">Phase diagram supporting the alloy system selection and phase stability analysis</div>
+            <div class="caption" data-i18n="galleryCaption2">Phase diagram of the alloy system</div>
           </div>
         </div>
       </div>
@@ -413,7 +392,7 @@
       en: {
         backToPortfolio: "← Back to portfolio",
 
-        projectTag: "EPFL · Advanced Metallurgy · Thermo-Calc",
+        projectTag: "EPFL · Advanced Metallurgy · MSE-422",
         projectTitle: "Development of High-Temperature High-Strength Aluminium Alloys",
         projectLead: "Computational study of an Al-Ce-Sc alloy system using Thermo-Calc to design aluminium alloys with improved thermal stability and strength for service temperatures well above conventional aluminium applications.",
 
@@ -443,7 +422,8 @@
 
         resultsTitle: "Main Results",
         resultsText1: "The simulations showed that the Al₁₁Ce₃ eutectic has extremely high thermal stability, with negligible interfacial diffusion over the investigated conditions. On the scandium side, Al₃Sc precipitates provided significant strengthening of the α-Al matrix, with computed yield strengths increasing strongly with scandium content.",
-        resultsText2: "At 300 °C, the alloy system remains promising over long durations, with limited strength degradation after coarsening. At 350 °C, however, precipitate coarsening becomes much more severe and significantly reduces long-term strength retention, making this temperature more limiting for sustained service.",
+        resultsText2: "From an engineering standpoint, the main interest of this alloy system lies in the combination of long-term eutectic stability and controllable matrix strengthening. This makes the Al-Ce-Sc concept particularly relevant for lightweight components operating beyond the typical thermal limits of standard aluminium alloys.",
+        resultsText3: "At 300 °C, the alloy system remains promising over long durations, with limited strength degradation after coarsening. At 350 °C, however, precipitate coarsening becomes much more severe and significantly reduces long-term strength retention. The study therefore highlights both the potential of the concept and the need for further optimization, especially regarding cost, heat treatment and experimental validation.",
 
         result1Title: "Eutectic stability",
         result1Text: "Al₁₁Ce₃ shows almost no diffusion and remains highly stable at elevated temperature.",
@@ -452,20 +432,9 @@
         result3Title: "Temperature limit",
         result3Text: "~300 °C is promising for long-term use, while 350 °C becomes more critical due to coarsening.",
 
-        interpretationTitle: "Engineering Interpretation",
-        interpretationText1: "From a materials engineering perspective, the interest of this alloy system lies in the combination of two complementary mechanisms. Cerium contributes long-term structural stability through a robust eutectic architecture, while scandium provides a controllable precipitation strengthening route for the matrix.",
-        interpretationText2: "This dual approach is particularly relevant for applications where standard aluminium alloys would soften too quickly above 150–200 °C. The study suggests that Al-Ce-Sc alloys could offer a valuable compromise between lightweight design, mechanical resistance and improved thermal capability.",
-
-        limitsTitle: "Limits and Outlook",
-        limitsText1: "The main limitation identified in the study is the behaviour of Al₃Sc precipitates at 350 °C, where coarsening accelerates and mechanical performance decreases more rapidly. In addition, high scandium contents improve performance but also increase material cost significantly.",
-        limit1: "Need for more detailed experimental validation",
-        limit2: "Potential partial replacement of Sc by Zr or Er to reduce cost",
-        limit3: "Further work required on corrosion and real processing routes",
-        limit4: "Optimization of heat treatment still needed for industrial use",
-
         galleryTitle: "Image Gallery",
-        galleryCaption1: "Thermo-Calc environment used for alloy thermodynamic and diffusion studies",
-        galleryCaption2: "Phase diagram supporting the alloy system selection and phase stability analysis",
+        galleryCaption1: "Thermo-Calc study environment",
+        galleryCaption2: "Phase diagram of the alloy system",
 
         filesTitle: "Important Files",
         file1: "Project report (PDF)",
@@ -475,7 +444,7 @@
       fr: {
         backToPortfolio: "← Retour au portfolio",
 
-        projectTag: "EPFL · Métallurgie avancée · Thermo-Calc",
+        projectTag: "EPFL · Métallurgie avancée · MSE-422",
         projectTitle: "Développement d’alliages d’aluminium haute résistance pour haute température",
         projectLead: "Étude computationnelle d’un système d’alliage Al-Ce-Sc à l’aide de Thermo-Calc afin de concevoir des alliages d’aluminium offrant une meilleure stabilité thermique et une meilleure résistance mécanique à des températures supérieures aux domaines classiques d’utilisation de l’aluminium.",
 
@@ -505,7 +474,8 @@
 
         resultsTitle: "Résultats principaux",
         resultsText1: "Les simulations ont montré que l’eutectique Al₁₁Ce₃ présente une très grande stabilité thermique, avec une diffusion interfaciale négligeable dans les conditions étudiées. Côté scandium, les précipités d’Al₃Sc apportent un renforcement significatif de la matrice α-Al, avec des limites d’élasticité calculées qui augmentent fortement avec la teneur en scandium.",
-        resultsText2: "À 300 °C, le système d’alliage reste prometteur sur des durées longues, avec une perte de résistance limitée après grossissement. À 350 °C, en revanche, le grossissement des précipités devient beaucoup plus sévère et réduit davantage la tenue mécanique à long terme, ce qui rend cette température plus limitante pour un service prolongé.",
+        resultsText2: "D’un point de vue ingénierie, l’intérêt principal de ce système réside dans la combinaison entre stabilité eutectique à long terme et renforcement contrôlable de la matrice. Le concept Al-Ce-Sc apparaît ainsi pertinent pour des composants allégés devant fonctionner au-delà des limites thermiques habituelles des alliages d’aluminium standards.",
+        resultsText3: "À 300 °C, le système d’alliage reste prometteur sur des durées longues, avec une perte de résistance limitée après grossissement. À 350 °C, en revanche, le grossissement des précipités devient beaucoup plus sévère et réduit davantage la tenue mécanique à long terme. L’étude met donc en évidence à la fois le potentiel du concept et la nécessité d’un travail complémentaire sur le coût, les traitements thermiques et la validation expérimentale.",
 
         result1Title: "Stabilité eutectique",
         result1Text: "Al₁₁Ce₃ montre quasiment aucune diffusion et reste très stable à température élevée.",
@@ -514,20 +484,9 @@
         result3Title: "Limite en température",
         result3Text: "~300 °C apparaît prometteur en usage long, tandis que 350 °C devient plus critique à cause du grossissement.",
 
-        interpretationTitle: "Interprétation technique",
-        interpretationText1: "D’un point de vue ingénierie matériaux, l’intérêt de ce système d’alliage réside dans l’association de deux mécanismes complémentaires. Le cérium apporte une stabilité structurelle à long terme via une architecture eutectique robuste, tandis que le scandium offre une voie contrôlable de durcissement structural dans la matrice.",
-        interpretationText2: "Cette approche double est particulièrement pertinente pour des applications où les alliages d’aluminium standards s’adoucissent trop rapidement au-delà de 150–200 °C. L’étude suggère que les alliages Al-Ce-Sc pourraient offrir un compromis intéressant entre légèreté, résistance mécanique et meilleure tenue thermique.",
-
-        limitsTitle: "Limites et perspectives",
-        limitsText1: "La principale limite identifiée dans l’étude concerne le comportement des précipités Al₃Sc à 350 °C, où le grossissement s’accélère et la performance mécanique se dégrade plus rapidement. En complément, des teneurs élevées en scandium améliorent les performances mais augmentent fortement le coût matière.",
-        limit1: "Besoin d’une validation expérimentale plus poussée",
-        limit2: "Substitution partielle possible du Sc par Zr ou Er pour réduire le coût",
-        limit3: "Travaux complémentaires nécessaires sur la corrosion et les procédés réels",
-        limit4: "Optimisation du traitement thermique encore nécessaire pour un usage industriel",
-
         galleryTitle: "Galerie d’images",
-        galleryCaption1: "Environnement Thermo-Calc utilisé pour les études thermodynamiques et de diffusion",
-        galleryCaption2: "Diagramme de phase servant au choix du système d’alliage et à l’analyse de stabilité",
+        galleryCaption1: "Environnement d’étude Thermo-Calc",
+        galleryCaption2: "Diagramme de phase du système alliage",
 
         filesTitle: "Fichiers importants",
         file1: "Rapport du projet (PDF)",
