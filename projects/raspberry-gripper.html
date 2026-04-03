@@ -221,10 +221,10 @@
   <main>
     <section class="hero">
       <div class="container">
-        <div class="tag" data-i18n="raspTag">EPFL · ME-320 · Robotic Fruit Harvesting Project</div>
+        <div class="tag" data-i18n="raspTag">EPFL · Product Design Development · ME-320</div>
         <h1 data-i18n="raspTitle">Raspberry Gripper</h1>
         <p class="lead" data-i18n="raspLead">
-          Development of a compact robotic gripper for raspberry harvesting, designed to pick delicate fruit without damage while integrating ripeness detection, pressure control and temporary onboard storage.
+          Development of a compact robotic gripper for raspberry harvesting, designed to pick delicate fruit without damage while integrating ripeness detection, pressure control and temporary onboard storage. The project focused on creating a mechanism that remained gentle on the fruit, compact enough for robotic integration, and practical to prototype with simple manufacturing methods and embedded sensing.
         </p>
       </div>
     </section>
@@ -238,16 +238,6 @@
     <section class="section">
       <div class="container grid-2">
         <div class="card">
-          <h2 data-i18n="raspOverviewTitle">Project Overview</h2>
-          <p data-i18n="raspOverviewText1">
-            This project focused on the design and prototyping of a raspberry harvesting gripper for robotic use at EPFL. The challenge was to handle a fragile fruit with a compact mechanism able to grip gently, identify ripeness and remain easy to integrate on a robot.
-          </p>
-          <p class="muted" data-i18n="raspOverviewText2">
-            The final concept combines a two-jaw side gripping system, sensing for pressure and conductivity, and an integrated storage box to avoid repeated back-and-forth motions during harvesting.
-          </p>
-        </div>
-
-        <div class="card">
           <h2 data-i18n="raspContribTitle">Key Contributions</h2>
           <ul>
             <li data-i18n="raspContrib1">Mechanical design and integration of the final gripper architecture</li>
@@ -257,21 +247,21 @@
             <li data-i18n="raspContrib5">Development of a compact storage solution to improve harvesting efficiency</li>
           </ul>
         </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container grid-2">
         <div class="card">
           <h2 data-i18n="raspConceptTitle">Concept Development</h2>
           <p data-i18n="raspConceptText1">
             The project started with five different gripper concepts exploring tendon-like fingers, rack-and-pinion motion, gear-driven linkages, three-finger solutions and integrated storage approaches.
           </p>
           <p class="muted" data-i18n="raspConceptText2">
-            After screening and weighted scoring, the final solution combined the overall architecture of concept B, the grip-related qualities of concept C, and the reservoir idea from concept E.
+            After screening and weighted scoring, the final solution retained the most relevant strengths of the explored concepts: a compact side-gripping architecture, a reliable gripping strategy, and the addition of an onboard storage reservoir to reduce unnecessary robot motion during harvesting.
           </p>
         </div>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="container grid-2">
         <div class="card">
           <h2 data-i18n="raspMechanismTitle">Final Mechanism</h2>
           <p data-i18n="raspMechanismText1">
@@ -281,11 +271,7 @@
             The fruit is gripped from the side, a practical approach for robot positioning during harvesting, and then transferred into an onboard tank that stores several raspberries before release.
           </p>
         </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container grid-2">
         <div class="card">
           <h2 data-i18n="raspSensorsTitle">Sensors & Control</h2>
           <ul>
@@ -296,7 +282,11 @@
             <li data-i18n="raspSensors5">System designed to balance delicacy, reliability and simplicity</li>
           </ul>
         </div>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="container grid-2">
         <div class="card">
           <h2 data-i18n="raspMaterialsTitle">Materials & Manufacturing</h2>
           <ul>
@@ -307,28 +297,14 @@
             <li data-i18n="raspMaterials5">Compact assembly including Arduino, servomotors, pressure sensor and integrated reservoir</li>
           </ul>
         </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container grid-2">
         <div class="card">
-          <h2 data-i18n="raspSustainTitle">Sustainability & Scalability</h2>
-          <p data-i18n="raspSustainText1">
+          <h2 data-i18n="raspReflectionTitle">Sustainability & Design Reflection</h2>
+          <p data-i18n="raspReflectionText1">
             Sustainability was addressed through material reuse, low-cost prototyping and simple sensing solutions. Recycled wires and reused materials were incorporated where possible, while the integrated storage reduced unnecessary robot motion during harvesting.
           </p>
-          <p class="muted" data-i18n="raspSustainText2">
-            The report also highlights future improvements such as FEM-guided design, topology optimization, reduced glue usage, and a transition from 3D printing to injection molding for larger-scale production.
-          </p>
-        </div>
-
-        <div class="card">
-          <h2 data-i18n="raspDesignTitle">Design Reflection</h2>
-          <p data-i18n="raspDesignText1">
-            The final design remained intentionally simple while still performing the key harvesting tasks effectively. The pressure sensing worked reliably and helped maintain gentle handling of the fruit.
-          </p>
-          <p class="muted" data-i18n="raspDesignText2">
-            The main limitation identified was the conductivity-based ripeness check, which was reliable but slower in use. A future redesign could consider a color sensor to increase harvesting speed and improve competitive performance.
+          <p class="muted" data-i18n="raspReflectionText2">
+            The final design remained intentionally simple while still performing the key harvesting tasks effectively. Pressure sensing worked reliably and supported gentle fruit handling, while the main limitation identified was the conductivity-based ripeness check, considered reliable but relatively slow. Future development could include FEM-guided optimization, reduced glue usage, a transition toward injection molding for larger-scale production, and the use of a color sensor to increase harvesting speed.
           </p>
         </div>
       </div>
@@ -344,8 +320,7 @@
             <span data-i18n="raspVideoFallback">Your browser does not support the video tag.</span>
           </video>
         </div>
-        <p class="muted" style="margin-top:1rem;" data-i18n="raspVideoNote">
-        </p>
+        <p class="muted" style="margin-top:1rem;" data-i18n="raspVideoNote"></p>
       </div>
     </section>
 
@@ -393,13 +368,9 @@
       en: {
         backToPortfolio: "← Back to portfolio",
 
-        raspTag: "EPFL · ME-320 · Robotic Fruit Harvesting Project",
+        raspTag: "EPFL · Product Design Development · ME-320",
         raspTitle: "Raspberry Gripper",
-        raspLead: "Development of a compact robotic gripper for raspberry harvesting, designed to pick delicate fruit without damage while integrating ripeness detection, pressure control and temporary onboard storage.",
-
-        raspOverviewTitle: "Project Overview",
-        raspOverviewText1: "This project focused on the design and prototyping of a raspberry harvesting gripper for robotic use at EPFL. The challenge was to handle a fragile fruit with a compact mechanism able to grip gently, identify ripeness and remain easy to integrate on a robot.",
-        raspOverviewText2: "The final concept combines a two-jaw side gripping system, sensing for pressure and conductivity, and an integrated storage box to avoid repeated back-and-forth motions during harvesting.",
+        raspLead: "Development of a compact robotic gripper for raspberry harvesting, designed to pick delicate fruit without damage while integrating ripeness detection, pressure control and temporary onboard storage. The project focused on creating a mechanism that remained gentle on the fruit, compact enough for robotic integration, and practical to prototype with simple manufacturing methods and embedded sensing.",
 
         raspContribTitle: "Key Contributions",
         raspContrib1: "Mechanical design and integration of the final gripper architecture",
@@ -410,7 +381,7 @@
 
         raspConceptTitle: "Concept Development",
         raspConceptText1: "The project started with five different gripper concepts exploring tendon-like fingers, rack-and-pinion motion, gear-driven linkages, three-finger solutions and integrated storage approaches.",
-        raspConceptText2: "After screening and weighted scoring, the final solution combined the overall architecture of concept B, the grip-related qualities of concept C, and the reservoir idea from concept E.",
+        raspConceptText2: "After screening and weighted scoring, the final solution retained the most relevant strengths of the explored concepts: a compact side-gripping architecture, a reliable gripping strategy, and the addition of an onboard storage reservoir to reduce unnecessary robot motion during harvesting.",
 
         raspMechanismTitle: "Final Mechanism",
         raspMechanismText1: "The final gripper uses a parallel jaw mechanism driven by a compact servo motor. Two gears transmit motion to a linkage system that converts rotation into a controlled translational closing motion of the jaws.",
@@ -430,16 +401,13 @@
         raspMaterials4: "Conductive wires recovered from old cables for the ripeness sensor",
         raspMaterials5: "Compact assembly including Arduino, servomotors, pressure sensor and integrated reservoir",
 
-        raspSustainTitle: "Sustainability & Scalability",
-        raspSustainText1: "Sustainability was addressed through material reuse, low-cost prototyping and simple sensing solutions. Recycled wires and reused materials were incorporated where possible, while the integrated storage reduced unnecessary robot motion during harvesting.",
-        raspSustainText2: "The report also highlights future improvements such as FEM-guided design, topology optimization, reduced glue usage, and a transition from 3D printing to injection molding for larger-scale production.",
-
-        raspDesignTitle: "Design Reflection",
-        raspDesignText1: "The final design remained intentionally simple while still performing the key harvesting tasks effectively. The pressure sensing worked reliably and helped maintain gentle handling of the fruit.",
-        raspDesignText2: "The main limitation identified was the conductivity-based ripeness check, which was reliable but slower in use. A future redesign could consider a color sensor to increase harvesting speed and improve competitive performance.",
+        raspReflectionTitle: "Sustainability & Design Reflection",
+        raspReflectionText1: "Sustainability was addressed through material reuse, low-cost prototyping and simple sensing solutions. Recycled wires and reused materials were incorporated where possible, while the integrated storage reduced unnecessary robot motion during harvesting.",
+        raspReflectionText2: "The final design remained intentionally simple while still performing the key harvesting tasks effectively. Pressure sensing worked reliably and supported gentle fruit handling, while the main limitation identified was the conductivity-based ripeness check, considered reliable but relatively slow. Future development could include FEM-guided optimization, reduced glue usage, a transition toward injection molding for larger-scale production, and the use of a color sensor to increase harvesting speed.",
 
         raspVideoTitle: "Project Video",
         raspVideoFallback: "Your browser does not support the video tag.",
+        raspVideoNote: "",
 
         raspGalleryTitle: "Image Gallery",
 
@@ -448,19 +416,14 @@
         raspFile2: "Concept selection report (PDF)",
         raspFile3: "Bill of materials (PDF)",
         raspFile4: "Drawings (PDF)"
-
       },
 
       fr: {
         backToPortfolio: "← Retour au portfolio",
 
-        raspTag: "EPFL · ME-320 · Projet de récolte robotisée",
+        raspTag: "EPFL · Product Design Development · ME-320",
         raspTitle: "Raspberry Gripper",
-        raspLead: "Développement d’une pince robotique compacte pour la récolte de framboises, conçue pour saisir un fruit délicat sans l’endommager tout en intégrant la détection de maturité, le contrôle de pression et un stockage embarqué temporaire.",
-
-        raspOverviewTitle: "Vue d’ensemble du projet",
-        raspOverviewText1: "Ce projet portait sur la conception et le prototypage d’une pince de récolte de framboises pour usage robotique à l’EPFL. L’enjeu était de manipuler un fruit fragile avec un mécanisme compact capable de saisir délicatement, d’identifier la maturité et de rester facile à intégrer sur un robot.",
-        raspOverviewText2: "Le concept final combine un système de préhension latérale à deux doigts, une détection par pression et conductivité, ainsi qu’un réservoir intégré pour éviter les allers-retours répétés pendant la récolte.",
+        raspLead: "Développement d’une pince robotique compacte pour la récolte de framboises, conçue pour saisir un fruit délicat sans l’endommager tout en intégrant la détection de maturité, le contrôle de pression et un stockage embarqué temporaire. Le projet visait à développer un mécanisme à la fois doux pour le fruit, suffisamment compact pour une intégration robotique, et pertinent en prototypage avec des moyens de fabrication simples et des capteurs embarqués.",
 
         raspContribTitle: "Contributions clés",
         raspContrib1: "Conception mécanique et intégration de l’architecture finale de la pince",
@@ -471,7 +434,7 @@
 
         raspConceptTitle: "Développement du concept",
         raspConceptText1: "Le projet a commencé par l’étude de cinq concepts différents de pince, explorant des doigts de type tendon, un système crémaillère-pignon, des liaisons entraînées par engrenages, des solutions à trois doigts et des approches avec stockage intégré.",
-        raspConceptText2: "Après une phase de screening et de scoring pondéré, la solution finale a combiné l’architecture générale du concept B, les qualités de préhension du concept C et l’idée de réservoir du concept E.",
+        raspConceptText2: "Après une phase de screening et de scoring pondéré, la solution finale a retenu les points les plus pertinents des concepts explorés : une architecture compacte à préhension latérale, une stratégie de saisie fiable, ainsi que l’ajout d’un réservoir embarqué pour réduire les mouvements inutiles du robot pendant la récolte.",
 
         raspMechanismTitle: "Mécanisme final",
         raspMechanismText1: "La pince finale repose sur un mécanisme à mâchoires parallèles entraîné par un servomoteur compact. Deux engrenages transmettent le mouvement à un système de liaisons qui convertit la rotation en fermeture translatoire contrôlée des doigts.",
@@ -491,24 +454,21 @@
         raspMaterials4: "Fils conducteurs récupérés sur d’anciens câbles pour le capteur de maturité",
         raspMaterials5: "Assemblage compact intégrant Arduino, servomoteurs, capteur de pression et réservoir",
 
-        raspSustainTitle: "Durabilité et passage à l’échelle",
-        raspSustainText1: "La durabilité a été abordée par la réutilisation de matériaux, le prototypage à faible coût et des solutions de détection simples. Des fils recyclés et des matériaux réemployés ont été intégrés lorsque cela était possible, tandis que le stockage intégré réduisait les mouvements inutiles du robot pendant la récolte.",
-        raspSustainText2: "Le rapport met aussi en avant plusieurs pistes d’amélioration : conception guidée par FEM, optimisation topologique, réduction de l’usage de colle et passage de l’impression 3D à l’injection plastique pour une production en plus grande série.",
-
-        raspDesignTitle: "Retour critique sur le design",
-        raspDesignText1: "Le design final est resté volontairement simple tout en assurant efficacement les fonctions clés de récolte. La mesure de pression s’est montrée fiable et a permis une manipulation douce du fruit.",
-        raspDesignText2: "La principale limite identifiée concerne la détection de maturité par conductivité, jugée fiable mais plus lente à l’usage. Une future version pourrait intégrer un capteur couleur pour augmenter la vitesse de récolte et améliorer les performances en contexte compétitif.",
+        raspReflectionTitle: "Durabilité et retour critique",
+        raspReflectionText1: "La durabilité a été abordée par la réutilisation de matériaux, le prototypage à faible coût et des solutions de détection simples. Des fils recyclés et des matériaux réemployés ont été intégrés lorsque cela était possible, tandis que le stockage intégré réduisait les mouvements inutiles du robot pendant la récolte.",
+        raspReflectionText2: "Le design final est resté volontairement simple tout en assurant efficacement les fonctions clés de récolte. La mesure de pression s’est montrée fiable et a permis une manipulation douce du fruit, tandis que la principale limite identifiée concerne la détection de maturité par conductivité, jugée fiable mais relativement lente. Les pistes d’amélioration incluent une optimisation guidée par FEM, une réduction de l’usage de colle, une transition vers l’injection plastique pour une production plus grande série, ainsi que l’intégration d’un capteur couleur pour accélérer la récolte.",
 
         raspVideoTitle: "Vidéo du projet",
         raspVideoFallback: "Votre navigateur ne prend pas en charge la lecture de cette vidéo.",
+        raspVideoNote: "",
 
         raspGalleryTitle: "Galerie d’images",
 
         raspFilesTitle: "Fichiers importants",
         raspFile1: "Rapport final (PDF)",
         raspFile2: "Rapport de sélection de concept (PDF)",
-        raspFile3: "Nomenclature / Bill of materials (PDF)", 
-        raspFile4: "Dessins Techniques (PDF)"
+        raspFile3: "Nomenclature / Bill of materials (PDF)",
+        raspFile4: "Dessins techniques (PDF)"
       }
     };
 
