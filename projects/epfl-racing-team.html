@@ -70,13 +70,13 @@
     }
 
     h1{font-size:clamp(2.4rem, 6vw, 4.4rem)}
-    h2{font-size:clamp(1.6rem, 4vw, 2.5rem)}
-    h3{font-size:1.15rem}
+    h2{font-size:clamp(1.55rem, 4vw, 2.4rem)}
+    h3{font-size:1.08rem}
 
     .lead{
       font-size:1.08rem;
       color:#333;
-      max-width:920px;
+      max-width:930px;
     }
 
     .tag{
@@ -169,6 +169,12 @@
       gap:1.2rem;
     }
 
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:1.2rem;
+    }
+
     .card{
       padding:1.5rem;
     }
@@ -176,7 +182,7 @@
     .muted{color:var(--muted)}
 
     ul{
-      margin:.3rem 0 0 1.1rem;
+      margin:.35rem 0 0 1.1rem;
       padding:0;
     }
 
@@ -240,13 +246,26 @@
       display:block;
     }
 
+    .mini-tag{
+      display:inline-block;
+      font-size:.78rem;
+      padding:.32rem .62rem;
+      border-radius:999px;
+      background:var(--red-soft);
+      color:#9b0000;
+      font-weight:700;
+      margin-bottom:.9rem;
+    }
+
     @media (max-width: 950px){
       .gallery{grid-template-columns:repeat(2, 1fr)}
       .files{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr 1fr}
     }
 
     @media (max-width: 800px){
-      .grid-2{grid-template-columns:1fr}
+      .grid-2,
+      .grid-3{grid-template-columns:1fr}
       .hero-image-frame{height:320px}
     }
 
@@ -270,7 +289,7 @@
         <div class="tag" data-i18n="pageTag">EPFL · EPFL Racing Team · Second Year</div>
         <h1 id="roleTitleMain">Monocoque & Layup Division Lead</h1>
         <p class="lead" id="roleLeadMain">
-          In parallel with my Vice-President role, I led the Monocoque & Layup Division, overseeing one of the most critical manufacturing scopes of the car. This position involved composites production leadership, division coordination and delivery responsibility on a core structural component of the vehicle.
+          In parallel with my Vice-President role, I led the Monocoque & Layup Division, overseeing one of the most critical manufacturing scopes of the car. This position combined technical ownership, production planning, process structuring and representation of the division internally and externally.
         </p>
       </div>
     </section>
@@ -301,24 +320,25 @@
       <section class="section">
         <div class="container grid-2">
           <div class="card">
-            <h2 data-i18n="monoOverviewTitle">Role Overview</h2>
-            <p data-i18n="monoOverviewText1">
-              As leader of the Monocoque & Layup Division, I was responsible for one of the most critical parts of the car: the manufacturing and delivery of the carbon monocoque and the organization of the layup-related work.
+            <div class="mini-tag" data-i18n="monoTag1">Production leadership</div>
+            <h2 data-i18n="monoBlock1Title">Monocoque Production Organization</h2>
+            <p data-i18n="monoBlock1Text1">
+              I structured and supervised the production of the new carbon monocoque from preparation to execution, with dedicated tools for pre-production, layup follow-up and post-production.
             </p>
-            <p class="muted" data-i18n="monoOverviewText2">
-              This role combined composites manufacturing, technical supervision, production planning and coordination of people working on one of the most demanding components of the whole vehicle.
+            <p class="muted" data-i18n="monoBlock1Text2">
+              This included organizing the manufacturing logic, sequencing the work, documenting the process and making sure the division could deliver reliably on one of the most critical structural components of the car.
             </p>
           </div>
 
           <div class="card">
-            <h2 data-i18n="monoRoleTitle">Main Responsibilities</h2>
-            <ul>
-              <li data-i18n="monoRole1">Leading the Monocoque & Layup Division throughout production</li>
-              <li data-i18n="monoRole2">Supervising composite manufacturing activities and preparation steps</li>
-              <li data-i18n="monoRole3">Coordinating people, tasks and priorities within the division</li>
-              <li data-i18n="monoRole4">Ensuring manufacturing quality, process consistency and progress tracking</li>
-              <li data-i18n="monoRole5">Contributing to the final delivery of a key structural part of the race car</li>
-            </ul>
+            <div class="mini-tag" data-i18n="monoTag2">Composite innovation</div>
+            <h2 data-i18n="monoBlock2Title">Lightweight Composite Boxes</h2>
+            <p data-i18n="monoBlock2Text1">
+              I also supervised the production of several electronic housings and implemented my own composite box concept to achieve lighter, stronger and faster-to-produce parts.
+            </p>
+            <p class="muted" data-i18n="monoBlock2Text2">
+              The method relied on laminating a single flat carbon plate, CNC cutting the parts and assembling them by bonding. This enabled a fast production flow while delivering robust housings that successfully passed all competition waterproofness tests.
+            </p>
           </div>
         </div>
       </section>
@@ -326,22 +346,24 @@
       <section class="section">
         <div class="container grid-2">
           <div class="card">
-            <h2 data-i18n="monoTechnicalTitle">Technical Dimension</h2>
-            <p data-i18n="monoTechnicalText1">
-              The monocoque is at the center of the car architecture, both structurally and from a manufacturing perspective. Leading this division required understanding the full production chain, from preparation and layup to organization, execution and manufacturing reliability.
+            <div class="mini-tag" data-i18n="monoTag3">Technical representation</div>
+            <h2 data-i18n="monoBlock3Title">Design Justification & Technical Reviews</h2>
+            <p data-i18n="monoBlock3Text1">
+              A key part of the role was being able to justify technical choices, manufacturing decisions and design logic to highly qualified judges and technical reviewers.
             </p>
-            <p class="muted" data-i18n="monoTechnicalText2">
-              It was a role where technical rigor, anticipation and workshop discipline were essential, because delays or errors on such a part have major consequences on the rest of the project.
+            <p class="muted" data-i18n="monoBlock3Text2">
+              This required strong understanding of the parts, the processes behind them and the ability to explain and defend the work with clarity in a demanding engineering context.
             </p>
           </div>
 
           <div class="card">
-            <h2 data-i18n="monoLeadershipTitle">Team & Production Leadership</h2>
-            <p data-i18n="monoLeadershipText1">
-              Beyond the technical side, this role also meant leading people in a production environment: assigning work, maintaining momentum, solving day-to-day issues and keeping the division aligned with the larger team schedule.
+            <div class="mini-tag" data-i18n="monoTag4">External exposure</div>
+            <h2 data-i18n="monoBlock4Title">Sponsoring & JEC Representation</h2>
+            <p data-i18n="monoBlock4Text1">
+              I also contributed to the visibility of the division by presenting our work externally, including sponsor-oriented exchanges and representation of the chassis / monocoque scope at JEC.
             </p>
-            <p class="muted" data-i18n="monoLeadershipText2">
-              It was one of the most intense and formative leadership experiences of my time in the team, because it required both engineering understanding and strong execution under pressure.
+            <p class="muted" data-i18n="monoBlock4Text2">
+              This strengthened my ability to present technical work in a professional way, connect engineering content with external partners and support the team’s sponsorship dynamics.
             </p>
           </div>
         </div>
@@ -371,11 +393,10 @@
         <div class="container card">
           <h2 data-i18n="monoFilesTitle">Important Files</h2>
           <div class="files">
-            <a class="file-link" href="../documents/RacingMono_Document1.pdf" target="_blank" data-i18n="monoFile1">Manufacturing report (PDF)</a>
-            <a class="file-link" href="../documents/RacingMono_Document2.pdf" target="_blank" data-i18n="monoFile2">Layup documentation (PDF)</a>
-            <a class="file-link" href="../documents/RacingMono_Document3.pdf" target="_blank" data-i18n="monoFile3">Production summary (PDF)</a>
-            <a class="file-link" href="../documents/RacingMono_Document4.pdf" target="_blank" data-i18n="monoFile4">Presentation deck (PDF)</a>
-            <a class="file-link" href="../documents/RacingMono_Document5.pdf" target="_blank" data-i18n="monoFile5">Additional document (PDF)</a>
+            <a class="file-link" href="../documents/EPFLRT_2_Plybook.pdf" target="_blank" data-i18n="monoFile1">Plybook / layup documentation (PDF)</a>
+            <a class="file-link" href="../documents/EPFLRT_2_Boites.pdf" target="_blank" data-i18n="monoFile2">Composite boxes production tracking (PDF)</a>
+            <a class="file-link" href="../documents/EPFLRT_2_Chassis JEC.pdf" target="_blank" data-i18n="monoFile3">Chassis / JEC presentation (PDF)</a>
+            <a class="file-link" href="../documents/EPFLRT_2_Rollout Présentation.pdf" target="_blank" data-i18n="monoFile4">Rollout presentation (PDF)</a>
           </div>
         </div>
       </section>
@@ -398,24 +419,25 @@
       <section class="section">
         <div class="container grid-2">
           <div class="card">
-            <h2 data-i18n="vpOverviewTitle">Role Overview</h2>
-            <p data-i18n="vpOverviewText1">
-              As Vice-President of the EPFL Racing Team, I contributed to the overall management of a large student engineering organization combining technical development, manufacturing, logistics, planning and competition preparation.
+            <div class="mini-tag" data-i18n="vpTag1">Leadership</div>
+            <h2 data-i18n="vpBlock1Title">Management of a Large Student Engineering Team</h2>
+            <p data-i18n="vpBlock1Text1">
+              As Vice-President, I worked within a team structure gathering around one hundred members across many technical and organizational scopes.
             </p>
-            <p class="muted" data-i18n="vpOverviewText2">
-              This position required balancing strategic vision with operational execution, while helping the team stay aligned across departments and throughout the race car development cycle.
+            <p class="muted" data-i18n="vpBlock1Text2">
+              The role required listening to many different perspectives, taking people’s feedback into account and helping decisions converge in the most efficient way for the project as a whole.
             </p>
           </div>
 
           <div class="card">
-            <h2 data-i18n="vpRoleTitle">Main Responsibilities</h2>
-            <ul>
-              <li data-i18n="vpRole1">Supporting overall team coordination and decision-making</li>
-              <li data-i18n="vpRole2">Contributing to planning, organization and project follow-up</li>
-              <li data-i18n="vpRole3">Helping align technical progress with manufacturing reality and deadlines</li>
-              <li data-i18n="vpRole4">Supporting team structure, communication and day-to-day operations</li>
-              <li data-i18n="vpRole5">Taking part in competition preparation, tests and global execution</li>
-            </ul>
+            <div class="mini-tag" data-i18n="vpTag2">Sponsors</div>
+            <h2 data-i18n="vpBlock2Title">Sponsor Events & External Representation</h2>
+            <p data-i18n="vpBlock2Text1">
+              I participated in sponsor-facing events and exchanges that helped strengthen the team’s visibility and relationships with partners.
+            </p>
+            <p class="muted" data-i18n="vpBlock2Text2">
+              This included events and meetings linked to JEC, Emil Frey and Garrett, as well as broader interactions with industrial stakeholders around the team and the project.
+            </p>
           </div>
         </div>
       </section>
@@ -423,22 +445,50 @@
       <section class="section">
         <div class="container grid-2">
           <div class="card">
-            <h2 data-i18n="vpLeadershipTitle">Leadership Dimension</h2>
-            <p data-i18n="vpLeadershipText1">
-              This role pushed me to grow beyond pure engineering execution. It required leadership, prioritization, communication and the ability to help people move in the same direction in a demanding and fast-paced environment.
+            <div class="mini-tag" data-i18n="vpTag3">Operations</div>
+            <h2 data-i18n="vpBlock3Title">Team Logistics & Standardized Inventory</h2>
+            <p data-i18n="vpBlock3Text1">
+              I was responsible for a significant part of the team logistics, including the implementation of a standardized inventory system at team scale.
             </p>
-            <p class="muted" data-i18n="vpLeadershipText2">
-              It was especially formative in understanding how performance also depends on team structure, project discipline and the quality of coordination between many parallel workstreams.
+            <p class="muted" data-i18n="vpBlock3Text2">
+              This work aimed at improving visibility, organization and readiness by structuring storage, references, equipment tracking and competition-related material management.
             </p>
           </div>
 
           <div class="card">
-            <h2 data-i18n="vpImpactTitle">Impact</h2>
-            <p data-i18n="vpImpactText1">
-              Being Vice-President gave me a much broader perspective on what it takes to bring a race car project from design to production, testing and competition.
+            <div class="mini-tag" data-i18n="vpTag4">Testing</div>
+            <h2 data-i18n="vpBlock4Title">Test Days Logistics</h2>
+            <p data-i18n="vpBlock4Text1">
+              I contributed to the logistical preparation and execution of test days, including planning, transport organization and material readiness.
             </p>
-            <p class="muted" data-i18n="vpImpactText2">
-              It reinforced my ability to connect technical challenges with organizational realities, which is essential in any high-performance engineering environment.
+            <p class="muted" data-i18n="vpBlock4Text2">
+              These phases required anticipation, coordination and execution discipline to ensure that tests could run efficiently and support the broader vehicle development process.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container grid-2">
+          <div class="card">
+            <div class="mini-tag" data-i18n="vpTag5">Event management</div>
+            <h2 data-i18n="vpBlock5Title">Rollout Organization</h2>
+            <p data-i18n="vpBlock5Text1">
+              I helped organize the team rollout, the official reveal of the car to families, partners and guests.
+            </p>
+            <p class="muted" data-i18n="vpBlock5Text2">
+              This involved coordinating the venue, catering, transport, equipment, decoration, sound and overall event logistics for a large-format presentation gathering roughly 300 people.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="mini-tag" data-i18n="vpTag6">Competitions</div>
+            <h2 data-i18n="vpBlock6Title">Competition Logistics</h2>
+            <p data-i18n="vpBlock6Text1">
+              I also contributed to the organization of competition logistics, covering transport plans, administrative preparation, ATA carnet follow-up and detailed planning.
+            </p>
+            <p class="muted" data-i18n="vpBlock6Text2">
+              This was essential to ensure that the team, the car and all key material could move efficiently and reliably across events and international competition environments.
             </p>
           </div>
         </div>
@@ -448,18 +498,18 @@
         <div class="container card">
           <h2 data-i18n="vpGalleryTitle">Image Gallery</h2>
           <div class="gallery">
-            <div class="gallery-item"><img src="../photos/RacingVP2.jpg" alt="Vice-President image 1"></div>
-            <div class="gallery-item"><img src="../photos/RacingVP3.jpg" alt="Vice-President image 2"></div>
-            <div class="gallery-item"><img src="../photos/RacingVP4.jpg" alt="Vice-President image 3"></div>
-            <div class="gallery-item"><img src="../photos/RacingVP5.jpg" alt="Vice-President image 4"></div>
-            <div class="gallery-item"><img src="../photos/RacingVP6.jpg" alt="Vice-President image 5"></div>
-            <div class="gallery-item"><img src="../photos/RacingVP7.jpg" alt="Vice-President image 6"></div>
-            <div class="gallery-item"><img src="../photos/RacingVP8.jpg" alt="Vice-President image 7"></div>
-            <div class="gallery-item"><img src="../photos/RacingVP9.jpg" alt="Vice-President image 8"></div>
-            <div class="gallery-item"><img src="../photos/RacingVP10.jpg" alt="Vice-President image 9"></div>
-            <div class="gallery-item"><img src="../photos/RacingVP11.jpg" alt="Vice-President image 10"></div>
-            <div class="gallery-item"><img src="../photos/RacingVP12.jpg" alt="Vice-President image 11"></div>
-            <div class="gallery-item"><img src="../photos/RacingVP13.jpg" alt="Vice-President image 12"></div>
+            <div class="gallery-item"><img src="../photos/EPFLRT_2_2.jpg" alt="Vice-President image 1"></div>
+            <div class="gallery-item"><img src="../photos/EPFLRT_2_3.jpg" alt="Vice-President image 2"></div>
+            <div class="gallery-item"><img src="../photos/EPFLRT_2_4.jpg" alt="Vice-President image 3"></div>
+            <div class="gallery-item"><img src="../photos/EPFLRT_2_5.jpg" alt="Vice-President image 4"></div>
+            <div class="gallery-item"><img src="../photos/EPFLRT_2_6.jpg" alt="Vice-President image 5"></div>
+            <div class="gallery-item"><img src="../photos/EPFLRT_2_7.jpg" alt="Vice-President image 6"></div>
+            <div class="gallery-item"><img src="../photos/EPFLRT_2_8.jpg" alt="Vice-President image 7"></div>
+            <div class="gallery-item"><img src="../photos/EPFLRT_2_9.jpg" alt="Vice-President image 8"></div>
+            <div class="gallery-item"><img src="../photos/EPFLRT_2_10.jpg" alt="Vice-President image 9"></div>
+            <div class="gallery-item"><img src="../photos/EPFLRT_2_11.jpg" alt="Vice-President image 10"></div>
+            <div class="gallery-item"><img src="../photos/EPFLRT_2_12.jpg" alt="Vice-President image 11"></div>
+            <div class="gallery-item"><img src="../photos/EPFLRT_2_13.jpg" alt="Vice-President image 12"></div>
           </div>
         </div>
       </section>
@@ -468,11 +518,10 @@
         <div class="container card">
           <h2 data-i18n="vpFilesTitle">Important Files</h2>
           <div class="files">
-            <a class="file-link" href="../documents/RacingVP_Document1.pdf" target="_blank" data-i18n="vpFile1">Annual overview report (PDF)</a>
-            <a class="file-link" href="../documents/RacingVP_Document2.pdf" target="_blank" data-i18n="vpFile2">Organization summary (PDF)</a>
-            <a class="file-link" href="../documents/RacingVP_Document3.pdf" target="_blank" data-i18n="vpFile3">Competition preparation notes (PDF)</a>
-            <a class="file-link" href="../documents/RacingVP_Document4.pdf" target="_blank" data-i18n="vpFile4">Presentation deck (PDF)</a>
-            <a class="file-link" href="../documents/RacingVP_Document5.pdf" target="_blank" data-i18n="vpFile5">Additional document (PDF)</a>
+            <a class="file-link" href="../documents/EPFLRT_2_Rollout Présentation.pdf" target="_blank" data-i18n="vpFile1">Rollout presentation (PDF)</a>
+            <a class="file-link" href="../documents/EPFLRT_2_Inventaire.pdf" target="_blank" data-i18n="vpFile2">Standardized inventory document (PDF)</a>
+            <a class="file-link" href="../documents/EPFLRT_2_Competitions.pdf" target="_blank" data-i18n="vpFile3">Competition logistics planning (PDF)</a>
+            <a class="file-link" href="../documents/EPFLRT_2_Chassis JEC.pdf" target="_blank" data-i18n="vpFile4">JEC / external presentation (PDF)</a>
           </div>
         </div>
       </section>
@@ -488,64 +537,74 @@
         tabMono: "Monocoque & Layup Division Lead",
 
         vpMainTitle: "Vice-President",
-        vpMainLead: "In my second year within the EPFL Racing Team, I combined two major responsibilities: Vice-President of the team and leader of the Monocoque & Layup Division. This role placed me at the intersection of technical execution, manufacturing leadership, team coordination and project organization.",
+        vpMainLead: "In my second year within the EPFL Racing Team, I combined two major responsibilities: Vice-President of the team and leader of the Monocoque & Layup Division. This role placed me at the intersection of technical execution, production leadership, logistics, team coordination and project organization.",
 
         monoMainTitle: "Monocoque & Layup Division Lead",
-        monoMainLead: "In parallel with my Vice-President role, I led the Monocoque & Layup Division, overseeing one of the most critical manufacturing scopes of the car. This position involved composites production leadership, division coordination and delivery responsibility on a core structural component of the vehicle.",
-
-        vpOverviewTitle: "Role Overview",
-        vpOverviewText1: "As Vice-President of the EPFL Racing Team, I contributed to the overall management of a large student engineering organization combining technical development, manufacturing, logistics, planning and competition preparation.",
-        vpOverviewText2: "This position required balancing strategic vision with operational execution, while helping the team stay aligned across departments and throughout the race car development cycle.",
-
-        vpRoleTitle: "Main Responsibilities",
-        vpRole1: "Supporting overall team coordination and decision-making",
-        vpRole2: "Contributing to planning, organization and project follow-up",
-        vpRole3: "Helping align technical progress with manufacturing reality and deadlines",
-        vpRole4: "Supporting team structure, communication and day-to-day operations",
-        vpRole5: "Taking part in competition preparation, tests and global execution",
-
-        vpLeadershipTitle: "Leadership Dimension",
-        vpLeadershipText1: "This role pushed me to grow beyond pure engineering execution. It required leadership, prioritization, communication and the ability to help people move in the same direction in a demanding and fast-paced environment.",
-        vpLeadershipText2: "It was especially formative in understanding how performance also depends on team structure, project discipline and the quality of coordination between many parallel workstreams.",
-
-        vpImpactTitle: "Impact",
-        vpImpactText1: "Being Vice-President gave me a much broader perspective on what it takes to bring a race car project from design to production, testing and competition.",
-        vpImpactText2: "It reinforced my ability to connect technical challenges with organizational realities, which is essential in any high-performance engineering environment.",
+        monoMainLead: "In parallel with my Vice-President role, I led the Monocoque & Layup Division, overseeing one of the most critical manufacturing scopes of the car. This position combined technical ownership, production planning, process structuring and representation of the division internally and externally.",
 
         vpGalleryTitle: "Image Gallery",
         vpFilesTitle: "Important Files",
-        vpFile1: "Annual overview report (PDF)",
-        vpFile2: "Organization summary (PDF)",
-        vpFile3: "Competition preparation notes (PDF)",
-        vpFile4: "Presentation deck (PDF)",
-        vpFile5: "Additional document (PDF)",
+        vpFile1: "Rollout presentation (PDF)",
+        vpFile2: "Standardized inventory document (PDF)",
+        vpFile3: "Competition logistics planning (PDF)",
+        vpFile4: "JEC / external presentation (PDF)",
 
-        monoOverviewTitle: "Role Overview",
-        monoOverviewText1: "As leader of the Monocoque & Layup Division, I was responsible for one of the most critical parts of the car: the manufacturing and delivery of the carbon monocoque and the organization of the layup-related work.",
-        monoOverviewText2: "This role combined composites manufacturing, technical supervision, production planning and coordination of people working on one of the most demanding components of the whole vehicle.",
+        vpTag1: "Leadership",
+        vpBlock1Title: "Management of a Large Student Engineering Team",
+        vpBlock1Text1: "As Vice-President, I worked within a team structure gathering around one hundred members across many technical and organizational scopes.",
+        vpBlock1Text2: "The role required listening to many different perspectives, taking people’s feedback into account and helping decisions converge in the most efficient way for the project as a whole.",
 
-        monoRoleTitle: "Main Responsibilities",
-        monoRole1: "Leading the Monocoque & Layup Division throughout production",
-        monoRole2: "Supervising composite manufacturing activities and preparation steps",
-        monoRole3: "Coordinating people, tasks and priorities within the division",
-        monoRole4: "Ensuring manufacturing quality, process consistency and progress tracking",
-        monoRole5: "Contributing to the final delivery of a key structural part of the race car",
+        vpTag2: "Sponsors",
+        vpBlock2Title: "Sponsor Events & External Representation",
+        vpBlock2Text1: "I participated in sponsor-facing events and exchanges that helped strengthen the team’s visibility and relationships with partners.",
+        vpBlock2Text2: "This included events and meetings linked to JEC, Emil Frey and Garrett, as well as broader interactions with industrial stakeholders around the team and the project.",
 
-        monoTechnicalTitle: "Technical Dimension",
-        monoTechnicalText1: "The monocoque is at the center of the car architecture, both structurally and from a manufacturing perspective. Leading this division required understanding the full production chain, from preparation and layup to organization, execution and manufacturing reliability.",
-        monoTechnicalText2: "It was a role where technical rigor, anticipation and workshop discipline were essential, because delays or errors on such a part have major consequences on the rest of the project.",
+        vpTag3: "Operations",
+        vpBlock3Title: "Team Logistics & Standardized Inventory",
+        vpBlock3Text1: "I was responsible for a significant part of the team logistics, including the implementation of a standardized inventory system at team scale.",
+        vpBlock3Text2: "This work aimed at improving visibility, organization and readiness by structuring storage, references, equipment tracking and competition-related material management.",
 
-        monoLeadershipTitle: "Team & Production Leadership",
-        monoLeadershipText1: "Beyond the technical side, this role also meant leading people in a production environment: assigning work, maintaining momentum, solving day-to-day issues and keeping the division aligned with the larger team schedule.",
-        monoLeadershipText2: "It was one of the most intense and formative leadership experiences of my time in the team, because it required both engineering understanding and strong execution under pressure.",
+        vpTag4: "Testing",
+        vpBlock4Title: "Test Days Logistics",
+        vpBlock4Text1: "I contributed to the logistical preparation and execution of test days, including planning, transport organization and material readiness.",
+        vpBlock4Text2: "These phases required anticipation, coordination and execution discipline to ensure that tests could run efficiently and support the broader vehicle development process.",
+
+        vpTag5: "Event management",
+        vpBlock5Title: "Rollout Organization",
+        vpBlock5Text1: "I helped organize the team rollout, the official reveal of the car to families, partners and guests.",
+        vpBlock5Text2: "This involved coordinating the venue, catering, transport, equipment, decoration, sound and overall event logistics for a large-format presentation gathering roughly 300 people.",
+
+        vpTag6: "Competitions",
+        vpBlock6Title: "Competition Logistics",
+        vpBlock6Text1: "I also contributed to the organization of competition logistics, covering transport plans, administrative preparation, ATA carnet follow-up and detailed planning.",
+        vpBlock6Text2: "This was essential to ensure that the team, the car and all key material could move efficiently and reliably across events and international competition environments.",
 
         monoGalleryTitle: "Image Gallery",
         monoFilesTitle: "Important Files",
-        monoFile1: "Manufacturing report (PDF)",
-        monoFile2: "Layup documentation (PDF)",
-        monoFile3: "Production summary (PDF)",
-        monoFile4: "Presentation deck (PDF)",
-        monoFile5: "Additional document (PDF)"
+        monoFile1: "Plybook / layup documentation (PDF)",
+        monoFile2: "Composite boxes production tracking (PDF)",
+        monoFile3: "Chassis / JEC presentation (PDF)",
+        monoFile4: "Rollout presentation (PDF)",
+
+        monoTag1: "Production leadership",
+        monoBlock1Title: "Monocoque Production Organization",
+        monoBlock1Text1: "I structured and supervised the production of the new carbon monocoque from preparation to execution, with dedicated tools for pre-production, layup follow-up and post-production.",
+        monoBlock1Text2: "This included organizing the manufacturing logic, sequencing the work, documenting the process and making sure the division could deliver reliably on one of the most critical structural components of the car.",
+
+        monoTag2: "Composite innovation",
+        monoBlock2Title: "Lightweight Composite Boxes",
+        monoBlock2Text1: "I also supervised the production of several electronic housings and implemented my own composite box concept to achieve lighter, stronger and faster-to-produce parts.",
+        monoBlock2Text2: "The method relied on laminating a single flat carbon plate, CNC cutting the parts and assembling them by bonding. This enabled a fast production flow while delivering robust housings that successfully passed all competition waterproofness tests.",
+
+        monoTag3: "Technical representation",
+        monoBlock3Title: "Design Justification & Technical Reviews",
+        monoBlock3Text1: "A key part of the role was being able to justify technical choices, manufacturing decisions and design logic to highly qualified judges and technical reviewers.",
+        monoBlock3Text2: "This required strong understanding of the parts, the processes behind them and the ability to explain and defend the work with clarity in a demanding engineering context.",
+
+        monoTag4: "External exposure",
+        monoBlock4Title: "Sponsoring & JEC Representation",
+        monoBlock4Text1: "I also contributed to the visibility of the division by presenting our work externally, including sponsor-oriented exchanges and representation of the chassis / monocoque scope at JEC.",
+        monoBlock4Text2: "This strengthened my ability to present technical work in a professional way, connect engineering content with external partners and support the team’s sponsorship dynamics."
       },
 
       fr: {
@@ -555,64 +614,74 @@
         tabMono: "Responsable division monocoque & layup",
 
         vpMainTitle: "Vice-président",
-        vpMainLead: "Lors de ma deuxième année à l’EPFL Racing Team, j’ai cumulé deux responsabilités majeures : vice-président de l’équipe et responsable de la division Monocoque & Layup. Ce rôle me plaçait à l’interface entre exécution technique, leadership de production, coordination d’équipe et organisation globale du projet.",
+        vpMainLead: "Lors de ma deuxième année à l’EPFL Racing Team, j’ai cumulé deux responsabilités majeures : vice-président de l’équipe et responsable de la division Monocoque & Layup. Ce rôle me plaçait à l’interface entre exécution technique, leadership de production, logistique, coordination d’équipe et organisation globale du projet.",
 
         monoMainTitle: "Responsable division monocoque & layup",
-        monoMainLead: "En parallèle de mon rôle de vice-président, j’ai dirigé la division Monocoque & Layup, en supervisant l’un des périmètres de fabrication les plus critiques de la voiture. Cette fonction impliquait le pilotage de la production composite, la coordination de la division et la responsabilité de livrer un composant structurel central du véhicule.",
-
-        vpOverviewTitle: "Vue d’ensemble du rôle",
-        vpOverviewText1: "En tant que vice-président de l’EPFL Racing Team, j’ai contribué à la gestion globale d’une importante organisation étudiante d’ingénierie mêlant développement technique, fabrication, logistique, planification et préparation des compétitions.",
-        vpOverviewText2: "Cette position demandait d’équilibrer vision stratégique et exécution opérationnelle, tout en aidant l’équipe à rester alignée entre les départements et tout au long du cycle de développement de la voiture.",
-
-        vpRoleTitle: "Responsabilités principales",
-        vpRole1: "Contribution à la coordination globale de l’équipe et à la prise de décision",
-        vpRole2: "Participation à la planification, à l’organisation et au suivi du projet",
-        vpRole3: "Aide à l’alignement entre avancement technique, réalité de fabrication et délais",
-        vpRole4: "Soutien à la structure de l’équipe, à la communication et aux opérations quotidiennes",
-        vpRole5: "Participation à la préparation des compétitions, aux tests et à l’exécution globale",
-
-        vpLeadershipTitle: "Dimension leadership",
-        vpLeadershipText1: "Ce rôle m’a poussé à aller au-delà de la seule exécution technique. Il demandait du leadership, de la priorisation, de la communication et la capacité à faire avancer plusieurs personnes dans la même direction dans un environnement exigeant et rapide.",
-        vpLeadershipText2: "Il a été particulièrement formateur pour comprendre que la performance dépend aussi de la structure de l’équipe, de la discipline projet et de la qualité de coordination entre de nombreux chantiers parallèles.",
-
-        vpImpactTitle: "Impact",
-        vpImpactText1: "Être vice-président m’a donné une vision beaucoup plus large de ce qu’il faut pour mener un projet de voiture de course, depuis la conception jusqu’à la production, aux essais puis à la compétition.",
-        vpImpactText2: "Cela a renforcé ma capacité à relier défis techniques et réalités organisationnelles, ce qui est essentiel dans tout environnement d’ingénierie haute performance.",
+        monoMainLead: "En parallèle de mon rôle de vice-président, j’ai dirigé la division Monocoque & Layup, en supervisant l’un des périmètres de fabrication les plus critiques de la voiture. Cette fonction combinait responsabilité technique, planification de production, structuration des process et représentation de la division en interne comme en externe.",
 
         vpGalleryTitle: "Galerie d’images",
         vpFilesTitle: "Fichiers importants",
-        vpFile1: "Rapport d’ensemble annuel (PDF)",
-        vpFile2: "Synthèse organisationnelle (PDF)",
-        vpFile3: "Notes de préparation compétition (PDF)",
-        vpFile4: "Présentation (PDF)",
-        vpFile5: "Document supplémentaire (PDF)",
+        vpFile1: "Présentation rollout (PDF)",
+        vpFile2: "Document d’inventaire standardisé (PDF)",
+        vpFile3: "Planification logistique compétitions (PDF)",
+        vpFile4: "Présentation JEC / externe (PDF)",
 
-        monoOverviewTitle: "Vue d’ensemble du rôle",
-        monoOverviewText1: "En tant que responsable de la division Monocoque & Layup, j’étais en charge de l’un des éléments les plus critiques de la voiture : la fabrication et la livraison de la monocoque carbone, ainsi que l’organisation des travaux liés au layup.",
-        monoOverviewText2: "Ce rôle combinait fabrication composite, supervision technique, planification de production et coordination de plusieurs personnes travaillant sur l’un des composants les plus exigeants du véhicule.",
+        vpTag1: "Leadership",
+        vpBlock1Title: "Management d’une grande équipe d’ingénierie étudiante",
+        vpBlock1Text1: "En tant que vice-président, j’évoluais dans une structure rassemblant environ une centaine de membres répartis sur de nombreux périmètres techniques et organisationnels.",
+        vpBlock1Text2: "Le rôle demandait d’écouter plusieurs points de vue, de prendre en compte les retours des membres et d’aider à faire converger les décisions de la manière la plus efficiente possible pour le projet dans son ensemble.",
 
-        monoRoleTitle: "Responsabilités principales",
-        monoRole1: "Pilotage de la division Monocoque & Layup pendant la production",
-        monoRole2: "Supervision des activités de fabrication composite et des étapes de préparation",
-        monoRole3: "Coordination des personnes, des tâches et des priorités dans la division",
-        monoRole4: "Garantie de la qualité de fabrication, de la cohérence process et du suivi d’avancement",
-        monoRole5: "Contribution à la livraison finale d’une pièce structurelle majeure de la voiture",
+        vpTag2: "Sponsors",
+        vpBlock2Title: "Événements sponsors et représentation externe",
+        vpBlock2Text1: "J’ai participé à des événements et échanges orientés sponsors qui contribuaient à renforcer la visibilité de l’équipe et ses relations avec ses partenaires.",
+        vpBlock2Text2: "Cela incluait notamment des événements et meetings liés au JEC, à Emil Frey et à Garrett, ainsi que plus largement des interactions avec des interlocuteurs industriels autour du projet.",
 
-        monoTechnicalTitle: "Dimension technique",
-        monoTechnicalText1: "La monocoque est au centre de l’architecture de la voiture, à la fois d’un point de vue structurel et fabrication. Diriger cette division demandait de comprendre toute la chaîne de production, depuis la préparation et le layup jusqu’à l’organisation, l’exécution et la fiabilité de fabrication.",
-        monoTechnicalText2: "C’était un rôle où la rigueur technique, l’anticipation et la discipline atelier étaient essentielles, car les retards ou erreurs sur une telle pièce ont des conséquences majeures sur le reste du projet.",
+        vpTag3: "Opérations",
+        vpBlock3Title: "Logistique équipe et inventaire standardisé",
+        vpBlock3Text1: "J’étais responsable d’une partie importante de la logistique de l’équipe, notamment avec la mise en place d’un inventaire standardisé à l’échelle de l’ensemble du team.",
+        vpBlock3Text2: "L’objectif était d’améliorer la visibilité, l’organisation et la réactivité grâce à une structuration claire du stockage, des références, du suivi matériel et de la préparation compétition.",
 
-        monoLeadershipTitle: "Leadership d’équipe et de production",
-        monoLeadershipText1: "Au-delà de l’aspect technique, ce rôle signifiait aussi encadrer des personnes dans un environnement de production : répartir le travail, maintenir la dynamique, résoudre les problèmes du quotidien et garder la division alignée avec le planning global de l’équipe.",
-        monoLeadershipText2: "Cela a été l’une des expériences de leadership les plus intenses et formatrices de mon parcours dans l’équipe, car elle demandait à la fois compréhension technique et forte capacité d’exécution sous pression.",
+        vpTag4: "Essais",
+        vpBlock4Title: "Organisation logistique des journées de tests",
+        vpBlock4Text1: "J’ai contribué à la préparation et à l’exécution logistique des journées de tests, avec du planning, de l’organisation transport et de la préparation matériel.",
+        vpBlock4Text2: "Ces phases demandaient de l’anticipation, de la coordination et une exécution rigoureuse pour permettre des essais efficaces au service du développement global de la voiture.",
+
+        vpTag5: "Événementiel",
+        vpBlock5Title: "Organisation du rollout",
+        vpBlock5Text1: "J’ai participé à l’organisation du rollout de l’équipe, c’est-à-dire la révélation officielle de la voiture auprès des familles, partenaires et invités.",
+        vpBlock5Text2: "Cela impliquait la coordination de la salle, du catering, du transport, du matériel, de la décoration, du son et plus largement de toute la logistique d’un événement d’environ 300 personnes.",
+
+        vpTag6: "Compétitions",
+        vpBlock6Title: "Logistique des compétitions",
+        vpBlock6Text1: "J’ai également contribué à l’organisation logistique des compétitions, avec les plans de transport, la préparation administrative, le suivi du carnet ATA et le planning détaillé.",
+        vpBlock6Text2: "C’était essentiel pour garantir le déplacement fluide et fiable de l’équipe, de la voiture et de tout le matériel clé dans un contexte de compétitions parfois internationales.",
 
         monoGalleryTitle: "Galerie d’images",
         monoFilesTitle: "Fichiers importants",
-        monoFile1: "Rapport de fabrication (PDF)",
-        monoFile2: "Documentation layup (PDF)",
-        monoFile3: "Synthèse de production (PDF)",
-        monoFile4: "Présentation (PDF)",
-        monoFile5: "Document supplémentaire (PDF)"
+        monoFile1: "Plybook / documentation layup (PDF)",
+        monoFile2: "Suivi de production des boîtes composites (PDF)",
+        monoFile3: "Présentation châssis / JEC (PDF)",
+        monoFile4: "Présentation rollout (PDF)",
+
+        monoTag1: "Pilotage production",
+        monoBlock1Title: "Organisation de la production de la monocoque",
+        monoBlock1Text1: "J’ai structuré et supervisé la production de la nouvelle monocoque carbone, de la préparation jusqu’à l’exécution, avec des outils dédiés pour la pré-production, le suivi de layup et la post-production.",
+        monoBlock1Text2: "Cela comprenait l’organisation de la logique de fabrication, le séquencement du travail, la documentation du process et le pilotage de la division pour livrer l’un des composants structurels les plus critiques de la voiture.",
+
+        monoTag2: "Innovation composite",
+        monoBlock2Title: "Boîtes composites légères et robustes",
+        monoBlock2Text1: "J’ai aussi supervisé la production de plusieurs boîtiers électroniques et mis en place mon propre concept de boîtes composites afin d’obtenir des pièces plus légères, plus solides et plus rapides à produire.",
+        monoBlock2Text2: "La méthode reposait sur la stratification d’une seule plaque carbone plane, une découpe CNC des pièces puis un assemblage par collage. Cela a permis une production rapide tout en obtenant des boîtes robustes ayant validé tous les tests d’étanchéité en compétition.",
+
+        monoTag3: "Représentation technique",
+        monoBlock3Title: "Justification de design et revues techniques",
+        monoBlock3Text1: "Une partie importante du rôle consistait à être capable de justifier les choix techniques, les décisions de fabrication et la logique de design face à des juges et experts hautement qualifiés.",
+        monoBlock3Text2: "Cela demandait une compréhension approfondie des pièces, des procédés derrière elles et la capacité d’expliquer et défendre le travail avec clarté dans un contexte d’ingénierie exigeant.",
+
+        monoTag4: "Exposition externe",
+        monoBlock4Title: "Recherche sponsors et représentation au JEC",
+        monoBlock4Text1: "J’ai également contribué à la visibilité de la division en présentant notre travail en externe, notamment à travers des échanges orientés sponsors et la représentation du périmètre châssis / monocoque au JEC.",
+        monoBlock4Text2: "Cela a renforcé ma capacité à présenter un travail technique de manière professionnelle, à connecter contenu d’ingénierie et partenaires externes, et à soutenir la dynamique sponsoring de l’équipe."
       }
     };
 
