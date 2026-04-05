@@ -31,6 +31,7 @@
 
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
+    video{display:block;max-width:100%}
 
     .container{
       width:min(var(--max), calc(100% - 2rem));
@@ -240,6 +241,31 @@
       color:#9b0000;
       font-weight:700;
       margin-bottom:.9rem;
+    }
+
+    .video-card{
+      padding:1.5rem;
+    }
+
+    .video-frame{
+      width:100%;
+      border-radius:22px;
+      overflow:hidden;
+      background:#000;
+      border:1px solid rgba(0,0,0,.06);
+    }
+
+    .video-frame video{
+      width:100%;
+      height:auto;
+      aspect-ratio:16/9;
+      object-fit:cover;
+      background:#000;
+    }
+
+    .video-caption{
+      margin-top:1rem;
+      color:var(--muted);
     }
 
     @media (max-width: 950px){
@@ -491,6 +517,22 @@
       </section>
 
       <section class="section">
+        <div class="container card video-card">
+          <span class="mini-tag" data-i18n="vpVideoTag">Rollout</span>
+          <h2 data-i18n="vpVideoTitle">Rollout Reveal Video</h2>
+          <div class="video-frame">
+            <video controls preload="metadata">
+              <source src="../videos/EPFLRT_2_RolloutReveal.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-caption" data-i18n="vpVideoText">
+            This reveal video captures the official rollout of the car, a key milestone of the season that brought together team members, families, sponsors and guests around the final result of the year’s work.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
         <div class="container card">
           <h2 data-i18n="vpGalleryTitle">Image Gallery</h2>
           <div class="gallery">
@@ -542,6 +584,9 @@
         vpFile1: "Rollout presentation (PDF)",
         vpFile2: "Standardized inventory document (PDF)",
         vpFile3: "Competition logistics planning (PDF)",
+        vpVideoTag: "Rollout",
+        vpVideoTitle: "Rollout Reveal Video",
+        vpVideoText: "This reveal video captures the official rollout of the car, a key milestone of the season that brought together team members, families, sponsors and guests around the final result of the year’s work.",
 
         vpBlock1Title: "Management of a Large Student Engineering Team",
         vpBlock1Text1: "During my second year in the EPFL Racing Team, I took on the role of Vice-President. This position gave me a broad transversal view of the project and required me to operate across technical, organizational and logistical topics in order to support the team’s overall execution.",
@@ -615,6 +660,9 @@
         vpFile1: "Présentation rollout (PDF)",
         vpFile2: "Document d’inventaire standardisé (PDF)",
         vpFile3: "Planification logistique compétitions (PDF)",
+        vpVideoTag: "Rollout",
+        vpVideoTitle: "Vidéo reveal du rollout",
+        vpVideoText: "Cette vidéo de reveal illustre le rollout officiel de la voiture, un moment clé de la saison réunissant membres de l’équipe, familles, sponsors et invités autour du résultat final du travail de l’année.",
 
         vpBlock1Title: "Management d’une grande équipe d’ingénierie étudiante",
         vpBlock1Text1: "Lors de ma deuxième année à l’EPFL Racing Team, j’ai pris le rôle de vice-président. Cette fonction m’a donné une vision transversale très large du projet et m’a amené à intervenir sur des sujets techniques, organisationnels et logistiques afin de soutenir l’exécution globale de l’équipe.",
