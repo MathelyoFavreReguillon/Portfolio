@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Acquisition Semester Project | Mathélyo Favre-Réguillon</title>
+  <title>Rotational Fatigue Testing Project | Mathélyo Favre-Réguillon</title>
+
   <style>
     :root{
       --bg:#f4f1ef;
@@ -13,36 +14,53 @@
       --card:#ffffff;
       --shadow:0 20px 60px rgba(0,0,0,.08);
       --radius:28px;
-      --max:1050px;
+      --max:1100px;
     }
 
-    *{box-sizing:border-box}
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       background:var(--bg);
       color:var(--text);
       line-height:1.6;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
 
     .container{
-      width:min(var(--max), calc(100% - 2rem));
+      width:min(var(--max),calc(100% - 2rem));
       margin:0 auto;
     }
 
     .nav{
       position:sticky;
       top:0;
-      z-index:10;
+      z-index:20;
       backdrop-filter:blur(16px);
       background:rgba(244,241,239,.82);
       border-bottom:1px solid rgba(0,0,0,.06);
     }
 
     .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
       padding:1rem 0;
     }
 
@@ -52,43 +70,60 @@
     }
 
     .hero{
-      padding:4rem 0 3rem;
+      padding:3rem 0 2rem;
+    }
+
+    h1,
+    h2{
+      line-height:1.05;
+      letter-spacing:-.04em;
+      margin:0 0 1rem;
+    }
+
+    h1{
+      font-size:clamp(2.4rem,6vw,4.4rem);
+    }
+
+    h2{
+      font-size:clamp(1.7rem,4vw,2.45rem);
+    }
+
+    .lead{
+      display:block;
+      width:100%;
+      font-size:1.08rem;
+      color:#333;
+      margin:0;
     }
 
     .tag{
       display:inline-block;
-      padding:.4rem .75rem;
+      font-size:.82rem;
+      padding:.35rem .7rem;
       border-radius:999px;
       background:#f7e5e5;
       color:#9b0000;
-      font-size:.82rem;
-      font-weight:800;
+      font-weight:700;
       margin-bottom:1rem;
     }
 
-    h1{
-      margin:0 0 1rem;
-      font-size:clamp(2.5rem, 6vw, 4.8rem);
-      line-height:1.02;
-      letter-spacing:-.04em;
+    .section{
+      padding:1.5rem 0;
     }
 
-    .lead{
-      max-width:760px;
-      font-size:1.08rem;
-      color:#333;
-      margin:0 0 2rem;
-    }
-
-    .image-wrap{
+    .hero-image,
+    .card{
       background:var(--card);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:1rem;
       overflow:hidden;
     }
 
-    .image-wrap img{
+    .hero-image{
+      padding:1rem;
+    }
+
+    .hero-image img{
       width:100%;
       height:560px;
       object-fit:contain;
@@ -97,61 +132,628 @@
       background:#fff;
     }
 
-    @media (max-width: 900px){
-      .hero{
-        padding:3rem 0 2rem;
+    .card{
+      padding:1.5rem;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1.2rem;
+    }
+
+    .facts{
+      display:grid;
+      gap:.8rem;
+    }
+
+    .fact{
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .fact strong{
+      display:block;
+      font-size:1.05rem;
+      margin-bottom:.2rem;
+    }
+
+    .results{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1rem;
+      margin-top:1rem;
+    }
+
+    .result{
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .result strong{
+      display:block;
+      font-size:1.1rem;
+      margin-bottom:.35rem;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1rem;
+    }
+
+    .gallery-item{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:20px;
+      padding:.8rem;
+      min-height:320px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:.75rem;
+    }
+
+    .gallery-item img{
+      width:100%;
+      max-height:320px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:14px;
+      background:#fff;
+    }
+
+    .gallery-wide{
+      grid-column:1 / -1;
+    }
+
+    .gallery-wide img{
+      max-height:540px;
+      width:100%;
+      object-fit:contain;
+    }
+
+    .caption{
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    .files{
+      display:grid;
+      gap:.8rem;
+    }
+
+    .file-link{
+      display:block;
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .file-link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(214,0,0,.18);
+    }
+
+    .muted{
+      color:var(--muted);
+    }
+
+    ul{
+      margin:.3rem 0 0 1.1rem;
+      padding:0;
+    }
+
+    li + li{
+      margin-top:.45rem;
+    }
+
+    @media (max-width:900px){
+      .grid-2,
+      .results,
+      .gallery{
+        grid-template-columns:1fr;
       }
 
-      .image-wrap img{
-        height:320px;
+      .hero-image img{
+        height:340px;
+      }
+
+      .gallery-item{
+        min-height:260px;
+      }
+
+      .gallery-item img,
+      .gallery-wide img{
+        max-height:280px;
+      }
+
+      .gallery-wide{
+        grid-column:auto;
       }
     }
   </style>
 </head>
+
 <body>
+
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="back" href="../index.html#projects" data-i18n="backToPortfolio">← Back to portfolio</a>
+      <a
+        class="back"
+        href="../index.html#projects"
+        data-i18n="backToPortfolio"
+      >
+        ← Back to portfolio
+      </a>
     </div>
   </nav>
 
-  <main class="hero">
-    <div class="container">
-      <div class="tag" data-i18n="projectTag">Instrumentation</div>
-      <h1 data-i18n="projectTitle">Data acquisition semester project</h1>
-      <p class="lead" data-i18n="projectLead">
-        Semester project focused on measurement, signal acquisition and experimental data processing for engineering analysis and system understanding.
-      </p>
+  <main>
 
-      <div class="image-wrap">
-        <img src="../photos/Soon.png" alt="Data acquisition semester project image">
+    <section class="hero">
+      <div class="container">
+
+        <div class="tag" data-i18n="projectTag">
+          EPFL · Semester Project · Spring 2026
+        </div>
+
+        <h1 data-i18n="projectTitle">
+          Experimental Methods for Testing Materials Using Rotational Forces
+        </h1>
+
+        <p class="lead" data-i18n="projectLead">
+          Development of a rotating experimental platform for high-throughput material testing, combining flexure-guided loading with Hall-effect sensing and camera-based displacement measurements.
+        </p>
+
       </div>
-    </div>
+    </section>
+
+    <section class="section">
+      <div class="container hero-image">
+        <img
+          src="../photos/fatigue 1.png"
+          alt="Main project illustration"
+        >
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+
+        <div class="card">
+          <h2 data-i18n="overviewTitle">
+            Project Overview
+          </h2>
+
+          <p data-i18n="overviewText1">
+            This project focused on the development of experimental methods for characterizing materials in a rotating environment. Instead of imposing displacement with a conventional testing machine, the rotating setup generates force through centrifugal loading, making displacement measurement essential for characterizing the mechanical response.
+          </p>
+
+          <p class="muted" data-i18n="overviewText2">
+            Two complementary measurement approaches were implemented and compared: an embedded Hall-effect sensor combined with a permanent magnet, and an optical tracking method based on an industrial camera. The objective was to evaluate their suitability for future fatigue testing and rupture detection applications.
+          </p>
+        </div>
+
+        <div class="facts">
+
+          <div class="fact">
+            <strong data-i18n="fact1Title">Supervision</strong>
+            <span class="muted" data-i18n="fact1Text">
+              Advisor: Mario Ibrahim · Supervisor: Dr. Pedro Reis
+            </span>
+          </div>
+
+          <div class="fact">
+            <strong data-i18n="fact2Title">Main hardware</strong>
+            <span class="muted" data-i18n="fact2Text">
+              ETEL direct-drive motor, Arduino MKR WiFi 1010, Raspberry Pi, IDS uEye CP camera and DRV5013 Hall sensor.
+            </span>
+          </div>
+
+          <div class="fact">
+            <strong data-i18n="fact3Title">Experimental range</strong>
+            <span class="muted" data-i18n="fact3Text">
+              Target angular velocities from 10 to 50 rad/s with flexure lengths from 20 mm to 50 mm.
+            </span>
+          </div>
+
+          <div class="fact">
+            <strong data-i18n="fact4Title">Project goal</strong>
+            <span class="muted" data-i18n="fact4Text">
+              Develop a reliable displacement measurement framework for rotating fatigue test rigs.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+
+        <div class="card">
+          <h2 data-i18n="setupTitle">
+            Experimental Setup
+          </h2>
+
+          <p data-i18n="setupText1">
+            The experimental apparatus consists of a rotating acrylic structure carrying four testing stations mounted symmetrically around the motor axis. Each station uses a flexure-guided carriage so that the moving mass is constrained to radial translation under centrifugal loading.
+          </p>
+
+          <ul>
+            <li data-i18n="setup1">Four identical testing stations mounted on a 205 mm pitch circle diameter</li>
+            <li data-i18n="setup2">Flexure lengths of 20, 30, 40 and 50 mm</li>
+            <li data-i18n="setup3">Constant flexure thickness of 0.20 mm and width of 13.00 mm</li>
+            <li data-i18n="setup4">Specimens mounted on a dedicated carriage with break-off supports</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="methodsTitle">
+            Measurement Methods
+          </h2>
+
+          <p data-i18n="methodsText1">
+            Two non-contact acquisition methods were retained and experimentally compared for use in the rotating frame. The Hall-effect sensor provides an embedded sensing solution, while the camera-based method serves as an independent reference measurement.
+          </p>
+
+          <ul>
+            <li data-i18n="methods1">Hall-effect sensor + permanent magnet for embedded displacement sensing</li>
+            <li data-i18n="methods2">Industrial camera tracking of a marker attached to the carriage</li>
+            <li data-i18n="methods3">Offline image processing for displacement reconstruction</li>
+            <li data-i18n="methods4">Comparison of both methods across multiple motor velocity profiles</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+
+        <div class="card">
+          <h2 data-i18n="resultsTitle">
+            Main Results
+          </h2>
+
+          <p data-i18n="resultsText1">
+            Both measurement techniques successfully captured the displacement evolution of the moving carriage. Larger displacements were observed at higher rotational velocities and for longer flexures, consistent with the increase in centrifugal loading and the reduction in structural stiffness.
+          </p>
+
+          <p class="muted" data-i18n="resultsText2">
+            The camera-based measurements provided the most reliable quantitative reference, while the Hall-effect sensor reproduced the main displacement trends with good agreement. The main limitation of the Hall-effect approach remains the calibration procedure, which depends strongly on the sensor–magnet configuration.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="dynamicTitle">
+            Dynamic Characterization
+          </h2>
+
+          <p data-i18n="dynamicText1">
+            The dynamic response of the flexure system was also characterized through free oscillation experiments. The natural frequency decreases as the flexure length increases, confirming the expected reduction in stiffness for longer compliant elements.
+          </p>
+
+          <ul>
+            <li data-i18n="dynamic1">30 mm flexure: natural frequency ≈ 33.25 Hz</li>
+            <li data-i18n="dynamic2">50 mm flexure: natural frequency ≈ 16.11 Hz</li>
+            <li data-i18n="dynamic3">Stable displacement evolution without significant overshoot</li>
+            <li data-i18n="dynamic4">Useful basis for selecting safe operating conditions away from resonance</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+
+        <h2 data-i18n="keyFiguresTitle">
+          Key Figures
+        </h2>
+
+        <div class="results">
+
+          <div class="result">
+            <strong data-i18n="result1Title">10–50 rad/s</strong>
+            <span class="muted" data-i18n="result1Text">
+              Range of target angular velocities investigated experimentally.
+            </span>
+          </div>
+
+          <div class="result">
+            <strong data-i18n="result2Title">4 stations</strong>
+            <span class="muted" data-i18n="result2Text">
+              Testing stations mounted symmetrically on the rotating platform.
+            </span>
+          </div>
+
+          <div class="result">
+            <strong data-i18n="result3Title">≈ 4.08 mm</strong>
+            <span class="muted" data-i18n="result3Text">
+              Maximum camera-measured displacement for the 50 mm flexure at 50 rad/s.
+            </span>
+          </div>
+
+          <div class="result">
+            <strong data-i18n="result4Title">≈ 1.2%</strong>
+            <span class="muted" data-i18n="result4Text">
+              Relative difference between Hall sensor and camera at the highest displacement case.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+
+        <h2 data-i18n="galleryTitle">
+          Image Gallery
+        </h2>
+
+        <div class="gallery">
+
+          <div class="gallery-item">
+            <img
+              src="../photos/fatigue 2.png"
+              alt="Project image 2"
+            >
+            <div class="caption" data-i18n="galleryCaption1">
+              Electrical architecture and acquisition setup integrating the Raspberry Pi, camera, Arduino and Hall sensor measurement chain.
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="../photos/fatigue 3.png"
+              alt="Project image 3"
+            >
+            <div class="caption" data-i18n="galleryCaption2">
+              CAD overview of the rotating test rig showing the main subsystems and instrumentation layout.
+            </div>
+          </div>
+
+          <div class="gallery-item gallery-wide">
+            <img
+              src="../photos/fatigue 4.png"
+              alt="Project image 4"
+            >
+            <div class="caption" data-i18n="galleryCaption3">
+              Comparison between Hall sensor, camera displacement measurements and theoretical motor velocity profiles.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+
+        <div class="card">
+          <h2 data-i18n="conclusionTitle">
+            Conclusion
+          </h2>
+
+          <p data-i18n="conclusionText1">
+            The project demonstrated the feasibility of monitoring displacement directly on a rotating test rig using both embedded and optical measurement techniques. The results validated the general behaviour of the setup and confirmed the influence of rotational speed and flexure stiffness on the system response.
+          </p>
+
+          <p class="muted" data-i18n="conclusionText2">
+            The Hall-effect sensor is promising for compact in-situ monitoring, but further calibration improvements are required before full quantitative validation in future fatigue testing applications.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="futureTitle">
+            Future Work
+          </h2>
+
+          <ul>
+            <li data-i18n="future1">Improve Hall-effect calibration using synchronized displacement and voltage measurements</li>
+            <li data-i18n="future2">Integrate lighting directly on the rotating frame for more robust optical tracking</li>
+            <li data-i18n="future3">Extend the methodology to real specimens and rupture detection under centrifugal loading</li>
+            <li data-i18n="future4">Use the platform for future fatigue characterization campaigns</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+
+        <h2 data-i18n="filesTitle">
+          Important Files
+        </h2>
+
+        <div class="files">
+
+          <a
+            class="file-link"
+            href="../documents/Fatigue_report.pdf"
+            target="_blank"
+            data-i18n="file1"
+          >
+            Project report (PDF)
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <script>
     const translations = {
       en: {
         backToPortfolio: "← Back to portfolio",
-        projectTag: "Instrumentation",
-        projectTitle: "Data acquisition semester project",
-        projectLead: "Semester project focused on measurement, signal acquisition and experimental data processing for engineering analysis and system understanding."
+        projectTag: "EPFL · Semester Project · Spring 2026",
+        projectTitle: "Experimental Methods for Testing Materials Using Rotational Forces",
+        projectLead: "Development of a rotating experimental platform for high-throughput material testing, combining flexure-guided loading with Hall-effect sensing and camera-based displacement measurements.",
+
+        overviewTitle: "Project Overview",
+        overviewText1: "This project focused on the development of experimental methods for characterizing materials in a rotating environment. Instead of imposing displacement with a conventional testing machine, the rotating setup generates force through centrifugal loading, making displacement measurement essential for characterizing the mechanical response.",
+        overviewText2: "Two complementary measurement approaches were implemented and compared: an embedded Hall-effect sensor combined with a permanent magnet, and an optical tracking method based on an industrial camera. The objective was to evaluate their suitability for future fatigue testing and rupture detection applications.",
+
+        fact1Title: "Supervision",
+        fact1Text: "Advisor: Mario Ibrahim · Supervisor: Dr. Pedro Reis",
+        fact2Title: "Main hardware",
+        fact2Text: "ETEL direct-drive motor, Arduino MKR WiFi 1010, Raspberry Pi, IDS uEye CP camera and DRV5013 Hall sensor.",
+        fact3Title: "Experimental range",
+        fact3Text: "Target angular velocities from 10 to 50 rad/s with flexure lengths from 20 mm to 50 mm.",
+        fact4Title: "Project goal",
+        fact4Text: "Develop a reliable displacement measurement framework for rotating fatigue test rigs.",
+
+        setupTitle: "Experimental Setup",
+        setupText1: "The experimental apparatus consists of a rotating acrylic structure carrying four testing stations mounted symmetrically around the motor axis. Each station uses a flexure-guided carriage so that the moving mass is constrained to radial translation under centrifugal loading.",
+        setup1: "Four identical testing stations mounted on a 205 mm pitch circle diameter",
+        setup2: "Flexure lengths of 20, 30, 40 and 50 mm",
+        setup3: "Constant flexure thickness of 0.20 mm and width of 13.00 mm",
+        setup4: "Specimens mounted on a dedicated carriage with break-off supports",
+
+        methodsTitle: "Measurement Methods",
+        methodsText1: "Two non-contact acquisition methods were retained and experimentally compared for use in the rotating frame. The Hall-effect sensor provides an embedded sensing solution, while the camera-based method serves as an independent reference measurement.",
+        methods1: "Hall-effect sensor + permanent magnet for embedded displacement sensing",
+        methods2: "Industrial camera tracking of a marker attached to the carriage",
+        methods3: "Offline image processing for displacement reconstruction",
+        methods4: "Comparison of both methods across multiple motor velocity profiles",
+
+        resultsTitle: "Main Results",
+        resultsText1: "Both measurement techniques successfully captured the displacement evolution of the moving carriage. Larger displacements were observed at higher rotational velocities and for longer flexures, consistent with the increase in centrifugal loading and the reduction in structural stiffness.",
+        resultsText2: "The camera-based measurements provided the most reliable quantitative reference, while the Hall-effect sensor reproduced the main displacement trends with good agreement. The main limitation of the Hall-effect approach remains the calibration procedure, which depends strongly on the sensor–magnet configuration.",
+
+        dynamicTitle: "Dynamic Characterization",
+        dynamicText1: "The dynamic response of the flexure system was also characterized through free oscillation experiments. The natural frequency decreases as the flexure length increases, confirming the expected reduction in stiffness for longer compliant elements.",
+        dynamic1: "30 mm flexure: natural frequency ≈ 33.25 Hz",
+        dynamic2: "50 mm flexure: natural frequency ≈ 16.11 Hz",
+        dynamic3: "Stable displacement evolution without significant overshoot",
+        dynamic4: "Useful basis for selecting safe operating conditions away from resonance",
+
+        keyFiguresTitle: "Key Figures",
+        result1Title: "10–50 rad/s",
+        result1Text: "Range of target angular velocities investigated experimentally.",
+        result2Title: "4 stations",
+        result2Text: "Testing stations mounted symmetrically on the rotating platform.",
+        result3Title: "≈ 4.08 mm",
+        result3Text: "Maximum camera-measured displacement for the 50 mm flexure at 50 rad/s.",
+        result4Title: "≈ 1.2%",
+        result4Text: "Relative difference between Hall sensor and camera at the highest displacement case.",
+
+        galleryTitle: "Image Gallery",
+        galleryCaption1: "Electrical architecture and acquisition setup integrating the Raspberry Pi, camera, Arduino and Hall sensor measurement chain.",
+        galleryCaption2: "CAD overview of the rotating test rig showing the main subsystems and instrumentation layout.",
+        galleryCaption3: "Comparison between Hall sensor, camera displacement measurements and theoretical motor velocity profiles.",
+
+        conclusionTitle: "Conclusion",
+        conclusionText1: "The project demonstrated the feasibility of monitoring displacement directly on a rotating test rig using both embedded and optical measurement techniques. The results validated the general behaviour of the setup and confirmed the influence of rotational speed and flexure stiffness on the system response.",
+        conclusionText2: "The Hall-effect sensor is promising for compact in-situ monitoring, but further calibration improvements are required before full quantitative validation in future fatigue testing applications.",
+
+        futureTitle: "Future Work",
+        future1: "Improve Hall-effect calibration using synchronized displacement and voltage measurements",
+        future2: "Integrate lighting directly on the rotating frame for more robust optical tracking",
+        future3: "Extend the methodology to real specimens and rupture detection under centrifugal loading",
+        future4: "Use the platform for future fatigue characterization campaigns",
+
+        filesTitle: "Important Files",
+        file1: "Project report (PDF)"
       },
+
       fr: {
         backToPortfolio: "← Retour au portfolio",
-        projectTag: "Instrumentation",
-        projectTitle: "Projet de semestre en acquisition de données",
-        projectLead: "Projet de semestre centré sur la mesure, l’acquisition de signaux et le traitement de données expérimentales pour l’analyse d’ingénierie et la compréhension des systèmes."
+        projectTag: "EPFL · Projet de semestre · Printemps 2026",
+        projectTitle: "Méthodes expérimentales pour tester des matériaux par forces rotationnelles",
+        projectLead: "Développement d’une plateforme expérimentale rotative pour le test de matériaux à haut débit, combinant un chargement par flexures avec mesure de déplacement par capteur Hall et par caméra.",
+
+        overviewTitle: "Vue d’ensemble du projet",
+        overviewText1: "Ce projet porte sur le développement de méthodes expérimentales pour caractériser des matériaux dans un environnement rotatif. Au lieu d’imposer un déplacement avec une machine d’essai conventionnelle, le système rotatif génère une force par chargement centrifuge, ce qui rend la mesure du déplacement indispensable pour caractériser la réponse mécanique.",
+        overviewText2: "Deux approches de mesure complémentaires ont été mises en place et comparées : un capteur à effet Hall associé à un aimant permanent, et une méthode de suivi optique basée sur une caméra industrielle. L’objectif était d’évaluer leur pertinence pour de futurs essais de fatigue et applications de détection de rupture.",
+
+        fact1Title: "Encadrement",
+        fact1Text: "Advisor : Mario Ibrahim · Supervisor : Dr. Pedro Reis",
+        fact2Title: "Matériel principal",
+        fact2Text: "Moteur direct-drive ETEL, Arduino MKR WiFi 1010, Raspberry Pi, caméra IDS uEye CP et capteur Hall DRV5013.",
+        fact3Title: "Plage expérimentale",
+        fact3Text: "Vitesses angulaires cibles de 10 à 50 rad/s avec des flexures de 20 mm à 50 mm.",
+        fact4Title: "Objectif du projet",
+        fact4Text: "Développer un cadre de mesure fiable du déplacement pour des bancs d’essais de fatigue rotatifs.",
+
+        setupTitle: "Montage expérimental",
+        setupText1: "Le montage expérimental se compose d’une structure rotative en acrylique portant quatre stations d’essai montées symétriquement autour de l’axe moteur. Chaque station utilise un chariot guidé par flexures, de sorte que la masse mobile soit contrainte à une translation radiale sous chargement centrifuge.",
+        setup1: "Quatre stations d’essai identiques montées sur un cercle de pas de 205 mm de diamètre",
+        setup2: "Longueurs de flexures de 20, 30, 40 et 50 mm",
+        setup3: "Épaisseur constante de 0,20 mm et largeur de 13,00 mm pour les flexures",
+        setup4: "Éprouvettes montées sur un chariot dédié avec supports cassables",
+
+        methodsTitle: "Méthodes de mesure",
+        methodsText1: "Deux méthodes d’acquisition sans contact ont été retenues et comparées expérimentalement dans le repère tournant. Le capteur Hall offre une solution embarquée, tandis que la méthode par caméra sert de mesure de référence indépendante.",
+        methods1: "Capteur à effet Hall + aimant permanent pour une mesure embarquée du déplacement",
+        methods2: "Suivi d’un marqueur fixé sur le chariot à l’aide d’une caméra industrielle",
+        methods3: "Traitement d’images hors ligne pour reconstruire le déplacement",
+        methods4: "Comparaison des deux méthodes sur plusieurs profils de vitesse moteur",
+
+        resultsTitle: "Résultats principaux",
+        resultsText1: "Les deux techniques de mesure ont permis de suivre l’évolution du déplacement du chariot mobile. Des déplacements plus importants ont été observés aux vitesses de rotation plus élevées et pour les flexures les plus longues, ce qui est cohérent avec l’augmentation du chargement centrifuge et la diminution de la rigidité structurelle.",
+        resultsText2: "Les mesures par caméra ont fourni la référence quantitative la plus fiable, tandis que le capteur Hall a correctement reproduit les principales tendances de déplacement. La principale limite de l’approche par capteur Hall reste la procédure d’étalonnage, fortement dépendante de la configuration capteur–aimant.",
+
+        dynamicTitle: "Caractérisation dynamique",
+        dynamicText1: "La réponse dynamique du système de flexures a également été caractérisée par des essais d’oscillation libre. La fréquence propre diminue lorsque la longueur de la flexure augmente, confirmant la réduction attendue de rigidité pour des éléments plus longs et plus souples.",
+        dynamic1: "Flexure de 30 mm : fréquence propre ≈ 33,25 Hz",
+        dynamic2: "Flexure de 50 mm : fréquence propre ≈ 16,11 Hz",
+        dynamic3: "Évolution stable du déplacement sans dépassement significatif",
+        dynamic4: "Base utile pour choisir des conditions d’essai éloignées des zones de résonance",
+
+        keyFiguresTitle: "Chiffres clés",
+        result1Title: "10–50 rad/s",
+        result1Text: "Plage de vitesses angulaires cibles étudiées expérimentalement.",
+        result2Title: "4 stations",
+        result2Text: "Stations d’essai montées symétriquement sur la plateforme rotative.",
+        result3Title: "≈ 4,08 mm",
+        result3Text: "Déplacement maximal mesuré par caméra pour la flexure de 50 mm à 50 rad/s.",
+        result4Title: "≈ 1,2 %",
+        result4Text: "Écart relatif entre le capteur Hall et la caméra dans le cas du déplacement maximal.",
+
+        galleryTitle: "Galerie d’images",
+        galleryCaption1: "Architecture électrique et chaîne d’acquisition intégrant le Raspberry Pi, la caméra, l’Arduino et le système de mesure par capteur Hall.",
+        galleryCaption2: "Vue CAO du banc d’essai rotatif montrant les principaux sous-systèmes et l’implantation de l’instrumentation.",
+        galleryCaption3: "Comparaison entre les mesures de déplacement par capteur Hall, par caméra et les profils théoriques de vitesse moteur.",
+
+        conclusionTitle: "Conclusion",
+        conclusionText1: "Le projet a démontré la faisabilité de la mesure du déplacement directement sur un banc d’essai rotatif à l’aide de techniques embarquées et optiques. Les résultats ont validé le comportement général du montage et confirmé l’influence de la vitesse de rotation et de la rigidité des flexures sur la réponse du système.",
+        conclusionText2: "Le capteur Hall est prometteur pour une mesure embarquée compacte, mais des améliorations d’étalonnage restent nécessaires avant une validation quantitative complète pour de futures applications en fatigue.",
+
+        futureTitle: "Travaux futurs",
+        future1: "Améliorer l’étalonnage du capteur Hall à l’aide de mesures synchronisées déplacement–tension",
+        future2: "Intégrer l’éclairage directement sur le repère tournant pour renforcer le suivi optique",
+        future3: "Étendre la méthodologie à de vraies éprouvettes et à la détection de rupture sous chargement centrifuge",
+        future4: "Utiliser la plateforme pour de futures campagnes de caractérisation en fatigue",
+
+        filesTitle: "Fichiers importants",
+        file1: "Rapport du projet (PDF)"
       }
     };
 
-    function applyTranslations(lang) {
+    function applyTranslations(lang){
       const dict = translations[lang] || translations.en;
       document.documentElement.lang = lang;
 
       document.querySelectorAll("[data-i18n]").forEach((el) => {
         const key = el.dataset.i18n;
-        if (dict[key] !== undefined) {
+        if(dict[key] !== undefined){
           el.innerHTML = dict[key];
         }
       });
@@ -168,5 +770,6 @@
       applyTranslations(savedLang);
     });
   </script>
+
 </body>
 </html>
