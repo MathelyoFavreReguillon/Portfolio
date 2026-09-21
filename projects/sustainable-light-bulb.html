@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sustainable Light Bulb | Mathélyo Favre-Réguillon</title>
+  <title>LumiNova – Circular LED Bulb | Mathélyo Favre-Réguillon</title>
   <style>
     :root{
       --bg:#f4f1ef;
@@ -13,36 +13,41 @@
       --card:#ffffff;
       --shadow:0 20px 60px rgba(0,0,0,.08);
       --radius:28px;
-      --max:1050px;
+      --max:1100px;
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
     body{
       margin:0;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       background:var(--bg);
       color:var(--text);
       line-height:1.6;
     }
 
     a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
+    img{max-width:100%;display:block}
 
     .container{
-      width:min(var(--max), calc(100% - 2rem));
+      width:min(var(--max),calc(100% - 2rem));
       margin:0 auto;
     }
 
     .nav{
       position:sticky;
       top:0;
-      z-index:10;
+      z-index:20;
       backdrop-filter:blur(16px);
       background:rgba(244,241,239,.82);
       border-bottom:1px solid rgba(0,0,0,.06);
     }
 
     .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
       padding:1rem 0;
     }
 
@@ -52,62 +57,181 @@
     }
 
     .hero{
-      padding:4rem 0 3rem;
+      padding:3rem 0 2rem;
+    }
+
+    h1,h2{
+      line-height:1.05;
+      letter-spacing:-.04em;
+      margin:0 0 1rem;
+    }
+
+    h1{font-size:clamp(2.4rem,6vw,4.4rem)}
+    h2{font-size:clamp(1.7rem,4vw,2.45rem)}
+
+    .lead{
+      display:block;
+      width:100%;
+      max-width:none;
+      font-size:1.08rem;
+      color:#333;
+      margin:0;
     }
 
     .tag{
       display:inline-block;
-      padding:.4rem .75rem;
+      font-size:.82rem;
+      padding:.35rem .7rem;
       border-radius:999px;
       background:#f7e5e5;
       color:#9b0000;
-      font-size:.82rem;
-      font-weight:800;
+      font-weight:700;
       margin-bottom:1rem;
     }
 
-    h1{
-      margin:0 0 1rem;
-      font-size:clamp(2.5rem, 6vw, 4.8rem);
-      line-height:1.02;
-      letter-spacing:-.04em;
-    }
+    .section{padding:1.5rem 0}
 
-    .lead{
-      max-width:760px;
-      font-size:1.08rem;
-      color:#333;
-      margin:0 0 2rem;
-    }
-
-    .image-wrap{
+    .hero-image,
+    .card{
       background:var(--card);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:1rem;
       overflow:hidden;
     }
 
-    .image-wrap img{
+    .hero-image{padding:1rem}
+
+    .hero-image img{
       width:100%;
-      height:560px;
+      height:520px;
       object-fit:contain;
       object-position:center;
       border-radius:22px;
       background:#fff;
     }
 
-    @media (max-width: 900px){
-      .hero{
-        padding:3rem 0 2rem;
+    .card{padding:1.5rem}
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1.2rem;
+    }
+
+    .facts{
+      display:grid;
+      gap:.8rem;
+    }
+
+    .fact{
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .fact strong{
+      display:block;
+      font-size:1.05rem;
+      margin-bottom:.2rem;
+    }
+
+    .results{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1rem;
+      margin-top:1rem;
+    }
+
+    .result{
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .result strong{
+      display:block;
+      font-size:1.1rem;
+      margin-bottom:.35rem;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1rem;
+    }
+
+    .gallery-item{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:20px;
+      padding:.8rem;
+      min-height:320px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:.75rem;
+    }
+
+    .gallery img{
+      width:100%;
+      height:100%;
+      max-height:310px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:14px;
+      background:#fff;
+    }
+
+    .caption{
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    .files{
+      display:grid;
+      gap:.8rem;
+    }
+
+    .file-link{
+      display:block;
+      padding:1rem 1.1rem;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .file-link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(214,0,0,.18);
+    }
+
+    .muted{color:var(--muted)}
+
+    ul{
+      margin:.3rem 0 0 1.1rem;
+      padding:0;
+    }
+
+    li + li{margin-top:.45rem}
+
+    @media (max-width:900px){
+      .grid-2,
+      .results,
+      .gallery{
+        grid-template-columns:1fr;
       }
 
-      .image-wrap img{
-        height:320px;
-      }
+      .hero-image img{height:320px}
+      .gallery-item{min-height:260px}
+      .gallery img{max-height:240px}
     }
   </style>
 </head>
+
 <body>
   <nav class="nav">
     <div class="container nav-inner">
@@ -115,43 +239,344 @@
     </div>
   </nav>
 
-  <main class="hero">
-    <div class="container">
-      <div class="tag" data-i18n="projectTag">Sustainable Design</div>
-      <h1 data-i18n="projectTitle">Sustainable light bulb</h1>
-      <p class="lead" data-i18n="projectLead">
-        Redesign of a light bulb with a stronger focus on circularity, modularity, material optimization and improved sustainability across the product lifecycle.
-      </p>
-
-      <div class="image-wrap">
-        <img src="../photos/Soon.png" alt="Sustainable light bulb project image">
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="tag" data-i18n="projectTag">EPFL · Towards Sustainable Materials · MSE-433</div>
+        <h1 data-i18n="projectTitle">LumiNova – Circular & Repairable LED Light Bulb</h1>
+        <p class="lead" data-i18n="projectLead">
+          Redesign of a conventional LED light bulb into a modular, repairable and lower-impact product, combining design for disassembly, life cycle assessment, material circularity and circular supply-chain strategies.
+        </p>
       </div>
-    </div>
+    </section>
+
+    <section class="section">
+      <div class="container hero-image">
+        <img src="../photos/CAD_ampoule.png" alt="Exploded CAD view of the LumiNova modular LED bulb">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="overviewTitle">Project Overview</h2>
+          <p data-i18n="overviewText1">
+            LumiNova was developed as a circular alternative to conventional LED light bulbs, which are generally sealed, difficult to repair and discarded entirely when a single electronic component fails. The project focused on rethinking both the product architecture and the associated material and recovery systems.
+          </p>
+          <p class="muted" data-i18n="overviewText2">
+            The redesigned concept combines a snap-fit, glue-free architecture, replaceable LED and driver modules, an integrated failure-detection system, recycled metals, a biodegradable PCB substrate and dedicated take-back loops. The redesign was evaluated through CAD, structural validation, material flow analysis, life cycle assessment, cost modelling and long-term decarbonisation targets.
+          </p>
+        </div>
+
+        <div class="facts">
+          <div class="fact">
+            <strong data-i18n="fact1Title">Reference product</strong>
+            <span class="muted" data-i18n="fact1Text">Philips LED A60 E27 bulb, used as the linear incumbent benchmark.</span>
+          </div>
+
+          <div class="fact">
+            <strong data-i18n="fact2Title">Functional unit</strong>
+            <span class="muted" data-i18n="fact2Text">Lighting service over 60,000 hours with equivalent lighting performance.</span>
+          </div>
+
+          <div class="fact">
+            <strong data-i18n="fact3Title">Assessment tools</strong>
+            <span class="muted" data-i18n="fact3Text">SimaPro, ecoinvent, MFA/MCI analysis, CAD and finite element validation.</span>
+          </div>
+
+          <div class="fact">
+            <strong data-i18n="fact4Title">Main objective</strong>
+            <span class="muted" data-i18n="fact4Text">Reduce repeated material production while improving repairability, recovery and lifetime.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="designTitle">Circular Product Redesign</h2>
+          <p data-i18n="designText1">
+            The central design decision was to replace the conventional permanently bonded structure with a modular architecture. The diffuser, LED board, driver PCB and structural support can be separated, allowing only the failed module to be replaced rather than the complete bulb.
+          </p>
+          <ul>
+            <li data-i18n="design1">Snap-fit, glue-free assembly for tool-free disassembly</li>
+            <li data-i18n="design2">Replaceable LED board and driver PCB</li>
+            <li data-i18n="design3">Integrated fault detection to identify the failed module</li>
+            <li data-i18n="design4">Dedicated return and recycling streams for PCB and aluminium components</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="materialsTitle">Material Strategy</h2>
+          <p data-i18n="materialsText1">
+            The material hotspot analysis identified primary aluminium, PCB materials, gold finishes, GaN and other electronic materials as important contributors to upstream impacts. The redesign therefore combines lower-carbon material choices with longer product lifetime.
+          </p>
+          <ul>
+            <li data-i18n="materials1">Recycled aluminium for the shell and structural metal parts</li>
+            <li data-i18n="materials2">Biodegradable resin as an alternative to conventional FR4 epoxy systems</li>
+            <li data-i18n="materials3">Strong reduction of gold use and long-term transition toward gold-free PCB finishes</li>
+            <li data-i18n="materials4">Product lifetime extended from 15,000 to 60,000 hours through modular replacement</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="resultsTitle">Main Results</h2>
+        <p data-i18n="resultsText1">
+          The life cycle assessment showed that LumiNova reduces total climate-change impact from 7.21 to 5.01 kg CO₂-eq over the selected functional unit. The largest improvement occurs in the production phase, where recycled materials and component-level replacement reduce the need for repeated manufacturing.
+        </p>
+        <p class="muted" data-i18n="resultsText2">
+          Circularity also improves strongly. The Material Circularity Indicator rises from 24.1% for the conventional bulb to 70.6% for LumiNova, mainly because the modular architecture allows structural components to remain in use over several replacement cycles.
+        </p>
+
+        <div class="results">
+          <div class="result">
+            <strong data-i18n="result1Title">−30.5%</strong>
+            <span class="muted" data-i18n="result1Text">Total climate-change impact: 7.21 → 5.01 kg CO₂-eq.</span>
+          </div>
+
+          <div class="result">
+            <strong data-i18n="result2Title">−36%</strong>
+            <span class="muted" data-i18n="result2Text">Production-phase impact reduction through modularity and recycled materials.</span>
+          </div>
+
+          <div class="result">
+            <strong data-i18n="result3Title">24.1 → 70.6%</strong>
+            <span class="muted" data-i18n="result3Text">Increase in Material Circularity Indicator.</span>
+          </div>
+
+          <div class="result">
+            <strong data-i18n="result4Title">15k → 60k h</strong>
+            <span class="muted" data-i18n="result4Text">Lifetime extension enabled by component-level replacement.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card">
+          <h2 data-i18n="lcaTitle">Life Cycle Assessment</h2>
+          <p data-i18n="lcaText1">
+            The comparative LCA was performed in SimaPro using ecoinvent datasets and identical lighting service for both products. Scope 3 upstream emissions dominate the product footprint, mainly due to raw-material extraction, electronics manufacturing and assembly.
+          </p>
+          <p class="muted" data-i18n="lcaText2">
+            This result shows that the strongest circularity lever is not only use-phase efficiency, but also avoiding unnecessary replacement of functional components and reducing demand for virgin high-impact materials.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-i18n="roadmapTitle">Long-Term Roadmap</h2>
+          <p data-i18n="roadmapText1">
+            A phased roadmap was developed to progressively decarbonise the product through material substitution, improved recovery and localised production.
+          </p>
+          <ul>
+            <li data-i18n="roadmap1">2030: modular design, recycled aluminium, biodegradable PCB resin and major gold reduction</li>
+            <li data-i18n="roadmap2">2040: larger recycled content, stronger metal recovery and local PCB pilot production</li>
+            <li data-i18n="roadmap3">2050: full local PCB and LED fabrication with complete elimination of gold</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="galleryTitle">Image Gallery</h2>
+        <div class="gallery">
+
+          <div class="gallery-item">
+            <img src="../photos/CAD_ampoule.png" alt="Exploded CAD view of LumiNova">
+            <div class="caption" data-i18n="galleryCaption1">Exploded CAD view of the modular LumiNova concept</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="../photos/Comparaison LCA.png" alt="LCA comparison between Philips and LumiNova">
+            <div class="caption" data-i18n="galleryCaption2">Comparative LCA: Philips linear bulb vs LumiNova circular alternative</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="../photos/circular LCA.png" alt="Circular life-cycle assessment diagram">
+            <div class="caption" data-i18n="galleryCaption3">Circular life-cycle and recovery flows for the redesigned bulb</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="../photos/roadmaptarget.jpeg" alt="LumiNova decarbonisation roadmap">
+            <div class="caption" data-i18n="galleryCaption4">Projected improvements after SMART goal implementation</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card">
+        <h2 data-i18n="filesTitle">Important Files</h2>
+        <div class="files">
+          <a class="file-link" href="../documents/LightBulb_report.pdf" target="_blank" data-i18n="file1">
+            Project report (PDF)
+          </a>
+
+          <a class="file-link" href="../documents/LightBulb_presentation.pdf" target="_blank" data-i18n="file2">
+            Final presentation (PDF)
+          </a>
+
+          <a class="file-link" href="../documents/LightBulb_Presentation.mov" target="_blank" data-i18n="file3">
+            Final presentation video (MOV)
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>
     const translations = {
       en: {
         backToPortfolio: "← Back to portfolio",
-        projectTag: "Sustainable Design",
-        projectTitle: "Sustainable light bulb",
-        projectLead: "Redesign of a light bulb with a stronger focus on circularity, modularity, material optimization and improved sustainability across the product lifecycle."
+
+        projectTag: "EPFL · Towards Sustainable Materials · MSE-433",
+        projectTitle: "LumiNova – Circular & Repairable LED Light Bulb",
+        projectLead: "Redesign of a conventional LED light bulb into a modular, repairable and lower-impact product, combining design for disassembly, life cycle assessment, material circularity and circular supply-chain strategies.",
+
+        overviewTitle: "Project Overview",
+        overviewText1: "LumiNova was developed as a circular alternative to conventional LED light bulbs, which are generally sealed, difficult to repair and discarded entirely when a single electronic component fails. The project focused on rethinking both the product architecture and the associated material and recovery systems.",
+        overviewText2: "The redesigned concept combines a snap-fit, glue-free architecture, replaceable LED and driver modules, an integrated failure-detection system, recycled metals, a biodegradable PCB substrate and dedicated take-back loops. The redesign was evaluated through CAD, structural validation, material flow analysis, life cycle assessment, cost modelling and long-term decarbonisation targets.",
+
+        fact1Title: "Reference product",
+        fact1Text: "Philips LED A60 E27 bulb, used as the linear incumbent benchmark.",
+        fact2Title: "Functional unit",
+        fact2Text: "Lighting service over 60,000 hours with equivalent lighting performance.",
+        fact3Title: "Assessment tools",
+        fact3Text: "SimaPro, ecoinvent, MFA/MCI analysis, CAD and finite element validation.",
+        fact4Title: "Main objective",
+        fact4Text: "Reduce repeated material production while improving repairability, recovery and lifetime.",
+
+        designTitle: "Circular Product Redesign",
+        designText1: "The central design decision was to replace the conventional permanently bonded structure with a modular architecture. The diffuser, LED board, driver PCB and structural support can be separated, allowing only the failed module to be replaced rather than the complete bulb.",
+        design1: "Snap-fit, glue-free assembly for tool-free disassembly",
+        design2: "Replaceable LED board and driver PCB",
+        design3: "Integrated fault detection to identify the failed module",
+        design4: "Dedicated return and recycling streams for PCB and aluminium components",
+
+        materialsTitle: "Material Strategy",
+        materialsText1: "The material hotspot analysis identified primary aluminium, PCB materials, gold finishes, GaN and other electronic materials as important contributors to upstream impacts. The redesign therefore combines lower-carbon material choices with longer product lifetime.",
+        materials1: "Recycled aluminium for the shell and structural metal parts",
+        materials2: "Biodegradable resin as an alternative to conventional FR4 epoxy systems",
+        materials3: "Strong reduction of gold use and long-term transition toward gold-free PCB finishes",
+        materials4: "Product lifetime extended from 15,000 to 60,000 hours through modular replacement",
+
+        resultsTitle: "Main Results",
+        resultsText1: "The life cycle assessment showed that LumiNova reduces total climate-change impact from 7.21 to 5.01 kg CO₂-eq over the selected functional unit. The largest improvement occurs in the production phase, where recycled materials and component-level replacement reduce the need for repeated manufacturing.",
+        resultsText2: "Circularity also improves strongly. The Material Circularity Indicator rises from 24.1% for the conventional bulb to 70.6% for LumiNova, mainly because the modular architecture allows structural components to remain in use over several replacement cycles.",
+        result1Title: "−30.5%",
+        result1Text: "Total climate-change impact: 7.21 → 5.01 kg CO₂-eq.",
+        result2Title: "−36%",
+        result2Text: "Production-phase impact reduction through modularity and recycled materials.",
+        result3Title: "24.1 → 70.6%",
+        result3Text: "Increase in Material Circularity Indicator.",
+        result4Title: "15k → 60k h",
+        result4Text: "Lifetime extension enabled by component-level replacement.",
+
+        lcaTitle: "Life Cycle Assessment",
+        lcaText1: "The comparative LCA was performed in SimaPro using ecoinvent datasets and identical lighting service for both products. Scope 3 upstream emissions dominate the product footprint, mainly due to raw-material extraction, electronics manufacturing and assembly.",
+        lcaText2: "This result shows that the strongest circularity lever is not only use-phase efficiency, but also avoiding unnecessary replacement of functional components and reducing demand for virgin high-impact materials.",
+
+        roadmapTitle: "Long-Term Roadmap",
+        roadmapText1: "A phased roadmap was developed to progressively decarbonise the product through material substitution, improved recovery and localised production.",
+        roadmap1: "2030: modular design, recycled aluminium, biodegradable PCB resin and major gold reduction",
+        roadmap2: "2040: larger recycled content, stronger metal recovery and local PCB pilot production",
+        roadmap3: "2050: full local PCB and LED fabrication with complete elimination of gold",
+
+        galleryTitle: "Image Gallery",
+        galleryCaption1: "Exploded CAD view of the modular LumiNova concept",
+        galleryCaption2: "Comparative LCA: Philips linear bulb vs LumiNova circular alternative",
+        galleryCaption3: "Circular life-cycle and recovery flows for the redesigned bulb",
+        galleryCaption4: "Projected improvements after SMART goal implementation",
+
+        filesTitle: "Important Files",
+        file1: "Project report (PDF)",
+        file2: "Final presentation (PDF)",
+        file3: "Final presentation video (MOV)"
       },
+
       fr: {
         backToPortfolio: "← Retour au portfolio",
-        projectTag: "Design durable",
-        projectTitle: "Ampoule durable",
-        projectLead: "Redesign d’une ampoule avec un accent renforcé sur la circularité, la modularité, l’optimisation matière et une meilleure durabilité sur l’ensemble du cycle de vie du produit."
+
+        projectTag: "EPFL · Towards Sustainable Materials · MSE-433",
+        projectTitle: "LumiNova – Ampoule LED circulaire et réparable",
+        projectLead: "Refonte d’une ampoule LED conventionnelle en un produit modulaire, réparable et à plus faible impact, combinant design pour le démontage, analyse du cycle de vie, circularité matière et stratégie de chaîne d’approvisionnement circulaire.",
+
+        overviewTitle: "Vue d’ensemble du projet",
+        overviewText1: "LumiNova a été développé comme une alternative circulaire aux ampoules LED conventionnelles, généralement scellées, difficiles à réparer et entièrement jetées lorsqu’un seul composant électronique tombe en panne. Le projet a consisté à repenser à la fois l’architecture du produit et les systèmes associés de matériaux et de récupération.",
+        overviewText2: "Le concept redessiné combine une architecture clipsée sans colle, des modules LED et PCB remplaçables, un système intégré de détection de panne, des métaux recyclés, un substrat PCB biodégradable et des boucles de reprise dédiées. Le redesign a été évalué au moyen de CAO, validation structurelle, analyse des flux de matière, ACV, modélisation des coûts et objectifs de décarbonation à long terme.",
+
+        fact1Title: "Produit de référence",
+        fact1Text: "Ampoule Philips LED A60 E27 utilisée comme référence linéaire.",
+        fact2Title: "Unité fonctionnelle",
+        fact2Text: "Service d’éclairage sur 60 000 heures avec performances lumineuses équivalentes.",
+        fact3Title: "Outils d’évaluation",
+        fact3Text: "SimaPro, ecoinvent, analyse MFA/MCI, CAO et validation par éléments finis.",
+        fact4Title: "Objectif principal",
+        fact4Text: "Réduire la fabrication répétée de matière tout en améliorant réparabilité, récupération et durée de vie.",
+
+        designTitle: "Redesign circulaire du produit",
+        designText1: "La décision de design principale a été de remplacer la structure conventionnelle collée de manière permanente par une architecture modulaire. Le diffuseur, la carte LED, le PCB driver et le support structurel peuvent être séparés, permettant de ne remplacer que le module défaillant plutôt que l’ampoule complète.",
+        design1: "Assemblage clipsé sans colle pour un démontage sans outil",
+        design2: "Carte LED et PCB driver remplaçables",
+        design3: "Détection intégrée de panne pour identifier le module défaillant",
+        design4: "Flux dédiés de retour et recyclage pour le PCB et les composants en aluminium",
+
+        materialsTitle: "Stratégie matériaux",
+        materialsText1: "L’analyse des hotspots matériaux a identifié l’aluminium primaire, les matériaux de PCB, les finitions à base d’or, le GaN et d’autres matériaux électroniques comme contributeurs importants aux impacts amont. Le redesign combine donc choix de matériaux à plus faible empreinte et augmentation de la durée de vie.",
+        materials1: "Aluminium recyclé pour l’enveloppe et les pièces métalliques structurelles",
+        materials2: "Résine biodégradable en alternative aux systèmes époxy FR4 conventionnels",
+        materials3: "Forte réduction de l’or et transition à long terme vers des finitions PCB sans or",
+        materials4: "Durée de vie portée de 15 000 à 60 000 heures grâce au remplacement modulaire",
+
+        resultsTitle: "Résultats principaux",
+        resultsText1: "L’analyse du cycle de vie montre que LumiNova réduit l’impact total sur le changement climatique de 7,21 à 5,01 kg CO₂-éq sur l’unité fonctionnelle retenue. L’amélioration principale provient de la phase de production, où les matériaux recyclés et le remplacement au niveau composant réduisent le besoin de refabriquer l’ensemble du produit.",
+        resultsText2: "La circularité progresse également fortement. Le Material Circularity Indicator passe de 24,1 % pour l’ampoule conventionnelle à 70,6 % pour LumiNova, principalement parce que l’architecture modulaire permet aux composants structurels de rester en service sur plusieurs cycles de remplacement.",
+        result1Title: "−30,5 %",
+        result1Text: "Impact climatique total : 7,21 → 5,01 kg CO₂-éq.",
+        result2Title: "−36 %",
+        result2Text: "Réduction de l’impact de la phase de production grâce à la modularité et aux matériaux recyclés.",
+        result3Title: "24,1 → 70,6 %",
+        result3Text: "Augmentation du Material Circularity Indicator.",
+        result4Title: "15k → 60k h",
+        result4Text: "Extension de durée de vie permise par le remplacement au niveau composant.",
+
+        lcaTitle: "Analyse du cycle de vie",
+        lcaText1: "L’ACV comparative a été réalisée dans SimaPro à partir de la base ecoinvent, avec le même service d’éclairage pour les deux produits. Les émissions du Scope 3 amont dominent l’empreinte du produit, principalement en raison de l’extraction des matières premières, de la fabrication électronique et de l’assemblage.",
+        lcaText2: "Le résultat montre que le principal levier de circularité ne repose pas uniquement sur l’efficacité en phase d’usage, mais également sur l’évitement du remplacement inutile des composants fonctionnels et sur la réduction de la demande en matériaux vierges à fort impact.",
+
+        roadmapTitle: "Roadmap long terme",
+        roadmapText1: "Une roadmap progressive a été développée afin de décarboner le produit par substitution de matériaux, amélioration de la récupération et relocalisation de la production.",
+        roadmap1: "2030 : design modulaire, aluminium recyclé, résine PCB biodégradable et forte réduction de l’or",
+        roadmap2: "2040 : augmentation du contenu recyclé, récupération accrue des métaux et ligne pilote PCB locale",
+        roadmap3: "2050 : fabrication locale complète des PCB et LED avec élimination totale de l’or",
+
+        galleryTitle: "Galerie d’images",
+        galleryCaption1: "Vue CAO éclatée du concept modulaire LumiNova",
+        galleryCaption2: "ACV comparative : ampoule Philips linéaire vs alternative circulaire LumiNova",
+        galleryCaption3: "Cycle de vie circulaire et flux de récupération du produit redessiné",
+        galleryCaption4: "Améliorations projetées après mise en place des objectifs SMART",
+
+        filesTitle: "Fichiers importants",
+        file1: "Rapport du projet (PDF)",
+        file2: "Présentation finale (PDF)",
+        file3: "Vidéo de la présentation finale (MOV)"
       }
     };
 
-    function applyTranslations(lang) {
+    function applyTranslations(lang){
       const dict = translations[lang] || translations.en;
       document.documentElement.lang = lang;
 
       document.querySelectorAll("[data-i18n]").forEach((el) => {
         const key = el.dataset.i18n;
-        if (dict[key] !== undefined) {
+        if(dict[key] !== undefined){
           el.innerHTML = dict[key];
         }
       });
