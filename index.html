@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mathélyo Favre-Réguillon | Portfolio</title>
   <meta name="description" content="Mechanical Engineering portfolio of Mathélyo Favre-Réguillon, focused on high-performance engineering, composites, design, simulation and Formula Student." />
+
   <style>
     :root{
       --bg:#f4f1ef;
@@ -22,28 +23,36 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       background:var(--bg);
       color:var(--text);
       line-height:1.55;
       overflow-x:hidden;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
 
     #about,
     #racing,
     #projects,
     #skills,
     #contact{
-      scroll-margin-top: var(--nav-offset);
+      scroll-margin-top:var(--nav-offset);
     }
 
     .container{
-      width:min(var(--max), calc(100% - 2rem));
+      width:min(var(--max),calc(100% - 2rem));
       margin:0 auto;
     }
 
@@ -51,7 +60,7 @@
       position:sticky;
       top:0;
       z-index:1000;
-      backdrop-filter: blur(16px);
+      backdrop-filter:blur(16px);
       background:var(--nav-bg);
       border-bottom:1px solid rgba(0,0,0,.08);
       box-shadow:0 10px 25px rgba(0,0,0,.05);
@@ -309,12 +318,12 @@
     }
 
     h1{
-      font-size:clamp(3rem, 8vw, 6.2rem);
+      font-size:clamp(3rem,8vw,6.2rem);
       margin-bottom:1rem;
     }
 
     h2{
-      font-size:clamp(2rem, 5vw, 3.6rem);
+      font-size:clamp(2rem,5vw,3.6rem);
       margin-bottom:1rem;
     }
 
@@ -417,7 +426,7 @@
       position:relative;
       overflow:hidden;
       padding:2rem;
-      background: radial-gradient(circle at top right, rgba(214,0,0,.08), transparent 28%), #fff;
+      background:radial-gradient(circle at top right,rgba(214,0,0,.08),transparent 28%),#fff;
     }
 
     .status-availability{
@@ -461,7 +470,7 @@
     }
 
     .status-heading{
-      font-size:clamp(1.6rem, 4vw, 2.8rem);
+      font-size:clamp(1.6rem,4vw,2.8rem);
       line-height:1.06;
       letter-spacing:-.03em;
       margin:0 0 .9rem;
@@ -477,7 +486,7 @@
 
     .status-grid{
       display:grid;
-      grid-template-columns:repeat(4, minmax(0,1fr));
+      grid-template-columns:repeat(4,minmax(0,1fr));
       gap:1rem;
       margin-top:1.6rem;
     }
@@ -515,7 +524,7 @@
 
     .project-stats{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
       gap:1rem;
       width:100%;
     }
@@ -536,7 +545,7 @@
 
     .projects-grid{
       display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:1.2rem;
       margin-top:1.2rem;
     }
@@ -576,7 +585,7 @@
       height:100%;
       object-fit:contain;
       object-position:center;
-      transform:scale(var(--img-scale, 1));
+      transform:scale(var(--img-scale,1));
       transform-origin:center;
       transition:transform .25s ease;
     }
@@ -596,7 +605,9 @@
       margin-bottom:.8rem;
     }
 
-    .muted{color:var(--muted)}
+    .muted{
+      color:var(--muted);
+    }
 
     .timeline{
       position:relative;
@@ -611,7 +622,7 @@
       top:0;
       bottom:0;
       width:3px;
-      background:linear-gradient(to bottom, var(--red), #e8c3c3);
+      background:linear-gradient(to bottom,var(--red),#e8c3c3);
       border-radius:999px;
     }
 
@@ -725,7 +736,7 @@
 
     .soft-skills-grid{
       display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:1rem;
     }
 
@@ -798,13 +809,19 @@
 
     .software-grid{
       display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
+      grid-template-columns:repeat(3,minmax(0,1fr));
       gap:1rem;
     }
 
     @keyframes fadeSlide{
-      from{ opacity:0; transform:translateY(6px); }
-      to{ opacity:1; transform:translateY(0); }
+      from{
+        opacity:0;
+        transform:translateY(6px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
     }
 
     .footer{
@@ -851,55 +868,75 @@
       justify-content:center;
     }
 
-    .small{font-size:.9rem}
+    .small{
+      font-size:.9rem;
+    }
 
-    @media (max-width: 960px){
-      .intro-grid,.grid-2,.project-feature,.contact,.nav-right{
+    @media (max-width:960px){
+      .intro-grid,
+      .grid-2,
+      .project-feature,
+      .contact,
+      .nav-right{
         grid-template-columns:1fr;
       }
-      .projects-grid,.project-stats,.soft-skills-grid,.software-grid{
+
+      .projects-grid,
+      .project-stats,
+      .soft-skills-grid,
+      .software-grid{
         grid-template-columns:1fr 1fr;
       }
+
       .hero-card{
         max-width:360px;
       }
+
       .timeline-item{
         grid-template-columns:1fr;
         align-items:start;
       }
+
       .timeline-logo{
         justify-content:flex-start;
         padding-right:0;
       }
+
       .timeline-logo-box{
         max-width:260px;
       }
+
       .nav-right{
         display:flex;
         flex-direction:column;
         align-items:flex-end;
         gap:.8rem;
       }
+
       .contact-extended{
         grid-template-columns:1fr;
       }
+
       .contact-image-wrap{
         min-height:220px;
       }
+
       .status-top{
         padding-right:0;
       }
+
       .status-availability{
         position:static;
         margin-bottom:1.1rem;
         width:max-content;
       }
+
       .status-grid{
         grid-template-columns:1fr 1fr;
       }
     }
 
-    @media (max-width: 640px){
+    @media (max-width:640px){
       .nav-inner{
         flex-wrap:wrap;
         align-items:center;
@@ -926,7 +963,11 @@
         display:block;
       }
 
-      .projects-grid,.project-stats,.soft-skills-grid,.software-grid,.status-grid{
+      .projects-grid,
+      .project-stats,
+      .soft-skills-grid,
+      .software-grid,
+      .status-grid{
         grid-template-columns:1fr;
       }
 
@@ -957,717 +998,1964 @@
     }
   </style>
 </head>
-<body>
-  <nav class="nav" id="mainNav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top">Mathélyo Favre-Réguillon</a>
 
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+
+<body>
+
+  <nav class="nav" id="mainNav">
+
+    <div class="container nav-inner">
+
+      <a class="brand" href="#top">
+        Mathélyo Favre-Réguillon
+      </a>
+
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
         ☰
       </button>
 
+
       <div class="nav-right">
+
         <div class="nav-links">
-          <a href="#about" data-i18n="navAbout">About me</a>
-          <a href="#racing" data-i18n="navRacing">EPFL Racing Team</a>
+
+          <a href="#about" data-i18n="navAbout">
+            About me
+          </a>
+
+          <a href="#racing" data-i18n="navRacing">
+            EPFL Racing Team
+          </a>
+
 
           <div class="dropdown" id="projectsDropdown">
-            <button class="dropdown-toggle" type="button" onclick="toggleDropdown(event)">
-              <span data-i18n="navProjects">Projects</span> ▾
+
+            <button
+              class="dropdown-toggle"
+              type="button"
+              onclick="toggleDropdown(event)"
+            >
+              <span data-i18n="navProjects">Projects</span>
+              ▾
             </button>
+
+
             <div class="dropdown-menu">
-              <a href="projects/epfl-racing-team.html" data-i18n="dropdownRacing">EPFL Racing Team</a>
-              <a href="projects/monocoque.html" data-i18n="dropdownMonocoque">Monocoque insert analysis</a>
-              <a href="projects/screw-sorter.html" data-i18n="dropdownScrew">Screw sorter</a>
-              <a href="projects/raspberry-gripper.html" data-i18n="dropdownRaspberry">Raspberry gripper</a>
-              <a href="projects/domino-machine.html" data-i18n="dropdownDomino">Domino placement machine</a>
-              <a href="projects/sudoku-solver.html" data-i18n="dropdownSudoku">Sudoku solver</a>
-              <a href="projects/fea-inserts.html" data-i18n="dropdownFea">Finite element simulation</a>
-              <a href="projects/trampoline-measurement.html" data-i18n="dropdownTrampoline">Measurement on trampoline</a>
-              <a href="projects/xray-spectroscopy.html" data-i18n="dropdownXray">X-ray spectroscopy</a>
-              <a href="projects/aluminium-alloys.html" data-i18n="dropdownAlloys">High strength aluminium alloys</a>
-              <a href="projects/electrical-housing.html" data-i18n="dropdownElectrical">Electrical housing integration</a>
-              <a href="projects/topology-optimization.html" data-i18n="dropdownTopology">Topology optimization</a>
-              <a href="projects/sustainable-light-bulb.html" data-i18n="dropdownBulb">Sustainable light bulb</a>
-              <a href="projects/lattice-optimization.html" data-i18n="dropdownLattice">Lattice optimization</a>
-              <a href="projects/data-acquisition-semester-project.html" data-i18n="dropdownData">Data acquisition semester project</a>
+
+              <a href="projects/monocoque.html" data-i18n="dropdownMonocoque">
+                Monocoque insert analysis
+              </a>
+
+              <a href="projects/screw-sorter.html" data-i18n="dropdownScrew">
+                Screw sorter
+              </a>
+
+              <a href="projects/raspberry-gripper.html" data-i18n="dropdownRaspberry">
+                Raspberry gripper
+              </a>
+
+              <a href="projects/domino-machine.html" data-i18n="dropdownDomino">
+                Domino placement machine
+              </a>
+
+              <a href="projects/sustainable-light-bulb.html" data-i18n="dropdownBulb">
+                Sustainable light bulb
+              </a>
+
+              <a href="projects/data-acquisition-semester-project.html" data-i18n="dropdownData">
+                Data acquisition semester project
+              </a>
+
+              <a href="projects/electrical-housing.html" data-i18n="dropdownElectrical">
+                Electrical housing integration
+              </a>
+
+              <a href="projects/sudoku-solver.html" data-i18n="dropdownSudoku">
+                Sudoku solver
+              </a>
+
+              <a href="projects/fea-inserts.html" data-i18n="dropdownFea">
+                Finite element simulation
+              </a>
+
+              <a href="projects/trampoline-measurement.html" data-i18n="dropdownTrampoline">
+                Measurement on trampoline
+              </a>
+
+              <a href="projects/topology-optimization.html" data-i18n="dropdownTopology">
+                Topology optimization
+              </a>
+
+              <a href="projects/lattice-optimization.html" data-i18n="dropdownLattice">
+                Lattice optimization
+              </a>
+
+              <a href="projects/xray-spectroscopy.html" data-i18n="dropdownXray">
+                X-ray spectroscopy
+              </a>
+
+              <a href="projects/aluminium-alloys.html" data-i18n="dropdownAlloys">
+                High strength aluminium alloys
+              </a>
+
+              <a href="projects/epfl-racing-team.html" data-i18n="dropdownRacing">
+                EPFL Racing Team
+              </a>
+
             </div>
+
           </div>
 
-          <a href="#skills" data-i18n="navSkills">Skills</a>
-          <a href="#contact" data-i18n="navContact">Contact</a>
+
+          <a href="#skills" data-i18n="navSkills">
+            Skills
+          </a>
+
+          <a href="#contact" data-i18n="navContact">
+            Contact
+          </a>
+
         </div>
+
 
         <div class="lang-switch" aria-label="Language switcher">
-          <button class="lang-btn active" type="button" data-lang="en">EN</button>
-          <button class="lang-btn" type="button" data-lang="fr">FR</button>
+
+          <button class="lang-btn active" type="button" data-lang="en">
+            EN
+          </button>
+
+          <button class="lang-btn" type="button" data-lang="fr">
+            FR
+          </button>
+
         </div>
+
       </div>
+
 
       <div class="mobile-menu" id="mobileMenu">
+
         <div class="mobile-menu-panel">
+
           <div class="mobile-menu-links">
-            <a href="#about" data-i18n="navAbout" onclick="closeMobileMenu()">About me</a>
-            <a href="#racing" data-i18n="navRacing" onclick="closeMobileMenu()">EPFL Racing Team</a>
+
+            <a
+              href="#about"
+              data-i18n="navAbout"
+              onclick="closeMobileMenu()"
+            >
+              About me
+            </a>
+
+            <a
+              href="#racing"
+              data-i18n="navRacing"
+              onclick="closeMobileMenu()"
+            >
+              EPFL Racing Team
+            </a>
+
 
             <div class="mobile-dropdown" id="mobileProjectsDropdown">
-              <button class="mobile-dropdown-toggle" type="button" onclick="toggleMobileProjects(event)">
-                <span data-i18n="navProjects">Projects</span>
-                <span>▾</span>
+
+              <button
+                class="mobile-dropdown-toggle"
+                type="button"
+                onclick="toggleMobileProjects(event)"
+              >
+
+                <span data-i18n="navProjects">
+                  Projects
+                </span>
+
+                <span>
+                  ▾
+                </span>
+
               </button>
+
+
               <div class="mobile-dropdown-menu">
-                <a href="projects/epfl-racing-team.html" data-i18n="dropdownRacing">EPFL Racing Team</a>
-                <a href="projects/monocoque.html" data-i18n="dropdownMonocoque">Monocoque insert analysis</a>
-                <a href="projects/screw-sorter.html" data-i18n="dropdownScrew">Screw sorter</a>
-                <a href="projects/raspberry-gripper.html" data-i18n="dropdownRaspberry">Raspberry gripper</a>
-                <a href="projects/domino-machine.html" data-i18n="dropdownDomino">Domino placement machine</a>
-                <a href="projects/sudoku-solver.html" data-i18n="dropdownSudoku">Sudoku solver</a>
-                <a href="projects/fea-inserts.html" data-i18n="dropdownFea">Finite element simulation</a>
-                <a href="projects/trampoline-measurement.html" data-i18n="dropdownTrampoline">Measurement on trampoline</a>
-                <a href="projects/topology-optimization.html" data-i18n="dropdownTopology">Topology optimization</a>
-                <a href="projects/xray-spectroscopy.html" data-i18n="dropdownXray">X-ray spectroscopy</a>
-                <a href="projects/aluminium-alloys.html" data-i18n="dropdownAlloys">High strength aluminium alloys</a>
-                <a href="projects/electrical-housing.html" data-i18n="dropdownElectrical">Electrical housing integration</a>
-                <a href="projects/sustainable-light-bulb.html" data-i18n="dropdownBulb">Sustainable light bulb</a>
-                <a href="projects/lattice-optimization.html" data-i18n="dropdownLattice">Lattice optimization</a>
-                <a href="projects/data-acquisition-semester-project.html" data-i18n="dropdownData">Data acquisition semester project</a>
+
+                <a href="projects/monocoque.html" data-i18n="dropdownMonocoque">
+                  Monocoque insert analysis
+                </a>
+
+                <a href="projects/screw-sorter.html" data-i18n="dropdownScrew">
+                  Screw sorter
+                </a>
+
+                <a href="projects/raspberry-gripper.html" data-i18n="dropdownRaspberry">
+                  Raspberry gripper
+                </a>
+
+                <a href="projects/domino-machine.html" data-i18n="dropdownDomino">
+                  Domino placement machine
+                </a>
+
+                <a href="projects/sustainable-light-bulb.html" data-i18n="dropdownBulb">
+                  Sustainable light bulb
+                </a>
+
+                <a href="projects/data-acquisition-semester-project.html" data-i18n="dropdownData">
+                  Data acquisition semester project
+                </a>
+
+                <a href="projects/electrical-housing.html" data-i18n="dropdownElectrical">
+                  Electrical housing integration
+                </a>
+
+                <a href="projects/sudoku-solver.html" data-i18n="dropdownSudoku">
+                  Sudoku solver
+                </a>
+
+                <a href="projects/fea-inserts.html" data-i18n="dropdownFea">
+                  Finite element simulation
+                </a>
+
+                <a href="projects/trampoline-measurement.html" data-i18n="dropdownTrampoline">
+                  Measurement on trampoline
+                </a>
+
+                <a href="projects/topology-optimization.html" data-i18n="dropdownTopology">
+                  Topology optimization
+                </a>
+
+                <a href="projects/lattice-optimization.html" data-i18n="dropdownLattice">
+                  Lattice optimization
+                </a>
+
+                <a href="projects/xray-spectroscopy.html" data-i18n="dropdownXray">
+                  X-ray spectroscopy
+                </a>
+
+                <a href="projects/aluminium-alloys.html" data-i18n="dropdownAlloys">
+                  High strength aluminium alloys
+                </a>
+
+                <a href="projects/epfl-racing-team.html" data-i18n="dropdownRacing">
+                  EPFL Racing Team
+                </a>
+
               </div>
+
             </div>
 
-            <a href="#skills" data-i18n="navSkills" onclick="closeMobileMenu()">Skills</a>
-            <a href="#contact" data-i18n="navContact" onclick="closeMobileMenu()">Contact</a>
+
+            <a
+              href="#skills"
+              data-i18n="navSkills"
+              onclick="closeMobileMenu()"
+            >
+              Skills
+            </a>
+
+            <a
+              href="#contact"
+              data-i18n="navContact"
+              onclick="closeMobileMenu()"
+            >
+              Contact
+            </a>
+
           </div>
+
 
           <div class="lang-switch" aria-label="Language switcher mobile">
-            <button class="lang-btn active" type="button" data-lang="en">EN</button>
-            <button class="lang-btn" type="button" data-lang="fr">FR</button>
+
+            <button class="lang-btn active" type="button" data-lang="en">
+              EN
+            </button>
+
+            <button class="lang-btn" type="button" data-lang="fr">
+              FR
+            </button>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
+
   </nav>
 
+
   <header class="intro" id="top">
+
     <div class="container intro-grid">
+
       <div>
-        <div class="eyebrow" data-i18n="heroEyebrow">Mechanical Engineering Portfolio</div>
-        <h1 data-i18n="heroTitle">Design.<br>Build.<br>Deliver.</h1>
+
+        <div class="eyebrow" data-i18n="heroEyebrow">
+          Mechanical Engineering Portfolio
+        </div>
+
+        <h1 data-i18n="heroTitle">
+          Design.<br>Build.<br>Deliver.
+        </h1>
+
         <p class="lead" data-i18n="heroLead">
           Welcome to my portfolio. I am Mathélyo Favre-Réguillon, a Mechanical Engineering Master’s student at EPFL, focused on high-performance engineering, composites, and lightweight structures. I am driven by both technical challenges and project leadership, aiming to turn complex ideas into efficient, well-executed solutions.
         </p>
+
         <div class="intro-actions">
-          <button class="btn" onclick="scrollToSection('about')" data-i18n="heroBtnProfile">Discover my profile</button>
-          <a class="btn-outline" href="#contact" data-i18n="heroBtnContact">Contact me</a>
+
+          <button
+            class="btn"
+            onclick="scrollToSection('about')"
+            data-i18n="heroBtnProfile"
+          >
+            Discover my profile
+          </button>
+
+          <a
+            class="btn-outline"
+            href="#contact"
+            data-i18n="heroBtnContact"
+          >
+            Contact me
+          </a>
+
         </div>
+
       </div>
+
 
       <div class="hero-card">
-        <img src="photos/ImagePresentation.jpg" alt="Mathélyo Favre-Réguillon portfolio cover">
+
+        <img
+          src="photos/ImagePresentation.jpg"
+          alt="Mathélyo Favre-Réguillon portfolio cover"
+        >
+
       </div>
+
     </div>
+
   </header>
 
+
   <main>
+
     <section class="section" id="status">
+
       <div class="container">
+
         <div class="card status-card">
+
           <div class="status-availability">
+
             <span class="status-dot"></span>
-            <span data-i18n="statusAvailable">Currently available</span>
+
+            <span data-i18n="statusAvailable">
+              Currently available
+            </span>
+
           </div>
 
+
           <div class="status-top">
-            <p class="status-label" data-i18n="statusLabel">Current status</p>
+
+            <p class="status-label" data-i18n="statusLabel">
+              Current status
+            </p>
+
             <h3 class="status-heading" data-i18n="statusHeading">
               First-year Master’s student at EPFL, currently looking for an internship
             </h3>
+
             <p class="status-text" data-i18n="statusText">
               I am currently looking for a 6 to 12-month internship in engineering, design, simulation, manufacturing, production chain optimization or technical project management.
             </p>
+
           </div>
+
 
           <div class="status-grid">
+
             <div class="status-item">
-              <div class="status-item-title" data-i18n="statusBox1Title">Format</div>
-              <div class="status-item-text" data-i18n="statusBox1Text">6 to 12-month internship</div>
+
+              <div class="status-item-title" data-i18n="statusBox1Title">
+                Format
+              </div>
+
+              <div class="status-item-text" data-i18n="statusBox1Text">
+                6 to 12-month internship
+              </div>
+
             </div>
+
+
             <div class="status-item">
-              <div class="status-item-title" data-i18n="statusBox2Title">Focus areas</div>
-              <div class="status-item-text" data-i18n="statusBox2Text">Engineering, design and simulation</div>
+
+              <div class="status-item-title" data-i18n="statusBox2Title">
+                Focus areas
+              </div>
+
+              <div class="status-item-text" data-i18n="statusBox2Text">
+                Engineering, design and simulation
+              </div>
+
             </div>
+
+
             <div class="status-item">
-              <div class="status-item-title" data-i18n="statusBox3Title">Industrial scope</div>
-              <div class="status-item-text" data-i18n="statusBox3Text">Manufacturing and production optimization</div>
+
+              <div class="status-item-title" data-i18n="statusBox3Title">
+                Industrial scope
+              </div>
+
+              <div class="status-item-text" data-i18n="statusBox3Text">
+                Manufacturing and production optimization
+              </div>
+
             </div>
+
+
             <div class="status-item">
-              <div class="status-item-title" data-i18n="statusBox4Title">Project management</div>
-              <div class="status-item-text" data-i18n="statusBox4Text">Technical project management and coordination</div>
+
+              <div class="status-item-title" data-i18n="statusBox4Title">
+                Project management
+              </div>
+
+              <div class="status-item-text" data-i18n="statusBox4Text">
+                Technical project management and coordination
+              </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
+
     <section class="section" id="about">
+
       <div class="container">
+
         <div class="card">
-          <h2 data-i18n="aboutTitle">About Me</h2>
+
+          <h2 data-i18n="aboutTitle">
+            About Me
+          </h2>
+
           <p class="lead lead-full" data-i18n="aboutLead">
             My academic journey has been defined by a continuous progression through demanding engineering projects that have shaped both my technical skills and my way of working. At EPFL, I have been involved in complex, team-based projects, strengthening my interest in design, manufacturing, and high-performance systems, while developing a structured and collaborative approach to engineering. This timeline traces my path from 2018 to today.
           </p>
 
+
           <div class="timeline">
+
             <div class="timeline-item">
+
               <div class="timeline-content">
-                <div class="timeline-year">2018</div>
-                <h4 data-i18n="aboutUgitechTitle">Metallurgy Internship · UGITECH</h4>
+
+                <div class="timeline-year">
+                  2018
+                </div>
+
+                <h4 data-i18n="aboutUgitechTitle">
+                  Metallurgy Internship · UGITECH
+                </h4>
+
                 <p class="timeline-text" data-i18n="aboutUgitechText">
                   Internship at UGITECH in Ugine, FR, a stainless steel manufacturer. Worked on production and automation while developing a solid understanding of advanced metallurgy concepts applied to high-performance materials.
                 </p>
+
               </div>
+
+
               <div class="timeline-logo">
+
                 <div class="timeline-logo-box">
-                  <img src="Logos/Ugitech.png" alt="Ugitech logo">
+
+                  <img
+                    src="Logos/Ugitech.png"
+                    alt="Ugitech logo"
+                  >
+
                 </div>
+
               </div>
+
             </div>
 
+
             <div class="timeline-item">
+
               <div class="timeline-content">
-                <div class="timeline-year">2019 – 2022</div>
-                <h4 data-i18n="aboutHsTitle">High School · Saint-Joseph</h4>
+
+                <div class="timeline-year">
+                  2019 – 2022
+                </div>
+
+                <h4 data-i18n="aboutHsTitle">
+                  High School · Saint-Joseph
+                </h4>
+
                 <p class="timeline-text" data-i18n="aboutHsText">
                   General high school at Saint-Joseph in Thônes, FR. Specialized in Mathematics, Physics, and Economics & Social Sciences. Developed a strong interest in analytical thinking and technical problem-solving, and graduated with honors in the French General Baccalauréat: 18.24/20 (91.2%).
                 </p>
+
               </div>
+
+
               <div class="timeline-logo">
+
                 <div class="timeline-logo-box">
-                  <img src="Logos/SaintJoseph.png" alt="High school logo">
+
+                  <img
+                    src="Logos/SaintJoseph.png"
+                    alt="High school logo"
+                  >
+
                 </div>
+
               </div>
+
             </div>
 
+
             <div class="timeline-item">
+
               <div class="timeline-content">
-                <div class="timeline-year">2022</div>
-                <h4 data-i18n="aboutBianchettiTitle">Summer Work in Carpentry & Roofing · Bianchetti</h4>
+
+                <div class="timeline-year">
+                  2022
+                </div>
+
+                <h4 data-i18n="aboutBianchettiTitle">
+                  Summer Work in Carpentry & Roofing · Bianchetti
+                </h4>
+
                 <p class="timeline-text" data-i18n="aboutBianchettiText">
                   Summer work at Bianchetti in Thônes, FR, in carpentry and roofing. Contributed to the renovation of a high-rise roof, working with various tools and within a team environment, while developing hands-on skills in construction and roofing techniques.
                 </p>
+
               </div>
+
+
               <div class="timeline-logo">
+
                 <div class="timeline-logo-box">
-                  <img src="Logos/bianchetti.jpg" alt="Bianchetti logo">
+
+                  <img
+                    src="Logos/bianchetti.jpg"
+                    alt="Bianchetti logo"
+                  >
+
                 </div>
+
               </div>
+
             </div>
 
+
             <div class="timeline-item">
+
               <div class="timeline-content">
-                <div class="timeline-year">2022 – 2025</div>
-                <h4 data-i18n="aboutBachelorTitle">Bachelor in Mechanical Engineering · EPFL</h4>
+
+                <div class="timeline-year">
+                  2022 – 2025
+                </div>
+
+                <h4 data-i18n="aboutBachelorTitle">
+                  Bachelor in Mechanical Engineering · EPFL
+                </h4>
+
                 <p class="timeline-text" data-i18n="aboutBachelorText">
                   Strong foundations in mathematics, physics, structural mechanics, materials, and engineering design at EPFL in Lausanne, CH. Graduated with a First Grade (79%), through a rigorous program combining advanced coursework and multiple technical group projects, including Mechanical Construction, Product Development, Engineering Design, and a final Bachelor Project.
                 </p>
+
               </div>
+
+
               <div class="timeline-logo">
+
                 <div class="timeline-logo-box">
-                  <img src="Logos/EPFL.png" alt="EPFL logo">
+
+                  <img
+                    src="Logos/EPFL.png"
+                    alt="EPFL logo"
+                  >
+
                 </div>
+
               </div>
+
             </div>
 
+
             <div class="timeline-item">
+
               <div class="timeline-content">
-                <div class="timeline-year">2023 – 2025</div>
-                <h4 data-i18n="aboutRacingTitle">Monocoque & Leadership Roles · EPFL Racing Team</h4>
+
+                <div class="timeline-year">
+                  2023 – 2025
+                </div>
+
+                <h4 data-i18n="aboutRacingTitle">
+                  Monocoque & Leadership Roles · EPFL Racing Team
+                </h4>
+
                 <p class="timeline-text" data-i18n="aboutRacingText">
                   Alongside my Bachelor at EPFL in Lausanne, CH, I first joined the EPFL Racing Team as a chassis member, working on the mechanical integration of electronics. I later took on broader responsibilities as Head of Monocoque and Layup Manufacturing, and Vice President, developing both composite manufacturing expertise and leadership skills in a high-performance team.
                 </p>
+
               </div>
+
+
               <div class="timeline-logo">
+
                 <div class="timeline-logo-box">
-                  <img src="Logos/EPFL-RacingTeam.png" alt="EPFL Racing logo">
+
+                  <img
+                    src="Logos/EPFL-RacingTeam.png"
+                    alt="EPFL Racing logo"
+                  >
+
                 </div>
+
               </div>
+
             </div>
 
+
             <div class="timeline-item">
+
               <div class="timeline-content">
-                <div class="timeline-year">2025 – 2028</div>
-                <h4 data-i18n="aboutMasterTitle">Master of Science in Mechanical Engineering · EPFL</h4>
+
+                <div class="timeline-year">
+                  2025 – 2028
+                </div>
+
+                <h4 data-i18n="aboutMasterTitle">
+                  Master of Science in Mechanical Engineering · EPFL
+                </h4>
+
                 <p class="timeline-text" data-i18n="aboutMasterText">
                   Specialization in Design and Production with a minor in Materials Science at EPFL in Lausanne, CH. Focused on high-performance engineering, combining advanced technical knowledge with complex project-based work and a strong interest in manufacturing, optimization, and engineering systems.
                 </p>
+
               </div>
+
+
               <div class="timeline-logo">
+
                 <div class="timeline-logo-box">
-                  <img src="Logos/EPFL.png" alt="EPFL Master logo">
+
+                  <img
+                    src="Logos/EPFL.png"
+                    alt="EPFL Master logo"
+                  >
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
+
 
           <div class="section-actions">
-            <a class="btn" href="documents/Mathelyo_Favre-Reguillon_CV.pdf" download data-i18n="aboutCvBtn">Download my CV</a>
+
+            <a
+              class="btn"
+              href="documents/Mathelyo_Favre-Reguillon_CV.pdf"
+              download
+              data-i18n="aboutCvBtn"
+            >
+              Download my CV
+            </a>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
+
     <section class="section" id="racing">
+
       <div class="container">
+
         <div class="card">
-          <h2 data-i18n="racingTitle">EPFL Racing Team</h2>
+
+          <h2 data-i18n="racingTitle">
+            EPFL Racing Team
+          </h2>
+
+
           <p data-i18n="racingLead">
             EPFL Racing Team is a student-led engineering project that designs, manufactures and races a fully electric and autonomous Formula Student car. The project combines vehicle development, testing, manufacturing and competition in a demanding environment that closely reflects real engineering teamwork.
           </p>
+
+
           <p data-i18n="racingLead2">
-            It brings together students from different disciplines who work on the car as a complete system: chassis, aerodynamics, drivetrain, electronics, software, manufacturing, testing, logistics and project coordination. More information is available on the team website: <a class="inline-link" href="https://epflracingteam.ch/fr/" target="_blank" rel="noopener noreferrer">epflracingteam.ch</a>.
+            It brings together students from different disciplines who work on the car as a complete system: chassis, aerodynamics, drivetrain, electronics, software, manufacturing, testing, logistics and project coordination. More information is available on the team website:
+            <a
+              class="inline-link"
+              href="https://epflracingteam.ch/fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              epflracingteam.ch
+            </a>.
           </p>
 
+
           <div class="project-feature">
+
             <div>
-              <h3 data-i18n="racingSubtitle">From technical contribution to team leadership</h3>
+
+              <h3 data-i18n="racingSubtitle">
+                From technical contribution to team leadership
+              </h3>
+
+
               <p data-i18n="racingText1">
                 During my first year, I designed and produced the full electrical integration kit using composite, aluminium and 3D-printed materials, creating a rigid and waterproof solution. I also contributed to the manufacturing of major composite parts, including the monocoque.
               </p>
+
+
               <p data-i18n="racingText2">
                 In my second year, as Head of Monocoque and Layup Manufacturing, I led the production of the carbon monocoque and improved the electronic integration approach, while also developing validated inserts for composite and aluminium parts.
               </p>
 
+
               <div class="project-stats">
+
                 <div class="stat">
-                  <strong>1 month</strong>
-                  <span data-i18n="racingStat4">production time saved</span>
+
+                  <strong>
+                    1 month
+                  </strong>
+
+                  <span data-i18n="racingStat4">
+                    production time saved
+                  </span>
+
                 </div>
+
+
                 <div class="stat">
-                  <strong>2 kg</strong>
-                  <span data-i18n="racingStat5">weight reduction on integration system</span>
+
+                  <strong>
+                    2 kg
+                  </strong>
+
+                  <span data-i18n="racingStat5">
+                    weight reduction on integration system
+                  </span>
+
                 </div>
+
+
                 <div class="stat">
-                  <strong>47%</strong>
-                  <span data-i18n="racingStat6">lighter than previous design</span>
+
+                  <strong>
+                    47%
+                  </strong>
+
+                  <span data-i18n="racingStat6">
+                    lighter than previous design
+                  </span>
+
                 </div>
+
               </div>
+
 
               <div class="section-actions">
-                <a class="btn" href="projects/epfl-racing-team.html" data-i18n="racingBtn">Click to discover more</a>
-                <a class="btn-outline" href="https://epflracingteam.ch/fr/" target="_blank" rel="noopener noreferrer" data-i18n="racingSiteBtn">Team website</a>
+
+                <a
+                  class="btn"
+                  href="projects/epfl-racing-team.html"
+                  data-i18n="racingBtn"
+                >
+                  Click to discover more
+                </a>
+
+                <a
+                  class="btn-outline"
+                  href="https://epflracingteam.ch/fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="racingSiteBtn"
+                >
+                  Team website
+                </a>
+
               </div>
+
             </div>
 
-            <div class="card" style="padding:0; overflow:hidden;">
-              <img src="photos/EPFLRT2.png" alt="EPFL Racing Team car and carbon packaging">
+
+            <div
+              class="card"
+              style="padding:0;overflow:hidden;"
+            >
+
+              <img
+                src="photos/EPFLRT2.png"
+                alt="EPFL Racing Team car and carbon packaging"
+              >
+
             </div>
+
           </div>
+
 
           <p data-i18n="racingText3">
             As Vice President, I contributed to team organization, logistics and strategic coordination, while supporting testing, competitions, key events and budget-related decisions.
           </p>
 
+
           <div class="project-stats">
+
             <div class="stat">
-              <strong>90+</strong>
-              <span data-i18n="racingStat2">members involved in the student team</span>
+
+              <strong>
+                90+
+              </strong>
+
+              <span data-i18n="racingStat2">
+                members involved in the student team
+              </span>
+
             </div>
+
+
             <div class="stat">
-              <strong>30+</strong>
-              <span data-i18n="racingStat3">tests coordinated, plus 3 competitions</span>
+
+              <strong>
+                30+
+              </strong>
+
+              <span data-i18n="racingStat3">
+                tests coordinated, plus 3 competitions
+              </span>
+
             </div>
+
+
             <div class="stat">
-              <strong>400</strong>
-              <span data-i18n="racingStat7">participants at unveiling event</span>
+
+              <strong>
+                400
+              </strong>
+
+              <span data-i18n="racingStat7">
+                participants at unveiling event
+              </span>
+
             </div>
+
+
             <div class="stat">
-              <strong>300k CHF</strong>
-              <span data-i18n="racingStat8">annual budget involved</span>
+
+              <strong>
+                300k CHF
+              </strong>
+
+              <span data-i18n="racingStat8">
+                annual budget involved
+              </span>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- ====================================================== -->
+    <!-- PROJECTS -->
+    <!-- ====================================================== -->
 
     <section class="section" id="projects">
+
       <div class="container">
-        <h2 data-i18n="projectsTitle">Selected Projects</h2>
+
+        <h2 data-i18n="projectsTitle">
+          Selected Projects
+        </h2>
+
 
         <div class="projects-grid">
+
+
+          <!-- 1 — MONOCOQUE INSERT ANALYSIS -->
+
           <a class="project-link" href="projects/monocoque.html">
+
             <article class="project-card">
+
               <div class="project-image">
-                <img src="photos/Insert1.png" alt="Bachelor thesis insert analysis preview" style="--img-scale: 1.50;">
+
+                <img
+                  src="photos/Insert1.png"
+                  alt="Bachelor thesis insert analysis preview"
+                  style="--img-scale:1.50;"
+                >
+
               </div>
+
+
               <div class="project-body">
-                <div class="tag" data-i18n="tagSimulation">Simulation</div>
-                <h3 data-i18n="projectMonocoqueTitle">Monocoque insert analysis</h3>
-                <p class="muted" data-i18n="projectMonocoqueText">Analysis and redesign of production and post-production monocoque inserts, supported by full-structure simulations including carbon, aluminium, inserts and reinforcements.</p>
+
+                <div class="tag" data-i18n="tagSimulation">
+                  Simulation
+                </div>
+
+                <h3 data-i18n="projectMonocoqueTitle">
+                  Monocoque insert analysis
+                </h3>
+
+                <p class="muted" data-i18n="projectMonocoqueText">
+                  Analysis and redesign of production and post-production monocoque inserts, supported by full-structure simulations including carbon, aluminium, inserts and reinforcements.
+                </p>
+
               </div>
+
             </article>
+
           </a>
+
+
+          <!-- 2 — SCREW SORTER -->
 
           <a class="project-link" href="projects/screw-sorter.html">
+
             <article class="project-card">
+
               <div class="project-image">
-                <img src="photos/ScrewSorter.png" alt="Screw sorter preview" style="--img-scale: 2.0;">
+
+                <img
+                  src="photos/ScrewSorter.png"
+                  alt="Screw sorter preview"
+                  style="--img-scale:2.0;"
+                >
+
               </div>
+
+
               <div class="project-body">
-                <div class="tag" data-i18n="tagAutomation">Automation / Product Development</div>
-                <h3 data-i18n="projectScrewTitle">Screw sorter</h3>
-                <p class="muted" data-i18n="projectScrewText">Design and prototyping of a low-cost automated screw sorting system combining mechanical guidance, part detection and user-oriented integration for workshop use.</p>
+
+                <div class="tag" data-i18n="tagAutomation">
+                  Automation / Product Development
+                </div>
+
+                <h3 data-i18n="projectScrewTitle">
+                  Screw sorter
+                </h3>
+
+                <p class="muted" data-i18n="projectScrewText">
+                  Design and prototyping of a low-cost automated screw sorting system combining mechanical guidance, part detection and user-oriented integration for workshop use.
+                </p>
+
               </div>
+
             </article>
+
           </a>
+
+
+          <!-- 3 — RASPBERRY GRIPPER -->
 
           <a class="project-link" href="projects/raspberry-gripper.html">
+
             <article class="project-card">
+
               <div class="project-image">
-                <img src="photos/rasberry gripper.png" alt="Raspberry gripper preview" style="--img-scale: 1.1;">
+
+                <img
+                  src="photos/rasberry gripper.png"
+                  alt="Raspberry gripper preview"
+                  style="--img-scale:1.1;"
+                >
+
               </div>
+
+
               <div class="project-body">
-                <div class="tag" data-i18n="tagRobotics">Robotics</div>
-                <h3 data-i18n="projectRaspberryTitle">Raspberry gripper</h3>
-                <p class="muted" data-i18n="projectRaspberryText">Robotic end-effector for raspberry picking with Arduino-based automation, pressure-controlled gripping and ripeness detection for gentle harvesting.</p>
+
+                <div class="tag" data-i18n="tagRobotics">
+                  Robotics
+                </div>
+
+                <h3 data-i18n="projectRaspberryTitle">
+                  Raspberry gripper
+                </h3>
+
+                <p class="muted" data-i18n="projectRaspberryText">
+                  Robotic end-effector for raspberry picking with Arduino-based automation, pressure-controlled gripping and ripeness detection for gentle harvesting.
+                </p>
+
               </div>
+
             </article>
+
           </a>
+
+
+          <!-- 4 — DOMINO -->
 
           <a class="project-link" href="projects/domino-machine.html">
+
             <article class="project-card">
+
               <div class="project-image">
-                <img src="photos/domino.png" alt="Domino placement machine preview" style="--img-scale: 1.2;">
+
+                <img
+                  src="photos/domino.png"
+                  alt="Domino placement machine preview"
+                  style="--img-scale:1.2;"
+                >
+
               </div>
+
+
               <div class="project-body">
-                <div class="tag" data-i18n="tagCad">CAD / Mechanisms</div>
-                <h3 data-i18n="projectDominoTitle">Domino placement machine</h3>
-                <p class="muted" data-i18n="projectDominoText">CATIA project covering kinematics, dynamic studies, structural design, fasteners, documentation and timeline-driven team delivery.</p>
+
+                <div class="tag" data-i18n="tagCad">
+                  CAD / Mechanisms
+                </div>
+
+                <h3 data-i18n="projectDominoTitle">
+                  Domino placement machine
+                </h3>
+
+                <p class="muted" data-i18n="projectDominoText">
+                  CATIA project covering kinematics, dynamic studies, structural design, fasteners, documentation and timeline-driven team delivery.
+                </p>
+
               </div>
+
             </article>
+
           </a>
 
-          <a class="project-link" href="projects/sudoku-solver.html">
-            <article class="project-card">
-              <div class="project-image">
-                <img src="photos/sudoku.png" alt="Sudoku solver preview" style="--img-scale: 1.2;">
-              </div>
-              <div class="project-body">
-                <div class="tag" data-i18n="tagProgramming">Programming</div>
-                <h3 data-i18n="projectSudokuTitle">Sudoku solver</h3>
-                <p class="muted" data-i18n="projectSudokuText">End-to-end automation of Sudoku solving from a photo using C for image recognition, MATLAB for solving and LabVIEW for orchestration and interface.</p>
-              </div>
-            </article>
-          </a>
 
-          <a class="project-link" href="projects/fea-inserts.html">
-            <article class="project-card">
-              <div class="project-image">
-                <img src="photos/InsertFEA.png" alt="Finite element simulation preview" style="--img-scale: 1.10;">
-              </div>
-              <div class="project-body">
-                <div class="tag" data-i18n="tagSimulation">Simulation</div>
-                <h3 data-i18n="projectFeaTitle">Finite element simulation for inserts</h3>
-                <p class="muted" data-i18n="projectFeaText">Detailed simulation workflow in 3DEXPERIENCE covering mesh selection, convergence analysis and tension, torsion and shear load cases.</p>
-              </div>
-            </article>
-          </a>
-
-          <a class="project-link" href="projects/trampoline-measurement.html">
-            <article class="project-card">
-              <div class="project-image">
-                <img src="photos/MeasureTrampoline.png" alt="Measurement on trampoline preview" style="--img-scale: 2.6;">
-              </div>
-              <div class="project-body">
-                <div class="tag" data-i18n="tagDataAcquisition">Data acquisition methods</div>
-                <h3 data-i18n="projectTrampolineTitle">Measurement on trampoline</h3>
-                <p class="muted" data-i18n="projectTrampolineText">Experimental project using a simplified trampoline-ball system to study deformation fields, acceleration and oscillation frequency.</p>
-              </div>
-            </article>
-          </a>
-
-          <a class="project-link" href="projects/topology-optimization.html">
-            <article class="project-card">
-              <div class="project-image">
-                <img src="photos/OptiTopo.jpg" alt="Topology optimization preview" style="--img-scale: 1.1;">
-              </div>
-              <div class="project-body">
-                <div class="tag" data-i18n="tagTopology">Literature Review</div>
-                <h3 data-i18n="projectTopologyTitle">Topology optimization</h3>
-                <p class="muted" data-i18n="projectTopologyText">Literature review and engineering study focused on topology optimization, lightweight design and structural performance.</p>
-              </div>
-            </article>
-          </a>
-
-          <a class="project-link" href="projects/xray-spectroscopy.html">
-            <article class="project-card">
-              <div class="project-image">
-                <img src="photos/xray.png" alt="X-ray spectroscopy preview" style="--img-scale: 1.6;">
-              </div>
-              <div class="project-body">
-                <div class="tag" data-i18n="tagThinFilm">Thin Film Analysis</div>
-                <h3 data-i18n="projectXrayTitle">Si₃N₄ PVD coating analysis</h3>
-                <p class="muted" data-i18n="projectXrayText">Thin-film quality assessment focused on contamination, stoichiometry and interface integrity for silicon nitride coatings on silicon wafers.</p>
-              </div>
-            </article>
-          </a>
-
-          <a class="project-link" href="projects/aluminium-alloys.html">
-            <article class="project-card">
-              <div class="project-image">
-                <img src="photos/aluThermocalc.png" alt="High strength aluminium alloys preview" style="--img-scale: 1.1;">
-              </div>
-              <div class="project-body">
-                <div class="tag" data-i18n="tagComputational">Computational Materials</div>
-                <h3 data-i18n="projectAlloysTitle">High strength aluminium alloys at high temperature</h3>
-                <p class="muted" data-i18n="projectAlloysText">Thermo-Calc based study of Al–Ce–Sc alloy design for high-temperature strength retention beyond conventional aluminium alloys.</p>
-              </div>
-            </article>
-          </a>
-
-          <a class="project-link" href="projects/electrical-housing.html">
-            <article class="project-card">
-              <div class="project-image">
-                <img src="photos/RacingTeam1.png" alt="EPFL RT first year preview" style="--img-scale: 1.7;">
-              </div>
-              <div class="project-body">
-                <div class="tag" data-i18n="tagFormula">Formula Student</div>
-                <h3 data-i18n="projectElectricalTitle">Electrical housing integration</h3>
-                <p class="muted" data-i18n="projectElectricalText">Design, manufacturing and integration of the electrical housing system for the race car, with attention to packaging, sealing and structural constraints.</p>
-              </div>
-            </article>
-          </a>
+          <!-- 5 — SUSTAINABLE LIGHT BULB -->
 
           <a class="project-link" href="projects/sustainable-light-bulb.html">
+
             <article class="project-card">
+
               <div class="project-image">
-                <img src="photos/Soon.png" alt="Sustainable light bulb preview" style="--img-scale: 1.1;">
+
+                <img
+                  src="photos/CAD_ampoule.png"
+                  alt="Sustainable light bulb preview"
+                  style="--img-scale:1.05;"
+                >
+
               </div>
+
+
               <div class="project-body">
-                <div class="tag" data-i18n="tagSustainable">Sustainable Design</div>
-                <h3 data-i18n="projectBulbTitle">Sustainable light bulb</h3>
-                <p class="muted" data-i18n="projectBulbText">Redesign of a light bulb with a stronger focus on circularity, modularity, material optimization and improved sustainability across the product lifecycle.</p>
+
+                <div class="tag" data-i18n="tagSustainable">
+                  Sustainable Design
+                </div>
+
+                <h3 data-i18n="projectBulbTitle">
+                  Sustainable light bulb
+                </h3>
+
+                <p class="muted" data-i18n="projectBulbText">
+                  Redesign of a light bulb with a stronger focus on circularity, modularity, material optimization and improved sustainability across the product lifecycle.
+                </p>
+
               </div>
+
             </article>
+
           </a>
 
-          <a class="project-link" href="projects/lattice-optimization.html">
-            <article class="project-card">
-              <div class="project-image">
-                <img src="photos/Soon.png" alt="Lattice optimization preview" style="--img-scale: 1.1;">
-              </div>
-              <div class="project-body">
-                <div class="tag" data-i18n="tagOptimization">Optimization / Simulation</div>
-                <h3 data-i18n="projectLatticeTitle">Lattice optimization</h3>
-                <p class="muted" data-i18n="projectLatticeText">Development of a parametric lattice generation and simulation workflow to optimize lightweight structures through numerical modeling and performance analysis.</p>
-              </div>
-            </article>
-          </a>
+
+          <!-- 6 — DATA ACQUISITION SEMESTER PROJECT -->
 
           <a class="project-link" href="projects/data-acquisition-semester-project.html">
+
             <article class="project-card">
+
               <div class="project-image">
-                <img src="photos/Soon.png" alt="Data acquisition semester project preview" style="--img-scale: 1.1;">
+
+                <img
+                  src="photos/Fatigue 1.png"
+                  alt="Data acquisition semester project preview"
+                  style="--img-scale:1.05;"
+                >
+
               </div>
+
+
               <div class="project-body">
-                <div class="tag" data-i18n="tagInstrumentation">Instrumentation</div>
-                <h3 data-i18n="projectDataTitle">Data acquisition semester project</h3>
-                <p class="muted" data-i18n="projectDataText">Semester project focused on measurement, signal acquisition and experimental data processing for engineering analysis and system understanding.</p>
+
+                <div class="tag" data-i18n="tagInstrumentation">
+                  Instrumentation
+                </div>
+
+                <h3 data-i18n="projectDataTitle">
+                  Data acquisition semester project
+                </h3>
+
+                <p class="muted" data-i18n="projectDataText">
+                  Semester project focused on measurement, signal acquisition and experimental data processing for engineering analysis and system understanding.
+                </p>
+
               </div>
+
             </article>
+
           </a>
+
+
+          <!-- 7 — ELECTRICAL HOUSING -->
+
+          <a class="project-link" href="projects/electrical-housing.html">
+
+            <article class="project-card">
+
+              <div class="project-image">
+
+                <img
+                  src="photos/RacingTeam1.png"
+                  alt="EPFL RT electrical housing preview"
+                  style="--img-scale:1.7;"
+                >
+
+              </div>
+
+
+              <div class="project-body">
+
+                <div class="tag" data-i18n="tagFormula">
+                  Formula Student
+                </div>
+
+                <h3 data-i18n="projectElectricalTitle">
+                  Electrical housing integration
+                </h3>
+
+                <p class="muted" data-i18n="projectElectricalText">
+                  Design, manufacturing and integration of the electrical housing system for the race car, with attention to packaging, sealing and structural constraints.
+                </p>
+
+              </div>
+
+            </article>
+
+          </a>
+
+
+          <!-- 8 — SUDOKU -->
+
+          <a class="project-link" href="projects/sudoku-solver.html">
+
+            <article class="project-card">
+
+              <div class="project-image">
+
+                <img
+                  src="photos/sudoku.png"
+                  alt="Sudoku solver preview"
+                  style="--img-scale:1.2;"
+                >
+
+              </div>
+
+
+              <div class="project-body">
+
+                <div class="tag" data-i18n="tagProgramming">
+                  Programming
+                </div>
+
+                <h3 data-i18n="projectSudokuTitle">
+                  Sudoku solver
+                </h3>
+
+                <p class="muted" data-i18n="projectSudokuText">
+                  End-to-end automation of Sudoku solving from a photo using C for image recognition, MATLAB for solving and LabVIEW for orchestration and interface.
+                </p>
+
+              </div>
+
+            </article>
+
+          </a>
+
+
+          <!-- 9 — INSERTS FEA -->
+
+          <a class="project-link" href="projects/fea-inserts.html">
+
+            <article class="project-card">
+
+              <div class="project-image">
+
+                <img
+                  src="photos/InsertFEA.png"
+                  alt="Finite element simulation preview"
+                  style="--img-scale:1.10;"
+                >
+
+              </div>
+
+
+              <div class="project-body">
+
+                <div class="tag" data-i18n="tagSimulation">
+                  Simulation
+                </div>
+
+                <h3 data-i18n="projectFeaTitle">
+                  Finite element simulation for inserts
+                </h3>
+
+                <p class="muted" data-i18n="projectFeaText">
+                  Detailed simulation workflow in 3DEXPERIENCE covering mesh selection, convergence analysis and tension, torsion and shear load cases.
+                </p>
+
+              </div>
+
+            </article>
+
+          </a>
+
+
+          <!-- 10 — TRAMPOLINE -->
+
+          <a class="project-link" href="projects/trampoline-measurement.html">
+
+            <article class="project-card">
+
+              <div class="project-image">
+
+                <img
+                  src="photos/MeasureTrampoline.png"
+                  alt="Measurement on trampoline preview"
+                  style="--img-scale:2.6;"
+                >
+
+              </div>
+
+
+              <div class="project-body">
+
+                <div class="tag" data-i18n="tagDataAcquisition">
+                  Data acquisition methods
+                </div>
+
+                <h3 data-i18n="projectTrampolineTitle">
+                  Measurement on trampoline
+                </h3>
+
+                <p class="muted" data-i18n="projectTrampolineText">
+                  Experimental project using a simplified trampoline-ball system to study deformation fields, acceleration and oscillation frequency.
+                </p>
+
+              </div>
+
+            </article>
+
+          </a>
+
+
+          <!-- 11 — TOPOLOGY OPTIMIZATION -->
+
+          <a class="project-link" href="projects/topology-optimization.html">
+
+            <article class="project-card">
+
+              <div class="project-image">
+
+                <img
+                  src="photos/OptiTopo.jpg"
+                  alt="Topology optimization preview"
+                  style="--img-scale:1.1;"
+                >
+
+              </div>
+
+
+              <div class="project-body">
+
+                <div class="tag" data-i18n="tagTopology">
+                  Literature Review
+                </div>
+
+                <h3 data-i18n="projectTopologyTitle">
+                  Topology optimization
+                </h3>
+
+                <p class="muted" data-i18n="projectTopologyText">
+                  Literature review and engineering study focused on topology optimization, lightweight design and structural performance.
+                </p>
+
+              </div>
+
+            </article>
+
+          </a>
+
+
+          <!-- 12 — LATTICE -->
+
+          <a class="project-link" href="projects/lattice-optimization.html">
+
+            <article class="project-card">
+
+              <div class="project-image">
+
+                <img
+                  src="photos/lattice 1.png"
+                  alt="Lattice optimization preview"
+                  style="--img-scale:1.05;"
+                >
+
+              </div>
+
+
+              <div class="project-body">
+
+                <div class="tag" data-i18n="tagOptimization">
+                  Optimization / Simulation
+                </div>
+
+                <h3 data-i18n="projectLatticeTitle">
+                  Lattice optimization
+                </h3>
+
+                <p class="muted" data-i18n="projectLatticeText">
+                  Development of a parametric lattice generation and simulation workflow to optimize lightweight structures through numerical modeling and performance analysis.
+                </p>
+
+              </div>
+
+            </article>
+
+          </a>
+
+
+          <!-- 13 — PVD -->
+
+          <a class="project-link" href="projects/xray-spectroscopy.html">
+
+            <article class="project-card">
+
+              <div class="project-image">
+
+                <img
+                  src="photos/xray.png"
+                  alt="X-ray spectroscopy preview"
+                  style="--img-scale:1.6;"
+                >
+
+              </div>
+
+
+              <div class="project-body">
+
+                <div class="tag" data-i18n="tagThinFilm">
+                  Thin Film Analysis
+                </div>
+
+                <h3 data-i18n="projectXrayTitle">
+                  Si₃N₄ PVD coating analysis
+                </h3>
+
+                <p class="muted" data-i18n="projectXrayText">
+                  Thin-film quality assessment focused on contamination, stoichiometry and interface integrity for silicon nitride coatings on silicon wafers.
+                </p>
+
+              </div>
+
+            </article>
+
+          </a>
+
+
+          <!-- 14 — ALUMINIUM -->
+
+          <a class="project-link" href="projects/aluminium-alloys.html">
+
+            <article class="project-card">
+
+              <div class="project-image">
+
+                <img
+                  src="photos/aluThermocalc.png"
+                  alt="High strength aluminium alloys preview"
+                  style="--img-scale:1.1;"
+                >
+
+              </div>
+
+
+              <div class="project-body">
+
+                <div class="tag" data-i18n="tagComputational">
+                  Computational Materials
+                </div>
+
+                <h3 data-i18n="projectAlloysTitle">
+                  High strength aluminium alloys at high temperature
+                </h3>
+
+                <p class="muted" data-i18n="projectAlloysText">
+                  Thermo-Calc based study of Al–Ce–Sc alloy design for high-temperature strength retention beyond conventional aluminium alloys.
+                </p>
+
+              </div>
+
+            </article>
+
+          </a>
+
+
         </div>
+
       </div>
+
     </section>
 
+
     <section class="section" id="skills">
+
       <div class="container">
+
         <div class="card">
-          <h2 data-i18n="skillsTitle">Skills and Expertise</h2>
+
+          <h2 data-i18n="skillsTitle">
+            Skills and Expertise
+          </h2>
+
+
           <p class="lead lead-full" data-i18n="skillsLead">
             My profile combines technical engineering skills, hands-on prototyping experience and strong collaborative abilities. I enjoy moving from concept to execution, whether through design, simulation, manufacturing or teamwork in demanding environments.
           </p>
 
+
           <div class="skills-layout">
+
+
             <div class="skills-block">
-              <h3 data-i18n="softTitle">Soft Skills</h3>
+
+              <h3 data-i18n="softTitle">
+                Soft Skills
+              </h3>
+
+
               <div class="soft-skills-grid">
+
                 <div class="soft-skill-card">
-                  <h4 data-i18n="soft1Title">Critical thinking</h4>
-                  <p data-i18n="soft1Text">Ability to analyze complex situations, identify key issues and make structured engineering decisions.</p>
+
+                  <h4 data-i18n="soft1Title">
+                    Critical thinking
+                  </h4>
+
+                  <p data-i18n="soft1Text">
+                    Ability to analyze complex situations, identify key issues and make structured engineering decisions.
+                  </p>
+
                 </div>
+
+
                 <div class="soft-skill-card">
-                  <h4 data-i18n="soft2Title">Problem solving</h4>
-                  <p data-i18n="soft2Text">Strong interest in understanding technical challenges and developing practical, efficient and robust solutions.</p>
+
+                  <h4 data-i18n="soft2Title">
+                    Problem solving
+                  </h4>
+
+                  <p data-i18n="soft2Text">
+                    Strong interest in understanding technical challenges and developing practical, efficient and robust solutions.
+                  </p>
+
                 </div>
+
+
                 <div class="soft-skill-card">
-                  <h4 data-i18n="soft3Title">Teamwork</h4>
-                  <p data-i18n="soft3Text">Used to collaborating in multidisciplinary teams with shared objectives, deadlines and technical constraints.</p>
+
+                  <h4 data-i18n="soft3Title">
+                    Teamwork
+                  </h4>
+
+                  <p data-i18n="soft3Text">
+                    Used to collaborating in multidisciplinary teams with shared objectives, deadlines and technical constraints.
+                  </p>
+
                 </div>
+
+
                 <div class="soft-skill-card">
-                  <h4 data-i18n="soft4Title">Curiosity</h4>
-                  <p data-i18n="soft4Text">Motivated by learning new methods, exploring new tools and improving both technical knowledge and execution.</p>
+
+                  <h4 data-i18n="soft4Title">
+                    Curiosity
+                  </h4>
+
+                  <p data-i18n="soft4Text">
+                    Motivated by learning new methods, exploring new tools and improving both technical knowledge and execution.
+                  </p>
+
                 </div>
+
+
                 <div class="soft-skill-card">
-                  <h4 data-i18n="soft5Title">Stress management</h4>
-                  <p data-i18n="soft5Text">Comfortable working in demanding environments with tight schedules, multiple priorities and high expectations.</p>
+
+                  <h4 data-i18n="soft5Title">
+                    Stress management
+                  </h4>
+
+                  <p data-i18n="soft5Text">
+                    Comfortable working in demanding environments with tight schedules, multiple priorities and high expectations.
+                  </p>
+
                 </div>
+
+
                 <div class="soft-skill-card">
-                  <h4 data-i18n="soft6Title">Ownership and delivery</h4>
-                  <p data-i18n="soft6Text">Strong ability to take responsibility for a task or project and move it forward with consistency and commitment.</p>
+
+                  <h4 data-i18n="soft6Title">
+                    Ownership and delivery
+                  </h4>
+
+                  <p data-i18n="soft6Text">
+                    Strong ability to take responsibility for a task or project and move it forward with consistency and commitment.
+                  </p>
+
                 </div>
+
               </div>
+
             </div>
 
+
             <div class="skills-block technical-block">
-              <h3 data-i18n="technicalTitle">Technical Skills</h3>
+
+              <h3 data-i18n="technicalTitle">
+                Technical Skills
+              </h3>
+
 
               <div class="skills-tabs">
-                <button class="skill-tab active" type="button" data-tab="cad" data-i18n="tabCad">CAD</button>
-                <button class="skill-tab" type="button" data-tab="simulation" data-i18n="tabSimulation">Simulation</button>
-                <button class="skill-tab" type="button" data-tab="programming" data-i18n="tabProgramming">Programming</button>
-                <button class="skill-tab" type="button" data-tab="prototyping" data-i18n="tabPrototyping">Prototyping</button>
-                <button class="skill-tab" type="button" data-tab="manufacturing" data-i18n="tabManufacturing">Manufacturing</button>
+
+                <button
+                  class="skill-tab active"
+                  type="button"
+                  data-tab="cad"
+                  data-i18n="tabCad"
+                >
+                  CAD
+                </button>
+
+                <button
+                  class="skill-tab"
+                  type="button"
+                  data-tab="simulation"
+                  data-i18n="tabSimulation"
+                >
+                  Simulation
+                </button>
+
+                <button
+                  class="skill-tab"
+                  type="button"
+                  data-tab="programming"
+                  data-i18n="tabProgramming"
+                >
+                  Programming
+                </button>
+
+                <button
+                  class="skill-tab"
+                  type="button"
+                  data-tab="prototyping"
+                  data-i18n="tabPrototyping"
+                >
+                  Prototyping
+                </button>
+
+                <button
+                  class="skill-tab"
+                  type="button"
+                  data-tab="manufacturing"
+                  data-i18n="tabManufacturing"
+                >
+                  Manufacturing
+                </button>
+
               </div>
 
+
               <div class="skills-panels">
+
+
                 <div class="skills-panel active" data-panel="cad">
+
                   <div class="software-grid">
+
                     <div class="software-card">
-                      <h4>3DEXPERIENCE</h4>
-                      <p data-i18n="cad1">3D design, assemblies, technical development and mechanical project work.</p>
+
+                      <h4>
+                        3DEXPERIENCE
+                      </h4>
+
+                      <p data-i18n="cad1">
+                        3D design, assemblies, technical development and mechanical project work.
+                      </p>
+
                     </div>
+
+
                     <div class="software-card">
-                      <h4>CATIA</h4>
-                      <p data-i18n="cad2">Mechanical design, part development and prototyping-oriented modeling.</p>
+
+                      <h4>
+                        CATIA
+                      </h4>
+
+                      <p data-i18n="cad2">
+                        Mechanical design, part development and prototyping-oriented modeling.
+                      </p>
+
                     </div>
+
+
                     <div class="software-card">
-                      <h4>Fusion 360</h4>
-                      <p data-i18n="cad3">Fast design iterations, integrated engineering workflow and project development.</p>
+
+                      <h4>
+                        Fusion 360
+                      </h4>
+
+                      <p data-i18n="cad3">
+                        Fast design iterations, integrated engineering workflow and project development.
+                      </p>
+
                     </div>
+
                   </div>
+
                 </div>
+
 
                 <div class="skills-panel" data-panel="simulation">
+
                   <div class="software-grid">
+
                     <div class="software-card">
-                      <h4>3DEXPERIENCE</h4>
-                      <p data-i18n="sim1">Finite element studies, mesh strategy, convergence analysis and structural investigations.</p>
+
+                      <h4>
+                        3DEXPERIENCE
+                      </h4>
+
+                      <p data-i18n="sim1">
+                        Finite element studies, mesh strategy, convergence analysis and structural investigations.
+                      </p>
+
                     </div>
+
+
                     <div class="software-card">
-                      <h4>Abaqus</h4>
-                      <p data-i18n="sim2">Computational materials work and alloy behavior analysis.</p>
+
+                      <h4>
+                        Abaqus
+                      </h4>
+
+                      <p data-i18n="sim2">
+                        Computational materials work and alloy behavior analysis.
+                      </p>
+
                     </div>
+
+
                     <div class="software-card">
-                      <h4>ESAcomp</h4>
-                      <p data-i18n="sim3">Scientific computing, numerical analysis and engineering problem solving.</p>
+
+                      <h4>
+                        ESAcomp
+                      </h4>
+
+                      <p data-i18n="sim3">
+                        Scientific computing, numerical analysis and engineering problem solving.
+                      </p>
+
                     </div>
+
                   </div>
+
                 </div>
 
+
                 <div class="skills-panel" data-panel="programming">
+
                   <div class="software-grid">
+
                     <div class="software-card">
                       <h4>Python</h4>
                       <p data-i18n="prog1">Automation, data processing, engineering workflows and technical scripting.</p>
                     </div>
+
                     <div class="software-card">
                       <h4>C</h4>
                       <p data-i18n="prog2">Structured programming for problem solving and low-level technical applications.</p>
                     </div>
+
                     <div class="software-card">
                       <h4>MATLAB</h4>
                       <p data-i18n="prog3">Algorithm development, calculation and technical modeling.</p>
                     </div>
+
                     <div class="software-card">
                       <h4>LabVIEW</h4>
                       <p data-i18n="prog4">Experimental interfacing, workflow control and system orchestration.</p>
                     </div>
+
                     <div class="software-card">
                       <h4>Arduino</h4>
                       <p data-i18n="prog5">Embedded prototyping, sensor integration and experimental control systems.</p>
                     </div>
+
                     <div class="software-card">
                       <h4>LaTeX</h4>
                       <p data-i18n="prog6"></p>
                     </div>
+
                     <div class="software-card">
                       <h4>HTML/CSS</h4>
                       <p data-i18n="prog7"></p>
                     </div>
+
                   </div>
+
                 </div>
+
 
                 <div class="skills-panel" data-panel="prototyping">
+
                   <div class="software-grid">
+
                     <div class="software-card">
-                      <h4 data-i18n="proto1Title">3D Printing</h4>
-                      <p data-i18n="proto1Text">Rapid prototyping, test parts and fast design validation loops.</p>
+
+                      <h4 data-i18n="proto1Title">
+                        3D Printing
+                      </h4>
+
+                      <p data-i18n="proto1Text">
+                        Rapid prototyping, test parts and fast design validation loops.
+                      </p>
+
                     </div>
+
+
                     <div class="software-card">
-                      <h4>Arduino</h4>
-                      <p data-i18n="proto2Text">Electromechanical prototyping, sensor testing and hardware experimentation.</p>
+
+                      <h4>
+                        Arduino
+                      </h4>
+
+                      <p data-i18n="proto2Text">
+                        Electromechanical prototyping, sensor testing and hardware experimentation.
+                      </p>
+
                     </div>
+
+
                     <div class="software-card">
-                      <h4 data-i18n="proto3Title">Workshop fabrication</h4>
-                      <p data-i18n="proto3Text">Hands-on manufacturing and assembly in practical engineering environments.</p>
+
+                      <h4 data-i18n="proto3Title">
+                        Workshop fabrication
+                      </h4>
+
+                      <p data-i18n="proto3Text">
+                        Hands-on manufacturing and assembly in practical engineering environments.
+                      </p>
+
                     </div>
+
                   </div>
+
                 </div>
+
 
                 <div class="skills-panel" data-panel="manufacturing">
+
                   <div class="software-grid">
+
                     <div class="software-card">
-                      <h4 data-i18n="manu1Title">Composite manufacturing</h4>
-                      <p data-i18n="manu1Text">Layup processes, monocoque production and lightweight structural fabrication.</p>
+
+                      <h4 data-i18n="manu1Title">
+                        Composite manufacturing
+                      </h4>
+
+                      <p data-i18n="manu1Text">
+                        Layup processes, monocoque production and lightweight structural fabrication.
+                      </p>
+
                     </div>
+
+
                     <div class="software-card">
-                      <h4 data-i18n="manu2Title">Mechanical integration</h4>
-                      <p data-i18n="manu2Text">System packaging, structural constraints and design-for-integration thinking.</p>
+
+                      <h4 data-i18n="manu2Title">
+                        Mechanical integration
+                      </h4>
+
+                      <p data-i18n="manu2Text">
+                        System packaging, structural constraints and design-for-integration thinking.
+                      </p>
+
                     </div>
+
+
                     <div class="software-card">
-                      <h4 data-i18n="manu3Title">Testing and validation</h4>
-                      <p data-i18n="manu3Text">Practical verification, iteration and engineering performance follow-up.</p>
+
+                      <h4 data-i18n="manu3Title">
+                        Testing and validation
+                      </h4>
+
+                      <p data-i18n="manu3Text">
+                        Practical verification, iteration and engineering performance follow-up.
+                      </p>
+
                     </div>
+
                   </div>
+
                 </div>
+
               </div>
+
             </div>
+
           </div>
 
         </div>
+
       </div>
+
     </section>
+
 
     <section class="section footer" id="contact">
+
       <div class="container">
+
         <div class="card contact contact-extended">
+
+
           <div>
-            <h2 data-i18n="contactTitle">Contact</h2>
+
+            <h2 data-i18n="contactTitle">
+              Contact
+            </h2>
+
+
             <div class="contact-list">
-              <div>Mathélyo Favre-Réguillon</div>
-              <div><p data-i18n="country"></p></div>
-              <div><a href="tel:+33768422354">+33 7 68 42 23 54</a></div>
-              <div><a href="mailto:mathelyo.favrereguillon@gmail.com">mathelyo.favrereguillon@gmail.com</a></div>
+
               <div>
-                <a href="https://www.linkedin.com/in/mathelyo-favre-reguillon-556341243/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BdatiT3mWSQuK0xoTsgAMBw%3D%3D" target="_blank" rel="noopener noreferrer">@mathelyo favre-reguillon</a>
+                Mathélyo Favre-Réguillon
               </div>
+
+
+              <div>
+                <p data-i18n="country"></p>
+              </div>
+
+
+              <div>
+
+                <a href="tel:+33768422354">
+                  +33 7 68 42 23 54
+                </a>
+
+              </div>
+
+
+              <div>
+
+                <a href="mailto:mathelyo.favrereguillon@gmail.com">
+                  mathelyo.favrereguillon@gmail.com
+                </a>
+
+              </div>
+
+
+              <div>
+
+                <a
+                  href="https://www.linkedin.com/in/mathelyo-favre-reguillon-556341243/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BdatiT3mWSQuK0xoTsgAMBw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @mathelyo favre-reguillon
+                </a>
+
+              </div>
+
             </div>
+
           </div>
+
 
           <div class="contact-image-wrap">
-            <img src="photos/EPFLRT4.jpg" alt="Contact visual">
+
+            <img
+              src="photos/EPFLRT4.jpg"
+              alt="Contact visual"
+            >
+
           </div>
+
 
           <div class="contact-cta">
-            <a class="btn" href="mailto:mathelyo.favrereguillon@gmail.com" data-i18n="contactBtn">Get in touch</a>
+
+            <a
+              class="btn"
+              href="mailto:mathelyo.favrereguillon@gmail.com"
+              data-i18n="contactBtn"
+            >
+              Get in touch
+            </a>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
+
   <script>
+
     const translations = {
+
       en: {
+
         navAbout: "About me",
         navRacing: "EPFL Racing Team",
         navProjects: "Projects",
@@ -1690,454 +2978,1251 @@
         dropdownLattice: "Lattice optimization",
         dropdownData: "Data acquisition semester project",
 
-        heroEyebrow: "Mechanical Engineering Portfolio",
-        heroTitle: "Design.<br>Build.<br>Deliver.",
-        heroLead: "Welcome to my portfolio. I am Mathélyo Favre-Réguillon, a Mechanical Engineering Master’s student at EPFL, focused on high-performance engineering, composites, and lightweight structures. I am driven by both technical challenges and project leadership, aiming to turn complex ideas into efficient, well-executed solutions.",
-        heroBtnProfile: "Discover my profile",
-        heroBtnContact: "Contact me",
+        heroEyebrow:
+          "Mechanical Engineering Portfolio",
 
-        statusAvailable: "Currently available",
-        statusLabel: "Current status",
-        statusHeading: "First-year Master’s student at EPFL, currently looking for an internship",
-        statusText: "I am currently looking for a 6 to 12-month internship in engineering, design, simulation, manufacturing, production chain optimization or technical project management.",
-        statusBox1Title: "Format",
-        statusBox1Text: "6 to 12-month internship",
-        statusBox2Title: "Focus areas",
-        statusBox2Text: "Engineering, design and simulation",
-        statusBox3Title: "Industrial scope",
-        statusBox3Text: "Manufacturing and production optimization",
-        statusBox4Title: "Project management",
-        statusBox4Text: "Technical project management and coordination",
+        heroTitle:
+          "Design.<br>Build.<br>Deliver.",
 
-        aboutTitle: "About Me",
-        aboutLead: "My academic journey has been defined by a continuous progression through demanding engineering projects that have shaped both my technical skills and my way of working. At EPFL, I have been involved in complex, team-based projects, strengthening my interest in design, manufacturing, and high-performance systems, while developing a structured and collaborative approach to engineering. This timeline traces my path from 2018 to today.",
-        aboutHsTitle: "High School · Saint-Joseph",
-        aboutUgitechTitle: "Metallurgy Internship · UGITECH",
-        aboutUgitechText: "Internship at UGITECH in Ugine, FR, a stainless steel manufacturer. Worked on production and automation while developing a solid understanding of advanced metallurgy concepts applied to high-performance materials.",
-        aboutHsText: "General high school at Saint-Joseph in Thônes, FR. Specialized in Mathematics, Physics, and Economics & Social Sciences. Developed a strong interest in analytical thinking and technical problem-solving, and graduated with honors in the French General Baccalauréat: 18.24/20 (91.2%).",
-        aboutBianchettiText: "Summer work at Bianchetti in Thônes, FR, in carpentry and roofing. Contributed to the renovation of a high-rise roof, working with various tools and within a team environment, while developing hands-on skills in construction and roofing techniques.",
-        aboutBianchettiTitle: "Summer Work in Carpentry & Roofing · Bianchetti",
-        aboutBachelorTitle: "Bachelor in Mechanical Engineering · EPFL",
-        aboutBachelorText: "Strong foundations in mathematics, physics, structural mechanics, materials, and engineering design at EPFL in Lausanne, CH. Graduated with a First Grade (79%), through a rigorous program combining advanced coursework and multiple technical group projects, including Mechanical Construction, Product Development, Engineering Design, and a final Bachelor Project.",
-        aboutRacingTitle: "Monocoque & Leadership Roles · EPFL Racing Team",
-        aboutRacingText: "Alongside my Bachelor at EPFL in Lausanne, CH, I first joined the EPFL Racing Team as a chassis member, working on the mechanical integration of electronics. I later took on broader responsibilities as Head of Monocoque and Layup Manufacturing, and Vice President, developing both composite manufacturing expertise and leadership skills in a high-performance team.",
-        aboutMasterTitle: "Master of Science in Mechanical Engineering · EPFL",
-        aboutMasterText: "Specialization in Design and Production with a minor in Materials Science at EPFL in Lausanne, CH. Focused on high-performance engineering, combining advanced technical knowledge with complex project-based work and a strong interest in manufacturing, optimization, and engineering systems.",
-        aboutCvBtn: "Download my CV",
+        heroLead:
+          "Welcome to my portfolio. I am Mathélyo Favre-Réguillon, a Mechanical Engineering Master’s student at EPFL, focused on high-performance engineering, composites, and lightweight structures. I am driven by both technical challenges and project leadership, aiming to turn complex ideas into efficient, well-executed solutions.",
 
-        racingTitle: "EPFL Racing Team",
-        racingLead: "EPFL Racing Team is a student-led engineering project that designs, manufactures and races a fully electric and autonomous Formula Student car. The project combines vehicle development, testing, manufacturing and competition in a demanding environment that closely reflects real engineering teamwork.",
-        racingLead2: "It brings together students from different disciplines who work on the car as a complete system: chassis, aerodynamics, drivetrain, electronics, software, manufacturing, testing, logistics and project coordination. More information is available on the team website:",
-        racingSubtitle: "From technical contribution to team leadership",
-        racingText1: "During my first year, I designed and produced the full electrical integration kit using composite, aluminium and 3D-printed materials, creating a rigid and waterproof solution. I also contributed to the manufacturing of major composite parts, including the monocoque.",
-        racingText2: "In my second year, as Head of Monocoque and Layup Manufacturing, I led the production of the carbon monocoque and improved the electronic integration approach, while also developing validated inserts for composite and aluminium parts.",
-        racingText3: "As Vice President, in parallel with my role as a technical lead, I contributed to team organization, logistics and strategic coordination. I supported the structuring of operations, from inventory and transport to planning and team coordination, while also being involved in decision-making, testing activities, competitions and key events.",
-        racingStat2: "members involved in the student team",
-        racingStat3: "tests coordinated, plus 3 competitions",
-        racingStat4: "production time saved",
-        racingStat5: "weight reduction on integration system",
-        racingStat6: "lighter than previous design",
-        racingStat7: "participants at unveiling event",
-        racingStat8: "annual budget involved",
-        racingBtn: "Click to discover more",
-        racingSiteBtn: "Team website",
+        heroBtnProfile:
+          "Discover my profile",
 
-        projectsTitle: "Selected Projects",
-        tagBachelor: "Bachelor Thesis",
-        tagSimulation: "Simulation",
-        tagAutomation: "Automation / Product Development",
-        tagRobotics: "Robotics",
-        tagCad: "CAD / Mechanisms",
-        tagProgramming: "Programming",
-        tagExperimental: "Experimental Methods",
-        tagDataAcquisition: "Data acquisition methods",
-        tagMaterials: "Materials Science",
-        tagThinFilm: "Thin Film Analysis",
-        tagComputational: "Computational Materials",
-        tagFormula: "Formula Student",
-        tagTopology: "Literature Review",
-        tagSustainable: "Sustainable Design",
-        tagOptimization: "Optimization / Simulation",
-        tagInstrumentation: "Instrumentation",
+        heroBtnContact:
+          "Contact me",
 
-        projectMonocoqueTitle: "Monocoque insert analysis",
-        projectMonocoqueText: "Analysis and redesign of production and post-production monocoque inserts, supported by full-structure simulations including carbon, aluminium, inserts and reinforcements.",
-        projectScrewTitle: "Screw sorter",
-        projectScrewText: "Design and prototyping of a low-cost automated screw sorting system combining mechanical guidance, part detection and user-oriented integration for workshop use.",
-        projectRaspberryTitle: "Raspberry gripper",
-        projectRaspberryText: "Robotic end-effector for raspberry picking with Arduino-based automation, pressure-controlled gripping and ripeness detection for gentle harvesting.",
-        projectDominoTitle: "Domino placement machine",
-        projectDominoText: "CATIA project covering kinematics, dynamic studies, structural design, fasteners, documentation and timeline-driven team delivery.",
-        projectSudokuTitle: "Sudoku solver",
-        projectSudokuText: "End-to-end automation of Sudoku solving from a photo using C for image recognition, MATLAB for solving and LabVIEW for orchestration and interface.",
-        projectFeaTitle: "Finite element simulation for inserts",
-        projectFeaText: "Detailed simulation workflow in 3DEXPERIENCE covering mesh selection, convergence analysis and tension, torsion and shear load cases.",
-        projectTrampolineTitle: "Measurement on trampoline",
-        projectTrampolineText: "Experimental project using a simplified trampoline-ball system to study deformation fields, acceleration and oscillation frequency.",
-        projectXrayTitle: "Si₃N₄ PVD coating analysis",
-        projectXrayText: "Thin-film quality assessment focused on contamination, stoichiometry and interface integrity for silicon nitride coatings on silicon wafers.",
-        projectAlloysTitle: "High strength aluminium alloys at high temperature",
-        projectAlloysText: "Thermo-Calc based study of Al–Ce–Sc alloy design for high-temperature strength retention beyond conventional aluminium alloys.",
-        projectElectricalTitle: "Electrical housing integration",
-        projectElectricalText: "Design, manufacturing and integration of the electrical housing system for the race car, with attention to packaging, sealing and structural constraints.",
-        projectTopologyTitle: "Topology optimization",
-        projectTopologyText: "Literature review and engineering study focused on topology optimization, lightweight design and structural performance.",
-        projectBulbTitle: "Sustainable light bulb",
-        projectBulbText: "Redesign of a light bulb with a stronger focus on circularity, modularity, material optimization and improved sustainability across the product lifecycle.",
-        projectLatticeTitle: "Lattice optimization",
-        projectLatticeText: "Development of a parametric lattice generation and simulation workflow to optimize lightweight structures through numerical modeling and performance analysis.",
-        projectDataTitle: "Data acquisition semester project",
-        projectDataText: "Semester project focused on measurement, signal acquisition and experimental data processing for engineering analysis and system understanding.",
+        statusAvailable:
+          "Currently available",
 
-        skillsTitle: "Skills and Expertise",
-        skillsLead: "My profile combines strong technical engineering skills, hands-on prototyping experience and strong collaborative abilities. I enjoy moving from concept to execution, through design, simulation, manufacturing and teamwork in demanding environments.",
-        softTitle: "Soft Skills",
-        soft1Title: "Analytical thinking",
-        soft1Text: "Ability to structure problems, understand complex systems and make clear, engineering-driven decisions.",
-        soft2Title: "Fast learner",
-        soft2Text: "Quickly able to grasp new concepts, tools and environments, and apply them efficiently in practice.",
-        soft3Title: "Organization",
-        soft3Text: "Able to manage multiple tasks, priorities and deadlines in structured and demanding environments.",
-        soft4Title: "Commitment & delivery",
-        soft4Text: "Focused on delivering results on time and at the expected level of quality, with strong ownership.",
-        soft5Title: "Team player",
-        soft5Text: "Comfortable working in collaborative environments with multidisciplinary teams and shared objectives.",
-        soft6Title: "Leadership & initiative",
-        soft6Text: "Capable of taking initiative, driving projects forward and motivating others in high-performance environments.",
+        statusLabel:
+          "Current status",
 
-        technicalTitle: "Technical Skills",
-        tabCad: "CAD",
-        tabSimulation: "Simulation",
-        tabProgramming: "Programming",
-        tabPrototyping: "Prototyping",
-        tabManufacturing: "Manufacturing",
-        cad1: "Advanced 3D design, assemblies and product development.",
-        cad2: "Mechanical design and integration of complex systems.",
-        cad3: "Rapid design iterations and prototyping-oriented workflows.",
-        sim1: "Finite element analysis, structural simulations and engineering validation.",
-        sim2: "Advanced structural analysis and material behavior modeling.",
-        sim3: "Composite material analysis and laminate design.",
-        prog1: "Automation, data processing and engineering workflows.",
-        prog2: "Structured programming for technical and low-level applications.",
-        prog3: "Numerical analysis, modeling and scientific computing.",
-        prog4: "System control and experimental interfacing.",
-        prog5: "Embedded prototyping and sensor integration.",
-        prog6: "Technical documentation and scientific reporting.",
-        prog7: "Web development and interface structuring.",
-        proto1Title: "3D Printing",
-        proto1Text: "Rapid prototyping and fast design validation cycles.",
-        proto2Text: "Electromechanical prototyping, sensor testing and system integration.",
-        proto3Title: "Workshop fabrication",
-        proto3Text: "Hands-on manufacturing including CNC machining, laser cutting and assembly.",
-        manu1Title: "Composite manufacturing",
-        manu1Text: "Layup processes, monocoque production and lightweight structural fabrication.",
-        manu2Title: "Mechanical integration",
-        manu2Text: "System packaging, constraints management and design-for-integration.",
-        manu3Title: "Testing and validation",
-        manu3Text: "Experimental verification, iteration and engineering performance follow-up.",
+        statusHeading:
+          "First-year Master’s student at EPFL, currently looking for an internship",
 
-        contactTitle: "Contact",
-        contactBtn: "Get in touch",
-        country: "52D Rue de Lausanne, 1030 Bussigny, Switzerland"
+        statusText:
+          "I am currently looking for a 6 to 12-month internship in engineering, design, simulation, manufacturing, production chain optimization or technical project management.",
+
+        statusBox1Title:
+          "Format",
+
+        statusBox1Text:
+          "6 to 12-month internship",
+
+        statusBox2Title:
+          "Focus areas",
+
+        statusBox2Text:
+          "Engineering, design and simulation",
+
+        statusBox3Title:
+          "Industrial scope",
+
+        statusBox3Text:
+          "Manufacturing and production optimization",
+
+        statusBox4Title:
+          "Project management",
+
+        statusBox4Text:
+          "Technical project management and coordination",
+
+        aboutTitle:
+          "About Me",
+
+        aboutLead:
+          "My academic journey has been defined by a continuous progression through demanding engineering projects that have shaped both my technical skills and my way of working. At EPFL, I have been involved in complex, team-based projects, strengthening my interest in design, manufacturing, and high-performance systems, while developing a structured and collaborative approach to engineering. This timeline traces my path from 2018 to today.",
+
+        aboutHsTitle:
+          "High School · Saint-Joseph",
+
+        aboutUgitechTitle:
+          "Metallurgy Internship · UGITECH",
+
+        aboutUgitechText:
+          "Internship at UGITECH in Ugine, FR, a stainless steel manufacturer. Worked on production and automation while developing a solid understanding of advanced metallurgy concepts applied to high-performance materials.",
+
+        aboutHsText:
+          "General high school at Saint-Joseph in Thônes, FR. Specialized in Mathematics, Physics, and Economics & Social Sciences. Developed a strong interest in analytical thinking and technical problem-solving, and graduated with honors in the French General Baccalauréat: 18.24/20 (91.2%).",
+
+        aboutBianchettiText:
+          "Summer work at Bianchetti in Thônes, FR, in carpentry and roofing. Contributed to the renovation of a high-rise roof, working with various tools and within a team environment, while developing hands-on skills in construction and roofing techniques.",
+
+        aboutBianchettiTitle:
+          "Summer Work in Carpentry & Roofing · Bianchetti",
+
+        aboutBachelorTitle:
+          "Bachelor in Mechanical Engineering · EPFL",
+
+        aboutBachelorText:
+          "Strong foundations in mathematics, physics, structural mechanics, materials, and engineering design at EPFL in Lausanne, CH. Graduated with a First Grade (79%), through a rigorous program combining advanced coursework and multiple technical group projects, including Mechanical Construction, Product Development, Engineering Design, and a final Bachelor Project.",
+
+        aboutRacingTitle:
+          "Monocoque & Leadership Roles · EPFL Racing Team",
+
+        aboutRacingText:
+          "Alongside my Bachelor at EPFL in Lausanne, CH, I first joined the EPFL Racing Team as a chassis member, working on the mechanical integration of electronics. I later took on broader responsibilities as Head of Monocoque and Layup Manufacturing, and Vice President, developing both composite manufacturing expertise and leadership skills in a high-performance team.",
+
+        aboutMasterTitle:
+          "Master of Science in Mechanical Engineering · EPFL",
+
+        aboutMasterText:
+          "Specialization in Design and Production with a minor in Materials Science at EPFL in Lausanne, CH. Focused on high-performance engineering, combining advanced technical knowledge with complex project-based work and a strong interest in manufacturing, optimization, and engineering systems.",
+
+        aboutCvBtn:
+          "Download my CV",
+
+        racingTitle:
+          "EPFL Racing Team",
+
+        racingLead:
+          "EPFL Racing Team is a student-led engineering project that designs, manufactures and races a fully electric and autonomous Formula Student car. The project combines vehicle development, testing, manufacturing and competition in a demanding environment that closely reflects real engineering teamwork.",
+
+        racingLead2:
+          "It brings together students from different disciplines who work on the car as a complete system: chassis, aerodynamics, drivetrain, electronics, software, manufacturing, testing, logistics and project coordination. More information is available on the team website:",
+
+        racingSubtitle:
+          "From technical contribution to team leadership",
+
+        racingText1:
+          "During my first year, I designed and produced the full electrical integration kit using composite, aluminium and 3D-printed materials, creating a rigid and waterproof solution. I also contributed to the manufacturing of major composite parts, including the monocoque.",
+
+        racingText2:
+          "In my second year, as Head of Monocoque and Layup Manufacturing, I led the production of the carbon monocoque and improved the electronic integration approach, while also developing validated inserts for composite and aluminium parts.",
+
+        racingText3:
+          "As Vice President, in parallel with my role as a technical lead, I contributed to team organization, logistics and strategic coordination. I supported the structuring of operations, from inventory and transport to planning and team coordination, while also being involved in decision-making, testing activities, competitions and key events.",
+
+        racingStat2:
+          "members involved in the student team",
+
+        racingStat3:
+          "tests coordinated, plus 3 competitions",
+
+        racingStat4:
+          "production time saved",
+
+        racingStat5:
+          "weight reduction on integration system",
+
+        racingStat6:
+          "lighter than previous design",
+
+        racingStat7:
+          "participants at unveiling event",
+
+        racingStat8:
+          "annual budget involved",
+
+        racingBtn:
+          "Click to discover more",
+
+        racingSiteBtn:
+          "Team website",
+
+        projectsTitle:
+          "Selected Projects",
+
+        tagBachelor:
+          "Bachelor Thesis",
+
+        tagSimulation:
+          "Simulation",
+
+        tagAutomation:
+          "Automation / Product Development",
+
+        tagRobotics:
+          "Robotics",
+
+        tagCad:
+          "CAD / Mechanisms",
+
+        tagProgramming:
+          "Programming",
+
+        tagExperimental:
+          "Experimental Methods",
+
+        tagDataAcquisition:
+          "Data acquisition methods",
+
+        tagMaterials:
+          "Materials Science",
+
+        tagThinFilm:
+          "Thin Film Analysis",
+
+        tagComputational:
+          "Computational Materials",
+
+        tagFormula:
+          "Formula Student",
+
+        tagTopology:
+          "Literature Review",
+
+        tagSustainable:
+          "Sustainable Design",
+
+        tagOptimization:
+          "Optimization / Simulation",
+
+        tagInstrumentation:
+          "Instrumentation",
+
+        projectMonocoqueTitle:
+          "Monocoque insert analysis",
+
+        projectMonocoqueText:
+          "Analysis and redesign of production and post-production monocoque inserts, supported by full-structure simulations including carbon, aluminium, inserts and reinforcements.",
+
+        projectScrewTitle:
+          "Screw sorter",
+
+        projectScrewText:
+          "Design and prototyping of a low-cost automated screw sorting system combining mechanical guidance, part detection and user-oriented integration for workshop use.",
+
+        projectRaspberryTitle:
+          "Raspberry gripper",
+
+        projectRaspberryText:
+          "Robotic end-effector for raspberry picking with Arduino-based automation, pressure-controlled gripping and ripeness detection for gentle harvesting.",
+
+        projectDominoTitle:
+          "Domino placement machine",
+
+        projectDominoText:
+          "CATIA project covering kinematics, dynamic studies, structural design, fasteners, documentation and timeline-driven team delivery.",
+
+        projectSudokuTitle:
+          "Sudoku solver",
+
+        projectSudokuText:
+          "End-to-end automation of Sudoku solving from a photo using C for image recognition, MATLAB for solving and LabVIEW for orchestration and interface.",
+
+        projectFeaTitle:
+          "Finite element simulation for inserts",
+
+        projectFeaText:
+          "Detailed simulation workflow in 3DEXPERIENCE covering mesh selection, convergence analysis and tension, torsion and shear load cases.",
+
+        projectTrampolineTitle:
+          "Measurement on trampoline",
+
+        projectTrampolineText:
+          "Experimental project using a simplified trampoline-ball system to study deformation fields, acceleration and oscillation frequency.",
+
+        projectXrayTitle:
+          "Si₃N₄ PVD coating analysis",
+
+        projectXrayText:
+          "Thin-film quality assessment focused on contamination, stoichiometry and interface integrity for silicon nitride coatings on silicon wafers.",
+
+        projectAlloysTitle:
+          "High strength aluminium alloys at high temperature",
+
+        projectAlloysText:
+          "Thermo-Calc based study of Al–Ce–Sc alloy design for high-temperature strength retention beyond conventional aluminium alloys.",
+
+        projectElectricalTitle:
+          "Electrical housing integration",
+
+        projectElectricalText:
+          "Design, manufacturing and integration of the electrical housing system for the race car, with attention to packaging, sealing and structural constraints.",
+
+        projectTopologyTitle:
+          "Topology optimization",
+
+        projectTopologyText:
+          "Literature review and engineering study focused on topology optimization, lightweight design and structural performance.",
+
+        projectBulbTitle:
+          "Sustainable light bulb",
+
+        projectBulbText:
+          "Redesign of a light bulb with a stronger focus on circularity, modularity, material optimization and improved sustainability across the product lifecycle.",
+
+        projectLatticeTitle:
+          "Lattice optimization",
+
+        projectLatticeText:
+          "Development of a parametric lattice generation and simulation workflow to optimize lightweight structures through numerical modeling and performance analysis.",
+
+        projectDataTitle:
+          "Data acquisition semester project",
+
+        projectDataText:
+          "Semester project focused on measurement, signal acquisition and experimental data processing for engineering analysis and system understanding.",
+
+        skillsTitle:
+          "Skills and Expertise",
+
+        skillsLead:
+          "My profile combines strong technical engineering skills, hands-on prototyping experience and strong collaborative abilities. I enjoy moving from concept to execution, through design, simulation, manufacturing and teamwork in demanding environments.",
+
+        softTitle:
+          "Soft Skills",
+
+        soft1Title:
+          "Analytical thinking",
+
+        soft1Text:
+          "Ability to structure problems, understand complex systems and make clear, engineering-driven decisions.",
+
+        soft2Title:
+          "Fast learner",
+
+        soft2Text:
+          "Quickly able to grasp new concepts, tools and environments, and apply them efficiently in practice.",
+
+        soft3Title:
+          "Organization",
+
+        soft3Text:
+          "Able to manage multiple tasks, priorities and deadlines in structured and demanding environments.",
+
+        soft4Title:
+          "Commitment & delivery",
+
+        soft4Text:
+          "Focused on delivering results on time and at the expected level of quality, with strong ownership.",
+
+        soft5Title:
+          "Team player",
+
+        soft5Text:
+          "Comfortable working in collaborative environments with multidisciplinary teams and shared objectives.",
+
+        soft6Title:
+          "Leadership & initiative",
+
+        soft6Text:
+          "Capable of taking initiative, driving projects forward and motivating others in high-performance environments.",
+
+        technicalTitle:
+          "Technical Skills",
+
+        tabCad:
+          "CAD",
+
+        tabSimulation:
+          "Simulation",
+
+        tabProgramming:
+          "Programming",
+
+        tabPrototyping:
+          "Prototyping",
+
+        tabManufacturing:
+          "Manufacturing",
+
+        cad1:
+          "Advanced 3D design, assemblies and product development.",
+
+        cad2:
+          "Mechanical design and integration of complex systems.",
+
+        cad3:
+          "Rapid design iterations and prototyping-oriented workflows.",
+
+        sim1:
+          "Finite element analysis, structural simulations and engineering validation.",
+
+        sim2:
+          "Advanced structural analysis and material behavior modeling.",
+
+        sim3:
+          "Composite material analysis and laminate design.",
+
+        prog1:
+          "Automation, data processing and engineering workflows.",
+
+        prog2:
+          "Structured programming for technical and low-level applications.",
+
+        prog3:
+          "Numerical analysis, modeling and scientific computing.",
+
+        prog4:
+          "System control and experimental interfacing.",
+
+        prog5:
+          "Embedded prototyping and sensor integration.",
+
+        prog6:
+          "Technical documentation and scientific reporting.",
+
+        prog7:
+          "Web development and interface structuring.",
+
+        proto1Title:
+          "3D Printing",
+
+        proto1Text:
+          "Rapid prototyping and fast design validation cycles.",
+
+        proto2Text:
+          "Electromechanical prototyping, sensor testing and system integration.",
+
+        proto3Title:
+          "Workshop fabrication",
+
+        proto3Text:
+          "Hands-on manufacturing including CNC machining, laser cutting and assembly.",
+
+        manu1Title:
+          "Composite manufacturing",
+
+        manu1Text:
+          "Layup processes, monocoque production and lightweight structural fabrication.",
+
+        manu2Title:
+          "Mechanical integration",
+
+        manu2Text:
+          "System packaging, constraints management and design-for-integration.",
+
+        manu3Title:
+          "Testing and validation",
+
+        manu3Text:
+          "Experimental verification, iteration and engineering performance follow-up.",
+
+        contactTitle:
+          "Contact",
+
+        contactBtn:
+          "Get in touch",
+
+        country:
+          "52D Rue de Lausanne, 1030 Bussigny, Switzerland"
       },
 
+
       fr: {
-        navAbout: "À propos",
-        navRacing: "EPFL Racing Team",
-        navProjects: "Projets",
-        navSkills: "Compétences",
-        navContact: "Contact",
 
-        dropdownRacing: "EPFL Racing Team",
-        dropdownMonocoque: "Analyse des inserts de monocoque",
-        dropdownScrew: "Trieur de vis",
-        dropdownRaspberry: "Pince à framboises",
-        dropdownDomino: "Machine de pose de dominos",
-        dropdownSudoku: "Solveur de Sudoku",
-        dropdownFea: "Simulation par éléments finis",
-        dropdownTrampoline: "Mesure sur trampoline",
-        dropdownXray: "Spectroscopie X",
-        dropdownAlloys: "Alliages d’aluminium haute résistance",
-        dropdownElectrical: "Intégration du boîtier électrique",
-        dropdownTopology: "Topology optimization",
-        dropdownBulb: "Ampoule durable",
-        dropdownLattice: "Optimisation de lattice",
-        dropdownData: "Projet semestriel d’acquisition de données",
+        navAbout:
+          "À propos",
 
-        heroEyebrow: "Portfolio en génie mécanique",
-        heroTitle: "Concevoir.<br>Fabriquer.<br>Livrer.",
-        heroLead: "Bienvenue sur mon portfolio. Je suis Mathélyo Favre-Réguillon, étudiant en Master de génie mécanique à l’EPFL, avec un intérêt marqué pour l’ingénierie de haute performance, les composites et les structures légères. Au-delà des aspects techniques, je m’intéresse particulièrement à la gestion de projet et au travail en équipe, avec l’ambition de structurer et concrétiser des solutions d’ingénierie efficaces.",
-        heroBtnProfile: "Découvrir mon profil",
-        heroBtnContact: "Me contacter",
+        navRacing:
+          "EPFL Racing Team",
 
-        statusAvailable: "Actuellement disponible",
-        statusLabel: "Situation actuelle",
-        statusHeading: "Étudiant en première année de Master à l’EPFL, actuellement à la recherche d’un stage",
-        statusText: "Je recherche actuellement un stage de 6 à 12 mois en ingénierie, conception, simulation, fabrication, optimisation de chaîne de production ou gestion de projet technique.",
-        statusBox1Title: "Format",
-        statusBox1Text: "Stage de 6 à 12 mois",
-        statusBox2Title: "Domaines visés",
-        statusBox2Text: "Ingénierie, conception et simulation",
-        statusBox3Title: "Dimension industrielle",
-        statusBox3Text: "Fabrication et optimisation de production",
-        statusBox4Title: "Gestion de projet",
-        statusBox4Text: "Gestion et coordination de projets techniques",
+        navProjects:
+          "Projets",
 
-        aboutTitle: "À propos de moi",
-        aboutLead: "Mon parcours académique s’est construit à travers une progression continue de projets d’ingénierie exigeants, qui ont façonné à la fois mes compétences techniques et ma manière de travailler. À l’EPFL, j’ai été impliqué dans des projets complexes menés en équipe, renforçant mon intérêt pour la conception, la fabrication et les systèmes à haute performance, tout en développant une approche structurée et collaborative de l’ingénierie. Cette frise retrace mon parcours de 2018 à aujourd’hui.",
-        aboutHsTitle: "Lycée · Saint-Joseph",
-        aboutHsText: "Lycée général à Saint-Joseph à Thônes, FR. Spécialités en Mathématiques, Physique et Sciences Économiques et Sociales. Développement d’un esprit analytique et d’une appétence pour la résolution de problèmes techniques, avec obtention du Baccalauréat général avec mention : 18.24/20 (91.2%).",
-        aboutUgitechTitle: "Stage en métallurgie · UGITECH",
-        aboutUgitechText: "Stage chez UGITECH à Ugine, FR, spécialisé dans les aciers inoxydables. Travail en production et automatisation, avec le développement de compétences en métallurgie avancée appliquée à des matériaux haute performance.",
-        aboutBianchettiText: "Travail d’été chez Bianchetti à Thônes, FR, en charpente et couverture. Participation à la rénovation d’une toiture en hauteur, avec l’utilisation de différents outils et un travail en équipe, permettant d’acquérir une expérience concrète des techniques de construction et de couverture.",
-        aboutBianchettiTitle: "Travail d’été en charpente & couverture · Bianchetti",
-        aboutBachelorTitle: "Bachelor en Génie Mécanique · EPFL",
-        aboutBachelorText: "Bases solides en mathématiques, physique, mécanique des structures, matériaux et conception à l’EPFL à Lausanne, CH. Diplômé avec une mention de premier niveau (79%), au sein d’une formation exigeante mêlant enseignements avancés et projets techniques en groupe : construction mécanique, développement de produit, conception ingénierie et projet de Bachelor.",
-        aboutRacingTitle: "Rôles Monocoque & Leadership · EPFL Racing Team",
-        aboutRacingText: "En parallèle de mon Bachelor à l’EPFL à Lausanne, CH, j’ai d'abord intégré l’EPFL Racing Team en tant que membre châssis, en travaillant sur l’intégration mécanique de l’électronique. J’ai ensuite évolué vers des responsabilités élargies en tant que Head of Monocoque and Layup Manufacturing, puis Vice-Président, développant à la fois une expertise en fabrication composite et des compétences en leadership.",
-        aboutMasterTitle: "Master en Génie Mécanique · EPFL",
-        aboutMasterText: "Spécialisation en Design et Production avec une mineure en Science des Matériaux à l’EPFL à Lausanne, CH. Formation orientée vers l’ingénierie haute performance, combinant connaissances techniques avancées, projets complexes et un fort intérêt pour la production, l’optimisation et les systèmes industriels.",
-        aboutCvBtn: "Télécharger mon CV",
+        navSkills:
+          "Compétences",
 
-        racingTitle: "EPFL Racing Team",
-        racingLead: "EPFL Racing Team est un projet étudiant d’ingénierie qui conçoit, fabrique et fait courir une voiture de Formula Student entièrement électrique et autonome. Le projet combine développement véhicule, essais, fabrication et compétition dans un environnement exigeant, très proche du fonctionnement d’une véritable équipe d’ingénierie.",
-        racingLead2: "L’équipe réunit des étudiants de plusieurs disciplines qui travaillent sur la voiture comme un système complet : châssis, aérodynamique, drivetrain, électronique, software, fabrication, essais, logistique et coordination de projet. Plus d’informations sont disponibles sur le site de l’équipe :",
-        racingSubtitle: "De la contribution technique au leadership d’équipe",
-        racingText1: "Lors de ma première année, j’ai conçu et fabriqué l’ensemble du système d’intégration électronique en combinant matériaux composites, aluminium et impression 3D, afin d’obtenir une solution rigide et étanche. J’ai également contribué à la fabrication de pièces composites majeures, dont la monocoque.",
-        racingText2: "Lors de ma deuxième année, en tant que responsable Monocoque et Layup Manufacturing, j’ai piloté la production de la monocoque carbone et amélioré l’approche d’intégration électronique, tout en développant de nouveaux inserts validés pour les pièces carbone et aluminium.",
-        racingText3: "En tant que Vice-Président, en parallèle de mon rôle de responsable technique, j’ai contribué à l’organisation, à la logistique et à la coordination globale de l’équipe. J’ai participé à la structuration des opérations, de la gestion des stocks et transports à la planification et la coordination, tout en prenant part aux décisions stratégiques, aux phases de tests, aux compétitions et aux événements clés.",
-        racingStat2: "membres impliqués dans l’équipe",
-        racingStat3: "tests coordonnés, dont 3 compétitions",
-        racingStat4: "de gain de production",
-        racingStat5: "de réduction de masse",
-        racingStat6: "plus léger que la version précédente",
-        racingStat7: "participants à l’événement",
-        racingStat8: "budget annuel impliqué",
-        racingBtn: "Découvrir le projet",
-        racingSiteBtn: "Site de l’équipe",
+        navContact:
+          "Contact",
 
-        projectsTitle: "Projets sélectionnés",
-        tagBachelor: "Projet de Bachelor",
-        tagSimulation: "Simulation",
-        tagAutomation: "Automatisation / Développement produit",
-        tagRobotics: "Robotique",
-        tagCad: "CAO / Mécanismes",
-        tagProgramming: "Programmation",
-        tagExperimental: "Méthodes expérimentales",
-        tagDataAcquisition: "Méthodes d’acquisition de données",
-        tagMaterials: "Science des matériaux",
-        tagThinFilm: "Analyse de couches minces",
-        tagComputational: "Matériaux computationnels",
-        tagFormula: "Formula Student",
-        tagTopology: "Revue de littérature",
-        tagSustainable: "Conception durable",
-        tagOptimization: "Optimisation / Simulation",
-        tagInstrumentation: "Instrumentation",
+        dropdownRacing:
+          "EPFL Racing Team",
 
-        projectMonocoqueTitle: "Analyse des inserts de monocoque",
-        projectMonocoqueText: "Analyse et redesign des inserts de monocoque en production et post-production, appuyés par des simulations structurelles complètes incluant carbone, aluminium, inserts et renforts.",
-        projectScrewTitle: "Trieur de vis",
-        projectScrewText: "Conception et prototypage d’un système automatisé de tri de vis à faible coût, combinant guidage mécanique, détection des pièces et intégration pensée pour un usage en atelier.",
-        projectRaspberryTitle: "Pince à framboises",
-        projectRaspberryText: "Effecteur robotique pour la récolte de framboises avec automatisation Arduino, contrôle de pression du pincement et détection de maturité pour une récolte délicate.",
-        projectDominoTitle: "Machine de pose de dominos",
-        projectDominoText: "Projet CATIA couvrant cinématique, études dynamiques, conception structurelle, fixations, documentation et gestion d’équipe selon un planning défini.",
-        projectSudokuTitle: "Solveur de Sudoku",
-        projectSudokuText: "Automatisation complète de la résolution de Sudoku à partir d’une photo avec C pour la reconnaissance d’image, MATLAB pour la résolution et LabVIEW pour l’orchestration et l’interface.",
-        projectFeaTitle: "Simulation par éléments finis pour inserts",
-        projectFeaText: "Workflow détaillé de simulation sous 3DEXPERIENCE couvrant stratégie de maillage, analyse de convergence et cas de charge en traction, torsion et cisaillement.",
-        projectTrampolineTitle: "Mesure sur trampoline",
-        projectTrampolineText: "Projet expérimental utilisant un système simplifié trampoline-balle pour étudier les champs de déformation, l’accélération et la fréquence d’oscillation.",
-        projectXrayTitle: "Analyse de revêtement PVD Si₃N₄",
-        projectXrayText: "Évaluation de la qualité de couches minces, centrée sur la contamination, la stœchiométrie et l’intégrité d’interface pour des revêtements de nitrure de silicium sur wafer silicium.",
-        projectAlloysTitle: "Alliages d’aluminium haute résistance à haute température",
-        projectAlloysText: "Étude sous Thermo-Calc de la conception d’alliages Al–Ce–Sc pour le maintien des performances mécaniques à haute température au-delà des alliages d’aluminium conventionnels.",
-        projectElectricalTitle: "Intégration du boîtier électrique",
-        projectElectricalText: "Conception, fabrication et intégration du système de boîtier électrique de la voiture de course, avec un focus sur l’encombrement, l’étanchéité et les contraintes structurelles.",
-        projectTopologyTitle: "Topology optimization",
-        projectTopologyText: "Revue de littérature et étude d’ingénierie centrées sur l’optimisation topologique, l’allègement des structures et les performances mécaniques.",
-        projectBulbTitle: "Ampoule durable",
-        projectBulbText: "Redesign d’une ampoule avec un accent renforcé sur la circularité, la modularité, l’optimisation des matériaux et l’amélioration de la durabilité sur l’ensemble du cycle de vie.",
-        projectLatticeTitle: "Optimisation de lattice",
-        projectLatticeText: "Développement d’un workflow paramétrique de génération et simulation de lattice afin d’optimiser des structures légères par modélisation numérique et analyse de performance.",
-        projectDataTitle: "Projet semestriel d’acquisition de données",
-        projectDataText: "Projet semestriel centré sur la mesure, l’acquisition de signaux et le traitement de données expérimentales pour l’analyse et la compréhension de systèmes d’ingénierie.",
+        dropdownMonocoque:
+          "Analyse des inserts de monocoque",
 
-        skillsTitle: "Compétences et expertise",
-        skillsLead: "Mon profil combine de solides compétences techniques en ingénierie, une forte expérience terrain en prototypage et de solides capacités de collaboration. J’aime aller du concept à la réalisation, en passant par la conception, la simulation, la fabrication et le travail en équipe dans des environnements exigeants.",
-        softTitle: "Compétences humaines",
-        soft1Title: "Esprit analytique",
-        soft1Text: "Capacité à structurer des problèmes, comprendre des systèmes complexes et prendre des décisions d’ingénierie claires.",
-        soft2Title: "Apprentissage rapide",
-        soft2Text: "Capacité à assimiler rapidement de nouveaux concepts, outils et environnements, et à les appliquer efficacement.",
-        soft3Title: "Organisation",
-        soft3Text: "Gestion efficace de plusieurs tâches, priorités et délais dans des environnements exigeants.",
-        soft4Title: "Engagement et délivrabilité",
-        soft4Text: "Forte orientation résultats avec une capacité à livrer dans les délais et avec un haut niveau de qualité.",
-        soft5Title: "Esprit d’équipe",
-        soft5Text: "À l’aise dans des environnements collaboratifs avec des équipes pluridisciplinaires et des objectifs communs.",
-        soft6Title: "Leadership et initiative",
-        soft6Text: "Capacité à prendre des initiatives, faire avancer les projets et mobiliser une équipe dans des contextes exigeants.",
+        dropdownScrew:
+          "Trieur de vis",
 
-        technicalTitle: "Compétences techniques",
-        tabCad: "CAO",
-        tabSimulation: "Simulation",
-        tabProgramming: "Programmation",
-        tabPrototyping: "Prototypage",
-        tabManufacturing: "Fabrication",
-        cad1: "Conception 3D avancée, assemblages et développement produit.",
-        cad2: "Conception mécanique et intégration de systèmes complexes.",
-        cad3: "Itérations rapides de conception et développement orienté prototypage.",
-        sim1: "Analyse par éléments finis, simulations structurelles et validation.",
-        sim2: "Analyse avancée des structures et comportement des matériaux.",
-        sim3: "Analyse des matériaux composites et conception de stratifiés.",
-        prog1: "Automatisation, traitement de données et workflows d’ingénierie.",
-        prog2: "Programmation structurée pour applications techniques bas niveau.",
-        prog3: "Calcul scientifique, modélisation et analyse numérique.",
-        prog4: "Pilotage de systèmes et interfacing expérimental.",
-        prog5: "Prototypage embarqué et intégration de capteurs.",
-        prog6: "Rédaction de documents techniques et scientifiques.",
-        prog7: "Développement web et structuration d’interfaces.",
-        proto1Title: "Impression 3D",
-        proto1Text: "Prototypage rapide et validation accélérée des concepts.",
-        proto2Text: "Prototypage électromécanique, tests capteurs et intégration systèmes.",
-        proto3Title: "Fabrication atelier",
-        proto3Text: "Fabrication pratique incluant usinage CNC, découpe laser et assemblage.",
-        manu1Title: "Fabrication composite",
-        manu1Text: "Procédés de layup, production de monocoques et structures légères.",
-        manu2Title: "Intégration mécanique",
-        manu2Text: "Packaging système, gestion des contraintes et conception orientée intégration.",
-        manu3Title: "Tests et validation",
-        manu3Text: "Vérification expérimentale, itérations et suivi des performances.",
+        dropdownRaspberry:
+          "Pince à framboises",
 
-        contactTitle: "Contact",
-        contactBtn: "Prendre contact",
-        country: "52D Rue de Lausanne, 1030 Bussigny, Suisse"
+        dropdownDomino:
+          "Machine de pose de dominos",
+
+        dropdownSudoku:
+          "Solveur de Sudoku",
+
+        dropdownFea:
+          "Simulation par éléments finis",
+
+        dropdownTrampoline:
+          "Mesure sur trampoline",
+
+        dropdownXray:
+          "Spectroscopie X",
+
+        dropdownAlloys:
+          "Alliages d’aluminium haute résistance",
+
+        dropdownElectrical:
+          "Intégration du boîtier électrique",
+
+        dropdownTopology:
+          "Topology optimization",
+
+        dropdownBulb:
+          "Ampoule durable",
+
+        dropdownLattice:
+          "Optimisation de lattice",
+
+        dropdownData:
+          "Projet semestriel d’acquisition de données",
+
+        heroEyebrow:
+          "Portfolio en génie mécanique",
+
+        heroTitle:
+          "Concevoir.<br>Fabriquer.<br>Livrer.",
+
+        heroLead:
+          "Bienvenue sur mon portfolio. Je suis Mathélyo Favre-Réguillon, étudiant en Master de génie mécanique à l’EPFL, avec un intérêt marqué pour l’ingénierie de haute performance, les composites et les structures légères. Au-delà des aspects techniques, je m’intéresse particulièrement à la gestion de projet et au travail en équipe, avec l’ambition de structurer et concrétiser des solutions d’ingénierie efficaces.",
+
+        heroBtnProfile:
+          "Découvrir mon profil",
+
+        heroBtnContact:
+          "Me contacter",
+
+        statusAvailable:
+          "Actuellement disponible",
+
+        statusLabel:
+          "Situation actuelle",
+
+        statusHeading:
+          "Étudiant en première année de Master à l’EPFL, actuellement à la recherche d’un stage",
+
+        statusText:
+          "Je recherche actuellement un stage de 6 à 12 mois en ingénierie, conception, simulation, fabrication, optimisation de chaîne de production ou gestion de projet technique.",
+
+        statusBox1Title:
+          "Format",
+
+        statusBox1Text:
+          "Stage de 6 à 12 mois",
+
+        statusBox2Title:
+          "Domaines visés",
+
+        statusBox2Text:
+          "Ingénierie, conception et simulation",
+
+        statusBox3Title:
+          "Dimension industrielle",
+
+        statusBox3Text:
+          "Fabrication et optimisation de production",
+
+        statusBox4Title:
+          "Gestion de projet",
+
+        statusBox4Text:
+          "Gestion et coordination de projets techniques",
+
+        aboutTitle:
+          "À propos de moi",
+
+        aboutLead:
+          "Mon parcours académique s’est construit à travers une progression continue de projets d’ingénierie exigeants, qui ont façonné à la fois mes compétences techniques et ma manière de travailler. À l’EPFL, j’ai été impliqué dans des projets complexes menés en équipe, renforçant mon intérêt pour la conception, la fabrication et les systèmes à haute performance, tout en développant une approche structurée et collaborative de l’ingénierie. Cette frise retrace mon parcours de 2018 à aujourd’hui.",
+
+        aboutHsTitle:
+          "Lycée · Saint-Joseph",
+
+        aboutHsText:
+          "Lycée général à Saint-Joseph à Thônes, FR. Spécialités en Mathématiques, Physique et Sciences Économiques et Sociales. Développement d’un esprit analytique et d’une appétence pour la résolution de problèmes techniques, avec obtention du Baccalauréat général avec mention : 18.24/20 (91.2%).",
+
+        aboutUgitechTitle:
+          "Stage en métallurgie · UGITECH",
+
+        aboutUgitechText:
+          "Stage chez UGITECH à Ugine, FR, spécialisé dans les aciers inoxydables. Travail en production et automatisation, avec le développement de compétences en métallurgie avancée appliquée à des matériaux haute performance.",
+
+        aboutBianchettiText:
+          "Travail d’été chez Bianchetti à Thônes, FR, en charpente et couverture. Participation à la rénovation d’une toiture en hauteur, avec l’utilisation de différents outils et un travail en équipe, permettant d’acquérir une expérience concrète des techniques de construction et de couverture.",
+
+        aboutBianchettiTitle:
+          "Travail d’été en charpente & couverture · Bianchetti",
+
+        aboutBachelorTitle:
+          "Bachelor en Génie Mécanique · EPFL",
+
+        aboutBachelorText:
+          "Bases solides en mathématiques, physique, mécanique des structures, matériaux et conception à l’EPFL à Lausanne, CH. Diplômé avec une mention de premier niveau (79%), au sein d’une formation exigeante mêlant enseignements avancés et projets techniques en groupe : construction mécanique, développement de produit, conception ingénierie et projet de Bachelor.",
+
+        aboutRacingTitle:
+          "Rôles Monocoque & Leadership · EPFL Racing Team",
+
+        aboutRacingText:
+          "En parallèle de mon Bachelor à l’EPFL à Lausanne, CH, j’ai d'abord intégré l’EPFL Racing Team en tant que membre châssis, en travaillant sur l’intégration mécanique de l’électronique. J’ai ensuite évolué vers des responsabilités élargies en tant que Head of Monocoque and Layup Manufacturing, puis Vice-Président, développant à la fois une expertise en fabrication composite et des compétences en leadership.",
+
+        aboutMasterTitle:
+          "Master en Génie Mécanique · EPFL",
+
+        aboutMasterText:
+          "Spécialisation en Design et Production avec une mineure en Science des Matériaux à l’EPFL à Lausanne, CH. Formation orientée vers l’ingénierie haute performance, combinant connaissances techniques avancées, projets complexes et un fort intérêt pour la production, l’optimisation et les systèmes industriels.",
+
+        aboutCvBtn:
+          "Télécharger mon CV",
+
+        racingTitle:
+          "EPFL Racing Team",
+
+        racingLead:
+          "EPFL Racing Team est un projet étudiant d’ingénierie qui conçoit, fabrique et fait courir une voiture de Formula Student entièrement électrique et autonome. Le projet combine développement véhicule, essais, fabrication et compétition dans un environnement exigeant, très proche du fonctionnement d’une véritable équipe d’ingénierie.",
+
+        racingLead2:
+          "L’équipe réunit des étudiants de plusieurs disciplines qui travaillent sur la voiture comme un système complet : châssis, aérodynamique, drivetrain, électronique, software, fabrication, essais, logistique et coordination de projet. Plus d’informations sont disponibles sur le site de l’équipe :",
+
+        racingSubtitle:
+          "De la contribution technique au leadership d’équipe",
+
+        racingText1:
+          "Lors de ma première année, j’ai conçu et fabriqué l’ensemble du système d’intégration électronique en combinant matériaux composites, aluminium et impression 3D, afin d’obtenir une solution rigide et étanche. J’ai également contribué à la fabrication de pièces composites majeures, dont la monocoque.",
+
+        racingText2:
+          "Lors de ma deuxième année, en tant que responsable Monocoque et Layup Manufacturing, j’ai piloté la production de la monocoque carbone et amélioré l’approche d’intégration électronique, tout en développant de nouveaux inserts validés pour les pièces carbone et aluminium.",
+
+        racingText3:
+          "En tant que Vice-Président, en parallèle de mon rôle de responsable technique, j’ai contribué à l’organisation, à la logistique et à la coordination globale de l’équipe. J’ai participé à la structuration des opérations, de la gestion des stocks et transports à la planification et la coordination, tout en prenant part aux décisions stratégiques, aux phases de tests, aux compétitions et aux événements clés.",
+
+        racingStat2:
+          "membres impliqués dans l’équipe",
+
+        racingStat3:
+          "tests coordonnés, dont 3 compétitions",
+
+        racingStat4:
+          "de gain de production",
+
+        racingStat5:
+          "de réduction de masse",
+
+        racingStat6:
+          "plus léger que la version précédente",
+
+        racingStat7:
+          "participants à l’événement",
+
+        racingStat8:
+          "budget annuel impliqué",
+
+        racingBtn:
+          "Découvrir le projet",
+
+        racingSiteBtn:
+          "Site de l’équipe",
+
+        projectsTitle:
+          "Projets sélectionnés",
+
+        tagBachelor:
+          "Projet de Bachelor",
+
+        tagSimulation:
+          "Simulation",
+
+        tagAutomation:
+          "Automatisation / Développement produit",
+
+        tagRobotics:
+          "Robotique",
+
+        tagCad:
+          "CAO / Mécanismes",
+
+        tagProgramming:
+          "Programmation",
+
+        tagExperimental:
+          "Méthodes expérimentales",
+
+        tagDataAcquisition:
+          "Méthodes d’acquisition de données",
+
+        tagMaterials:
+          "Science des matériaux",
+
+        tagThinFilm:
+          "Analyse de couches minces",
+
+        tagComputational:
+          "Matériaux computationnels",
+
+        tagFormula:
+          "Formula Student",
+
+        tagTopology:
+          "Revue de littérature",
+
+        tagSustainable:
+          "Conception durable",
+
+        tagOptimization:
+          "Optimisation / Simulation",
+
+        tagInstrumentation:
+          "Instrumentation",
+
+        projectMonocoqueTitle:
+          "Analyse des inserts de monocoque",
+
+        projectMonocoqueText:
+          "Analyse et redesign des inserts de monocoque en production et post-production, appuyés par des simulations structurelles complètes incluant carbone, aluminium, inserts et renforts.",
+
+        projectScrewTitle:
+          "Trieur de vis",
+
+        projectScrewText:
+          "Conception et prototypage d’un système automatisé de tri de vis à faible coût, combinant guidage mécanique, détection des pièces et intégration pensée pour un usage en atelier.",
+
+        projectRaspberryTitle:
+          "Pince à framboises",
+
+        projectRaspberryText:
+          "Effecteur robotique pour la récolte de framboises avec automatisation Arduino, contrôle de pression du pincement et détection de maturité pour une récolte délicate.",
+
+        projectDominoTitle:
+          "Machine de pose de dominos",
+
+        projectDominoText:
+          "Projet CATIA couvrant cinématique, études dynamiques, conception structurelle, fixations, documentation et gestion d’équipe selon un planning défini.",
+
+        projectSudokuTitle:
+          "Solveur de Sudoku",
+
+        projectSudokuText:
+          "Automatisation complète de la résolution de Sudoku à partir d’une photo avec C pour la reconnaissance d’image, MATLAB pour la résolution et LabVIEW pour l’orchestration et l’interface.",
+
+        projectFeaTitle:
+          "Simulation par éléments finis pour inserts",
+
+        projectFeaText:
+          "Workflow détaillé de simulation sous 3DEXPERIENCE couvrant stratégie de maillage, analyse de convergence et cas de charge en traction, torsion et cisaillement.",
+
+        projectTrampolineTitle:
+          "Mesure sur trampoline",
+
+        projectTrampolineText:
+          "Projet expérimental utilisant un système simplifié trampoline-balle pour étudier les champs de déformation, l’accélération et la fréquence d’oscillation.",
+
+        projectXrayTitle:
+          "Analyse de revêtement PVD Si₃N₄",
+
+        projectXrayText:
+          "Évaluation de la qualité de couches minces, centrée sur la contamination, la stœchiométrie et l’intégrité d’interface pour des revêtements de nitrure de silicium sur wafer silicium.",
+
+        projectAlloysTitle:
+          "Alliages d’aluminium haute résistance à haute température",
+
+        projectAlloysText:
+          "Étude sous Thermo-Calc de la conception d’alliages Al–Ce–Sc pour le maintien des performances mécaniques à haute température au-delà des alliages d’aluminium conventionnels.",
+
+        projectElectricalTitle:
+          "Intégration du boîtier électrique",
+
+        projectElectricalText:
+          "Conception, fabrication et intégration du système de boîtier électrique de la voiture de course, avec un focus sur l’encombrement, l’étanchéité et les contraintes structurelles.",
+
+        projectTopologyTitle:
+          "Topology optimization",
+
+        projectTopologyText:
+          "Revue de littérature et étude d’ingénierie centrées sur l’optimisation topologique, l’allègement des structures et les performances mécaniques.",
+
+        projectBulbTitle:
+          "Ampoule durable",
+
+        projectBulbText:
+          "Redesign d’une ampoule avec un accent renforcé sur la circularité, la modularité, l’optimisation des matériaux et l’amélioration de la durabilité sur l’ensemble du cycle de vie.",
+
+        projectLatticeTitle:
+          "Optimisation de lattice",
+
+        projectLatticeText:
+          "Développement d’un workflow paramétrique de génération et simulation de lattice afin d’optimiser des structures légères par modélisation numérique et analyse de performance.",
+
+        projectDataTitle:
+          "Projet semestriel d’acquisition de données",
+
+        projectDataText:
+          "Projet semestriel centré sur la mesure, l’acquisition de signaux et le traitement de données expérimentales pour l’analyse et la compréhension de systèmes d’ingénierie.",
+
+        skillsTitle:
+          "Compétences et expertise",
+
+        skillsLead:
+          "Mon profil combine de solides compétences techniques en ingénierie, une forte expérience terrain en prototypage et de solides capacités de collaboration. J’aime aller du concept à la réalisation, en passant par la conception, la simulation, la fabrication et le travail en équipe dans des environnements exigeants.",
+
+        softTitle:
+          "Compétences humaines",
+
+        soft1Title:
+          "Esprit analytique",
+
+        soft1Text:
+          "Capacité à structurer des problèmes, comprendre des systèmes complexes et prendre des décisions d’ingénierie claires.",
+
+        soft2Title:
+          "Apprentissage rapide",
+
+        soft2Text:
+          "Capacité à assimiler rapidement de nouveaux concepts, outils et environnements, et à les appliquer efficacement.",
+
+        soft3Title:
+          "Organisation",
+
+        soft3Text:
+          "Gestion efficace de plusieurs tâches, priorités et délais dans des environnements exigeants.",
+
+        soft4Title:
+          "Engagement et délivrabilité",
+
+        soft4Text:
+          "Forte orientation résultats avec une capacité à livrer dans les délais et avec un haut niveau de qualité.",
+
+        soft5Title:
+          "Esprit d’équipe",
+
+        soft5Text:
+          "À l’aise dans des environnements collaboratifs avec des équipes pluridisciplinaires et des objectifs communs.",
+
+        soft6Title:
+          "Leadership et initiative",
+
+        soft6Text:
+          "Capacité à prendre des initiatives, faire avancer les projets et mobiliser une équipe dans des contextes exigeants.",
+
+        technicalTitle:
+          "Compétences techniques",
+
+        tabCad:
+          "CAO",
+
+        tabSimulation:
+          "Simulation",
+
+        tabProgramming:
+          "Programmation",
+
+        tabPrototyping:
+          "Prototypage",
+
+        tabManufacturing:
+          "Fabrication",
+
+        cad1:
+          "Conception 3D avancée, assemblages et développement produit.",
+
+        cad2:
+          "Conception mécanique et intégration de systèmes complexes.",
+
+        cad3:
+          "Itérations rapides de conception et développement orienté prototypage.",
+
+        sim1:
+          "Analyse par éléments finis, simulations structurelles et validation.",
+
+        sim2:
+          "Analyse avancée des structures et comportement des matériaux.",
+
+        sim3:
+          "Analyse des matériaux composites et conception de stratifiés.",
+
+        prog1:
+          "Automatisation, traitement de données et workflows d’ingénierie.",
+
+        prog2:
+          "Programmation structurée pour applications techniques bas niveau.",
+
+        prog3:
+          "Calcul scientifique, modélisation et analyse numérique.",
+
+        prog4:
+          "Pilotage de systèmes et interfacing expérimental.",
+
+        prog5:
+          "Prototypage embarqué et intégration de capteurs.",
+
+        prog6:
+          "Rédaction de documents techniques et scientifiques.",
+
+        prog7:
+          "Développement web et structuration d’interfaces.",
+
+        proto1Title:
+          "Impression 3D",
+
+        proto1Text:
+          "Prototypage rapide et validation accélérée des concepts.",
+
+        proto2Text:
+          "Prototypage électromécanique, tests capteurs et intégration systèmes.",
+
+        proto3Title:
+          "Fabrication atelier",
+
+        proto3Text:
+          "Fabrication pratique incluant usinage CNC, découpe laser et assemblage.",
+
+        manu1Title:
+          "Fabrication composite",
+
+        manu1Text:
+          "Procédés de layup, production de monocoques et structures légères.",
+
+        manu2Title:
+          "Intégration mécanique",
+
+        manu2Text:
+          "Packaging système, gestion des contraintes et conception orientée intégration.",
+
+        manu3Title:
+          "Tests et validation",
+
+        manu3Text:
+          "Vérification expérimentale, itérations et suivi des performances.",
+
+        contactTitle:
+          "Contact",
+
+        contactBtn:
+          "Prendre contact",
+
+        country:
+          "52D Rue de Lausanne, 1030 Bussigny, Suisse"
       }
+
     };
+
 
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
 
+
     function scrollToSection(id) {
-      const section = document.getElementById(id);
+
+      const section =
+        document.getElementById(id);
+
       if (section) {
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
-        history.replaceState(null, null, window.location.pathname);
+
+        section.scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        });
+
+        history.replaceState(
+          null,
+          null,
+          window.location.pathname
+        );
+
         closeMobileMenu();
+
       }
+
     }
+
 
     function toggleDropdown(event) {
+
       event.stopPropagation();
-      const dropdown = document.getElementById("projectsDropdown");
+
+      const dropdown =
+        document.getElementById("projectsDropdown");
+
       dropdown.classList.toggle("open");
+
     }
+
 
     function toggleMobileProjects(event) {
+
       event.stopPropagation();
-      const dropdown = document.getElementById("mobileProjectsDropdown");
+
+      const dropdown =
+        document.getElementById("mobileProjectsDropdown");
+
       dropdown.classList.toggle("open");
+
     }
+
 
     function toggleMobileMenu() {
-      const nav = document.getElementById("mainNav");
-      const menuToggle = document.getElementById("menuToggle");
-      const isOpen = nav.classList.toggle("mobile-open");
-      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      menuToggle.textContent = isOpen ? "✕" : "☰";
+
+      const nav =
+        document.getElementById("mainNav");
+
+      const menuToggle =
+        document.getElementById("menuToggle");
+
+      const isOpen =
+        nav.classList.toggle("mobile-open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
+      menuToggle.textContent =
+        isOpen ? "✕" : "☰";
+
     }
+
 
     function closeMobileMenu() {
-      const nav = document.getElementById("mainNav");
-      const menuToggle = document.getElementById("menuToggle");
+
+      const nav =
+        document.getElementById("mainNav");
+
+      const menuToggle =
+        document.getElementById("menuToggle");
+
       nav.classList.remove("mobile-open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.textContent = "☰";
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      menuToggle.textContent =
+        "☰";
+
     }
+
 
     function setLanguage(lang) {
-      document.documentElement.lang = lang;
-      document.querySelectorAll("[data-i18n]").forEach((element) => {
-        const key = element.getAttribute("data-i18n");
-        if (translations[lang] && translations[lang][key] !== undefined) {
-          element.innerHTML = translations[lang][key];
-        }
-      });
 
-      document.querySelectorAll(".lang-btn").forEach((btn) => {
-        btn.classList.toggle("active", btn.dataset.lang === lang);
-      });
+      document.documentElement.lang =
+        lang;
 
-      localStorage.setItem("siteLanguage", lang);
+
+      document
+        .querySelectorAll("[data-i18n]")
+        .forEach((element) => {
+
+          const key =
+            element.getAttribute("data-i18n");
+
+          if (
+            translations[lang] &&
+            translations[lang][key] !== undefined
+          ) {
+
+            element.innerHTML =
+              translations[lang][key];
+
+          }
+
+        });
+
+
+      document
+        .querySelectorAll(".lang-btn")
+        .forEach((btn) => {
+
+          btn.classList.toggle(
+            "active",
+            btn.dataset.lang === lang
+          );
+
+        });
+
+
+      localStorage.setItem(
+        "siteLanguage",
+        lang
+      );
+
     }
 
-    document.addEventListener("click", (event) => {
-      const dropdown = document.getElementById("projectsDropdown");
-      if (dropdown && !dropdown.contains(event.target)) {
-        dropdown.classList.remove("open");
-      }
 
-      const mobileDropdown = document.getElementById("mobileProjectsDropdown");
-      if (mobileDropdown && !mobileDropdown.contains(event.target)) {
-        mobileDropdown.classList.remove("open");
-      }
-    });
+    document.addEventListener(
+      "click",
+      (event) => {
 
-    const skillTabs = document.querySelectorAll(".skill-tab");
-    const skillPanels = document.querySelectorAll(".skills-panel");
+        const dropdown =
+          document.getElementById("projectsDropdown");
+
+        if (
+          dropdown &&
+          !dropdown.contains(event.target)
+        ) {
+
+          dropdown.classList.remove("open");
+
+        }
+
+
+        const mobileDropdown =
+          document.getElementById("mobileProjectsDropdown");
+
+        if (
+          mobileDropdown &&
+          !mobileDropdown.contains(event.target)
+        ) {
+
+          mobileDropdown.classList.remove("open");
+
+        }
+
+      }
+    );
+
+
+    const skillTabs =
+      document.querySelectorAll(".skill-tab");
+
+    const skillPanels =
+      document.querySelectorAll(".skills-panel");
+
 
     skillTabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const target = tab.dataset.tab;
 
-        skillTabs.forEach((btn) => btn.classList.remove("active"));
-        skillPanels.forEach((panel) => panel.classList.remove("active"));
+      tab.addEventListener(
+        "click",
+        () => {
 
-        tab.classList.add("active");
-        document.querySelector(`.skills-panel[data-panel="${target}"]`).classList.add("active");
-      });
+          const target =
+            tab.dataset.tab;
+
+
+          skillTabs.forEach(
+            (btn) => btn.classList.remove("active")
+          );
+
+
+          skillPanels.forEach(
+            (panel) => panel.classList.remove("active")
+          );
+
+
+          tab.classList.add("active");
+
+
+          document
+            .querySelector(
+              `.skills-panel[data-panel="${target}"]`
+            )
+            .classList
+            .add("active");
+
+        }
+      );
+
     });
 
-    document.querySelectorAll(".lang-btn").forEach((button) => {
-      button.addEventListener("click", () => {
-        setLanguage(button.dataset.lang);
+
+    document
+      .querySelectorAll(".lang-btn")
+      .forEach((button) => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            setLanguage(
+              button.dataset.lang
+            );
+
+          }
+        );
+
       });
-    });
 
-    document.getElementById("menuToggle").addEventListener("click", toggleMobileMenu);
 
-    document.querySelectorAll('.mobile-menu a[href^="#"]').forEach((link) => {
-      link.addEventListener("click", () => {
-        closeMobileMenu();
+    document
+      .getElementById("menuToggle")
+      .addEventListener(
+        "click",
+        toggleMobileMenu
+      );
+
+
+    document
+      .querySelectorAll('.mobile-menu a[href^="#"]')
+      .forEach((link) => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            closeMobileMenu();
+
+          }
+        );
+
       });
-    });
 
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 640) {
-        closeMobileMenu();
+
+    window.addEventListener(
+      "resize",
+      () => {
+
+        if (window.innerWidth > 640) {
+
+          closeMobileMenu();
+
+        }
+
       }
-    });
+    );
 
-    window.addEventListener("load", () => {
-      const savedLanguage = localStorage.getItem("siteLanguage") || "en";
-      setLanguage(savedLanguage);
 
-      if (window.location.hash) {
-        history.replaceState(null, null, window.location.pathname);
+    window.addEventListener(
+      "load",
+      () => {
+
+        const savedLanguage =
+          localStorage.getItem("siteLanguage") ||
+          "en";
+
+        setLanguage(savedLanguage);
+
+
+        if (window.location.hash) {
+
+          history.replaceState(
+            null,
+            null,
+            window.location.pathname
+          );
+
+        }
+
+
+        requestAnimationFrame(
+          () => {
+
+            window.scrollTo(
+              0,
+              0
+            );
+
+          }
+        );
+
       }
+    );
 
-      requestAnimationFrame(() => {
-        window.scrollTo(0, 0);
-      });
-    });
 
-    window.addEventListener("pageshow", () => {
-      requestAnimationFrame(() => {
-        window.scrollTo(0, 0);
-      });
-    });
+    window.addEventListener(
+      "pageshow",
+      () => {
+
+        requestAnimationFrame(
+          () => {
+
+            window.scrollTo(
+              0,
+              0
+            );
+
+          }
+        );
+
+      }
+    );
+
   </script>
+
 </body>
 </html>
